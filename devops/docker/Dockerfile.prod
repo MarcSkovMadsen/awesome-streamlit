@@ -1,6 +1,6 @@
 FROM marcskovmadsen/awesome-streamlit/awesome-streamlit_base:latest
 
-EXPOSE 8501
+EXPOSE 8000
 
 WORKDIR /app
 ADD . ./

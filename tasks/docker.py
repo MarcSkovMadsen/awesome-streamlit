@@ -134,7 +134,7 @@ Running the '{image}:{tag}' Docker image
 """
     )
     command = (
-        f'docker run -it -p 8501:8501 --entrypoint "/bin/bash" '
+        f'docker run -it -p 8000:8000 --entrypoint "/bin/bash" '
         f"{DOCKER_REGISTRY}/{image}:{tag} "
     )
     print(command)
@@ -178,7 +178,7 @@ Running the '{image}:{tag}' Docker image
 """
     )
     command = (
-        'docker run -it -p 8501:8501 --entrypoint "streamlit" '
+        'docker run -it -p 8000:8000 --entrypoint "streamlit" '
         f"{DOCKER_REGISTRY}/{image}:{tag} "
         "run src/app.py"
     )
