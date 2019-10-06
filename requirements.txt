@@ -1,6 +1,10 @@
 # Streamlit
 streamlit
 
+# Utils
+# ------------------------------------------------------------------------------
+invoke==1.3.0 # Invoke is a Python task execution tool & library. See http://www.pyinvoke.org/
+
 # Data Engineering and Science
 pandas==0.24.2
 xlrd==1.2.0 # For importing xls files

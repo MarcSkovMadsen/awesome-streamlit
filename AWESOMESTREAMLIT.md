@@ -1,4 +1,4 @@
-# Awesome Streamlit [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/MarcSkovMadsen/awesomestreamlit)
+# Awesome Streamlit [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/MarcSkovMadsen/awesome-streamlit)
 
 ## Introduction
 
@@ -16,13 +16,13 @@ But we see the **potential to become the Iphone of Data Science, Technical Writi
 
 This article was inspired by a reply in this [post on LinkedIn](https://www.linkedin.com/posts/marcskovmadsen_turn-python-scripts-into-beautiful-ml-tools-activity-6585883899514146816-OonG) and some replies to the announcement in the [Streamlit Community](https://discuss.streamlit.io/t/streamlit-has-launched/105/5).
 
-You can find a curated list of Awesome Streamlit resources [here](https://github.com/MarcSkovMadsen/awesomestreamlit)
+You can find a curated list of Awesome Streamlit resources [here](https://github.com/MarcSkovMadsen/awesome-streamlit)
 
 ## Contribute
 
 Feel free to contribute your comments or suggestions to to this article.
 
-You can contribute through GitHub [Issues](https://github.com/MarcSkovMadsen/awesomeStreamlit/issues) or [Pull requests](https://github.com/MarcSkovMadsen/awesomeStreamlit/pulls).
+You can contribute through GitHub [Issues](https://github.com/MarcSkovMadsen/awesome-streamlit/issues) or [Pull requests](https://github.com/MarcSkovMadsen/awesome-streamlit/pulls).
 
 ## Disclaimer
 
@@ -47,7 +47,7 @@ But actually every body extracting, transforming, loading and presenting data ar
 
 One of the revolutionary tools of modern data science is the [Jupyter Notebook](https://jupyter.org/).
 
-[![Awesome](https://jupyter.org/assets/jupyterpreview.png)](https://github.com/MarcSkovMadsen/awesomestreamlit)
+[![Awesome](https://jupyter.org/assets/jupyterpreview.png)](https://github.com/MarcSkovMadsen/awesome-streamlit)
 
 The jupyter notebook provides an environment for working very exploratory and visually within data science
 

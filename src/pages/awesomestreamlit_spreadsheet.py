@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 
-"""# Awesome Streamlit Spreadsheet [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/MarcSkovMadsen/awesomestreamlit)"""
+"""# Awesome Streamlit Spreadsheet [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/MarcSkovMadsen/awesome-streamlit)"""
 
 """Illustration of how easy it is to create a spreadsheet like application with
 

@@ -1,0 +1,14 @@
+FROM marcskovmadsen/awesome-streamlit/awesome-streamlit_base:latest
+
+EXPOSE 8501
+
+WORKDIR /app
+ADD . ./
+
+
+RUN cp .streamlit/config.prod.toml ~/.streamlit/config.toml
+RUN cp .streamlit/credentials.prod.toml ~/.streamlit/credentials.toml
+
+WORKDIR /app
+
+ENTRYPOINT [ "streamlit run src/app.py" ]

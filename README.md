@@ -1,4 +1,4 @@
-# Awesome Streamlit [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/MarcSkovMadsen/awesomestreamlit)
+# Awesome Streamlit [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/MarcSkovMadsen/awesome-streamlit)
 
 The purpose of this project is to share knowledge on how Awesome Streamlit is.
 
@@ -8,9 +8,10 @@ Streamlit is very new (Oct 2019) but we see the potential of being the Iphone of
 
 This project will consist of 3 things
 
-- A [list](https://github.com/MarcSkovMadsen/awesomestreamlit#awesome-resources) of Awesome Streamlit resources. See below.
-- An [article](https://github.com/MarcSkovMadsen/awesomestreamlit/blob/master/AWESOMESTREAMLIT.md) on the vision of how awesome Streamlit is.
-- An Awesome Streamlit Application to illustrate and share the knowledge of how Awesome Streamlit is. Of course it will be built in Streamlit.
+- A [list](https://github.com/MarcSkovMadsen/awesome-streamlit#awesome-resources) of Awesome Streamlit resources. See below.
+- An [article](https://github.com/MarcSkovMadsen/awesome-streamlit/blob/master/awesome-streamlit.md) on the vision of how awesome Streamlit is.
+- An **Awesome Streamlit Application** to accompany the article and to illustrate and share the knowledge of how Awesome Streamlit is.
+  - Of course it will be built in Streamlit.
 
 ## Awesome Resources
 
@@ -18,12 +19,18 @@ A curated list of awesome streamlit resources.
 
 Inspired by [awesome-python](https://github.com/vinta/awesome-python).
 
+### The beginning
+
 - [The announcing blog](https://towardsdatascience.com/coding-ml-tools-like-you-code-ml-models-ddba3357eace)
 - [The announcing community post](https://discuss.streamlit.io/t/streamlit-has-launched/105/3)
 - [Streamlit.io](https://streamlit.io/)
 - [Streamlit Docs](https://streamlit.io/docs/)
 - [Streamlit Community](https://discuss.streamlit.io/top/quarterly)
 - [LinkedIn Discussion](https://www.linkedin.com/feed/update/urn:li:activity:6586497522896818176/?commentUrn=urn%3Ali%3Acomment%3A(activity%3A6585883899514146816%2C6586497466957385728))
+
+### Awesome Applications
+
+- [Kaggle Mushrooms Dashboard](https://github.com/pierpaolo28/Data-Visualization/tree/master/Streamlit)
 
 ## Governance
 
@@ -37,15 +44,15 @@ The team of Core Developers currently consists of
 
 ## Contribute
 
-Feel free to contribute to this project. You can contribute your thoughts or code through the GitHub [Issues](https://github.com/MarcSkovMadsen/awesomeStreamlit/issues) or [Pull requests](https://github.com/MarcSkovMadsen/awesomeStreamlit/pulls) functionality.
+Feel free to contribute to this project. You can contribute your thoughts or code through the GitHub [Issues](https://github.com/MarcSkovMadsen/awesome-streamlit/issues) or [Pull requests](https://github.com/MarcSkovMadsen/awesome-streamlit/pulls) functionality.
+
+If you are passionate about Streamlit and would like to join the team of Core Developers feel free to reach out via [datamodelsanalytics.com](https://datamodelsanalytics.com)
 
 ## LICENSE
 
-[MIT](https://github.com/MarcSkovMadsen/awesomeStreamlit/blob/master/LICENSE.md)
+[MIT](https://github.com/MarcSkovMadsen/awesome-streamlit/blob/master/LICENSE.md)
 
 ## Getting Started with the Awesome Streamlit Application
-
-THE APPLICATION IS NOT YET IMPLEMENTED
 
 ### Prerequisites
 
@@ -64,13 +71,13 @@ THE APPLICATION IS NOT YET IMPLEMENTED
 Clone the repo
 
 ```bash
-git clone https://github.com/MarcSkovMadsen/awesomeStreamlit.git
+git clone https://github.com/MarcSkovMadsen/awesome-streamlit.git
 ```
 
 cd into the project root folder
 
 ```bash
-cd awesomeStreamlit
+cd awesome-streamlit
 ```
 
 Then you should create a virtual environment named .venv
@@ -106,13 +113,13 @@ streamlit run src/pages/app.py
 ```
 
 ```bash
-streamlit run src/pages/awesomestreamlit_staticarticle.py
+streamlit run src/pages/awesome-streamlit_staticarticle.py
 ```
 
 or
 
 ```bash
-streamlit run src/pages/awesomestreamlit_spreadsheet.py
+streamlit run src/pages/awesome-streamlit_spreadsheet.py
 ```
 
 ### Project Layout

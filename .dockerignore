@@ -1,0 +1,12 @@
+**/__pycache__/
+**/.azure-pipelines/
+**/.benchmarks
+**/.git
+**/.ipynb_checkpoints
+**/.mypy_cache/
+**/.pytest_cache
+**/.ropeproject
+**/.venv/
+**/.vscode/
+**/*.sqlite3
+**/.env
