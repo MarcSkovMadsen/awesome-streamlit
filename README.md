@@ -4,13 +4,13 @@ The purpose of this project is to share knowledge on how Awesome Streamlit is.
 
 We believe that [Streamlit](https://streamlit.io/) is truly awesome.
 
-Streamlit is so new that it's to early to tell how awesome it will be. But we see the potential of being the Iphone of Data Science, Code, Web Apps or Python.
+Streamlit is very new (Oct 2019) but we see the potential of being the Iphone of Data Science, Technical Writing, Code, Web Apps or Python.
 
 This project will consist of 3 things
 
-- A list of Awesome Streamlit resources. See below.
-- An article on the potential of Streamlit: [Awesome Streamlit](https://github.com/MarcSkovMadsen/awesomestreamlit/blob/master/AWESOMESTREAMLIT.md)
-- An Awesome Streamlit application to illustrate and share the knowledge of how Awesome Streamlit is.
+- A [list](https://github.com/MarcSkovMadsen/awesomestreamlit#awesome-resources) of Awesome Streamlit resources. See below.
+- An [article](https://github.com/MarcSkovMadsen/awesomestreamlit/blob/master/AWESOMESTREAMLIT.md) on the potential of Streamlit
+- An Awesome Streamlit Application to illustrate and share the knowledge of how Awesome Streamlit is. Of course built in Streamlit.
 
 ## Awesome Resources
 
@@ -20,8 +20,8 @@ Inspired by [awesome-python](https://github.com/vinta/awesome-python).
 
 - [The announcing blog](https://towardsdatascience.com/coding-ml-tools-like-you-code-ml-models-ddba3357eace)
 - [The announcing community post](https://discuss.streamlit.io/t/streamlit-has-launched/105/3)
-- [streamlit.io](https://streamlit.io/)
-- [Streamlit docs](https://streamlit.io/docs/)
+- [Streamlit.io](https://streamlit.io/)
+- [Streamlit Docs](https://streamlit.io/docs/)
 - [Streamlit Community](https://discuss.streamlit.io/top/quarterly)
 
 ## Governance
@@ -60,9 +60,13 @@ THE APPLICATION IS NOT YET IMPLEMENTED
 
 ### Installation
 
+Clone the repo
+
 ```bash
 git clone https://github.com/MarcSkovMadsen/awesomeStreamlit.git
 ```
+
+cd into the project root folder
 
 ```bash
 cd awesomeStreamlit
@@ -96,11 +100,24 @@ The basic layout of a application is as simple as
     └── app.py
 ```
 
-As our application grows we need to think about the layout of our project, i.e. how we structure our files and folders. We would probably end up with something inspired by [this](https://itnext.io/choosing-a-highly-scalable-folder-structure-in-angular-d987de65ec7) blog post and the [Angular Style Guide](https://angular.io/guide/styleguide)
+As our application grows we would refactor our app.py file into multiple folders and files.
+
+- *assets* here we keep our css and images assets.
+- *models* - Defines the layout of our data in the form of
+  - Classes: Name, attribute names, types
+  - DataFrame Schemas: column and index names, dtypes
+  - SQLAlchemy Tables: columns names, types
+- *pages* - Defines the different pages of the Streamlit app
+- *services* - Organizes and shares business logic, models, data and functions with different pages of the Streamlit App.
+  - Database interactions: Select, Insert, Update, Delete
+  - REST API interactions, get, post, put, delete
+  - Pandas transformations
+
+and end up with a project structure like
 
 ```bash
 .
-├── src
+└── src
     ├── app.py
     └── assets
     |    └── css
@@ -129,16 +146,7 @@ As our application grows we need to think about the layout of our project, i.e. 
             └── component2.py
 ```
 
-- *assets* here we keep our css and images assets.
-- *models* - Defines the layout of our data in the form of
-  - Classes: Name, attribute names, types
-  - DataFrame Schemas: column and index names, dtypes
-  - SQLAlchemy Tables: columns names, types
-- *pages* - Defines the different pages of the Streamlit app
-- *services* - Organizes and shares business logic, models, data and functions with different pages of the Streamlit App.
-  - Database interactions: Select, Insert, Update, Delete
-  - REST API interactions, get, post, put, delete
-  - Pandas transformations
+Further refactoring is guided by by [this](https://itnext.io/choosing-a-highly-scalable-folder-structure-in-angular-d987de65ec7) blog post and the [Angular Style Guide](https://angular.io/guide/styleguide).
 
 We place our tests in a `test` folder in the root folder organized with folders similar to the `src` folder and file names with a `test_` prefix.
 
