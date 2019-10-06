@@ -14,7 +14,7 @@ Streamlit has just arrived (Oct 2019). So it's too early tell if Streamlit will 
 
 But we see the **potential to become the Iphone of Data Science, Technical Writing, Web Apps, Code, Python and more**. It has the potential to change the way we share knowledge and create tools and applications because it's so plain simple to use.
 
-This article was inspired by questions to this [post on LinkedIn](https://www.linkedin.com/posts/marcskovmadsen_turn-python-scripts-into-beautiful-ml-tools-activity-6585883899514146816-OonG).
+This article was inspired by a reply in this [post on LinkedIn](https://www.linkedin.com/posts/marcskovmadsen_turn-python-scripts-into-beautiful-ml-tools-activity-6585883899514146816-OonG) and some replies to the announcement in the [Streamlit Community](https://discuss.streamlit.io/t/streamlit-has-launched/105/5).
 
 You can find a curated list of Awesome Streamlit resources [here](https://github.com/MarcSkovMadsen/awesomestreamlit)
 
@@ -26,7 +26,7 @@ You can contribute through GitHub [Issues](https://github.com/MarcSkovMadsen/awe
 
 ## Disclaimer
 
-THE BELOW IS VERY PRELIMINARY AND RAPIDLY DEVELOPING!
+THE BELOW IS VERY PRELIMINARY AND RAPIDLY DEVELOPING! IT'S A VISION. NOT FACTS!
 
 ## Data Science
 
@@ -35,7 +35,7 @@ Data Science is a very broad category. It's used for to categorize work such as
 - data transformations and visualisations in excel
 - interactive data visualisations in BI Tools like Power BI and Tableau
 - Building Fundamental, Statistical, Mathematical, Machine Learning or Deeplearning models in Python, R etc.
-- Building applications on top of data science models and deploying them to production.
+- Building applications on top of data science models and deploying them to production using web frameworks such as Bokeh/ Dash, Flask/ Django and React/Vue/Angular.
 
 and much more
 
@@ -107,7 +107,9 @@ Things you cannot do yet
 - Select from thousands of web components to make your application interactive.
   - The basic ones are there
 - Deploy to production with one click.
-  - But it can be deployed as any other python web application. And it's only one file, the streamlit package and any data science packages needed. So it's very simple to setup.
+  - It can be deployed as any other python web application. And it's only one file, the streamlit package and any data science packages needed. So it's very simple to deploy.
+
+To come
 
 ### Spreadsheets
 
