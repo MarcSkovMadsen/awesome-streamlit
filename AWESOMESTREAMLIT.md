@@ -77,7 +77,7 @@ But this environment also has it's pains.
 
 #### Solution
 
-Streamlit will solve all of the problems described above as described in the  [Announcement](https://towardsdatascience.com/coding-ml-tools-like-you-code-ml-models-ddba3357eace).
+Streamlit aims to solve all of the problems described above as described in the  [Announcement](https://towardsdatascience.com/coding-ml-tools-like-you-code-ml-models-ddba3357eace).
 
 [![Streamlit Video](https://miro.medium.com/max/700/1*p3XPm-x0TUIuMmQQa4mjHQ.gif)](https://miro.medium.com/max/700/1*p3XPm-x0TUIuMmQQa4mjHQ.gif)
 

@@ -99,6 +99,22 @@ The final thing to do is to install the local requirements
 pip install -r requirements_local.txt
 ```
 
+### Run the Application(s)
+
+```bash
+streamlit run src/pages/app.py
+```
+
+```bash
+streamlit run src/pages/awesomestreamlit_staticarticle.py
+```
+
+or
+
+```bash
+streamlit run src/pages/awesomestreamlit_spreadsheet.py
+```
+
 ### Project Layout
 
 The basic layout of a application is as simple as
