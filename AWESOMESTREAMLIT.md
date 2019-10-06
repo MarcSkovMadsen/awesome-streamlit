@@ -91,12 +91,14 @@ And the application can provide the interactivity that you would normally be dev
 
 Streamlit provides **self service data science**.
 
-This is **very appealing to data scientists** as they develop an application in the way they find simple and appealing.
+And it's **very appealing to data scientists** as they can develop an application in the way they find simple, productive and joyfull
 
 - Text as MarkDown
 - Code in Python
 - Visualisations in your favourite visualization packages like Matplotlib, Vega and Plotly.
-- No HTML and No Javascript is needed.
+- No HTML and No Javascript is required.
+
+We believe that the **Jupyter Notebook is the cell phone** and **Streamlit is the Iphone**.
 
 #### Disclaimer
 

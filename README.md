@@ -4,13 +4,13 @@ The purpose of this project is to share knowledge on how Awesome Streamlit is.
 
 We believe that [Streamlit](https://streamlit.io/) is truly awesome.
 
-Streamlit is very new (Oct 2019) but we see the potential of being the Iphone of Data Science, Technical Writing, Code, Web Apps or Python.
+Streamlit is very new (Oct 2019) but we see the potential of being the Iphone of Data Science, Technical Writing, Code, Web Apps, Python and more.
 
 This project will consist of 3 things
 
 - A [list](https://github.com/MarcSkovMadsen/awesomestreamlit#awesome-resources) of Awesome Streamlit resources. See below.
-- An [article](https://github.com/MarcSkovMadsen/awesomestreamlit/blob/master/AWESOMESTREAMLIT.md) on the potential of Streamlit
-- An Awesome Streamlit Application to illustrate and share the knowledge of how Awesome Streamlit is. Of course built in Streamlit.
+- An [article](https://github.com/MarcSkovMadsen/awesomestreamlit/blob/master/AWESOMESTREAMLIT.md) on the vision of how awesome Streamlit is.
+- An Awesome Streamlit Application to illustrate and share the knowledge of how Awesome Streamlit is. Of course it will be built in Streamlit.
 
 ## Awesome Resources
 
@@ -23,6 +23,7 @@ Inspired by [awesome-python](https://github.com/vinta/awesome-python).
 - [Streamlit.io](https://streamlit.io/)
 - [Streamlit Docs](https://streamlit.io/docs/)
 - [Streamlit Community](https://discuss.streamlit.io/top/quarterly)
+- [LinkedIn Discussion](https://www.linkedin.com/feed/update/urn:li:activity:6586497522896818176/?commentUrn=urn%3Ali%3Acomment%3A(activity%3A6585883899514146816%2C6586497466957385728))
 
 ## Governance
 
