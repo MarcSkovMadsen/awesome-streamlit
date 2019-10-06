@@ -4,7 +4,7 @@ The purpose of this project is to share knowledge on how Awesome Streamlit is.
 
 We believe that [Streamlit](https://streamlit.io/) is truly awesome.
 
-But Streamlit is so new that it's to early to tell how awesome. Maybe it's the Iphone of Code, Web Apps or Python. The future will determine.
+Streamlit is so new that it's to early to tell how awesome it will be. But we see the potential of being the Iphone of Data Science, Code, Web Apps or Python.
 
 This project will consist of 3 things
 
