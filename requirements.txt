@@ -30,5 +30,3 @@ bandit # Bandit is a tool designed to find common security issues in Python code
 
 # Documentation Quality
 doc8 # Doc8 is an opinionated style checker for rst (with basic support for plain text) styles of documentation. See https://github.com/openstack/doc8
-
-gunicorn
