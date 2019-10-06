@@ -6,6 +6,8 @@ This article will discuss if [Streamlit](https://streamlit.io/) is awesome and h
 
 Streamlit is announced as being **[The fastest way to build custom ML tool](https://towardsdatascience.com/coding-ml-tools-like-you-code-ml-models-ddba3357eace)** but we believe it has the potential to become **much more awesome** than that.
 
+[![Streamlit Video](https://miro.medium.com/max/700/1*p3XPm-x0TUIuMmQQa4mjHQ.gif)](https://miro.medium.com/max/700/1*p3XPm-x0TUIuMmQQa4mjHQ.gif)
+
 The best way to think about the arrival of Streamlit is to think of the **arrival of the Iphone** being announced as **the smartest way to place calls and send text messages**. Well yes :-). But now we can see that it's a powerfull compute engine and an ecosystem of apps that has changed peoples lifes.
 
 Streamlit has just arrived (Oct 2019). So it's too early tell if Streamlit will become truly awesome.
@@ -21,6 +23,10 @@ You can find a curated list of Awesome Streamlit resources [here](https://github
 Feel free to contribute your comments or suggestions to to this article.
 
 You can contribute through GitHub [Issues](https://github.com/MarcSkovMadsen/awesomeStreamlit/issues) or [Pull requests](https://github.com/MarcSkovMadsen/awesomeStreamlit/pulls).
+
+## Disclaimer
+
+THE BELOW IS VERY PRELIMINARY AND RAPIDLY DEVELOPING!
 
 ## Data Science
 
@@ -47,11 +53,11 @@ The jupyter notebook provides an environment for working very exploratory and vi
 
 #### Problem
 
-A jupyter notebook cannot be deployed directly to production and the users.
+A jupyter notebook cannot really be deployed directly to production and the users.
 
 So Notebooks do not facilitate rapid sharing, exploration, testing and improvement cycle you would like.
 
-Bottom line. It's costly.
+Bottom line. Notebooks are costly.
 
 #### Complication
 
@@ -92,7 +98,7 @@ This is **very appealing to data scientists** as they develop an application in 
 - Visualisations in your favourite visualization packages like Matplotlib, Vega and Plotly.
 - No HTML and No Javascript is needed.
 
-#### DISCLAIMER
+#### Disclaimer
 
 Streamlit is very new. There will be rough edges and things you cannot yet do. But as the principles and api of Streamlit is so simple and productive we believe they will be developed very rapidly.
 
