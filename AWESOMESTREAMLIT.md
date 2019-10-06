@@ -39,7 +39,7 @@ Data Science is a very broad category. It's used for to categorize work such as
 
 and much more
 
-But actually every body extracting, transforming, loading and presenting data are actually doing work very similar to data scientists. If they are very structured about it they are called Data Engineers :-)
+But actually every body extracting, transforming, loading and presenting data are actually doing work very similar to data scientists. If they are very structured about it and using methodologies from software development they are called Data Engineers, ML Engineers or Platform Engineers :-)
 
 ### Notebooks
 
@@ -95,7 +95,8 @@ And it's **very appealing to data scientists** as they can develop an applicatio
 
 - Text as MarkDown
 - Code in Python
-- Visualisations in your favourite visualization packages like Matplotlib, Vega and Plotly.
+- All of your data science modelling libraries at hand like Pandas, SciKitLearn, PyTorch, Keras, TensorFlow etc.
+- All of your data science visualisation libraries at hand like  Matplotlib, Vega and Plotly.
 - No HTML and No Javascript is required.
 
 We believe that the **Jupyter Notebook is the cell phone** and **Streamlit is the Iphone**.

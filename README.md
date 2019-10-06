@@ -57,7 +57,7 @@ THE APPLICATION IS NOT YET IMPLEMENTED
   - We recommend [wsl](https://en.wikipedia.org/wiki/Windows_Subsystem_for_Linux) for For Windows 10
 - an Editor
   - We recommend [VS Code](https://code.visualstudio.com/) (Preferred) or [PyCharm](https://www.jetbrains.com/pycharm/).
-- a version of the project cloned from [https://github.com/MarcSkovMadsen/awesomeStreamlit.git](https://github.com/MarcSkovMadsen/awesomeStreamlit.git)
+- [Git-sci](https://git-scm.com/downloads)
 
 ### Installation
 
@@ -79,10 +79,18 @@ Then you should create a virtual environment named .venv
 python -m venv .venv
 ```
 
-and activate the environment
+and activate the environment.
+
+On Linux, OsX or in a Windows Git Bash terminal it's
 
 ```bash
 source .venv/Scripts/activate
+```
+
+In a Windows terminal it's
+
+```bash
+.venv/Scripts/activate.bat
 ```
 
 The final thing to do is to install the local requirements
