@@ -12,7 +12,7 @@ The best way to think about the arrival of Streamlit is to think of the **arriva
 
 Streamlit has just arrived (Oct 2019). So it's too early tell if Streamlit will become truly awesome.
 
-But we see the **potential to become the Iphone of Data Science, Technical Writing, Web Apps, Code, Python and more**. It has the potential to change the way we share knowledge and create tools and applications.
+But we see the **potential to become the Iphone of Data Science, Technical Writing, Web Apps, Code, Python and more**. It has the potential to change the way we share knowledge and create tools and applications because it's so plain simple to use.
 
 This article was inspired by questions to this [post on LinkedIn](https://www.linkedin.com/posts/marcskovmadsen_turn-python-scripts-into-beautiful-ml-tools-activity-6585883899514146816-OonG).
 
@@ -127,7 +127,7 @@ To come
 
 to come
 
-### Reach, Vue and Angular
+### React, Vue and Angular
 
 to come
 
