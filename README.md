@@ -38,7 +38,7 @@ Inspired by [awesome-python](https://github.com/vinta/awesome-python).
 
 ### Awesome Applications
 
-- [SpacyIO Applicatin](https://gist.github.com/ines/b320cb8441b590eedf19137599ce6685)
+- [SpacyIO Application](https://gist.github.com/ines/b320cb8441b590eedf19137599ce6685)
 - [Kaggle Mushrooms Dashboard](https://github.com/pierpaolo28/Data-Visualization/tree/master/Streamlit)
 
 ## Governance
