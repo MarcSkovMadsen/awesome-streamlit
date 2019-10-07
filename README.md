@@ -1,6 +1,6 @@
 # Awesome Streamlit [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/MarcSkovMadsen/awesome-streamlit)
 
-The purpose of this project is to share knowledge on how Awesome Streamlit is.
+The purpose of this project is to share knowledge on how Awesome Streamlit can become.
 
 We believe that [Streamlit](https://streamlit.io/) is truly awesome.
 
@@ -34,7 +34,7 @@ Inspired by [awesome-python](https://github.com/vinta/awesome-python).
 ### Follow the excitement
 
 - [LinkedIn](https://www.linkedin.com/search/results/all/?authorCompany=%5B%5D&authorIndustry=%5B%5D&contactInterest=%5B%5D&facetCity=%5B%5D&facetCompany=%5B%5D&facetConnectionOf=%5B%5D&facetCurrentCompany=%5B%5D&facetCurrentFunction=%5B%5D&facetGeoRegion=%5B%5D&facetGroup=%5B%5D&facetGuides=%5B%5D&facetIndustry=%5B%5D&facetNetwork=%5B%5D&facetNonprofitInterest=%5B%5D&facetPastCompany=%5B%5D&facetProfessionalEvent=%5B%5D&facetProfileLanguage=%5B%5D&facetRegion=%5B%5D&facetSchool=%5B%5D&facetSeniority=%5B%5D&facetServiceCategory=%5B%5D&facetState=%5B%5D&groups=%5B%5D&keywords=%23streamlit&origin=GLOBAL_SEARCH_HEADER&page=1&refresh=false&skillExplicit=%5B%5D&topic=%5B%5D)
-- [Twitter]_(https://twitter.com/search?q=%23streamlit&src=typed_query)
+- [Twitter](https://twitter.com/search?q=%23streamlit&src=typed_query)
 
 ### Awesome Applications
 
