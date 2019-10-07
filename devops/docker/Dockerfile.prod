@@ -5,10 +5,10 @@ EXPOSE 8000
 WORKDIR /app
 ADD . ./
 
-
+RUN mkdir ~/.streamlit
 RUN cp .streamlit/config.prod.toml ~/.streamlit/config.toml
 RUN cp .streamlit/credentials.prod.toml ~/.streamlit/credentials.toml
 
 WORKDIR /app
 
-ENTRYPOINT [ "streamlit run src/app.py" ]
+ENTRYPOINT [ "streamlit", "run", "src/app.py" ]

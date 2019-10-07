@@ -12,7 +12,7 @@ from typing import List
 # because Invoke uses 'c' for the Invoke command object
 from invoke import task
 
-DOCKER_REGISTRY = "marcskovmadsen/awesome-streamlit"
+DOCKER_REGISTRY = "marcskovmadsen"
 
 
 def _build(  # pylint: disable=too-many-arguments

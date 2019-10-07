@@ -9,7 +9,7 @@ Streamlit is very new (Oct 2019) but we see the potential of being the Iphone of
 This project will consist of 3 things
 
 - A [list](https://github.com/MarcSkovMadsen/awesome-streamlit#awesome-resources) of Awesome Streamlit resources. See below.
-- An [article](https://github.com/MarcSkovMadsen/awesome-streamlit/blob/master/awesome-streamlit.md) on the vision of how awesome Streamlit is.
+- An [article](https://github.com/MarcSkovMadsen/awesome-streamlit/blob/master/AWESOME-STREAMLIT.md) on the vision of how awesome Streamlit is.
 - An **Awesome Streamlit Application** to accompany the article and to illustrate and share the knowledge of how Awesome Streamlit is.
   - Of course it will be built in Streamlit.
 
@@ -106,20 +106,10 @@ The final thing to do is to install the local requirements
 pip install -r requirements_local.txt
 ```
 
-### Run the Application(s)
+### Run the Application
 
 ```bash
 streamlit run src/pages/app.py
-```
-
-```bash
-streamlit run src/pages/awesome-streamlit_staticarticle.py
-```
-
-or
-
-```bash
-streamlit run src/pages/awesome-streamlit_spreadsheet.py
 ```
 
 ### Project Layout

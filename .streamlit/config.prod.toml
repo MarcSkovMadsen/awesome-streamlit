@@ -72,7 +72,7 @@ port = 8000
 
 # Enables support for Cross-Origin Request Sharing, for added security.
 # Default: true
-enableCORS = true
+enableCORS = false
 
 
 [browser]
