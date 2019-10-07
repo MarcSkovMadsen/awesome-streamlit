@@ -4,19 +4,21 @@
 
 import streamlit as st
 import pandas as pd
+import pages.home
 import pages.spreadsheet
 import pages.awesome_streamlit_vision
 import pages.awesome_streamlit_readme
 import importlib
 
-PAGES = {
-    "Vision": pages.awesome_streamlit_vision,
-    "Resources": pages.awesome_streamlit_readme,
-    "Example: Spreadsheet": pages.spreadsheet,
-}
-
+PAGES = {"Home": pages.home, "Spreadsheet": pages.spreadsheet}
 
 selection = st.sidebar.selectbox("Select Page", list(PAGES.keys()))
+st.sidebar.info(
+    "You can add your awesome comments, questions, bug reports and feature requests [here](https://github.com/MarcSkovMadsen/awesome-streamlit/issues)"
+)
+st.sidebar.info(
+    "You can find the source of this project [here](https://github.com/MarcSkovMadsen/awesome-streamlit)"
+)
 page = PAGES[selection]
 importlib.reload(page)  # Hack? To enable how reloading
 

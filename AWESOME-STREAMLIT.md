@@ -57,7 +57,7 @@ A jupyter notebook cannot really be deployed directly to production and the user
 
 So Notebooks do not facilitate rapid sharing, exploration, testing and improvement cycle you would like.
 
-Bottom line. Notebooks are costly.
+Bottom line. **Notebooks makes deployment of data science products costly**.
 
 #### Complication
 

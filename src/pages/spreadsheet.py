@@ -113,12 +113,14 @@ def write():
 
     if show_code:
         st.write(
-            """This is just some dummy code
-        ```python
-        a = 1
-        b = 2
-        result = a + b
-        result
-        ```
-        """
+            """
+This is just some dummy code
+
+```python
+a = 1
+b = 2
+result = a + b
+print(result)
+```
+"""
         )
