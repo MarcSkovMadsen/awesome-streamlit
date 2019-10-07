@@ -43,7 +43,7 @@ But actually every body extracting, transforming, loading and presenting data ar
 
 ### Notebooks
 
-#### Situation
+#### Notebooks - Situation
 
 One of the revolutionary tools of modern data science is the [Jupyter Notebook](https://jupyter.org/).
 
@@ -51,7 +51,7 @@ One of the revolutionary tools of modern data science is the [Jupyter Notebook](
 
 The jupyter notebook provides an environment for working very exploratory and visually within data science
 
-#### Problem
+#### Notebooks - Problem
 
 A jupyter notebook cannot really be deployed directly to production and the users.
 
@@ -59,7 +59,7 @@ So Notebooks do not facilitate rapid sharing, exploration, testing and improveme
 
 Bottom line. **Notebooks makes deployment of data science products costly**.
 
-#### Complication
+#### Notebooks - Complication
 
 The pains of the Jupyter Notebook are
 
@@ -75,7 +75,7 @@ But this environment also has it's pains.
 - It's still not as productive or extensible as a real editor like VS Code or Pycharm.
 - It changes the Notebook from being a simple interactive document that you can read and distribute as pdf or html to an advanced but complicated development environment that you work in.
 
-#### Solution
+#### Notebooks - Solution
 
 Streamlit aims to solve all of the problems described above as described in the  [Announcement](https://towardsdatascience.com/coding-ml-tools-like-you-code-ml-models-ddba3357eace).
 
@@ -87,11 +87,11 @@ As you can see on the image above it simplifies everything by enabling data scie
 - using their editor of choice (VS Code on left side of image)
 - producing a web application that can very easily be deployed to production. (right side of image)
 
-And the application can provide the interactivity that you would normally be developing using a modern web framework as React, Vue or Angular. So one man can do it. **No team required**.
+And the application can provide the interactivity that you would normally be developing using a modern web framework as React, Vue or Angular. So **a single data scientist can develop a data science application in hours**. **No large project or team required**.
 
 Streamlit provides **self service data science**.
 
-And it's **very appealing to data scientists** as they can develop an application in the way they find simple, productive and joyfull
+And it's **very appealing to data scientists** as they can develop an application in the way they find simple, productive and fun
 
 - Text as MarkDown
 - Code in Python
@@ -99,9 +99,28 @@ And it's **very appealing to data scientists** as they can develop an applicatio
 - All of your data science visualisation libraries at hand like  Matplotlib, Vega and Plotly.
 - No HTML and No Javascript is required.
 
-We believe that the **Jupyter Notebook is the cell phone** and **Streamlit is the Iphone**.
+We believe that the **Jupyter Notebook is a cell phone** and **Streamlit is the Iphone** of Data Science
 
-#### Disclaimer
+## Notebooks - Implications
+
+For building data science applications
+
+- There will be a lot less demand for front end developers and development in React, Vue an Angular in data science.
+  - The remaining front end developers in data science should be developing specialized Web Components for Streamlit when needed.
+- There will be less demand for back end developers to develop REST APIs etc. for data science products.
+- Streamlit is so simple to use that business users across an enterprise can create apps them selves. It's the democratization of Data Science Apps.
+  - Actually we believe the development cycle will be
+    - Business users and data scientists develop data science apps independently or together and deploy to production.
+    - The most valuable apps will be identified and the quality and governance of these apps will be improved and maintained. They will get an approval as Enterprise Ready apps. But probably as this is so simple and there is revision control and pull requests Business Users and Data Scientist will be able to continue the development of these apps.
+- Business should start experimenting with this technology to find it's use cases and limits and evaluate how and when to start using Streamlit securely.
+  - As **time to market** is so important you should **start moving!**.
+- IT departments should
+  - Describe their way of securely deploying these applications to on-premise or cloud and
+  - join the [one-click deployment solution for Teams](https://streamlit.io/forteams/) beta.
+
+For building larger, traditional applications with data science app components the data science app components can in a lot of cases be build in Streamlit and embedded in the larger application. REST API endpoints should still be developed when the need is there. But start out developing
+
+### Notebooks - Disclaimer
 
 Streamlit is very new. There will be rough edges and things you cannot yet do. But as the principles and api of Streamlit is so simple and productive we believe they will be developed very rapidly.
 
@@ -116,41 +135,66 @@ To come
 
 ### Spreadsheets
 
-To Come
+As Streamlit apps are so simple, the quality so high and robust and it enjoys the power of Python a lot business users will transform from developing spreadsheets into developing Streamlit application.
+
+#### Spreadsheets - Implications
+
+- Train your business users in Python and Streamlit.
+- Help your business users install Python and Python packages.
+- Help your business users govern their projects and how to use revision control.
+
+We believe a Spreadsheet wrapper for Streamlit removing these pain points will be provided soon as it will be so easy to setup on top of Streamlit.
 
 ### BI Visualization Tools
 
 Another category of revolutionary tools for data science are data reporting and visualization tools like Power BI and Tableau.
 
-To Come
+### BI Visualization Tools - Problem
 
-### Bokeh and Dash
+- Difficult or impossible to do model visualization.
+- Hard to maintain using good software developing techniques because you do not develop code. - Does not enjoy the power of Python.
 
-To come
+But it's still a very strong drag and drop 1-click deployment tool for data visualization.
+
+### Bokeh
+
+
+### Dash
+
+Problem: You still need to master HTML and manage callbacks. Focus on Plotly charts mainly. The development cycle is slow. The api is not "magical".
+
+Implications:
+
+For some use case where you wan't a high degree of flexibility in layout and formatting, you might still need Dash.
 
 ### Flask and Django
 
-to come
+Problem: So many layers of abstraction to master. The api is not "magical".
 
 ### React, Vue and Angular
 
-to come
+Implications:
 
 ## Technical Writing
 
-To come
+Something like [this](https://insights.stackoverflow.com/survey/2019) and [this](https://streamlit.io/docs/api.html) will be so easy to develop in Streamlit.
 
 ## Code
 
-To come
+Streamlit lowers the barrier to entry for young and new programmers. One file in an editor is all that is needed to develop a powerfull app. Somebody will abstract away the rest in a cloud solution.
 
 ## Web Apps
 
-To come
+When you can build something like this is a few hours you know something will change.
+
+[Video](https://twitter.com/i/status/1179155259819806721)
+
+You can find the code [here](https://gist.github.com/ines/b320cb8441b590eedf19137599ce6685).
+See the original tweet [here](https://twitter.com/_inesmontani/status/1179155259819806721?ref_src=twsrc%5Etfw%7Ctwcamp%5Etweetembed%7Ctwterm%5E1179155259819806721&ref_url=https%3A%2F%2Fpublish.twitter.com%2F%3Fquery%3Dhttps%253A%252F%252Ftwitter.com%252F_inesmontani%252Fstatus%252F1179155259819806721%26widget%3DTweet)
 
 ## Python
 
-To come
+Streamlit reduces the barrier to entry and enables even more people to enjoy the power of Python.
 
 ## More
 

@@ -19,17 +19,26 @@ A curated list of awesome streamlit resources.
 
 Inspired by [awesome-python](https://github.com/vinta/awesome-python).
 
-### The beginning
+### Official Resources
 
-- [The announcing blog](https://towardsdatascience.com/coding-ml-tools-like-you-code-ml-models-ddba3357eace)
-- [The announcing community post](https://discuss.streamlit.io/t/streamlit-has-launched/105/3)
 - [Streamlit.io](https://streamlit.io/)
 - [Streamlit Docs](https://streamlit.io/docs/)
 - [Streamlit Community](https://discuss.streamlit.io/top/quarterly)
+
+### What started this project
+
+- [The announcing blog](https://towardsdatascience.com/coding-ml-tools-like-you-code-ml-models-ddba3357eace)
+- [The announcing community post](https://discuss.streamlit.io/t/streamlit-has-launched/105/3)
 - [LinkedIn Discussion](https://www.linkedin.com/feed/update/urn:li:activity:6586497522896818176/?commentUrn=urn%3Ali%3Acomment%3A(activity%3A6585883899514146816%2C6586497466957385728))
+
+### Follow the excitement
+
+- [LinkedIn](https://www.linkedin.com/search/results/all/?authorCompany=%5B%5D&authorIndustry=%5B%5D&contactInterest=%5B%5D&facetCity=%5B%5D&facetCompany=%5B%5D&facetConnectionOf=%5B%5D&facetCurrentCompany=%5B%5D&facetCurrentFunction=%5B%5D&facetGeoRegion=%5B%5D&facetGroup=%5B%5D&facetGuides=%5B%5D&facetIndustry=%5B%5D&facetNetwork=%5B%5D&facetNonprofitInterest=%5B%5D&facetPastCompany=%5B%5D&facetProfessionalEvent=%5B%5D&facetProfileLanguage=%5B%5D&facetRegion=%5B%5D&facetSchool=%5B%5D&facetSeniority=%5B%5D&facetServiceCategory=%5B%5D&facetState=%5B%5D&groups=%5B%5D&keywords=%23streamlit&origin=GLOBAL_SEARCH_HEADER&page=1&refresh=false&skillExplicit=%5B%5D&topic=%5B%5D)
+- [Twitter]_(https://twitter.com/search?q=%23streamlit&src=typed_query)
 
 ### Awesome Applications
 
+- [SpacyIO Applicatin](https://gist.github.com/ines/b320cb8441b590eedf19137599ce6685)
 - [Kaggle Mushrooms Dashboard](https://github.com/pierpaolo28/Data-Visualization/tree/master/Streamlit)
 
 ## Governance
