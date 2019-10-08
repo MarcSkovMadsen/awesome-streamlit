@@ -14,7 +14,7 @@ pool:
 variables:
   dockerFile: 'devops/docker/Dockerfile.base'
   dockerRegistry: ''
-  dockerImage: 'marcskovmadsen/awesome-streamlit_base'
+  imageName: 'marcskovmadsen/awesome-streamlit_base'
   buildContext: .
 
 
@@ -23,7 +23,17 @@ steps:
   displayName: 'Build an image'
   inputs:
     dockerFile: $(dockerFile)
-    imageName: '$(dockerImage):$(Build.BuildId)'
+    imageName: '$(imageName):$(Build.BuildId)'
     defaultContext: False
     context: $(buildContext)
     includeLatestTag: true
+- task: Docker@2
+  displayName: Push image
+  inputs:
+    containerRegistry: |
+      $(dockerHub)
+    repository: $(imageName)
+    command: push
+    tags: |
+      $(Build.BuildId)
+      latest
