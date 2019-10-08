@@ -87,7 +87,7 @@ def write():
 
         # Show
         st.write(
-            """We illustrate a calculation by calculating the Test Mean.
+            """I illustrate a calculation by calculating the Test Mean.
         After that we illustrate a calculation to show how much better the students did the 4th test compared to 1st one
         """,
             grades_mean[

@@ -2,7 +2,7 @@
 
 The purpose of this project is to share knowledge on how Awesome Streamlit can become.
 
-We believe that [Streamlit](https://streamlit.io/) is truly awesome.
+I believe that [Streamlit](https://streamlit.io/) is truly awesome.
 
 Streamlit is very new (Oct 2019) but we see the potential of being the Iphone of Data Science, Technical Writing, Code, Web Apps, Python and more.
 
@@ -43,19 +43,21 @@ Inspired by [awesome-python](https://github.com/vinta/awesome-python).
 
 ## Governance
 
-This repo is governed by a team of *Core Developers*.
+This repo is maintained by me :-)
 
-The Core Developers are guided by the [Zen of Python](https://www.python.org/dev/peps/pep-0020/).
+I'm Marc, Skov, Madsen, PhD, CFA, Lead Data Scientist Developer at [Ørsted](https://orsted.com)
 
-The team of Core Developers currently consists of
+You can find my contact details at [datamodelsanalytics.com](https://datamodelsanalytics.com)
 
-- Marc Skov Madsen, [datamodelsanalytics.com](https://datamodelsanalytics.com)
+I find guidance in the [Zen of Python](https://www.python.org/dev/peps/pep-0020/).
 
 ## Contribute
 
-Feel free to contribute to this project. You can contribute your thoughts or code through the GitHub [Issues](https://github.com/MarcSkovMadsen/awesome-streamlit/issues) or [Pull requests](https://github.com/MarcSkovMadsen/awesome-streamlit/pulls) functionality.
+Feel free to contribute to this project.
 
-If you are passionate about Streamlit and would like to join the team of Core Developers feel free to reach out via [datamodelsanalytics.com](https://datamodelsanalytics.com)
+You can contribute your thoughts or code through the GitHub [Issues](https://github.com/MarcSkovMadsen/awesome-streamlit/issues) or [Pull requests](https://github.com/MarcSkovMadsen/awesome-streamlit/pulls) functionality.
+
+If you are passionate about Streamlit and would like to join as a Core Maintainer feel free to reach out via [datamodelsanalytics.com](https://datamodelsanalytics.com)
 
 ## LICENSE
 

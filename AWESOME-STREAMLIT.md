@@ -99,7 +99,7 @@ And it's **very appealing to data scientists** as they can develop an applicatio
 - All of your data science visualisation libraries at hand like  Matplotlib, Vega and Plotly.
 - No HTML and No Javascript is required.
 
-We believe that the **Jupyter Notebook is a cell phone** and **Streamlit is the Iphone** of Data Science
+I believe that the **Jupyter Notebook is a cell phone** and **Streamlit is the Iphone** of Data Science
 
 ## Notebooks - Implications
 
@@ -143,7 +143,7 @@ As Streamlit apps are so simple, the quality so high and robust and it enjoys th
 - Help your business users install Python and Python packages.
 - Help your business users govern their projects and how to use revision control.
 
-We believe a Spreadsheet wrapper for Streamlit removing these pain points will be provided soon as it will be so easy to setup on top of Streamlit.
+I believe a Spreadsheet wrapper for Streamlit removing these pain points will be provided soon as it will be so easy to setup on top of Streamlit.
 
 ### BI Visualization Tools
 
