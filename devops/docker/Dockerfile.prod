@@ -5,7 +5,13 @@ EXPOSE 8000
 WORKDIR /app
 ADD . ./
 
-RUN ls
+RUN mkdir /tmp/build/
+# Add context to /tmp/build/
+COPY . /tmp/build
+
+# this last command outputs the list of files added to the build context:
+RUN find /tmp/build/
+
 RUN mkdir ~/.streamlit
 RUN cp .streamlit/config.prod.toml ~/.streamlit/config.toml
 RUN cp .streamlit/credentials.prod.toml ~/.streamlit/credentials.toml
