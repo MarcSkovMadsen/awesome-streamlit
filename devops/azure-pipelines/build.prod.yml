@@ -13,9 +13,9 @@ pool:
   vmImage: 'Ubuntu-16.04'
 variables:
   dockerFile: 'devops/docker/Dockerfile.prod'
-  dockerRegistry: 'dockerhub-awesome-streamlit'
+  dockerRegistry: ''
   imageName: 'marcskovmadsen/awesome-streamlit'
-  buildContext: $(System.DefaultWorkingDirectory)
+  buildContext: .
 
 steps:
 - task: Docker@2
@@ -23,14 +23,21 @@ steps:
   inputs:
     command: login
     containerRegistry: $(dockerRegistry)
-- task: Docker@2
-  displayName: Build and Push
+- task: Docker@0
+  displayName: 'Build an image'
   inputs:
-    command: buildAndPush
-    repository: $(imageName)
     dockerFile: $(dockerFile)
+    imageName: '$(imageName):$(Build.BuildId)'
     defaultContext: False
     context: $(buildContext)
+    includeLatestTag: true
+- task: Docker@2
+  displayName: Push image
+  inputs:
+    containerRegistry: |
+      $(dockerRegistry)
+    repository: $(imageName)
+    command: push
     tags: |
       $(Build.BuildId)
       latest
