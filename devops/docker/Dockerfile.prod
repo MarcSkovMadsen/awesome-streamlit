@@ -1,16 +1,12 @@
 FROM marcskovmadsen/awesome-streamlit_base:latest
 
-EXPOSE 8000
-
 WORKDIR /app
 ADD . ./
 
-RUN mkdir /tmp/build/
-# Add context to /tmp/build/
-COPY . /tmp/build
-
-# this last command outputs the list of files added to the build context:
-RUN find /tmp/build/
+# Default port for Azure Web App for containers is 80
+# Please note that port and serverPort in the config.toml file
+# should correspond to the exposed port
+EXPOSE 80
 
 RUN mkdir ~/.streamlit
 RUN cp .streamlit/config.prod.toml ~/.streamlit/config.toml
