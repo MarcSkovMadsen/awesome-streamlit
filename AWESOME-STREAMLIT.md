@@ -1,5 +1,9 @@
 # Awesome Streamlit [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/MarcSkovMadsen/awesome-streamlit)
 
+## Disclaimer
+
+THE BELOW IS VERY PRELIMINARY AND RAPIDLY DEVELOPING! IT'S A VISION and a HYPOTHESIS. NOT FACTS! MIGHT CHANGE A LOT.
+
 ## Introduction
 
 This article will discuss if [Streamlit](https://streamlit.io/) is awesome and how awesome it can be.
@@ -12,7 +16,7 @@ The best way to think about the arrival of Streamlit is to think of the **arriva
 
 Streamlit has just arrived (Oct 2019). So it's too early tell if Streamlit will become truly awesome.
 
-But we see the **potential to become the Iphone of Data Science, Technical Writing, Web Apps, Code, Python and more**. It has the potential to change the way we share knowledge and create tools and applications because it's so plain simple to use.
+But we see the **potential to become the Iphone of Data Science, Technical Writing, Micro Apps, Code, Python and more**. It has the potential to change the way we share knowledge and create tools and applications because it's so plain simple to use.
 
 This article was inspired by a reply in this [post on LinkedIn](https://www.linkedin.com/posts/marcskovmadsen_turn-python-scripts-into-beautiful-ml-tools-activity-6585883899514146816-OonG) and some replies to the announcement in the [Streamlit Community](https://discuss.streamlit.io/t/streamlit-has-launched/105/5).
 
@@ -23,10 +27,6 @@ You can find a curated list of Awesome Streamlit resources [here](https://github
 Feel free to contribute your comments or suggestions to to this article.
 
 You can contribute through GitHub [Issues](https://github.com/MarcSkovMadsen/awesome-streamlit/issues) or [Pull requests](https://github.com/MarcSkovMadsen/awesome-streamlit/pulls).
-
-## Disclaimer
-
-THE BELOW IS VERY PRELIMINARY AND RAPIDLY DEVELOPING! IT'S A VISION. NOT FACTS!
 
 ## Data Science
 

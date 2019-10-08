@@ -7,10 +7,15 @@ import pandas as pd
 import pages.home
 import pages.spreadsheet
 import pages.awesome_streamlit_vision
-import pages.awesome_streamlit_readme
+import pages.awesome_streamlit_resources
 import importlib
 
-PAGES = {"Home": pages.home, "Spreadsheet": pages.spreadsheet}
+PAGES = {
+    "Home": pages.home,
+    "Resources": pages.awesome_streamlit_resources,
+    "Vision": pages.awesome_streamlit_vision,
+    "Spreadsheet": pages.spreadsheet,
+}
 
 selection = st.sidebar.selectbox("Select Page", list(PAGES.keys()))
 st.sidebar.info(

@@ -1,1 +1,1 @@
-from . import spreadsheet, awesome_streamlit_vision, awesome_streamlit_readme, home
+from . import spreadsheet, awesome_streamlit_vision, awesome_streamlit_resources, home

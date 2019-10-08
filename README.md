@@ -4,7 +4,7 @@ The purpose of this project is to share knowledge on how Awesome Streamlit can b
 
 I believe that [Streamlit](https://streamlit.io/) is truly awesome.
 
-Streamlit is very new (Oct 2019) but we see the potential of being the Iphone of Data Science, Technical Writing, Code, Web Apps, Python and more.
+Streamlit is very new (Oct 2019) but we see the potential of being the Iphone of Data Science, Technical Writing, Code, Micro Apps, Python and more.
 
 This project will consist of 3 things
 
