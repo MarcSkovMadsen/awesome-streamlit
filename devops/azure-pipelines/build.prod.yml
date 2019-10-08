@@ -23,10 +23,14 @@ steps:
     context: $(buildContext)
     includeLatestTag: true
 - task: Docker@2
+  inputs:
+    containerRegistry: 'dockerhub-awesome-streamlit'
+    command: 'login'
+- task: Docker@2
   displayName: Push image
   inputs:
     containerRegistry: |
-      dockerhub-awesome-streamlit
+      'dockerhub-awesome-streamlit'
     repository: $(imageName)
     command: push
     tags: |
