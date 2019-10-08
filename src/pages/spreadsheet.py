@@ -3,10 +3,11 @@ import pandas as pd
 
 
 def write():
+    st.write("TEST ABCD")
     # Create Sidebar
     sheet = st.sidebar.selectbox("Select Sheet", ["Biostats", "Grades"])
-    show_source = st.sidebar.checkbox("Show Source")
     show_code = st.sidebar.checkbox("Show Code")
+    show_source = st.sidebar.checkbox("Show Source")
 
     # Create Header
     st.write(f"""## Spreadsheet""")
