@@ -14,6 +14,10 @@ variables:
 
 
 steps:
+- task: Docker@2
+  inputs:
+    containerRegistry: $(dockerRegistry)
+    command: 'login'
 - task: Docker@0
   displayName: 'Build an image'
   inputs:
@@ -22,10 +26,6 @@ steps:
     defaultContext: False
     context: $(buildContext)
     includeLatestTag: true
-- task: Docker@2
-  inputs:
-    containerRegistry: $(dockerRegistry)
-    command: 'login'
 - task: Docker@2
   displayName: Push image
   inputs:
