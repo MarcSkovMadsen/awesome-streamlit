@@ -41,3 +41,8 @@ steps:
     tags: |
       $(Build.BuildId)
       latest
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish Artifact: Dockerfile'
+  inputs:
+    PathtoPublish: $(dockerFile)
+    ArtifactName: $(imageName)
