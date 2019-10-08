@@ -15,7 +15,7 @@ variables:
   dockerFile: 'devops/docker/Dockerfile.prod'
   dockerRegistry: 'dockerhub-awesome-streamlit'
   imageName: 'marcskovmadsen/awesome-streamlit'
-  buildContext: '../**'
+  buildContext: $(System.DefaultWorkingDirectory)
 
 steps:
 - task: Docker@2
