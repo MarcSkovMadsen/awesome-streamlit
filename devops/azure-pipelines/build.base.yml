@@ -31,7 +31,7 @@ steps:
   displayName: Push image
   inputs:
     containerRegistry: |
-      $(dockerhub-awesome-streamlit)
+      dockerhub-awesome-streamlit
     repository: $(imageName)
     command: push
     tags: |
