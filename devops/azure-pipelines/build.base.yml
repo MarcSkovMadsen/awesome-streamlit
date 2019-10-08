@@ -1,0 +1,29 @@
+# specific path build
+trigger:
+  branches:
+    include:
+    - master
+  paths:
+    include:
+    - devops/azure-pipelines/build.base.yml
+    - devops/docker/Dockerfile.base
+    - requirements.txt
+
+pool:
+  vmImage: 'Ubuntu-16.04'
+variables:
+  dockerFile: 'devops/docker/Dockerfile.base'
+  dockerRegistry: ''
+  dockerImage: 'marcskovmadsen/awesome-streamlit_base'
+  buildContext: .
+
+
+steps:
+- task: Docker@0
+  displayName: 'Build an image'
+  inputs:
+    dockerFile: $(dockerFile)
+    imageName: '$(dockerImage):$(Build.BuildId)'
+    defaultContext: False
+    context: $(buildContext)
+    includeLatestTag: true
