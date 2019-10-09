@@ -8,9 +8,10 @@ This project will consist of 3 things
 
 - A unofficial and curated [list](https://github.com/MarcSkovMadsen/awesome-streamlit#awesome-resources) of Awesome Streamlit **resources**. See below.
 - An [article](https://github.com/MarcSkovMadsen/awesome-streamlit/blob/master/AWESOME-STREAMLIT.md) on the **vision** of how awesome Streamlit is and can become.
-- An [**awesome Streamlit application**](https://awesome-streamlit.azurewebsites.net/) to accompany the article and to act as **inspiration for building and deploying awesome, multipage Streamlit apps**.
+- An [**awesome Streamlit application**](https://awesome-streamlit.azurewebsites.net/) to containing the list of resources, the article and a **Gallery** of Awesome Streamlit Apps.
+  - Feel free to add your awesome app to the gallery via a [Pull request](https://github.com/MarcSkovMadsen/awesome-streamlit/pulls). It's easy (see below).
 
-You can also use this project as inspiration or as a starter template for your awesome Streamlit project.
+You can also use this project as inspiration or as a starter template for your awesome (multi-page) Streamlit app.
 
 ## Awesome Resources
 
