@@ -56,6 +56,10 @@ You can find my contact details at [datamodelsanalytics.com](https://datamodelsa
 
 I try my best to govern and maintain this project in the spirit of the [Zen of Python](https://www.python.org/dev/peps/pep-0020/).
 
+But **i'm not an experienced open source maintainer** so helpfull suggestions are appreciated.
+
+Thanks
+
 ## Contribute
 
 GitHub [Issues](https://github.com/MarcSkovMadsen/awesome-streamlit/issues) and [Pull requests](https://github.com/MarcSkovMadsen/awesome-streamlit/pulls) are very welcome!
