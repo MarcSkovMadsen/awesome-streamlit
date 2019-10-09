@@ -183,7 +183,7 @@ python -m spacy download de_core_news_sm
 ### Build and run the Application
 
 ```bash
-streamlit run src/pages/app.py
+streamlit run src/app.py
 ```
 
 or as a Docker container via

@@ -24,12 +24,14 @@ The purpose of this application is to
 - Provide a **gallery** of awesome streamlit applications.
 - Share a **vision** on how awesome Streamlit can be.
 
-The is an open source project and you are very welcome to **contribute** your awesome
+This an open source project and you are very welcome to **contribute** your awesome
 comments, questions, resources and apps as
 [issues](https://github.com/MarcSkovMadsen/awesome-streamlit/issues) or
 [pull requests](https://github.com/MarcSkovMadsen/awesome-streamlit/pulls).
 
-This app is maintained by Marc Skov Madsen. You can learn more about me at [datamodelsanalytics.com](https://datamodelsanalytics.com)
+This app is maintained by Marc Skov Madsen. I'm not an experienced open source maintainer,
+so helpfull hints and suggestions are welcome.
+You can learn more about me at [datamodelsanalytics.com](https://datamodelsanalytics.com)
 """
     )
     st.write(
