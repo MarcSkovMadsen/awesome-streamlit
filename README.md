@@ -168,9 +168,12 @@ The application is
 
 - build as a Docker image and tested via Azure Pipelines builds
   - You find the Dockerfiles [here](https://github.com/MarcSkovMadsen/awesome-streamlit/tree/master/devops/docker) and the Azure pipelines yml files [here](https://github.com/MarcSkovMadsen/awesome-streamlit/tree/master/devops/azure-pipelines)
-- pushed to the Dockerhub repository [marcskovmadsen/awesome-streamlit](https://cloud.docker.com/u/marcskovmadsen/repository/docker/marcskovmadsen/awesome-streamlit).
 
 ![Azure Pipelines](https://github.com/MarcSkovMadsen/awesome-streamlit/blob/master/assets/azure-pipeline.png)
+
+- pushed to the Dockerhub repository [marcskovmadsen/awesome-streamlit](https://cloud.docker.com/u/marcskovmadsen/repository/docker/marcskovmadsen/awesome-streamlit).
+
+![Dockerhub](https://github.com/MarcSkovMadsen/awesome-streamlit/blob/master/assets/dockerhub.png)
 
 - released via Azure Pipelines
 
