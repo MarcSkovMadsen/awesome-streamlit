@@ -2,7 +2,7 @@
 
 Here you maintain the list of awesome resources
 """
-from shared.models import Resource, Tag
+from src.shared.models import Resource, Tag
 
 APP = Tag("App")
 PAGE = Tag(name="App included here")
