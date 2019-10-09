@@ -8,7 +8,12 @@ import db
 
 def write():
     """Method used to write page in app.py"""
-    st.subheader("Resources")
+    st.write(
+        f"# Awesome Streamlit Resources "
+        "[![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/"
+        "d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)]"
+        "(https://github.com/MarcSkovMadsen/awesome-streamlit)"
+    )
 
     tags = st.multiselect("Filter", db.TAGS)
 

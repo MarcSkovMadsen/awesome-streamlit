@@ -10,12 +10,12 @@ import streamlit as st
 import pages.awesome_streamlit_resources
 import pages.awesome_streamlit_vision
 import pages.home
-import pages.spreadsheet
+import pages.gallery
 
 PAGES = {
     "Home": pages.home,
     "Resources": pages.awesome_streamlit_resources,
-    "Gallery": pages.spreadsheet,
+    "Gallery": pages.gallery,
     "Vision": pages.awesome_streamlit_vision,
 }
 

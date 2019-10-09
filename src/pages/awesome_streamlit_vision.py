@@ -10,5 +10,10 @@ def write():
     with open(url, mode="r") as file:
         readme_md_contents = "".join(file.readlines())
     readme_md_contents = readme_md_contents.split("\n", 3)[-1]
-    readme_md_contents = "# The Vision\n" + readme_md_contents
+    st.write(
+        f"# Awesome Streamlit Vision "
+        "[![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/"
+        "d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)]"
+        "(https://github.com/MarcSkovMadsen/awesome-streamlit)"
+    )
     st.markdown(readme_md_contents)
