@@ -17,6 +17,7 @@ PAGES = {
     "Spreadsheet": pages.spreadsheet,
 }
 
+st.
 selection = st.sidebar.selectbox("Select Page", list(PAGES.keys()))
 st.sidebar.info(
     "You can add your awesome comments, questions, bug reports and feature requests [here](https://github.com/MarcSkovMadsen/awesome-streamlit/issues)"
