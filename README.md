@@ -166,7 +166,9 @@ streamlit run src/pages/app.py
 
 The application is
 
-- build, tested via Azure Pipelines builds (cf )
+- build as a Docker image and tested via Azure Pipelines builds
+  - You find the Dockerfiles [here](https://github.com/MarcSkovMadsen/awesome-streamlit/tree/master/devops/docker) and the Azure pipelines yml files [here](https://github.com/MarcSkovMadsen/awesome-streamlit/tree/master/devops/azure-pipelines)
+- pushed to the Dockerhub repository [marcskovmadsen/awesome-streamlit](https://cloud.docker.com/u/marcskovmadsen/repository/docker/marcskovmadsen/awesome-streamlit).
 
 ![Azure Pipelines](https://github.com/MarcSkovMadsen/awesome-streamlit/blob/master/assets/azure-pipeline.png)
 
@@ -174,7 +176,7 @@ The application is
 
 ![Azure Pipelines](https://github.com/MarcSkovMadsen/awesome-streamlit/blob/master/assets/azure-pipeline-release.png)
 
-- to a web app for containers service on Azure
+- to a web app for containers service on Azure on the cheapest non-free pricing tier
 
 ![Azure Pipelines](https://github.com/MarcSkovMadsen/awesome-streamlit/blob/master/assets/azure-pricing-tier.png)
 
