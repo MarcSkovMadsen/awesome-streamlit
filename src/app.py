@@ -27,10 +27,13 @@ importlib.reload(page)  # Hack? To enable how reloading
 page.write()
 
 st.sidebar.info(
-    "You can add your awesome comments, questions, bug reports and feature requests "
-    "[here](https://github.com/MarcSkovMadsen/awesome-streamlit/issues)"
-)
-st.sidebar.info(
-    "You can find the source of this project "
-    "[here](https://github.com/MarcSkovMadsen/awesome-streamlit)"
+    "You can **contribute** your awesome comments, questions, resources, apps, bug reports and feature requests "
+    "as [issues](https://github.com/MarcSkovMadsen/awesome-streamlit/issues) or "
+    "[pull requests](https://github.com/MarcSkovMadsen/awesome-streamlit/pulls)."
+    "\n\n"
+    "You can find the **source** of this app "
+    "[here](https://github.com/MarcSkovMadsen/awesome-streamlit)."
+    "\n\n"
+    "This app is maintained by Marc Skov Madsen. "
+    "You can **contact** me at [datamodelsanalytics.com](https://datamodelsanalytics.com)"
 )
