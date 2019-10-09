@@ -102,7 +102,7 @@ Finally you need to make sure all automated tests pass by running
 invoke test.all
 ```
 
-Please note that your app should not require high compute power as we are running this on the cheapest pricing tier available on Azure.
+Please note that your app should not require high compute power as we are running on one of the cheapest tiers available on Azure.
 
 Feel free to reach out if you have comments, questions or need help.
 

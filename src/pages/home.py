@@ -32,8 +32,18 @@ comments, questions, resources and apps as
 This app is maintained by Marc Skov Madsen. I'm not an experienced open source maintainer,
 so helpfull hints and suggestions are welcome.
 You can learn more about me at [datamodelsanalytics.com](https://datamodelsanalytics.com)
+
+## Introduction
+
+The only way to truly understand how powerfull Streamlit is to play around with it
+but need to be convinced first, then here is the **4 minute introduction** to Streamlit!
+
+Afterwards you can go to the [Streamlit docs](https://streamlit.io/docs/) to get started.
+
+
 """
     )
     st.write(
-        """[![Streamlit Video](https://miro.medium.com/max/700/1*p3XPm-x0TUIuMmQQa4mjHQ.gif)](https://miro.medium.com/max/700/1*p3XPm-x0TUIuMmQQa4mjHQ.gif)"""
+        '<iframe width="100%" height="315" src="https://www.youtube.com/embed/B2iAodr0fOo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+        unsafe_allow_html=True,
     )
