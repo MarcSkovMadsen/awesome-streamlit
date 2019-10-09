@@ -36,7 +36,7 @@ You can learn more about me at [datamodelsanalytics.com](https://datamodelsanaly
 ## Introduction
 
 The only way to truly understand how powerfull Streamlit is to play around with it
-but need to be convinced first, then here is the **4 minute introduction** to Streamlit!
+but if you need to be convinced first, then here is the **4 minute introduction** to Streamlit!
 
 Afterwards you can go to the [Streamlit docs](https://streamlit.io/docs/) to get started.
 
