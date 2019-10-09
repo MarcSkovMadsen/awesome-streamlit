@@ -8,7 +8,7 @@ This project will consist of 3 things
 
 - A unofficial and curated [list](https://github.com/MarcSkovMadsen/awesome-streamlit#awesome-resources) of Awesome Streamlit **resources**. See below.
 - An [article](https://github.com/MarcSkovMadsen/awesome-streamlit/blob/master/AWESOME-STREAMLIT.md) on the **vision** of how awesome Streamlit is and can become.
-- An [**awesome Streamlit application**](https://awesome-streamlit.azurewebsites.net/) containing the list of resources, the article and a **Gallery** of Awesome Streamlit Apps.
+- An [**awesome Streamlit application**](https://awesome-streamlit.azurewebsites.net/) containing the list of resources, the article and a **gallery** of Awesome Streamlit Apps.
   - Feel free to add your awesome app to the gallery via a [Pull request](https://github.com/MarcSkovMadsen/awesome-streamlit/pulls). It's easy (see below).
 
 You can also use this project as inspiration or as a starter template for your awesome (multi-page) Streamlit app.
@@ -25,6 +25,7 @@ A curated list of awesome streamlit resources. Inspired by [awesome-python](http
 
 - [Kaggle Mushrooms Dashboard](https://github.com/pierpaolo28/Data-Visualization/tree/master/Streamlit)
 - [SpacyIO Application](https://gist.github.com/ines/b320cb8441b590eedf19137599ce6685)
+- [Sentiment Analyzer Tool](https://www.linkedin.com/posts/patidarparas13_code-ml-machinelearning-ugcPost-6585745929062703104-ttkv")
 
 ### Social
 
@@ -53,7 +54,7 @@ This repo is maintained by me :-)
 
 I'm Marc, Skov, Madsen, PhD, CFA®, Lead Data Scientist Developer at [Ørsted](https://orsted.com)
 
-You can find my contact details at [datamodelsanalytics.com](https://datamodelsanalytics.com)
+You can learn more about me at [datamodelsanalytics.com](https://datamodelsanalytics.com)
 
 I try my best to govern and maintain this project in the spirit of the [Zen of Python](https://www.python.org/dev/peps/pep-0020/).
 

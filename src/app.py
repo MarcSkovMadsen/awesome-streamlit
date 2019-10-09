@@ -35,5 +35,5 @@ st.sidebar.info(
     "[here](https://github.com/MarcSkovMadsen/awesome-streamlit)."
     "\n\n"
     "This app is maintained by Marc Skov Madsen. "
-    "You can **contact** me at [datamodelsanalytics.com](https://datamodelsanalytics.com)"
+    "You can learn more about me at [datamodelsanalytics.com](https://datamodelsanalytics.com)"
 )

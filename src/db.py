@@ -4,6 +4,7 @@ Here you maintain the list of awesome resources
 """
 from shared.models import Resource, Tag
 
+CODE = Tag("Code")
 APP = Tag("Apps")
 PAGE = Tag(name="App included here")
 STREAMLITIO = Tag(name="Streamlit.io")
@@ -75,6 +76,11 @@ RESOURCES = [
         name="Bokeh",
         url="https://bokeh.pydata.org/en/latest/index.html",
         tags=[ALTERNATIVE],
+    ),
+    Resource(
+        name="Sentiment Analyzer Tool",
+        url="https://www.linkedin.com/posts/patidarparas13_code-ml-machinelearning-ugcPost-6585745929062703104-ttkv",
+        tags=[CODE, APP, SOCIAL],
     ),
 ]
 
