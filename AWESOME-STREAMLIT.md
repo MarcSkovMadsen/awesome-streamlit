@@ -81,7 +81,11 @@ But this environment also has it's pains.
 
 Jupyter recently (Jun 2019) [announced](https://blog.jupyter.org/and-voil%C3%A0-f6a2c08a4a93) Voila which can transform Jupyter notebooks to standalone applications and dashboards.
 
-The approach is different than that of Streamlit. I do not yet know how they compare. But I believe the code in your editor, use caching and only transfer incremental data of Streamlit is a very strong approach. Whether Streamlit can compeet with the massive popularity and library of widgets of Jupyter is yet to be seen.
+The approach is different than that of Streamlit. I have not yet tried Voila.
+
+But for now I believe that the code in your editor, use caching and only transfer incremental data of Streamlit is a very strong and unique approach. Also the magical api of Streamlit is different but very, very simple to use.
+
+Whether Streamlit can compete with the massive popularity and library of widgets of Jupyter is yet to be seen. Or whether Voila will quickly learn from Streamlit.
 
 See [Hacker News Discussion](https://news.ycombinator.com/item?id=21158487) for a little bit of technical discussion.
 
