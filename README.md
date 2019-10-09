@@ -1,23 +1,18 @@
 # Awesome Streamlit [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/MarcSkovMadsen/awesome-streamlit)
 
-The purpose of this project is to share knowledge on how Awesome Streamlit can become.
+The purpose of this project is to share knowledge on how Awesome [Streamlit](https://streamlit.io/) is and can become. [Pull requests](https://github.com/MarcSkovMadsen/awesome-streamlit/pulls) are very welcome!
 
-I believe that [Streamlit](https://streamlit.io/) is truly awesome.
-
-Streamlit is very new (Oct 2019) but we see the potential of being the Iphone of Data Science, Technical Writing, Code, Micro Apps, Python and more.
+Streamlit has just been [announced](https://towardsdatascience.com/coding-ml-tools-like-you-code-ml-models-ddba3357eace) (Oct 2019) but I see the potential of becoming the Iphone of Data Science Apps. And maybe it can even become the Iphone of Technical Writing, Code, Micro Apps and Python.
 
 This project will consist of 3 things
 
-- A [list](https://github.com/MarcSkovMadsen/awesome-streamlit#awesome-resources) of Awesome Streamlit resources. See below.
-- An [article](https://github.com/MarcSkovMadsen/awesome-streamlit/blob/master/AWESOME-STREAMLIT.md) on the vision of how awesome Streamlit is.
-- An **Awesome Streamlit Application** to accompany the article and to illustrate and share the knowledge of how Awesome Streamlit is.
-  - Of course it will be built in Streamlit.
+- A unofficial and curated [list](https://github.com/MarcSkovMadsen/awesome-streamlit#awesome-resources) of Awesome Streamlit **resources**. See below.
+- An [article](https://github.com/MarcSkovMadsen/awesome-streamlit/blob/master/AWESOME-STREAMLIT.md) on the **vision** of how awesome Streamlit is and can become.
+- An [**awesome Streamlit application**](https://awesome-streamlit.azurewebsites.net/) to accompany the article and to act as **inspiration for building and deploying awesome, multipage Streamlit apps**.
 
 ## Awesome Resources
 
-A curated list of awesome streamlit resources.
-
-Inspired by [awesome-python](https://github.com/vinta/awesome-python).
+A curated list of awesome streamlit resources. Inspired by [awesome-python](https://github.com/vinta/awesome-python) and [awesome-pandas](https://github.com/tommyod/awesome-pandas).
 
 ### Official Resources
 
@@ -33,7 +28,7 @@ Inspired by [awesome-python](https://github.com/vinta/awesome-python).
 
 ### Follow the excitement
 
-- [LinkedIn](https://www.linkedin.com/search/results/all/?authorCompany=%5B%5D&authorIndustry=%5B%5D&contactInterest=%5B%5D&facetCity=%5B%5D&facetCompany=%5B%5D&facetConnectionOf=%5B%5D&facetCurrentCompany=%5B%5D&facetCurrentFunction=%5B%5D&facetGeoRegion=%5B%5D&facetGroup=%5B%5D&facetGuides=%5B%5D&facetIndustry=%5B%5D&facetNetwork=%5B%5D&facetNonprofitInterest=%5B%5D&facetPastCompany=%5B%5D&facetProfessionalEvent=%5B%5D&facetProfileLanguage=%5B%5D&facetRegion=%5B%5D&facetSchool=%5B%5D&facetSeniority=%5B%5D&facetServiceCategory=%5B%5D&facetState=%5B%5D&groups=%5B%5D&keywords=%23streamlit&origin=GLOBAL_SEARCH_HEADER&page=1&refresh=false&skillExplicit=%5B%5D&topic=%5B%5D)
+- [LinkedIn](https://www.linkedin.com/search/results/all/?keywords=%23streamlit)
 - [Twitter](https://twitter.com/search?q=%23streamlit&src=typed_query)
 
 ### Awesome Applications
@@ -45,19 +40,63 @@ Inspired by [awesome-python](https://github.com/vinta/awesome-python).
 
 This repo is maintained by me :-)
 
-I'm Marc, Skov, Madsen, PhD, CFA, Lead Data Scientist Developer at [Ørsted](https://orsted.com)
+I'm Marc, Skov, Madsen, PhD, CFA®, Lead Data Scientist Developer at [Ørsted](https://orsted.com)
 
 You can find my contact details at [datamodelsanalytics.com](https://datamodelsanalytics.com)
 
-I find guidance in the [Zen of Python](https://www.python.org/dev/peps/pep-0020/).
+I try my best to govern and maintain this project in the spirit of the [Zen of Python](https://www.python.org/dev/peps/pep-0020/).
 
 ## Contribute
 
-Feel free to contribute to this project.
+GitHub [Issues](https://github.com/MarcSkovMadsen/awesome-streamlit/issues) and [Pull requests](https://github.com/MarcSkovMadsen/awesome-streamlit/pulls) are very welcome!
 
-You can contribute your thoughts or code through the GitHub [Issues](https://github.com/MarcSkovMadsen/awesome-streamlit/issues) or [Pull requests](https://github.com/MarcSkovMadsen/awesome-streamlit/pulls) functionality.
+If you believe Streamlit is awesome and would like to join as a Core Maintainer feel free to reach out via [datamodelsanalytics.com](https://datamodelsanalytics.com)
 
-If you are passionate about Streamlit and would like to join as a Core Maintainer feel free to reach out via [datamodelsanalytics.com](https://datamodelsanalytics.com)
+### How to contribute awesome links
+
+The best way to contribute an awesome link is via a [Pull request](https://github.com/MarcSkovMadsen/awesome-streamlit/pulls).
+
+In the pull request you should
+
+- describe why your contribution is awesome and should be included.
+- update the [README.md](https://github.com/MarcSkovMadsen/awesome-streamlit/blob/master/README.md) file
+- update the list of RESOURCES in the [src/db.py](https://github.com/MarcSkovMadsen/awesome-streamlit/blob/master/src/db.py) file.
+
+Thanks.
+
+### How to contribute awesome apps
+
+The best way to contribute an awesome app is via a [Pull request](https://github.com/MarcSkovMadsen/awesome-streamlit/pulls).
+
+In the pull request you should
+
+- describe why your contribution is awesome and should be included.
+- add your code in a new `your_app_name.py` file in the `src/pages` folder.
+  - If your code is large feel free to add a `your_app_name` folder of files instead.
+- add the `your_app_name` to the
+  - [src/pages/__init__.py](https://github.com/MarcSkovMadsen/awesome-streamlit/blob/master/src/pages/__init__.py) file.
+  - list of PAGES in the [src/app.py](https://github.com/MarcSkovMadsen/awesome-streamlit/blob/master/src/app.py).
+- update the [requirements.txt](https://github.com/MarcSkovMadsen/awesome-streamlit/blob/master/requirements.txt) file.
+    Please specify the required version.
+- Manually test your contribution
+
+Finally you need to make sure all automated tests pass by running
+
+```bash
+invoke test.all
+```
+
+Please note that your app should not require high compute power as we are running this on the cheapest pricing tier available on Azure.
+
+Feel free to reach out if you have comments, questions or need help.
+
+Thanks.
+
+### How to sponsor this project
+
+If you would like to sponsor my time or the infrastructure the platform is running on feel free to reach out via [datamodelsanalytics.com](https://datamodelsanalytics.com).
+
+Thanks
 
 ## LICENSE
 
@@ -122,6 +161,22 @@ pip install -r requirements_local.txt
 ```bash
 streamlit run src/pages/app.py
 ```
+
+### CI/ CD and Hosting
+
+The application is
+
+- build, tested via Azure Pipelines builds (cf )
+
+![Azure Pipelines](https://github.com/MarcSkovMadsen/awesome-streamlit/blob/master/assets/azure-pipeline.png)
+
+- released via Azure Pipelines
+
+![Azure Pipelines](https://github.com/MarcSkovMadsen/awesome-streamlit/blob/master/assets/azure-pipeline-release.png)
+
+- to a web app for containers service on Azure
+
+![Azure Pipelines](https://github.com/MarcSkovMadsen/awesome-streamlit/blob/master/assets/azure-pricing-tier.png)
 
 ### Project Layout
 

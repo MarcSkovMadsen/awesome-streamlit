@@ -13,14 +13,12 @@ I believe Streamlit has the **potential to become the Iphone of Data Science, Te
 
 The purpose of this application is to
 
-- Share list of awesome Streamlit resources.
-- Share a vision on how awesome Streamlit can be.
-- Provide awesome Streamlit examples.
+- Share list of awesome Streamlit **resources**.
+- Share a **vision** on how awesome Streamlit can be.
+- Provide awesome Streamlit **examples**.
 
-You navigate to the material and examples using the sidebar on the left.
 """
     )
     st.write(
         """[![Streamlit Video](https://miro.medium.com/max/700/1*p3XPm-x0TUIuMmQQa4mjHQ.gif)](https://miro.medium.com/max/700/1*p3XPm-x0TUIuMmQQa4mjHQ.gif)"""
     )
-
