@@ -16,27 +16,35 @@ You can also use this project as inspiration or as a starter template for your a
 
 A curated list of awesome streamlit resources. Inspired by [awesome-python](https://github.com/vinta/awesome-python) and [awesome-pandas](https://github.com/tommyod/awesome-pandas).
 
-### Official Resources
+### Alternatives
 
-- [Streamlit.io](https://streamlit.io/)
-- [Streamlit Docs](https://streamlit.io/docs/)
+- [Jupyter Voila](https://blog.jupyter.org/and-voil%C3%A0-f6a2c08a4a93)
+
+### Apps
+
+- [Kaggle Mushrooms Dashboard](https://github.com/pierpaolo28/Data-Visualization/tree/master/Streamlit)
+- [SpacyIO Application](https://gist.github.com/ines/b320cb8441b590eedf19137599ce6685)
+
+### Social
+
+- [LinkedIn #streamlit](https://www.linkedin.com/search/results/all/?keywords=%23streamlit)
+- [Twitter #streamlit](https://twitter.com/search?q=%23streamlit&src=typed_query)
+
+### Streamlit.io
+
 - [Streamlit Community](https://discuss.streamlit.io/top/quarterly)
-
-### What started this project
-
+- [Streamlit Docs](https://streamlit.io/docs/)
+- [Streamlit.io](https://streamlit.io/)
 - [The announcing blog](https://towardsdatascience.com/coding-ml-tools-like-you-code-ml-models-ddba3357eace)
 - [The announcing community post](https://discuss.streamlit.io/t/streamlit-has-launched/105/3)
-- [LinkedIn Discussion](https://www.linkedin.com/feed/update/urn:li:activity:6586497522896818176/?commentUrn=urn%3Ali%3Acomment%3A(activity%3A6585883899514146816%2C6586497466957385728))
 
-### Follow the excitement
+### Technical
 
-- [LinkedIn](https://www.linkedin.com/search/results/all/?keywords=%23streamlit)
-- [Twitter](https://twitter.com/search?q=%23streamlit&src=typed_query)
+- [Hacker News technical discussion of Streamlit](https://news.ycombinator.com/item?id=21158487)
 
-### Awesome Applications
+### The beginning
 
-- [SpacyIO Application](https://gist.github.com/ines/b320cb8441b590eedf19137599ce6685)
-- [Kaggle Mushrooms Dashboard](https://github.com/pierpaolo28/Data-Visualization/tree/master/Streamlit)
+- [LinkedIn post that started awesome-streamlit.org](https://www.linkedin.com/feed/update/urn:li:activity:6586497522896818176)
 
 ## Governance
 

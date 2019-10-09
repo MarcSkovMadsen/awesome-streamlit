@@ -4,14 +4,16 @@ Here you maintain the list of awesome resources
 """
 from shared.models import Resource, Tag
 
-APP = Tag("App")
+APP = Tag("Apps")
 PAGE = Tag(name="App included here")
 STREAMLITIO = Tag(name="Streamlit.io")
 THEBEGINNING = Tag(name="The beginning")
 SOCIAL = Tag(name="Social")
 TECHNICAL = Tag(name="Technical")
-ALTERNATIVE = Tag(name="Alternative")
+ALTERNATIVE = Tag(name="Alternatives")
 
+# Please note that in the README.md resources will be listed
+# under the first tag in the tags list only
 RESOURCES = [
     Resource(name="Streamlit.io", url="https://streamlit.io/", tags=[STREAMLITIO]),
     Resource(
@@ -33,7 +35,7 @@ RESOURCES = [
         tags=[STREAMLITIO, THEBEGINNING],
     ),
     Resource(
-        "LinkedIn post that started awesome-streamlit",
+        "LinkedIn post that started awesome-streamlit.org",
         url="https://www.linkedin.com/feed/update/urn:li:activity:6586497522896818176",
         tags=[THEBEGINNING, SOCIAL],
     ),
@@ -51,7 +53,7 @@ RESOURCES = [
     Resource(
         name="SpacyIO Application",
         url="https://gist.github.com/ines/b320cb8441b590eedf19137599ce6685",
-        tags=[PAGE, APP],
+        tags=[APP, PAGE],
     ),
     Resource(
         name="Kaggle Mushrooms Dashboard",
@@ -59,13 +61,19 @@ RESOURCES = [
         tags=[APP],
     ),
     Resource(
-        name="Hacker News technical details of Streamlit",
+        name="Hacker News technical discussion of how Streamlit work",
         url="https://news.ycombinator.com/item?id=21158487",
         tags=[TECHNICAL],
     ),
     Resource(
         name="Jupyter Voila",
         url="https://blog.jupyter.org/and-voil%C3%A0-f6a2c08a4a93",
+        tags=[ALTERNATIVE],
+    ),
+    Resource(name="Plotly Dash", url="https://plot.ly/dash/", tags=[ALTERNATIVE]),
+    Resource(
+        name="Bokeh",
+        url="https://bokeh.pydata.org/en/latest/index.html",
         tags=[ALTERNATIVE],
     ),
 ]

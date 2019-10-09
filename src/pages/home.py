@@ -16,7 +16,7 @@ The purpose of this application is to
 
 - Share list of awesome Streamlit **resources**.
 - Share a **vision** on how awesome Streamlit can be.
-- Provide awesome Streamlit **examples**.
+- Provide a **gallery** of awesome streamlit applications.
 
 """
     )

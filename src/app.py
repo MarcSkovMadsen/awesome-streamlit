@@ -15,19 +15,12 @@ import pages.spreadsheet
 PAGES = {
     "Home": pages.home,
     "Resources": pages.awesome_streamlit_resources,
+    "Gallery": pages.spreadsheet,
     "Vision": pages.awesome_streamlit_vision,
-    "Spreadsheet": pages.spreadsheet,
 }
 
-selection = st.sidebar.selectbox("Select Page", list(PAGES.keys()))
-st.sidebar.info(
-    "You can add your awesome comments, questions, bug reports and feature requests "
-    "[here](https://github.com/MarcSkovMadsen/awesome-streamlit/issues)"
-)
-st.sidebar.info(
-    "You can find the source of this project "
-    "[here](https://github.com/MarcSkovMadsen/awesome-streamlit)"
-)
+selection = st.sidebar.radio("Go to", list(PAGES.keys()))
+
 page = PAGES[selection]
 importlib.reload(page)  # Hack? To enable how reloading
 
@@ -39,3 +32,12 @@ if selection not in ["Vision", "Resources"]:
         "(https://github.com/MarcSkovMadsen/awesome-streamlit)"
     )
 page.write()
+
+st.sidebar.info(
+    "You can add your awesome comments, questions, bug reports and feature requests "
+    "[here](https://github.com/MarcSkovMadsen/awesome-streamlit/issues)"
+)
+st.sidebar.info(
+    "You can find the source of this project "
+    "[here](https://github.com/MarcSkovMadsen/awesome-streamlit)"
+)
