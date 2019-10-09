@@ -2,7 +2,7 @@
 
 Here you maintain the list of awesome resources
 """
-from src.shared.models import Resource, Tag
+from shared.models import Resource, Tag
 
 APP = Tag("App")
 PAGE = Tag(name="App included here")
@@ -10,6 +10,7 @@ STREAMLITIO = Tag(name="Streamlit.io")
 THEBEGINNING = Tag(name="The beginning")
 SOCIAL = Tag(name="Social")
 TECHNICAL = Tag(name="Technical")
+ALTERNATIVE = Tag(name="Alternative")
 
 RESOURCES = [
     Resource(name="Streamlit.io", url="https://streamlit.io/", tags=[STREAMLITIO]),
@@ -32,12 +33,17 @@ RESOURCES = [
         tags=[STREAMLITIO, THEBEGINNING],
     ),
     Resource(
-        "LinkedIn Post that started this project",
+        "LinkedIn post that started awesome-streamlit",
         url="https://www.linkedin.com/feed/update/urn:li:activity:6586497522896818176",
         tags=[THEBEGINNING, SOCIAL],
     ),
     Resource(
-        name="Twitter",
+        "LinkedIn #streamlit",
+        url="https://www.linkedin.com/search/results/all/?keywords=%23streamlit",
+        tags=[SOCIAL],
+    ),
+    Resource(
+        name="Twitter #streamlit",
         url="https://twitter.com/search?q=%23streamlit&src=typed_query",
         tags=[SOCIAL],
     ),
@@ -53,9 +59,14 @@ RESOURCES = [
         tags=[APP],
     ),
     Resource(
-        name="abcd",
+        name="Hacker News technical details of Streamlit",
         url="https://news.ycombinator.com/item?id=21158487",
         tags=[TECHNICAL],
+    ),
+    Resource(
+        name="Jupyter Voila",
+        url="https://blog.jupyter.org/and-voil%C3%A0-f6a2c08a4a93",
+        tags=[ALTERNATIVE],
     ),
 ]
 

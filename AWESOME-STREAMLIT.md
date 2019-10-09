@@ -4,6 +4,8 @@
 
 THE BELOW IS VERY PRELIMINARY AND RAPIDLY DEVELOPING! IT'S A VISION and a HYPOTHESIS. NOT FACTS! MIGHT CHANGE A LOT.
 
+I JUST DISCOVERED [JUPYTER VOILA](https://blog.jupyter.org/and-voil%C3%A0-f6a2c08a4a93) WHICH MIGHT BE AN ALTERNATIVE. I DO NOT KNOW HOW THAT COMPARES. I WILL DESCRIBE THAT BELOW ASAP.
+
 ## Introduction
 
 This article will discuss if [Streamlit](https://streamlit.io/) is awesome and how awesome it can be.
@@ -75,6 +77,16 @@ But this environment also has it's pains.
 - It's still not as productive or extensible as a real editor like VS Code or Pycharm.
 - It changes the Notebook from being a simple interactive document that you can read and distribute as pdf or html to an advanced but complicated development environment that you work in.
 
+#### Notebooks even more complicated
+
+Jupyter recently (Jun 2019) [announced](https://blog.jupyter.org/and-voil%C3%A0-f6a2c08a4a93) Voila which can transform Jupyter notebooks to standalone applications and dashboards.
+
+The approach is different than that of Streamlit. I do not yet know how they compare. But I believe the code in your editor, use caching and only transfer incremental data of Streamlit is a very strong approach. Whether Streamlit can compeet with the massive popularity and library of widgets of Jupyter is yet to be seen.
+
+See [Hacker News Discussion](https://news.ycombinator.com/item?id=21158487) for a little bit of technical discussion.
+
+More to come
+
 #### Notebooks - Solution
 
 Streamlit aims to solve all of the problems described above as described in the  [Announcement](https://towardsdatascience.com/coding-ml-tools-like-you-code-ml-models-ddba3357eace).
@@ -105,6 +117,7 @@ I believe that the **Jupyter Notebook is a cell phone** and **Streamlit is the I
 
 For building data science applications
 
+- business should start investigating Streamlit and Jupyter Voila
 - There will be a lot less demand for front end developers and development in React, Vue an Angular in data science.
   - The remaining front end developers in data science should be developing specialized Web Components for Streamlit when needed.
 - There will be less demand for back end developers to develop REST APIs etc. for data science products.
@@ -118,7 +131,7 @@ For building data science applications
   - Describe their way of securely deploying these applications to on-premise or cloud and
   - join the [one-click deployment solution for Teams](https://streamlit.io/forteams/) beta.
 
-For building larger, traditional applications with data science app components the data science app components can in a lot of cases be build in Streamlit and embedded in the larger application. REST API endpoints should still be developed when the need is there. But start out developing
+For building larger, traditional applications with data science app components the data science app components can in a lot of cases be build in Streamlit and embedded in the larger application. REST API endpoints should still be developed when the need is there.
 
 ### Notebooks - Disclaimer
 
@@ -131,7 +144,7 @@ Things you cannot do yet
 - Deploy to production with one click.
   - It can be deployed as any other python web application. And it's only one file, the streamlit package and any data science packages needed. So it's very simple to deploy.
 
-To come
+More to come
 
 ### Spreadsheets
 
@@ -183,7 +196,7 @@ Something like [this](https://insights.stackoverflow.com/survey/2019) and [this]
 
 Streamlit lowers the barrier to entry for young and new programmers. One file in an editor is all that is needed to develop a powerfull app. Somebody will abstract away the rest in a cloud solution.
 
-## Web Apps
+## Micro Apps
 
 When you can build something like this is a few hours you know something will change.
 
