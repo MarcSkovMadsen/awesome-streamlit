@@ -24,13 +24,6 @@ selection = st.sidebar.radio("Go to", list(PAGES.keys()))
 page = PAGES[selection]
 importlib.reload(page)  # Hack? To enable how reloading
 
-if selection not in ["Vision", "Resources"]:
-    st.write(
-        "# Awesome Streamlit "
-        "[![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/"
-        "d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)]"
-        "(https://github.com/MarcSkovMadsen/awesome-streamlit)"
-    )
 page.write()
 
 st.sidebar.info(

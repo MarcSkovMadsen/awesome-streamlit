@@ -11,17 +11,19 @@ from . import spreadsheet
 
 PAGES = {"Spreadsheet": spreadsheet, "Spreadsheet 2": spreadsheet}
 
-st.write(
-    f"# Awesome Streamlit Gallery"
-    "[![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/"
-    "d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)]"
-    "(https://github.com/MarcSkovMadsen/awesome-streamlit)"
-)
-if len(PAGES) > 1:
-    selection = st.selectbox("SelectApp", list(PAGES.keys()))
-else:
-    selection = list(PAGES.keys())[0]
-page = PAGES[selection]
 
-importlib.reload(page)  # Hack? To enable how reloading
-page.write()
+def write():
+    st.write(
+        f"# Awesome Streamlit Gallery"
+        "[![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/"
+        "d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)]"
+        "(https://github.com/MarcSkovMadsen/awesome-streamlit)"
+    )
+    if len(PAGES) > 1:
+        selection = st.selectbox("Select App", list(PAGES.keys()))
+    else:
+        selection = list(PAGES.keys())[0]
+    page = PAGES[selection]
+
+    importlib.reload(page)  # Hack? To enable how reloading
+    page.write()
