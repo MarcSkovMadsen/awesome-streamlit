@@ -139,14 +139,14 @@ For building larger, traditional applications with data science app components t
 
 ### Notebooks - Disclaimer
 
-Streamlit is very new. There will be rough edges and things you cannot yet do. But as the principles and api of Streamlit is so simple and productive we believe they will be developed very rapidly.
+Streamlit is very new. There will be rough edges and things you cannot yet do. And maybe it turns out the product is not secure or something else. Who knows? But as the principles and api of Streamlit is so simple and productive we believe they will be developed and fixed very rapidly.
 
 Things you cannot do yet
 
 - Select from thousands of web components to make your application interactive.
   - The basic ones are there
 - Deploy to production with one click.
-  - It can be deployed as any other python web application. And it's only one file, the streamlit package and any data science packages needed. So it's very simple to deploy.
+  - It can be deployed as any other python web application. And it's only one file, the streamlit package and any data science packages needed. So it's very simple to deploy one you have done it once.
 
 More to come
 
