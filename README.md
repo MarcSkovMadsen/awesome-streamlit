@@ -10,6 +10,8 @@ This project will consist of 3 things
 - An [article](https://github.com/MarcSkovMadsen/awesome-streamlit/blob/master/AWESOME-STREAMLIT.md) on the **vision** of how awesome Streamlit is and can become.
 - An [**awesome Streamlit application**](https://awesome-streamlit.azurewebsites.net/) to accompany the article and to act as **inspiration for building and deploying awesome, multipage Streamlit apps**.
 
+You can also use this project as inspiration or as a starter template for your awesome Streamlit project.
+
 ## Awesome Resources
 
 A curated list of awesome streamlit resources. Inspired by [awesome-python](https://github.com/vinta/awesome-python) and [awesome-pandas](https://github.com/tommyod/awesome-pandas).
@@ -114,7 +116,7 @@ Thanks
   - We recommend [wsl](https://en.wikipedia.org/wiki/Windows_Subsystem_for_Linux) for For Windows 10
 - an Editor
   - We recommend [VS Code](https://code.visualstudio.com/) (Preferred) or [PyCharm](https://www.jetbrains.com/pycharm/).
-- [Git-sci](https://git-scm.com/downloads)
+- The [Git cli](https://git-scm.com/downloads)
 
 ### Installation
 
@@ -156,10 +158,52 @@ The final thing to do is to install the local requirements
 pip install -r requirements_local.txt
 ```
 
-### Run the Application
+### Build and run the Application
 
 ```bash
 streamlit run src/pages/app.py
+```
+
+or as a Docker container via
+
+```bash
+invoke docker.build --rebuild
+invoke docker.run-server
+```
+
+### Code quality and Tests
+
+We use isort, black, autoflake, pylint, mypy and pytest to ensure a high code quality and performance of our application.
+
+You can run all tests using
+
+```bash
+invoke test.all
+```
+
+### Workflow
+
+We use the power of [Invoke](http://www.pyinvoke.org/) to semi-automate the local workflow. You can see the list of available commands using
+
+```bash
+$ invoke --list
+Available tasks:
+
+  docker.build                            Build Docker image
+  docker.push                             Push the Docker container
+  docker.run                              Run the Docker container interactively.
+  docker.run-server                       Run the Docker image interactively.
+  docker.system-prune                     The docker system prune command will free up space
+  local.deploy
+  local.run-server
+  test.all (test.pre-commit, test.test)   Runs isort, autoflake, black, pylint, mypy and pytest
+  test.autoflake                          Runs autoflake to remove unused imports on all .py files recursively
+  test.bandit                             Runs Bandit the security linter from PyCQA.
+  test.black                              Runs black (autoformatter) on all .py files recursively
+  test.isort                              Runs isort (import sorter) on all .py files recursively
+  test.mypy                               Runs mypy (static type checker) on all .py files recursively
+  test.pylint                             Runs pylint (linter) on all .py files recursively to identify coding errors
+  test.pytest                             Runs pytest to identify failing tests
 ```
 
 ### CI/ CD and Hosting
