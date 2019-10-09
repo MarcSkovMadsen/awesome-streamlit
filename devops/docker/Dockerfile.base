@@ -12,4 +12,7 @@ ADD requirements.txt ./requirements.txt
 RUN pip install --upgrade pip && pip install --no-cache-dir -r requirements.txt \
     && rm -rf requirements.txt
 
+RUN python -m spacy download en_core_web_sm \
+    && python -m spacy download en_core_web_md \
+    && python -m spacy download de_core_news_sm
 ENTRYPOINT [ "/bin/bash" ]

@@ -9,8 +9,8 @@ import streamlit as st
 
 import pages.awesome_streamlit_resources
 import pages.awesome_streamlit_vision
-import pages.home
 import pages.gallery
+import pages.home
 
 PAGES = {
     "Home": pages.home,

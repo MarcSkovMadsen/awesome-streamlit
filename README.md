@@ -160,10 +160,18 @@ In a Windows terminal it's
 .venv/Scripts/activate.bat
 ```
 
-The final thing to do is to install the local requirements
+The you should install the local requirements
 
 ```bash
 pip install -r requirements_local.txt
+```
+
+Finally you need to install some [spacy](https://spacy.io/) dependencies
+
+```bash
+python -m spacy download en_core_web_sm
+python -m spacy download en_core_web_md
+python -m spacy download de_core_news_sm
 ```
 
 ### Build and run the Application

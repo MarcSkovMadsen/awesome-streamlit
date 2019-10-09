@@ -7,12 +7,13 @@ import importlib
 
 import streamlit as st
 
-from . import spreadsheet
+from . import spacyio, spreadsheet
 
-PAGES = {"Spreadsheet": spreadsheet, "Spreadsheet 2": spreadsheet}
+PAGES = {"SpacyIO": spacyio, "Spreadsheet": spreadsheet}
 
 
 def write():
+    """Used to write the contents of this page in app.py"""
     st.write(
         f"# Awesome Streamlit Gallery"
         "[![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/"
@@ -25,5 +26,9 @@ def write():
         selection = list(PAGES.keys())[0]
     page = PAGES[selection]
 
-    importlib.reload(page)  # Hack? To enable how reloading
+    try:
+        importlib.reload(page)  # Hack? To enable how reloading
+    except:
+        pass
+
     page.write()

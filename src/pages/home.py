@@ -21,8 +21,8 @@ I believe Streamlit has the **potential to become the Iphone of Data Science, Te
 The purpose of this application is to
 
 - Share list of awesome Streamlit **resources**.
-- Share a **vision** on how awesome Streamlit can be.
 - Provide a **gallery** of awesome streamlit applications.
+- Share a **vision** on how awesome Streamlit can be.
 
 """
     )

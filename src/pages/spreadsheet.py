@@ -6,6 +6,7 @@ import streamlit as st
 def write():
     """Used to write the page in the app.py file"""
     # Create Sidebar
+    st.sidebar.title("Spreadsheet")
     sheet = st.sidebar.selectbox("Select Sheet", ["Biostats", "Grades"])
     show_code = st.sidebar.checkbox("Show Code")
     show_source = st.sidebar.checkbox("Show Source")
@@ -14,14 +15,18 @@ def write():
     st.write(f"""## Spreadsheet""")
     st.write(
         """
-        Illustration of how easy it is to create a spreadsheet like application with
+        This app show how easy it is to create a spreadsheet like application with
 
         - Sheets
         - Tables
         - Plots
         - Formulas
 
-        using the power of Streamlit and Python
+        using the power of Streamlit and Python.
+
+        Authors: [Marc Skov Madsen](https://datamodelsanalytics.com/), Laurits Skov Madsen\n
+        Source: [Github](https://github.com/MarcSkovMadsen/awesome-streamlit/blob
+        /master/src/pages/spreadsheet.py)
         """
     )
     st.write("**You can change the Sheet shown in the sidebar on the left**")
