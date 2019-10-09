@@ -1,5 +1,5 @@
 """Models of app"""
-from typing import List, Optional, NamedTuple
+from typing import List, NamedTuple, Optional
 
 
 class Tag(NamedTuple):
@@ -28,4 +28,3 @@ class Resource(NamedTuple):
             result += f" [app]({self.app_url})"
 
         return result
-

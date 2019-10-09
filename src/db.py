@@ -1,4 +1,4 @@
-from shared.models import Tag, Resource
+from shared.models import Resource, Tag
 
 APP = Tag("App")
 PAGE = Tag(name="App included here")
@@ -60,4 +60,3 @@ for resource in RESOURCES:
     for tag in resource.tags:
         TAGS.append(tag)
 TAGS = sorted(list(set(TAGS)))
-

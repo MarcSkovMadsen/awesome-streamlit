@@ -8,6 +8,4 @@ def deploy(c):
 
 @task
 def run_server(c):
-    c.run(
-        "streamlit run src/app.py"
-    )
+    c.run("streamlit run src/app.py")
