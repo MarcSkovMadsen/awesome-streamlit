@@ -1,9 +1,11 @@
+"""This page is for searching and viewing the list of awesome resources"""
 import streamlit as st
 
 import db
 
 
 def write():
+    """Method used to write page in app.py"""
     st.subheader("Resources")
 
     tags = st.multiselect("Filter", db.TAGS)

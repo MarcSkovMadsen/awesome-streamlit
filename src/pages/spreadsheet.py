@@ -1,9 +1,10 @@
+"""Page for to show that its really easy to create a Spreadsheet like application"""
 import pandas as pd
 import streamlit as st
 
 
 def write():
-    st.write("TEST ABCD")
+    """Used to write the page in the app.py file"""
     # Create Sidebar
     sheet = st.sidebar.selectbox("Select Sheet", ["Biostats", "Grades"])
     show_code = st.sidebar.checkbox("Show Code")
@@ -86,10 +87,10 @@ def write():
         ).round()
 
         # Show
-        st.write(
-            """I illustrate a calculation by calculating the Test Mean.
-        After that we illustrate a calculation to show how much better the students did the 4th test compared to 1st one
-        """,
+        st.write(  # pylint-disable=line-too-long
+            "I illustrate a calculation by calculating the Test Mean."
+            " After that we illustrate a calculation to show how much better the students did"
+            " the 4th test compared to 1st one.",
             grades_mean[
                 [
                     "First name",

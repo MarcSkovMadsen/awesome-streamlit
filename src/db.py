@@ -1,3 +1,7 @@
+"""Simple 'database' of models
+
+Here you maintain the list of awesome resources
+"""
 from shared.models import Resource, Tag
 
 APP = Tag("App")

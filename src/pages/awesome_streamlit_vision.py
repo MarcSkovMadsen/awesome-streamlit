@@ -1,9 +1,11 @@
+"""Page for viewing the awesome Streamlit vision"""
 import pathlib
 
 import streamlit as st
 
 
 def write():
+    """Method used to write the page in the app.py file"""
     url = pathlib.Path(__file__).parent.parent.parent / "AWESOME-STREAMLIT.md"
     with open(url, mode="r") as file:
         readme_md_contents = "".join(file.readlines())
