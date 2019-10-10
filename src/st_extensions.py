@@ -4,7 +4,7 @@ For now these are hacks and hopefully a lot of them will be removed again as the
 extended"""
 import logging
 import sys
-
+import importlib
 import streamlit as st
 
 import config
@@ -21,8 +21,14 @@ def write_page(page):  # pylint: disable=redefined-outer-name
         page {module} -- A module with a 'def write():' function
     """
     if config.DEBUG:
-        logging.info("Writing: %s", page)
-        logging.info("In sys.modules: %s", page in sys.modules)
+        logging.info("1. Writing: %s", page)
+        logging.info("2. In sys.modules: %s", page in sys.modules)
+        try:
+            importlib.import_module(page.__name__)
+            importlib.reload(page)
+        except ImportError as identifier:
+            logging.info("3. Writing: %s", page)
+            logging.info("4. In sys.modules: %s", page in sys.modules)
     page.write()
 
 

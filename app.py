@@ -8,6 +8,7 @@ import streamlit as st
 # Import all needed packages
 # Dont write 'from src.pages import home'. Autoreload will not work!
 # Dont write 'import src.pages.home as home'. Autoreload will not work!
+# Use the same convention for importing in submodules. Otherwise Autoreload will not work!
 # cf. https://github.com/MarcSkovMadsen/awesome-streamlit/issues/2
 import config
 import src.st_extensions
@@ -19,6 +20,7 @@ import src.pages.gallery.index
 # Please import all other modules that needs livereload here
 # Dont write 'from src.pages.gallery import spacyio'. Autoreload will not work!
 # Dont write 'from src.shared.components.st_awesome as st_awesome'. Autoreload will not work!
+# Use the same convention for importing in submodules. Otherwise Autoreload will not work!
 # cf. https://github.com/MarcSkovMadsen/awesome-streamlit/issues/2
 import src.st_awesome  # pylint: disable=unused-import
 import src.pages.gallery.spacyio  # pylint: disable=unused-import

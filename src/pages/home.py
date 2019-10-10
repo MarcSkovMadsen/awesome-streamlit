@@ -40,6 +40,4 @@ Afterwards you can go to the [Streamlit docs](https://streamlit.io/docs/) to get
 
 """
     )
-    src.st_extensions.video_youtube(
-        src="https://www.youtube.com/embed/B2iAodr0fOo"
-    )
+    src.st_extensions.video_youtube(src="https://www.youtube.com/embed/B2iAodr0fOo")
