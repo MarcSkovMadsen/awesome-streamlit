@@ -1,5 +1,9 @@
 # Awesome Streamlit [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/MarcSkovMadsen/awesome-streamlit)
 
+[<img src="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-streamlit/master/streamlit.png" align="right" width="86">](https://streamlit.io)
+
+> The fastest way to build custom ML tools
+
 The purpose of this project is to share knowledge on how Awesome [Streamlit](https://streamlit.io/) is and can become. [Pull requests](https://github.com/MarcSkovMadsen/awesome-streamlit/pulls) are very welcome!
 
 Streamlit has just been [announced](https://towardsdatascience.com/coding-ml-tools-like-you-code-ml-models-ddba3357eace) (Oct 2019) but I see the potential of becoming the Iphone of Data Science Apps. And maybe it can even become the Iphone of Technical Writing, Code, Micro Apps and Python.
