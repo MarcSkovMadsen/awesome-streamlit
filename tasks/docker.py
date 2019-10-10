@@ -180,7 +180,7 @@ Running the '{image}:{tag}' Docker image
     command = (
         'docker run -it -p 80:80 --entrypoint "streamlit" '
         f"{DOCKER_REGISTRY}/{image}:{tag} "
-        "run src/app.py"
+        "run app/main.py"
     )
 
     print(command)

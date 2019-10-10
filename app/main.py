@@ -6,23 +6,19 @@
 import importlib
 
 import streamlit as st
+import streamlit_extensions as st_extensions
 
-import pages.awesome_streamlit_resources
-import pages.awesome_streamlit_vision
-import pages.gallery
-import pages.home
+# Pages need to be imported in this fashion in order to work
+# Dont know why
+from pages import home, resources, vision
+from pages.gallery import index as gallery
 
-PAGES = {
-    "Home": pages.home,
-    "Resources": pages.awesome_streamlit_resources,
-    "Gallery": pages.gallery,
-    "Vision": pages.awesome_streamlit_vision,
-}
+PAGES = {"Home": home, "Resources": resources, "Gallery": gallery, "Vision": vision}
 
 selection = st.sidebar.radio("Go to", list(PAGES.keys()))
 
 page = PAGES[selection]
-importlib.reload(page)  # Hack? To enable how reloading
+st_extensions.write_page(page)
 
 page.write()
 

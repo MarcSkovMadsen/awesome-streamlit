@@ -76,7 +76,7 @@ In the pull request you should
 
 - describe why your contribution is awesome and should be included.
 - update the [README.md](https://github.com/MarcSkovMadsen/awesome-streamlit/blob/master/README.md) file
-- update the list of RESOURCES in the [src/db.py](https://github.com/MarcSkovMadsen/awesome-streamlit/blob/master/src/db.py) file.
+- update the list of RESOURCES in the [app/db.py](https://github.com/MarcSkovMadsen/awesome-streamlit/blob/master/app/db.py) file.
 
 Thanks.
 
@@ -91,7 +91,7 @@ In the pull request you should
   - If your code is large feel free to add a `your_app_name` folder of files instead.
 - add the `your_app_name` to the
   - [src/pages/__init__.py](https://github.com/MarcSkovMadsen/awesome-streamlit/blob/master/src/pages/__init__.py) file.
-  - list of PAGES in the [src/app.py](https://github.com/MarcSkovMadsen/awesome-streamlit/blob/master/src/app.py).
+  - list of PAGES in the [app/main.py](https://github.com/MarcSkovMadsen/awesome-streamlit/blob/master/app/main.py).
 - update the [requirements.txt](https://github.com/MarcSkovMadsen/awesome-streamlit/blob/master/requirements.txt) file.
     Please specify the required version.
 - Manually test your contribution
@@ -183,7 +183,7 @@ python -m spacy download de_core_news_sm
 ### Build and run the Application
 
 ```bash
-streamlit run src/app.py
+streamlit run app/main.py
 ```
 
 or as a Docker container via
