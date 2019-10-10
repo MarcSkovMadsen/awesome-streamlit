@@ -10,7 +10,7 @@ import streamlit as st
 # Dont write 'import src.pages.home as home'. Autoreload will not work!
 # cf. https://github.com/MarcSkovMadsen/awesome-streamlit/issues/2
 import config
-import src.shared.components.st_extensions as st_extensions
+import src.st_extensions
 import src.pages.home
 import src.pages.resources
 import src.pages.vision
@@ -20,7 +20,7 @@ import src.pages.gallery.index
 # Dont write 'from src.pages.gallery import spacyio'. Autoreload will not work!
 # Dont write 'from src.shared.components.st_awesome as st_awesome'. Autoreload will not work!
 # cf. https://github.com/MarcSkovMadsen/awesome-streamlit/issues/2
-import src.shared.components.st_awesome  # pylint: disable=unused-import
+import src.st_awesome  # pylint: disable=unused-import
 import src.pages.gallery.spacyio  # pylint: disable=unused-import
 import src.pages.gallery.spreadsheet  # pylint: disable=unused-import
 
@@ -34,7 +34,7 @@ PAGES = {
 selection = st.sidebar.radio("Go to", list(PAGES.keys()))
 
 page = PAGES[selection]
-st_extensions.write_page(page)
+src.st_extensions.write_page(page)
 st.sidebar.info(
     "You can **contribute** your awesome comments, questions, resources, apps, bug reports and "
     "feature requests "

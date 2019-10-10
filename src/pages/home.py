@@ -1,18 +1,14 @@
 """Home page shown when the user enters the application"""
 import streamlit as st
-import src.shared.components.st_extensions
+import src.st_extensions
+import src.st_awesome
 
 # pylint: disable=line-too-long
 
 
 def write():
     """Used to write the page in the app.py file"""
-    st.write(
-        "# Awesome Streamlit "
-        "[![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/"
-        "d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)]"
-        "(https://github.com/MarcSkovMadsen/awesome-streamlit)"
-    )
+    src.st_awesome.title("")
     st.write(
         """
 [Streamlit](https://streamlit.io/) is [announced](https://towardsdatascience.com/coding-ml-tools-like-you-code-ml-models-ddba3357eace) as being **The fastest way to build custom Machine Learning tools** but I believe it has the potential to become much more awesome than that.
@@ -44,6 +40,6 @@ Afterwards you can go to the [Streamlit docs](https://streamlit.io/docs/) to get
 
 """
     )
-    src.shared.components.st_extensions.video_youtube(
+    src.st_extensions.video_youtube(
         src="https://www.youtube.com/embed/B2iAodr0fOo"
     )

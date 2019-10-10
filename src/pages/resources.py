@@ -3,15 +3,15 @@ from collections import defaultdict
 import streamlit as st
 
 import db
-import src.shared.components.st_extensions
-import src.shared.components.st_awesome
+import src.st_extensions
+import src.st_awesome
 
 
 def write():
     """Method used to write page in app.py"""
-    src.shared.components.st_awesome.title("Resource")
+    src.st_awesome.title("Resource")
 
-    tags = src.shared.components.st_extensions.multiselect(
+    tags = src.st_extensions.multiselect(
         "Select Tag(s)", options=db.TAGS, default=[]
     )
     st.info(

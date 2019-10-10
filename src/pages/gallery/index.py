@@ -4,8 +4,8 @@
 # In order for this to work they should be added to the APPS.__init__ file
 # pylint: disable=invalid-name
 import streamlit as st
-import src.shared.components.st_extensions
-import src.shared.components.st_awesome
+import src.st_extensions
+import src.st_awesome
 import src.pages.gallery.spacyio
 import src.pages.gallery.spreadsheet
 
@@ -17,11 +17,11 @@ APPS = {
 
 def write():
     """Used to write the contents of this page in app.py"""
-    src.shared.components.st_awesome.title("Gallery")
+    src.st_awesome.title("Gallery")
     if len(APPS) > 1:
         selection = st.selectbox("Select App", list(APPS.keys()))
     else:
         selection = list(APPS.keys())[0]
     page = APPS[selection]
 
-    src.shared.components.st_extensions.write_page(page)
+    src.st_extensions.write_page(page)
