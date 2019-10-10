@@ -20,8 +20,6 @@ selection = st.sidebar.radio("Go to", list(PAGES.keys()))
 page = PAGES[selection]
 st_extensions.write_page(page)
 
-page.write()
-
 st.sidebar.info(
     "You can **contribute** your awesome comments, questions, resources, apps, bug reports and feature requests "
     "as [issues](https://github.com/MarcSkovMadsen/awesome-streamlit/issues) or "

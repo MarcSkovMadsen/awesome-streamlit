@@ -15,7 +15,7 @@ APPS = {"SpacyIO": spacyio, "Spreadsheet": spreadsheet}
 def write():
     """Used to write the contents of this page in app.py"""
     st.write(
-        f"# Awesome Streamlit Gallery"
+        f"# Awesome Streamlit Gallery "
         "[![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/"
         "d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)]"
         "(https://github.com/MarcSkovMadsen/awesome-streamlit)"

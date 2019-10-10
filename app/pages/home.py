@@ -1,5 +1,6 @@
 """Home page shown when the user enters the application"""
 import streamlit as st
+import streamlit_extensions as st_extensions
 
 # pylint: disable=line-too-long
 
@@ -33,9 +34,9 @@ This app is maintained by Marc Skov Madsen. I'm not an experienced open source m
 so helpfull hints and suggestions are welcome.
 You can learn more about me at [datamodelsanalytics.com](https://datamodelsanalytics.com)
 
-## Introduction
+## The Magic of Streamlit
 
-The only way to truly understand how powerfull Streamlit is to play around with it
+The only way to truly understand how magical Streamlit is to play around with it
 but if you need to be convinced first, then here is the **4 minute introduction** to Streamlit!
 
 Afterwards you can go to the [Streamlit docs](https://streamlit.io/docs/) to get started.
@@ -43,7 +44,4 @@ Afterwards you can go to the [Streamlit docs](https://streamlit.io/docs/) to get
 
 """
     )
-    st.write(
-        '<iframe width="100%" height="315" src="https://www.youtube.com/embed/B2iAodr0fOo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
-        unsafe_allow_html=True,
-    )
+    st_extensions.video_youtube(src="https://www.youtube.com/embed/B2iAodr0fOo")
