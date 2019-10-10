@@ -20,6 +20,7 @@ A curated list of awesome streamlit resources. Inspired by [awesome-python](http
 ### Alternatives
 
 - [Jupyter Voila](https://blog.jupyter.org/and-voil%C3%A0-f6a2c08a4a93)
+- [plotly Dash](https://plot.ly/dash/)
 
 ### Apps
 
