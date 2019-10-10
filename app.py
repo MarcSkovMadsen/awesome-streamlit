@@ -6,8 +6,6 @@
 import streamlit as st
 import streamlit_extensions as st_extensions
 
-# Pages need to be imported in this fashion in order to work
-# Dont know why
 from src.pages import home, resources, vision
 from src.pages.gallery import index as gallery
 
