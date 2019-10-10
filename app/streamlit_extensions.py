@@ -15,7 +15,7 @@ logging.basicConfig(format="%(asctime)s - %(message)s", level=logging.INFO)
 def write_page(page):  # pylint: disable=redefined-outer-name
     """Writes the specified page/module
 
-    Our multipage app is structured into sub-pages with a `def write()` function
+    Our multipage app is structured into sub-files with a `def write()` function
 
     Arguments:
         page {module} -- A module with a 'def write():' function
