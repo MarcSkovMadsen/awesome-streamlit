@@ -76,7 +76,7 @@ In the pull request you should
 
 - describe why your contribution is awesome and should be included.
 - update the [README.md](https://github.com/MarcSkovMadsen/awesome-streamlit/blob/master/README.md) file
-- update the list of RESOURCES in the [app/db.py](https://github.com/MarcSkovMadsen/awesome-streamlit/blob/master/app/db.py) file.
+- update the list of RESOURCES in the [src/db.py](https://github.com/MarcSkovMadsen/awesome-streamlit/blob/master/src/db.py) file.
 
 Thanks.
 
@@ -87,7 +87,7 @@ The best way to contribute an awesome app is via a [Pull request](https://github
 In the pull request you should
 
 - describe why your contribution is awesome and should be included.
-- add your code in a new `your_app_name.py` file in the `app/pages/gallery` folder.
+- add your code in a new `your_app_name.py` file in the `src/pages/gallery` folder.
   - If your code is large feel free to add a `your_app_name` folder of files instead.
 - your code should look like
 
@@ -109,14 +109,14 @@ if __name__ == "__main__":
     write()
 ```
 
-- Please note magic in sub pages does not work. So don't use magic.
-- Run `streamlit run app/gallery/your_app_name.py` when developing in order for reload to work
+- Please note magic in sub pages does not work. So **don't use magic**.
+- Run `streamlit run src/gallery/your_app_name.py` when developing in order for reload to work
 - add the `your_app_name` to the
-  - list of APPS in the [app/gallery/index.py](https://github.com/MarcSkovMadsen/awesome-streamlit/blob/master/app/gallery/index.py).
+  - list of APPS in the [src/gallery/index.py](https://github.com/MarcSkovMadsen/awesome-streamlit/blob/master/src/gallery/index.py).
 - update the [requirements.txt](https://github.com/MarcSkovMadsen/awesome-streamlit/blob/master/requirements.txt) file.
     Please specify the required version.
 - Run the automated tests using `invoke test.all` and fix all errors from your app
-- Run the full app via `streamlit run app/main.py` and manually test your contribution.
+- Run the full app via `streamlit run app.py` and manually test your contribution.
 
 Please note that your app should not require high compute power as we are running on one of the cheapest tiers available on Azure.
 
@@ -199,7 +199,7 @@ python -m spacy download de_core_news_sm
 ### Build and run the Application
 
 ```bash
-streamlit run app/main.py
+streamlit run app.py
 ```
 
 or as a Docker container via
