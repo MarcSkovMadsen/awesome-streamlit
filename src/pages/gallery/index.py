@@ -4,9 +4,10 @@
 # In order for this to work they should be added to the APPS.__init__ file
 # pylint: disable=invalid-name
 import streamlit as st
-import streamlit_extensions as st_extensions
-from src.shared import components as st_awesome
-from . import spacyio, spreadsheet
+import st_extensions
+import src.shared.components.st_awesome as st_awesome
+import src.pages.gallery.spacyio as spacyio
+import src.pages.gallery.spreadsheet as spreadsheet
 
 APPS = {"SpacyIO": spacyio, "Spreadsheet": spreadsheet}
 

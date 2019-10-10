@@ -3,8 +3,8 @@ from collections import defaultdict
 import streamlit as st
 
 import db
-import streamlit_extensions as st_extensions
-from src.shared import components as st_awesome
+import st_extensions
+import src.shared.components.st_awesome as st_awesome
 
 
 def write():

@@ -4,6 +4,7 @@ For now these are hacks and hopefully a lot of them will be removed again as the
 extended"""
 import importlib
 import logging
+import sys
 
 import streamlit as st
 
@@ -20,17 +21,10 @@ def write_page(page):  # pylint: disable=redefined-outer-name
     Arguments:
         page {module} -- A module with a 'def write():' function
     """
-    try:
-        if config.RELOAD_MODULES:
-            importlib.import_module(page.__name__)
-            importlib.reload(page)
-    except ImportError as _:
-        logging.info(
-            """Info. Cannot reload %s.
-            Please reload manually by navigating to another page and back
-            """,
-            page,
-        )
+    if config.DEBUG:
+        logging.info("Loading: %s", page)
+        logging.info("In sys.modules: %s", page in sys.modules)
+
     page.write()
 
 

@@ -110,9 +110,9 @@ if __name__ == "__main__":
 ```
 
 - Please note magic in sub pages does not work. So **don't use magic**.
-- Run `streamlit run src/gallery/your_app_name.py` when developing in order for reload to work
 - add the `your_app_name` to the
   - list of APPS in the [src/gallery/index.py](https://github.com/MarcSkovMadsen/awesome-streamlit/blob/master/src/gallery/index.py).
+- import your page in the app.py to enable automatic reload. You need to use the full path src.pages.gallery.your_app_name for automatic reload to work. [cf.](https://github.com/MarcSkovMadsen/awesome-streamlit/issues/2)
 - update the [requirements.txt](https://github.com/MarcSkovMadsen/awesome-streamlit/blob/master/requirements.txt) file.
     Please specify the required version.
 - Run the automated tests using `invoke test.all` and fix all errors from your app
