@@ -2,7 +2,6 @@
 
 For now these are hacks and hopefully a lot of them will be removed again as the streamlit api is
 extended"""
-import importlib
 import logging
 import sys
 
@@ -22,9 +21,8 @@ def write_page(page):  # pylint: disable=redefined-outer-name
         page {module} -- A module with a 'def write():' function
     """
     if config.DEBUG:
-        logging.info("Loading: %s", page)
+        logging.info("Writing: %s", page)
         logging.info("In sys.modules: %s", page in sys.modules)
-
     page.write()
 
 

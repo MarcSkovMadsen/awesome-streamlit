@@ -1,6 +1,6 @@
 """Home page shown when the user enters the application"""
 import streamlit as st
-import st_extensions
+import src.shared.components.st_extensions
 
 # pylint: disable=line-too-long
 
@@ -44,4 +44,6 @@ Afterwards you can go to the [Streamlit docs](https://streamlit.io/docs/) to get
 
 """
     )
-    st_extensions.video_youtube(src="https://www.youtube.com/embed/B2iAodr0fOo")
+    src.shared.components.st_extensions.video_youtube(
+        src="https://www.youtube.com/embed/B2iAodr0fOo"
+    )

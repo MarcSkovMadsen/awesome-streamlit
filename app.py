@@ -4,30 +4,37 @@
 # In order for this to work they should be added to the pages.__init__ file
 # pylint: disable=invalid-name
 import streamlit as st
-import st_extensions
 
-# Dont write 'from src.pages import home'. Autoreload will not work.
+# Import all needed packages
+# Dont write 'from src.pages import home'. Autoreload will not work!
+# Dont write 'import src.pages.home as home'. Autoreload will not work!
 # cf. https://github.com/MarcSkovMadsen/awesome-streamlit/issues/2
-import src.pages.home as home
-import src.pages.resources as resources
-import src.pages.vision as vision
-import src.pages.gallery.index as index
+import config
+import src.shared.components.st_extensions as st_extensions
+import src.pages.home
+import src.pages.resources
+import src.pages.vision
+import src.pages.gallery.index
 
 # Please import all other modules that needs livereload here
 # Dont write 'from src.pages.gallery import spacyio'. Autoreload will not work!
-# Dont write 'from src.shared.components.st_awesome import as st_awesome'. Autoreload will not work!
+# Dont write 'from src.shared.components.st_awesome as st_awesome'. Autoreload will not work!
 # cf. https://github.com/MarcSkovMadsen/awesome-streamlit/issues/2
 import src.shared.components.st_awesome  # pylint: disable=unused-import
 import src.pages.gallery.spacyio  # pylint: disable=unused-import
 import src.pages.gallery.spreadsheet  # pylint: disable=unused-import
 
-PAGES = {"Home": home, "Resources": resources, "Gallery": index, "Vision": vision}
+PAGES = {
+    "Home": src.pages.home,
+    "Resources": src.pages.resources,
+    "Gallery": src.pages.gallery.index,
+    "Vision": src.pages.vision,
+}
 
 selection = st.sidebar.radio("Go to", list(PAGES.keys()))
 
 page = PAGES[selection]
 st_extensions.write_page(page)
-
 st.sidebar.info(
     "You can **contribute** your awesome comments, questions, resources, apps, bug reports and "
     "feature requests "

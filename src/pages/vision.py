@@ -2,7 +2,7 @@
 import pathlib
 
 import streamlit as st
-import src.shared.components.st_awesome as st_awesome
+import src.shared.components.st_awesome
 
 
 def write():
@@ -11,5 +11,5 @@ def write():
     with open(url, mode="r") as file:
         readme_md_contents = "".join(file.readlines())
     readme_md_contents = readme_md_contents.split("\n", 3)[-1]
-    st_awesome.title("Vision")
+    src.shared.components.st_awesome.title("Vision")
     st.markdown(readme_md_contents)
