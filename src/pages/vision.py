@@ -2,6 +2,7 @@
 import pathlib
 
 import streamlit as st
+import streamlit_awesome as st_awesome
 
 
 def write():
@@ -10,10 +11,5 @@ def write():
     with open(url, mode="r") as file:
         readme_md_contents = "".join(file.readlines())
     readme_md_contents = readme_md_contents.split("\n", 3)[-1]
-    st.write(
-        f"# Awesome Streamlit Vision "
-        "[![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/"
-        "d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)]"
-        "(https://github.com/MarcSkovMadsen/awesome-streamlit)"
-    )
+    st_awesome.title("Vision")
     st.markdown(readme_md_contents)

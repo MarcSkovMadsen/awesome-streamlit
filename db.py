@@ -2,7 +2,7 @@
 
 Here you maintain the list of awesome resources
 """
-from shared.models import Resource, Tag
+from src.shared.models import Resource, Tag
 
 CODE = Tag("Code")
 APP = Tag("Apps")
@@ -79,7 +79,10 @@ RESOURCES = [
     ),
     Resource(
         name="Sentiment Analyzer Tool",
-        url="https://www.linkedin.com/posts/patidarparas13_code-ml-machinelearning-ugcPost-6585745929062703104-ttkv",
+        url=(
+            "https://www.linkedin.com/posts/patidarparas13_code-ml-machinelearning-"
+            "ugcPost-6585745929062703104-ttkv"
+        ),
         tags=[APP, CODE, SOCIAL],
     ),
 ]

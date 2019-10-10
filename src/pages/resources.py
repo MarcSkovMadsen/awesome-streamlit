@@ -4,21 +4,17 @@ import streamlit as st
 
 import db
 import streamlit_extensions as st_extensions
+import streamlit_awesome as st_awesome
 
 
 def write():
     """Method used to write page in app.py"""
-    st.write(
-        f"# Awesome Streamlit Resources "
-        "[![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/"
-        "d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)]"
-        "(https://github.com/MarcSkovMadsen/awesome-streamlit)"
-    )
+    st_awesome.title("Resource")
 
     tags = st_extensions.multiselect("Select Tag(s)", options=db.TAGS, default=[])
     st.info(
-        """Please note that resources can belong to multiple categories!
-    We list each resource under **one category only**"""
+        """Please note that resources can have multiple tags!
+    We list each resource under **a most important tag only**"""
     )
     if not tags:
         resources = db.RESOURCES

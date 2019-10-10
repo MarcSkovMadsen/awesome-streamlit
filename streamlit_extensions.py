@@ -27,11 +27,9 @@ def write_page(page):  # pylint: disable=redefined-outer-name
     except ImportError as _:
         logging.info(
             """Info. Cannot reload %s.
-            Please use streamlit run '%s' directly while developing
-            or reload manually by navigating to another page and back
+            Please reload manually by navigating to another page and back
             """,
             page,
-            page.__file__,
         )
     page.write()
 
@@ -47,7 +45,9 @@ def video_youtube(src: str, width="100%", height=315):
         height {int} -- The height of the video (default: {315})
     """
     st.write(
-        f'<iframe width="{width}" height="{height}" src="{src}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+        f'<iframe width="{width}" height="{height}" src="{src}" frameborder="0" '
+        'allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" '
+        "allowfullscreen></iframe>",
         unsafe_allow_html=True,
     )
 
