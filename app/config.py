@@ -1,2 +1,2 @@
 """Configuration file for Local Development"""
-RELOAD_MODULES = False
+RELOAD_MODULES = True

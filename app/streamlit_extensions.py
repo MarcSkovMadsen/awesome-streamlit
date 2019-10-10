@@ -5,8 +5,9 @@ extended"""
 import importlib
 import config
 import logging
+import pages.gallery
 
-logging.basicConfig(format="%(name)s - %(levelname)s - %(message)s")
+logging.basicConfig(format="%(asctime)s - %(message)s", level=logging.INFO)
 
 
 def write_page(module_):  # pylint: disable=redefined-outer-name
@@ -15,6 +16,13 @@ def write_page(module_):  # pylint: disable=redefined-outer-name
     Arguments:
         module_ {[type]} -- A module with a 'def write():' function
     """
-    logging.info(f"module %s reloaded", module_)
-    importlib.reload(module_)
+    if config.RELOAD_MODULES:
+        try:
+            importlib.reload(module_)
+            logging.info(f"module %s reloaded", module_)
+        except ImportError as identifier:
+            if "module pages." in identifier.msg:
+                importlib.reload(pages.gallery)
+                logging.info(f"module %s reloaded", pages.gallery)
+
     module_.write()

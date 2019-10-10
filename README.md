@@ -87,11 +87,10 @@ The best way to contribute an awesome app is via a [Pull request](https://github
 In the pull request you should
 
 - describe why your contribution is awesome and should be included.
-- add your code in a new `your_app_name.py` file in the `src/pages` folder.
+- add your code in a new `your_app_name.py` file in the `app/pages/gallery` folder.
   - If your code is large feel free to add a `your_app_name` folder of files instead.
 - add the `your_app_name` to the
-  - [src/pages/__init__.py](https://github.com/MarcSkovMadsen/awesome-streamlit/blob/master/src/pages/__init__.py) file.
-  - list of PAGES in the [app/main.py](https://github.com/MarcSkovMadsen/awesome-streamlit/blob/master/app/main.py).
+  - list of APPS in the [app/gallery/index.py](https://github.com/MarcSkovMadsen/awesome-streamlit/blob/master/app/gallery/index.py).
 - update the [requirements.txt](https://github.com/MarcSkovMadsen/awesome-streamlit/blob/master/requirements.txt) file.
     Please specify the required version.
 - Manually test your contribution
@@ -255,8 +254,8 @@ The basic layout of a application is as simple as
 
 ```bash
 .
-└── src
-    └── app.py
+└── app
+    └── main.py
 ```
 
 As our application grows we would refactor our app.py file into multiple folders and files.
@@ -276,8 +275,8 @@ and end up with a project structure like
 
 ```bash
 .
-└── src
-    ├── app.py
+└── app
+    ├── main.py
     └── assets
     |    └── css
     |    |   ├── app.css
@@ -307,7 +306,7 @@ and end up with a project structure like
 
 Further refactoring is guided by by [this](https://itnext.io/choosing-a-highly-scalable-folder-structure-in-angular-d987de65ec7) blog post and the [Angular Style Guide](https://angular.io/guide/styleguide).
 
-We place our tests in a `test` folder in the root folder organized with folders similar to the `src` folder and file names with a `test_` prefix.
+We place our tests in a `test` folder in the root folder organized with folders similar to the `app` folder and file names with a `test_` prefix.
 
 ```bash
 .
