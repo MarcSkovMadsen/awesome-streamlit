@@ -80,7 +80,7 @@ RESOURCES = [
     Resource(
         name="Sentiment Analyzer Tool",
         url="https://www.linkedin.com/posts/patidarparas13_code-ml-machinelearning-ugcPost-6585745929062703104-ttkv",
-        tags=[CODE, APP, SOCIAL],
+        tags=[APP, CODE, SOCIAL],
     ),
 ]
 

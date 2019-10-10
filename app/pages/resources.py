@@ -1,9 +1,9 @@
 """This page is for searching and viewing the list of awesome resources"""
 from collections import defaultdict
-
 import streamlit as st
 
 import db
+import streamlit_extensions as st_extensions
 
 
 def write():
@@ -15,8 +15,11 @@ def write():
         "(https://github.com/MarcSkovMadsen/awesome-streamlit)"
     )
 
-    tags = st.multiselect("Filter", db.TAGS)
-
+    tags = st_extensions.multiselect("Select Tag(s)", options=db.TAGS, default=[])
+    st.info(
+        """Please note that resources can belong to multiple categories!
+    We list each resource under **one category only**"""
+    )
     if not tags:
         resources = db.RESOURCES
     else:
@@ -43,3 +46,7 @@ def write():
     if st.sidebar.checkbox("Show Resource JSON"):
         st.subheader("Source JSON")
         st.write(db.RESOURCES)
+
+
+if __name__ == "__main-_":
+    write()

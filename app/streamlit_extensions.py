@@ -50,3 +50,19 @@ def video_youtube(src: str, width="100%", height=315):
         f'<iframe width="{width}" height="{height}" src="{src}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
         unsafe_allow_html=True,
     )
+
+
+def multiselect(label, options, default, format_func=str):
+    """multiselect extension that enables default to be a subset list of the list of objects
+     - not a list of strings
+
+     Assumes that options have unique format_func representations
+
+     cf. https://github.com/streamlit/streamlit/issues/352
+     """
+    options_ = {format_func(option): option for option in options}
+    default_ = [format_func(option) for option in default]
+    selections = st.multiselect(
+        label, options=list(options_.keys()), default=default_, format_func=format_func
+    )
+    return [options_[format_func(selection)] for selection in selections]
