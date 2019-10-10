@@ -2,7 +2,7 @@
 import pathlib
 
 import streamlit as st
-import streamlit_awesome as st_awesome
+from src.shared import components as st_awesome
 
 
 def write():

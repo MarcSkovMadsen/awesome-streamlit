@@ -9,7 +9,6 @@ import streamlit_extensions as st_extensions
 # Pages need to be imported in this fashion in order to work
 # Dont know why
 from src.pages import home, resources, vision
-import src.pages.gallery.index as gallery
 from src.pages.gallery import index as gallery
 
 PAGES = {"Home": home, "Resources": resources, "Gallery": gallery, "Vision": vision}

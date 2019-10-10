@@ -11,8 +11,8 @@ EXPOSE 80
 RUN mkdir ~/.streamlit
 RUN cp .streamlit/config.prod.toml ~/.streamlit/config.toml
 RUN cp .streamlit/credentials.prod.toml ~/.streamlit/credentials.toml
-RUN cp app/config.prod.py app/config.py
+RUN cp config.prod.py config.py
 
 WORKDIR /app
 
-ENTRYPOINT [ "streamlit", "run", "app/main.py" ]
+ENTRYPOINT [ "streamlit", "run", "app.py" ]

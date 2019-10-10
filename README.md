@@ -246,7 +246,7 @@ Available tasks:
 
 ### Configuration
 
-You can configure the app in the `app/config.py` file.
+You can configure the app in the `config.py` file.
 
 Please note that streamlit has its own config files in the `~/.streamlit` folder.
 
@@ -277,8 +277,7 @@ The basic layout of a application is as simple as
 
 ```bash
 .
-└── app
-    └── main.py
+└── app.py
 ```
 
 As our application grows we would refactor our app.py file into multiple folders and files.
@@ -298,8 +297,8 @@ and end up with a project structure like
 
 ```bash
 .
-└── app
-    ├── main.py
+├── app.py
+└── src
     └── assets
     |    └── css
     |    |   ├── app.css

@@ -25,7 +25,8 @@ def write():
         using the power of Streamlit and Python.
 
         Authors: [Marc Skov Madsen](https://datamodelsanalytics.com/), Laurits Skov Madsen\n
-        Source: [Github](https://github.com/MarcSkovMadsen/awesome-streamlit/blob/master/app/pages/spreadsheet.py)
+        Source: [Github](https://github.com/MarcSkovMadsen/awesome-streamlit/blob/master/src/
+        pages/spreadsheet.py)
         """
     )
     st.write("**You can change the Sheet shown in the sidebar on the left**")
