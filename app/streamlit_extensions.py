@@ -16,13 +16,13 @@ def write_page(module_):  # pylint: disable=redefined-outer-name
     Arguments:
         module_ {[type]} -- A module with a 'def write():' function
     """
-    if config.RELOAD_MODULES:
-        try:
-            importlib.reload(module_)
-            logging.info(f"module %s reloaded", module_)
-        except ImportError as identifier:
-            if "module pages." in identifier.msg:
-                importlib.reload(pages.gallery)
-                logging.info(f"module %s reloaded", pages.gallery)
-
+    try:
+        importlib.import_module(module_.__name__)
+        importlib.reload(module_)
+    except ImportError as e:
+        logging.info(
+            f"""Warning. cannot reload %s. Please use streamlit run '%s' directly while developing""",
+            module_,
+            module_.__file__,
+        )
     module_.write()

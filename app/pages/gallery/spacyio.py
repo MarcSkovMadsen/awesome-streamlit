@@ -147,3 +147,6 @@ def write():
     st.header("JSON model meta")
     if st.button("Show JSON model meta"):
         st.json(nlp.meta)
+
+if __name__ == "__main__":
+    write()

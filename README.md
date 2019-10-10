@@ -89,17 +89,34 @@ In the pull request you should
 - describe why your contribution is awesome and should be included.
 - add your code in a new `your_app_name.py` file in the `app/pages/gallery` folder.
   - If your code is large feel free to add a `your_app_name` folder of files instead.
+- your code should look like
+
+```python
+"""APP DESCRIPTION"""
+def write():
+    st.title("APP NAME")
+    st.write(
+        """
+        DESCRIPTION
+
+        Author: [YOUR NAME](https://URL_TO_ME))\n
+        Source: [Github](https://github.com/URL_TO_CODE)
+        """
+    )
+    # Your goes code below
+
+if __name__ == "__main__":
+    write()
+```
+
+- Please note magic in sub pages does not work. So don't use magic.
+- Run `streamlit run app/gallery/your_app_name.py` when developing in order for reload to work
 - add the `your_app_name` to the
   - list of APPS in the [app/gallery/index.py](https://github.com/MarcSkovMadsen/awesome-streamlit/blob/master/app/gallery/index.py).
 - update the [requirements.txt](https://github.com/MarcSkovMadsen/awesome-streamlit/blob/master/requirements.txt) file.
     Please specify the required version.
-- Manually test your contribution
-
-Finally you need to make sure all automated tests pass by running
-
-```bash
-invoke test.all
-```
+- Run the automated tests using `invoke test.all` and fix all errors from your app
+- Run the full app via `streamlit run app/main.py` and manually test your contribution.
 
 Please note that your app should not require high compute power as we are running on one of the cheapest tiers available on Azure.
 
@@ -226,6 +243,12 @@ Available tasks:
   test.pylint                             Runs pylint (linter) on all .py files recursively to identify coding errors
   test.pytest                             Runs pytest to identify failing tests
 ```
+
+### Configuration
+
+You can configure the app in the `app/config.py` file.
+
+Please note that streamlit has its own config files in the `~/.streamlit` folder.
 
 ### CI/ CD and Hosting
 
