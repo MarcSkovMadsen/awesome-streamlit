@@ -130,7 +130,7 @@ def write():
         Source: [Github](https://github.com/URL_TO_CODE)
         """
     )
-    # Your goes code below
+    # Your code goes below
 
 if __name__ == "__main__":
     write()
