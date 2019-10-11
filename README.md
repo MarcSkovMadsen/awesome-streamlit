@@ -107,6 +107,8 @@ In the pull request you should
 
 ```python
 """APP DESCRIPTION"""
+import streamlit as st
+
 def write():
     st.title("APP NAME")
     st.write(
