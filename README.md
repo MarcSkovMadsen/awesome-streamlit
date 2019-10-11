@@ -115,7 +115,7 @@ def write():
         """
         DESCRIPTION
 
-        Author: [YOUR NAME](https://URL_TO_ME))\n
+        Author: [YOUR NAME](https://URL_TO_YOU))\n
         Source: [Github](https://github.com/URL_TO_CODE)
         """
     )
@@ -128,9 +128,9 @@ if __name__ == "__main__":
 - Please note magic in sub pages does not work. So **don't use magic**.
 - add the `your_app_name` to the
   - list of APPS in the [src/gallery/index.py](https://github.com/MarcSkovMadsen/awesome-streamlit/blob/master/src/gallery/index.py).
-- import your page in the app.py to enable automatic reload. You need to use the full path src.pages.gallery.your_app_name for automatic reload to work. [cf.](https://github.com/MarcSkovMadsen/awesome-streamlit/issues/2)
+- import your page in the app.py to enable automatic reload. You need to use the full path src.pages.gallery.your_app_name for automatic reload to work. Cf. this [issue](https://github.com/MarcSkovMadsen/awesome-streamlit/issues/2)
 - update the [requirements.txt](https://github.com/MarcSkovMadsen/awesome-streamlit/blob/master/requirements.txt) file.
-    Please specify the required version.
+    Please specify the required versions.
 - Run the automated tests using `invoke test.all` and fix all errors from your app
 - Run the full app via `streamlit run app.py` and manually test your contribution.
 
@@ -212,7 +212,7 @@ python -m spacy download en_core_web_md
 python -m spacy download de_core_news_sm
 ```
 
-### Build and run the Application
+### Build and run the Application Locally
 
 ```bash
 streamlit run app.py
@@ -225,9 +225,34 @@ invoke docker.build --rebuild
 invoke docker.run-server
 ```
 
+### Run the Application using the image on Dockerhub
+
+If you don't wan't to clone the repo and build the docker container you can just use `docker run` to run the image from [Dockerhub](https://cloud.docker.com/u/marcskovmadsen/repository/docker/marcskovmadsen/awesome-streamlit)
+
+To run bash interactively
+
+```bash
+docker run -it -p 80:80 --entrypoint "/bin/bash" marcskovmadsen/awesome-streamlit:latest
+```
+
+To run the streamlit interactively on port 80
+
+```bash
+docker run -it -p 80:80 --entrypoint "streamlit" marcskovmadsen/awesome-streamlit:latest run app.py
+```
+
 ### Code quality and Tests
 
-We use isort, black, autoflake, pylint, mypy and pytest to ensure a high code quality and performance of our application.
+We use
+
+- [isort](https://pypi.org/project/isort/) for sorting import statements
+- [autoflake] to remove unused imports and unused variables
+- [black](https://pypi.org/project/black/) the opinionated code formatter
+- [pylint](https://www.pylint.org/) for static analysis
+- [mypy](https://github.com/python/mypy) for static type checking
+- [pytest](https://github.com/pytest-dev/pytest) for unit to functional tests
+
+to ensure a high quality of our code and application.
 
 You can run all tests using
 
@@ -246,10 +271,8 @@ Available tasks:
   docker.build                            Build Docker image
   docker.push                             Push the Docker container
   docker.run                              Run the Docker container interactively.
-  docker.run-server                       Run the Docker image interactively.
+  docker.run-server                       Run the Docker container interactively
   docker.system-prune                     The docker system prune command will free up space
-  local.deploy
-  local.run-server
   test.all (test.pre-commit, test.test)   Runs isort, autoflake, black, pylint, mypy and pytest
   test.autoflake                          Runs autoflake to remove unused imports on all .py files recursively
   test.bandit                             Runs Bandit the security linter from PyCQA.
@@ -264,7 +287,7 @@ Available tasks:
 
 You can configure the app in the `config.py` file.
 
-Please note that streamlit has its own config files in the `~/.streamlit` folder.
+Please note that Streamlit has its own config files in the `~/.streamlit` folder.
 
 ### CI/ CD and Hosting
 
