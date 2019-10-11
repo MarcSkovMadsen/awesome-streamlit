@@ -25,6 +25,7 @@ and
   - [https://github.com/streamlit/streamlit/issues/367](https://github.com/streamlit/streamlit/issues/367)
   - [https://github.com/MarcSkovMadsen/awesome-streamlit/issues/6](https://github.com/MarcSkovMadsen/awesome-streamlit/issues/6)
 
+If you know how to solve this please let me know. Thanks
 
 ## Awesome Resources
 
