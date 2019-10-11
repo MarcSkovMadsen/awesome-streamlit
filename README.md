@@ -17,7 +17,7 @@ You can also use this project as inspiration or as a starter template for your a
 
 I'm working on getting it up and running but there are issues. Cf.
 
-- [https://discuss.streamlit.io/t/awesome-streamlit-org-404-message/381/2]([https://discuss.streamlit.io/t/awesome-streamlit-org-404-message/381/2]) or
+- [https://discuss.streamlit.io/t/awesome-streamlit-org-404-message/381/2]([https://discuss.streamlit.io/t/awesome-streamlit-org-404-message/381/2) or
   - [https://github.com/MarcSkovMadsen/awesome-streamlit/issues/5](https://github.com/MarcSkovMadsen/awesome-streamlit/issues/5)
 
 and
