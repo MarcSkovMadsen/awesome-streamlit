@@ -1,3 +1,5 @@
+"""This module provides a reference test example for
+https://github.com/MarcSkovMadsen/awesome-streamlit/issues/2"""
 import streamlit as st
 import st_extensions  # Hot reloading works in st_extensions.py file
 import bf.b  # Hot reloading works in b.py file
