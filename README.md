@@ -19,12 +19,8 @@ You can also use this project as inspiration or as a starter template for your a
 
 ## Awesome-streamlit.org is not yet running
 
-I'm working on getting it up and running but there are issues. Cf.
+I'm working on getting it up and running but there is an issue. Cf.
 
-- [https://discuss.streamlit.io/t/awesome-streamlit-org-404-message/381/2]([https://discuss.streamlit.io/t/awesome-streamlit-org-404-message/381/2) or
-  - [https://github.com/MarcSkovMadsen/awesome-streamlit/issues/5](https://github.com/MarcSkovMadsen/awesome-streamlit/issues/5)
-
-and
 - [https://discuss.streamlit.io/t/streamlit-app-deployed-as-azure-webapp-for-containers-becomes-unresponsive-over-time/330]
   - [https://github.com/streamlit/streamlit/issues/367](https://github.com/streamlit/streamlit/issues/367)
   - [https://github.com/MarcSkovMadsen/awesome-streamlit/issues/6](https://github.com/MarcSkovMadsen/awesome-streamlit/issues/6)

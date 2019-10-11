@@ -9,7 +9,7 @@ import src.st_awesome
 
 def write():
     """Method used to write page in app.py"""
-    src.st_awesome.title("Resource")
+    src.st_awesome.title("Resources")
 
     tags = src.st_extensions.multiselect("Select Tag(s)", options=db.TAGS, default=[])
     st.info(
