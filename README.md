@@ -27,15 +27,13 @@ and
 
 If you know how to solve this please let me know. Thanks
 
-## Introduction to Streamlit
-
 ## The Magic of Streamlit
 
 The only way to truly understand how magical Streamlit is to play around with it but if you need to be convinced first, then here is the **4 minute introduction** to Streamlit!
 
 Afterwards you can go to the [Streamlit docs](https://streamlit.io/docs/) to get started.
 
-<iframe width="100%" height="315" src="https://www.youtube.com/embed/B2iAodr0fOo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+[![Introduction to Streamlit](https://github.com/MarcSkovMadsen/awesome-streamlit/blob/master/assets/youtube-introduction-to-streamlit.png)](https://www.youtube.com/watch?v=B2iAodr0fOo&feature=youtu.be "Introduction to streamlit")
 
 ## Awesome Resources
 
