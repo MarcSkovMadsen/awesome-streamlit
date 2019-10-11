@@ -85,6 +85,16 @@ RESOURCES = [
         ),
         tags=[APP, CODE, SOCIAL],
     ),
+    Resource(
+        name="Streamlit-components-demo App",
+        url=("https://fullstackstation.com/streamlit-components-demo"),
+        tags=[APP],
+    ),
+    Resource(
+        name="Streamlit-components-demo Code",
+        url=("https://github.com/virusvn/streamlit-components-demo"),
+        tags=[CODE],
+    ),
 ]
 
 TAGS = []

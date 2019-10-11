@@ -47,14 +47,20 @@ A curated list of awesome streamlit resources. Inspired by [awesome-python](http
 
 ### Alternatives
 
+- [Bokeh](https://bokeh.pydata.org/en/latest/index.html)
 - [Jupyter Voila](https://blog.jupyter.org/and-voil%C3%A0-f6a2c08a4a93)
-- [plotly Dash](https://plot.ly/dash/)
+- [Plotly Dash](https://plot.ly/dash/)
 
 ### Apps
 
 - [Kaggle Mushrooms Dashboard](https://github.com/pierpaolo28/Data-Visualization/tree/master/Streamlit)
+- [Sentiment Analyzer Tool](https://www.linkedin.com/posts/patidarparas13_code-ml-machinelearning-ugcPost-6585745929062703104-ttkv)
 - [SpacyIO Application](https://gist.github.com/ines/b320cb8441b590eedf19137599ce6685)
-- [Sentiment Analyzer Tool](https://www.linkedin.com/posts/patidarparas13_code-ml-machinelearning-ugcPost-6585745929062703104-ttkv")
+- [Streamlit-components-demo App](https://fullstackstation.com/streamlit-components-demo)
+
+### Code
+
+- [Streamlit-components-demo Code](https://github.com/virusvn/streamlit-components-demo)
 
 ### Social
 
@@ -71,7 +77,7 @@ A curated list of awesome streamlit resources. Inspired by [awesome-python](http
 
 ### Technical
 
-- [Hacker News technical discussion of Streamlit](https://news.ycombinator.com/item?id=21158487)
+- [Hacker News technical discussion of how Streamlit work](https://news.ycombinator.com/item?id=21158487)
 
 ### The beginning
 
