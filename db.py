@@ -4,14 +4,15 @@ Here you maintain the list of awesome resources
 """
 from src.shared.models import Resource, Tag
 
-CODE = Tag("Code")
-APP = Tag("Apps")
-PAGE = Tag(name="App included here")
-STREAMLITIO = Tag(name="Streamlit.io")
-THEBEGINNING = Tag(name="The beginning")
-SOCIAL = Tag(name="Social")
-TECHNICAL = Tag(name="Technical")
 ALTERNATIVE = Tag(name="Alternatives")
+APP = Tag("Apps")
+CODE = Tag("Code")
+DEPLOYMENT = Tag(name="Deployment")
+PAGE = Tag(name="App included here")
+SOCIAL = Tag(name="Social")
+STREAMLITIO = Tag(name="Streamlit.io")
+TECHNICAL = Tag(name="Technical")
+THEBEGINNING = Tag(name="The beginning")
 
 # Please note that in the README.md resources will be listed
 # under the first tag in the tags list only
@@ -93,6 +94,16 @@ RESOURCES = [
     Resource(
         name="Streamlit-components-demo Code",
         url=("https://github.com/virusvn/streamlit-components-demo"),
+        tags=[CODE],
+    ),
+    Resource(
+        name="Deploying Streamlit app to EC2 instance",
+        url="https://medium.com/@pokepim/deploying-streamlit-app-to-ec2-instance-7a7edeffbb54",
+        tags=[CODE],
+    ),
+    Resource(
+        name="Uber Data Explorer App",
+        url="https://dataexplorerlit.herokuapp.com/",
         tags=[CODE],
     ),
 ]

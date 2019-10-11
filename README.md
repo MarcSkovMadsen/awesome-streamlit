@@ -6,7 +6,7 @@
 
 The purpose of this project is to share knowledge on how Awesome [Streamlit](https://streamlit.io/) is and can become. [Pull requests](https://github.com/MarcSkovMadsen/awesome-streamlit/pulls) are very welcome!
 
-Streamlit has just been [announced](https://towardsdatascience.com/coding-ml-tools-like-you-code-ml-models-ddba3357eace) (Oct 2019) but I see the potential of becoming the Iphone of Data Science Apps. And maybe it can even become the Iphone of Technical Writing, Code, Micro Apps and Python.
+Streamlit has just been [announced](https://towardsdatascience.com/coding-ml-tools-like-you-code-ml-models-ddba3357eace) (Oct 2019) but I see the potential of becoming the **Iphone of Data Science Apps**. And maybe it can even become the Iphone of Technical Writing, Code, Micro Apps and Python.
 
 This project will consist of 3 things
 

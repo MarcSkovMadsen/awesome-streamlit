@@ -22,9 +22,10 @@ import src.pages.gallery.index
 # Dont write 'from src.shared.components.st_awesome as st_awesome'. Autoreload will not work!
 # Use the same convention for importing in submodules. Otherwise Autoreload will not work!
 # cf. https://github.com/MarcSkovMadsen/awesome-streamlit/issues/2
-import src.st_awesome  # pylint: disable=unused-import
-import src.pages.gallery.spacyio  # pylint: disable=unused-import
-import src.pages.gallery.spreadsheet  # pylint: disable=unused-import
+if config.DEBUG:
+    import src.st_awesome  # pylint: disable=unused-import
+    import src.pages.gallery.spacyio  # pylint: disable=unused-import
+    import src.pages.gallery.spreadsheet  # pylint: disable=unused-import
 
 PAGES = {
     "Home": src.pages.home,
