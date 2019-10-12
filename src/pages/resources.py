@@ -5,26 +5,44 @@ import streamlit as st
 import db
 import src.st_extensions
 import src.st_awesome
+import config
 
 
-def write():
-    """Method used to write page in app.py"""
-    src.st_awesome.title("Resources")
+@st.cache
+def filter_by_tags(resources, tags):
+    """The resources having one of the specified Tags
 
-    tags = src.st_extensions.multiselect("Select Tag(s)", options=db.TAGS, default=[])
-    st.info(
-        """Please note that resources can have multiple tags!
-    We list each resource under **a most important tag only**"""
-    )
-    if not tags:
-        resources = db.RESOURCES
-    else:
-        resources = []
-        for resource in db.RESOURCES:
+    If tags is the empty list all resources are returned
+
+    Arguments:
+        resources {[type]} -- A list of Resources
+        tags {[type]} -- A list of Tags
+
+    Returns:
+        [type] -- A list of Resources
+    """
+    if tags:
+        resources_ = []
+        for resource in resources:
             if set(resource.tags).intersection(tags):
-                resources.append(resource)
-    resources = sorted(resources, key=lambda x: x.name)
+                resources_.append(resource)
+        return resources_
 
+    return resources
+
+
+@st.cache
+def filter_by_is_awesome(resources):
+    """The resources being that is_awesome
+
+    Arguments:
+        resources {[type]} -- A list of resources
+    """
+    return [resource for resource in resources if resource.is_awesome]
+
+
+@st.cache
+def to_markdown(resources):
     resources_dict = defaultdict(list)
     for resource in resources:
         resources_dict[resource.tags[0]].append(resource)
@@ -34,9 +52,32 @@ def write():
         for resource in resources_dict[tag]:
             markdown_bullets.append(resource.to_markdown_bullet())
     markdown = "\n".join(markdown_bullets)
+    if config.DEBUG:
+        print(markdown)
+
+    return markdown
+
+
+def write():
+    """Writes content to the app"""
+    src.st_awesome.title("Resources")
+
+    tags = src.st_extensions.multiselect("Select Tag(s)", options=db.TAGS, default=[])
+    resources = filter_by_tags(db.RESOURCES, tags)
+
+    if st.sidebar.checkbox("Show Awesome Resources Only", value=True):
+        resources = filter_by_is_awesome(resources)
+
+    resources = sorted(resources, key=lambda x: x.name)
+
+    st.info(
+        """Please note that resources can have multiple tags!
+    We list each resource under **a most important tag only**"""
+    )
+
+    markdown = to_markdown(resources)
     st.write(markdown)
-    # print markdown and copy to README.md to keep it updated
-    print(markdown)
+
     if st.sidebar.checkbox("Show Resource JSON"):
         st.subheader("Source JSON")
         st.write(db.RESOURCES)

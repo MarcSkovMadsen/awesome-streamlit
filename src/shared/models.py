@@ -1,5 +1,5 @@
 """Models of app"""
-from typing import List, NamedTuple, Optional
+from typing import List, NamedTuple
 
 
 class Tag(NamedTuple):
@@ -14,12 +14,25 @@ class Tag(NamedTuple):
         return self.name
 
 
+class Author(NamedTuple):
+    """Model of an Author"""
+
+    name: str
+    url: str
+
+    def __str__(self):
+        return self.name
+
+    def __repr__(self):
+        return self.name
+
+
 class Resource(NamedTuple):
     """Model of a Resource"""
 
     name: str
     url: str
-    app_url: Optional[str] = None
+    is_awesome: bool
     tags: List[Tag] = []
 
     def to_markdown_bullet(self) -> str:
@@ -29,7 +42,5 @@ class Resource(NamedTuple):
             [str] -- The Resource as a Markdown bullet string
         """
         result = f"- [{self.name}]({self.url})"
-        if self.app_url:
-            result += f" [app]({self.app_url})"
 
         return result
