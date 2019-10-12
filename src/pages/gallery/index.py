@@ -10,8 +10,9 @@ import json
 import logging
 import urllib.request
 from typing import Dict, List
-
+import src.st_awesome
 import streamlit as st
+import db
 
 # Get an instance of a logger
 logger = logging.getLogger(__name__)
@@ -19,35 +20,49 @@ logger = logging.getLogger(__name__)
 JSON_URL = "https://raw.githubusercontent.com/virusvn/streamlit-components-demo/master/streamlit_apps.json"
 
 
+@st.cache
+def get_resources():
+    return [resource for resource in db.RESOURCES if db.INGALLERY in resource.tags]
+
+
+@st.cache
+def get_authors(resources):
+    return list({resource.author for resource in resources})
+
+
 def write():
-    author = st.sidebar.selectbox("Select Author", ["Streamlit"])
+    src.st_awesome.title("Gallery")
+    app_credits = st.empty()
 
-    components()
+    with st.spinner("Loading Gallery ..."):
+        apps = get_resources()
+        authors = get_authors(apps)
 
+    author = st.sidebar.selectbox("Select Author", authors)
 
-def components():
+    def format_func(x):
+        return x.name
 
-    apps = get_apps(JSON_URL)  # type: Dict[str, str]
-    logger.info(apps)
-    app_names = []
-
-    for name, _ in apps.items():
-        app_names.append(name)
-
-    run_app = st.sidebar.selectbox("Select the app", app_names)
+    run_app = st.sidebar.selectbox("Select the app", apps)
     show_source_code = st.sidebar.checkbox("Show Source Code", True)
 
     # Fetch the content
-    python_code = get_file_content_as_string(apps[run_app])
+    python_code = get_file_content_as_string(run_app.url)
 
     # Run the child app
     if python_code is not None:
         try:
             st.header("App")
-            exec(python_code)
+            with st.spinner("Loading ..."):
+                exec(python_code, globals())
             st.header("Source code")
-            st.markdown("Author: []()")
-            st.markdown("Source: []()")
+            app_credits.markdown(
+                f"""
+            Author: [{run_app.author.name}]({run_app.author.url})
+
+            Source: [url]({run_app.url})
+            """
+            )
             st.code(python_code)
         except Exception as e:
             st.write("Error occurred when executing [{0}]".format(run_app))

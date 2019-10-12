@@ -1,5 +1,5 @@
 # Streamlit
-streamlit
+streamlit==0.47.4
 
 # Utils
 # ------------------------------------------------------------------------------
@@ -31,4 +31,13 @@ bandit # Bandit is a tool designed to find common security issues in Python code
 # Documentation Quality
 doc8 # Doc8 is an opinionated style checker for rst (with basic support for plain text) styles of documentation. See https://github.com/openstack/doc8
 
+# Other
 spacy # Industrial-Strength Natural Language Processing https://spacy.io/
+# boto3
+# botocore
+# Pillow
+# requests
+bokeh==1.3.4
+graphviz==0.13
+matplotlib==3.1.1
+scipy==1.3.1

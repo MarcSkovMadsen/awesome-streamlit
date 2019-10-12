@@ -45,3 +45,6 @@ class Resource(NamedTuple):
         result = f"- [{self.name}]({self.url})"
 
         return result
+
+    def __str__(self):
+        return self.name

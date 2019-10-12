@@ -6,6 +6,9 @@ import db
 import src.st_extensions
 import src.st_awesome
 import config
+import logging
+
+logging.basicConfig(format="%(asctime)s - %(message)s", level=logging.INFO)
 
 
 @st.cache
@@ -63,16 +66,19 @@ def write():
     src.st_awesome.title("Resources")
 
     tags = src.st_extensions.multiselect("Select Tag(s)", options=db.TAGS, default=[])
-    resources = filter_by_tags(db.RESOURCES, tags)
 
-    if st.sidebar.checkbox("Show Awesome Resources Only", value=True):
-        resources = filter_by_is_awesome(resources)
+    with st.spinner("Loading resources ..."):
+        logging.info(tags)
+        resources = filter_by_tags(db.RESOURCES, tags)
 
-    resources = sorted(resources, key=lambda x: x.name)
+        if st.sidebar.checkbox("Show Awesome Resources Only", value=True):
+            resources = filter_by_is_awesome(resources)
+
+        resources = sorted(resources, key=lambda x: x.name)
 
     st.info(
         """Please note that resources can have multiple tags!
-    We list each resource under **a most important tag only**"""
+    We list each resource under **a most important tag only!**"""
     )
 
     markdown = to_markdown(resources)
@@ -81,6 +87,8 @@ def write():
     if st.sidebar.checkbox("Show Resource JSON"):
         st.subheader("Source JSON")
         st.write(db.RESOURCES)
+
+    tags = None
 
 
 if __name__ == "__main-_":
