@@ -1,4 +1,4 @@
-"""Page for to show that its really easy to create a Spreadsheet like application"""
+"""Page to show that its really easy to create a Spreadsheet like application"""
 import pandas as pd
 import streamlit as st
 
