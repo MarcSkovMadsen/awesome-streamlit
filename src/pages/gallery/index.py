@@ -57,7 +57,6 @@ def write():
     show_source_code = st.sidebar.checkbox("Show Source Code", True)
 
     # Fetch the content
-    breakpoint()
     python_code = get_file_content_as_string(run_app.url)
 
     # Run the child app
