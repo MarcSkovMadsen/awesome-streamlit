@@ -1,27 +1,84 @@
-"""Gallery page used to navigate between examples"""
-# IMPORTANT NOTES
-# - For now modules from APPS have to be reloaded every time we use them
-# In order for this to work they should be added to the APPS.__init__ file
-# pylint: disable=invalid-name
-import streamlit as st
-import src.st_extensions
-import src.st_awesome
-import src.pages.gallery.spacyio
-import src.pages.gallery.spreadsheet
+"""Gallery page used to navigate between examples
 
-APPS = {
-    "SpacyIO": src.pages.gallery.spacyio,
-    "Spreadsheet": src.pages.gallery.spreadsheet,
-}
+Very much inspired by:
+Author: [Nhan Nguyen](https://github.com/virusvn)
+Source: https://github.com/virusvn/streamlit-components-demo/blob/master/app.py
+
+Thanks
+"""
+import json
+import logging
+import urllib.request
+from typing import Dict, List
+
+import streamlit as st
+
+# Get an instance of a logger
+logger = logging.getLogger(__name__)
+
+JSON_URL = "https://raw.githubusercontent.com/virusvn/streamlit-components-demo/master/streamlit_apps.json"
 
 
 def write():
-    """Used to write the contents of this page in app.py"""
-    src.st_awesome.title("Gallery")
-    if len(APPS) > 1:
-        selection = st.selectbox("Select App", list(APPS.keys()))
-    else:
-        selection = list(APPS.keys())[0]
-    page = APPS[selection]
+    author = st.sidebar.selectbox("Select Author", ["Streamlit"])
 
-    src.st_extensions.write_page(page)
+    components()
+
+
+def components():
+
+    apps = get_apps(JSON_URL)  # type: Dict[str, str]
+    logger.info(apps)
+    app_names = []
+
+    for name, _ in apps.items():
+        app_names.append(name)
+
+    run_app = st.sidebar.selectbox("Select the app", app_names)
+    show_source_code = st.sidebar.checkbox("Show Source Code", True)
+
+    # Fetch the content
+    python_code = get_file_content_as_string(apps[run_app])
+
+    # Run the child app
+    if python_code is not None:
+        try:
+            st.header("App")
+            exec(python_code)
+            st.header("Source code")
+            st.markdown("Author: []()")
+            st.markdown("Source: []()")
+            st.code(python_code)
+        except Exception as e:
+            st.write("Error occurred when executing [{0}]".format(run_app))
+            st.error(str(e))
+            logger.error(e)
+
+
+@st.cache
+def get_apps(url: str) -> Dict[str, str]:
+    json_obj = fetch_json(url)
+    apps = {}
+    for item in json_obj:
+        if item["url"] is not None and item["url"].endswith(".py"):
+            # can overwrite if same name
+            apps[item["name"]] = item["url"]
+
+    return apps
+
+
+@st.cache
+def fetch_json(url: str):
+    data = urllib.request.urlopen(url).read()
+    output = json.loads(data)
+    return output
+
+
+@st.cache
+def get_file_content_as_string(url: str):
+    data = urllib.request.urlopen(url).read()
+    return data.decode("utf-8")
+
+
+if __name__ == "__main__":
+    write()
