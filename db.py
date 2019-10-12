@@ -19,7 +19,7 @@ INGALLERY = Tag(name="In Gallery")
 # Authors
 STREAMLIT = Author(name="Streamlit", url="https://streamlit.io/")
 AWESOME_STREAMLIT = Author(
-    name="Awsome-Streamlit", url="https://github.com/marcskovmadsen/awesome-streamlit"
+    name="Awesome-Streamlit", url="https://github.com/marcskovmadsen/awesome-streamlit"
 )
 INES = Author(name="Ines Montani", url="https://gist.github.com/ines")
 
@@ -279,6 +279,13 @@ RESOURCES_OTHER_APPS = [
         is_awesome=True,
         author=INES,
     ),
+    Resource(
+        name="Spreadsheet",
+        url="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-streamlit/master/src/pages/gallery/spreadsheet.py",
+        tags=[CODE, INGALLERY],
+        is_awesome=True,
+        author=AWESOME_STREAMLIT,
+    )
 ]
 
 RESOURCES = [

@@ -4,8 +4,6 @@ import src.st_extensions
 import src.st_awesome
 
 # pylint: disable=line-too-long
-
-
 def write():
     """Used to write the page in the app.py file"""
     src.st_awesome.title("")
@@ -25,6 +23,7 @@ This an open source project and you are very welcome to **contribute** your awes
 comments, questions, resources and apps as
 [issues](https://github.com/MarcSkovMadsen/awesome-streamlit/issues) or
 [pull requests](https://github.com/MarcSkovMadsen/awesome-streamlit/pulls).
+You can find the source of the app [here](https://github.com/MarcSkovMadsen/awesome-streamlit).
 
 This app is maintained by Marc Skov Madsen. I'm not an experienced open source maintainer,
 so helpfull hints and suggestions are welcome.
