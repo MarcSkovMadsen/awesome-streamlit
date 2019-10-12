@@ -22,7 +22,7 @@ JSON_URL = "https://raw.githubusercontent.com/virusvn/streamlit-components-demo/
 
 @st.cache
 def get_resources():
-    return [resource for resource in db.RESOURCES if db.INGALLERY in resource.tags]
+    return [resource for resource in db.RESOURCES if db.APP_IN_GALLERY in resource.tags]
 
 
 @st.cache

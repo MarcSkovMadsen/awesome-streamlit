@@ -24,8 +24,6 @@ import src.pages.gallery.index
 # cf. https://github.com/MarcSkovMadsen/awesome-streamlit/issues/2
 if config.DEBUG:
     import src.st_awesome  # pylint: disable=unused-import
-    import src.pages.gallery.spacyio  # pylint: disable=unused-import
-    import src.pages.gallery.spreadsheet  # pylint: disable=unused-import
 
 PAGES = {
     "Home": src.pages.home,
@@ -33,7 +31,7 @@ PAGES = {
     "Gallery": src.pages.gallery.index,
     "Vision": src.pages.vision,
 }
-
+st.sidebar.title("Navigation")
 selection = st.sidebar.radio("Go to", list(PAGES.keys()))
 
 page = PAGES[selection]
