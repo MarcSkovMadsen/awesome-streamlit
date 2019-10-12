@@ -1,5 +1,5 @@
 """Models of app"""
-from typing import List, NamedTuple
+from typing import List, NamedTuple, Optional
 
 
 class Tag(NamedTuple):
@@ -34,6 +34,7 @@ class Resource(NamedTuple):
     url: str
     is_awesome: bool
     tags: List[Tag] = []
+    author: Optional[Author] = None
 
     def to_markdown_bullet(self) -> str:
         """A markdown bullet string
