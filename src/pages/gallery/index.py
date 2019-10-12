@@ -27,7 +27,8 @@ def get_resources():
 
 @st.cache
 def get_authors(resources):
-    return list({resource.author for resource in resources if resource.author})
+    author_set = {resource.author for resource in resources if resource.author}
+    return sorted(list(author_set), key=lambda x: x.name)
 
 
 @st.cache
@@ -46,8 +47,11 @@ def write():
     author = st.sidebar.selectbox("Select Author", authors)
     apps_by_author = get_apps_by_author(apps, author)
     run_app = st.sidebar.selectbox("Select the app", apps_by_author)
+
     app_credits.markdown(
         f"""
+            ## {run_app.name}
+
             Author: [{run_app.author.name}]({run_app.author.url})
 
             Source: [url]({run_app.url})
@@ -62,7 +66,6 @@ def write():
     # Run the child app
     if python_code is not None:
         try:
-            st.header("App")
             with st.spinner("Loading ..."):
                 exec(python_code, globals())
             st.header("Source code")

@@ -10,13 +10,14 @@ APP = Tag("App")
 CODE = Tag("Code")
 DEPLOYMENT = Tag(name="Deployment")
 SOCIAL = Tag(name="Social")
-STREAMLITIO = Tag(name="Streamlit.io")
+STREAMLIT_TAG = Tag(name="Streamlit.io")
 TECHNICAL = Tag(name="Technical")
-AWESOMESTREAMLIT = Tag(name="The beginning")
+AWESOMESTREAMLIT_COMPONENT_AUTHOR = Tag(name="The beginning")
 APP_IN_GALLERY = Tag(name="App In Gallery")
 
 # Authors
-STREAMLIT = Author(name="Streamlit", url="https://streamlit.io/")
+STREAMLIT_COMPONENT_AUTHOR = Author(name="Streamlit - Components", url="https://streamlit.io/")
+STREAMLIT_AUTHOR = Author(name="Streamlit", url="https://streamlit.io/")
 MARC_SKOV_MADSEN = Author(
     name="Marc Skov Madsen", url="https://datamodelsanalytics.com"
 )
@@ -37,253 +38,260 @@ RESOURCES_OTHER_APPS = [
         is_awesome=True,
         author=MARC_SKOV_MADSEN,
     ),
+    Resource(
+        name="Uber NYC Pickups",
+        url="https://raw.githubusercontent.com/streamlit/demo-uber-nyc-pickups/master/app.py",
+        tags=[CODE, APP_IN_GALLERY],
+        is_awesome=True,
+        author=STREAMLIT_AUTHOR,
+    ),
 ]
 
-RESOURCES_STREAMLIT_APPS = [
+RESOURCES_STREAMLIT_COMPONENT_APPS = [
     Resource(
         name="charts.area_chart",
         url="https://raw.githubusercontent.com/streamlit/streamlit/master/docs/api-examples-source/charts.area_chart.py",
         is_awesome=False,
         tags=[CODE, APP_IN_GALLERY],
-        author=STREAMLIT,
+        author=STREAMLIT_COMPONENT_AUTHOR,
     ),
     Resource(
         name="charts.audio",
         url="https://raw.githubusercontent.com/streamlit/streamlit/master/docs/api-examples-source/charts.audio.py",
         is_awesome=False,
         tags=[CODE, APP_IN_GALLERY],
-        author=STREAMLIT,
+        author=STREAMLIT_COMPONENT_AUTHOR,
     ),
     Resource(
         name="charts.bar_chart",
         url="https://raw.githubusercontent.com/streamlit/streamlit/master/docs/api-examples-source/charts.bar_chart.py",
         is_awesome=False,
         tags=[CODE, APP_IN_GALLERY],
-        author=STREAMLIT,
+        author=STREAMLIT_COMPONENT_AUTHOR,
     ),
     Resource(
         name="charts.bokeh_chart",
         url="https://raw.githubusercontent.com/streamlit/streamlit/master/docs/api-examples-source/charts.bokeh_chart.py",
         is_awesome=False,
         tags=[CODE, APP_IN_GALLERY],
-        author=STREAMLIT,
+        author=STREAMLIT_COMPONENT_AUTHOR,
     ),
     Resource(
         name="charts.deck_gl_charts1",
         url="https://raw.githubusercontent.com/streamlit/streamlit/master/docs/api-examples-source/charts.deck_gl_charts1.py",
         is_awesome=False,
         tags=[CODE, APP_IN_GALLERY],
-        author=STREAMLIT,
+        author=STREAMLIT_COMPONENT_AUTHOR,
     ),
     Resource(
         name="charts.deck_gl_charts2",
         url="https://raw.githubusercontent.com/streamlit/streamlit/master/docs/api-examples-source/charts.deck_gl_charts2.py",
         is_awesome=False,
         tags=[CODE, APP_IN_GALLERY],
-        author=STREAMLIT,
+        author=STREAMLIT_COMPONENT_AUTHOR,
     ),
     Resource(
         name="charts.graphviz_chart",
         url="https://raw.githubusercontent.com/streamlit/streamlit/master/docs/api-examples-source/charts.graphviz_chart.py",
         is_awesome=False,
         tags=[CODE, APP_IN_GALLERY],
-        author=STREAMLIT,
+        author=STREAMLIT_COMPONENT_AUTHOR,
     ),
     Resource(
         name="charts.image",
         url="https://raw.githubusercontent.com/streamlit/streamlit/master/docs/api-examples-source/charts.image.py",
         is_awesome=False,
         tags=[CODE, APP_IN_GALLERY],
-        author=STREAMLIT,
+        author=STREAMLIT_COMPONENT_AUTHOR,
     ),
     Resource(
         name="charts.line_chart",
         url="https://raw.githubusercontent.com/streamlit/streamlit/master/docs/api-examples-source/charts.line_chart.py",
         is_awesome=False,
         tags=[CODE, APP_IN_GALLERY],
-        author=STREAMLIT,
+        author=STREAMLIT_COMPONENT_AUTHOR,
     ),
     Resource(
         name="charts.map",
         url="https://raw.githubusercontent.com/streamlit/streamlit/master/docs/api-examples-source/charts.map.py",
         is_awesome=False,
         tags=[CODE, APP_IN_GALLERY],
-        author=STREAMLIT,
+        author=STREAMLIT_COMPONENT_AUTHOR,
     ),
     Resource(
         name="charts.plotly_chart",
         url="https://raw.githubusercontent.com/streamlit/streamlit/master/docs/api-examples-source/charts.plotly_chart.py",
         is_awesome=False,
         tags=[CODE, APP_IN_GALLERY],
-        author=STREAMLIT,
+        author=STREAMLIT_COMPONENT_AUTHOR,
     ),
     Resource(
         name="charts.pyplot",
         url="https://raw.githubusercontent.com/streamlit/streamlit/master/docs/api-examples-source/charts.pyplot.py",
         is_awesome=False,
         tags=[CODE, APP_IN_GALLERY],
-        author=STREAMLIT,
+        author=STREAMLIT_COMPONENT_AUTHOR,
     ),
     Resource(
         name="charts.vega_lite_chart",
         url="https://raw.githubusercontent.com/streamlit/streamlit/master/docs/api-examples-source/charts.vega_lite_chart.py",
         is_awesome=False,
         tags=[CODE, APP_IN_GALLERY],
-        author=STREAMLIT,
+        author=STREAMLIT_COMPONENT_AUTHOR,
     ),
     Resource(
         name="charts.video",
         url="https://raw.githubusercontent.com/streamlit/streamlit/master/docs/api-examples-source/charts.video.py",
         is_awesome=False,
         tags=[CODE, APP_IN_GALLERY],
-        author=STREAMLIT,
+        author=STREAMLIT_COMPONENT_AUTHOR,
     ),
     Resource(
         name="data.dataframe",
         url="https://raw.githubusercontent.com/streamlit/streamlit/master/docs/api-examples-source/data.dataframe.py",
         is_awesome=False,
         tags=[CODE, APP_IN_GALLERY],
-        author=STREAMLIT,
+        author=STREAMLIT_COMPONENT_AUTHOR,
     ),
     Resource(
         name="data.json",
         url="https://raw.githubusercontent.com/streamlit/streamlit/master/docs/api-examples-source/data.json.py",
         is_awesome=False,
         tags=[CODE, APP_IN_GALLERY],
-        author=STREAMLIT,
+        author=STREAMLIT_COMPONENT_AUTHOR,
     ),
     Resource(
         name="data.table",
         url="https://raw.githubusercontent.com/streamlit/streamlit/master/docs/api-examples-source/data.table.py",
         is_awesome=False,
         tags=[CODE, APP_IN_GALLERY],
-        author=STREAMLIT,
+        author=STREAMLIT_COMPONENT_AUTHOR,
     ),
     Resource(
         name="text.code",
         url="https://raw.githubusercontent.com/streamlit/streamlit/master/docs/api-examples-source/text.code.py",
         is_awesome=False,
         tags=[CODE, APP_IN_GALLERY],
-        author=STREAMLIT,
+        author=STREAMLIT_COMPONENT_AUTHOR,
     ),
     Resource(
         name="text.header",
         url="https://raw.githubusercontent.com/streamlit/streamlit/master/docs/api-examples-source/text.header.py",
         is_awesome=False,
         tags=[CODE, APP_IN_GALLERY],
-        author=STREAMLIT,
+        author=STREAMLIT_COMPONENT_AUTHOR,
     ),
     Resource(
         name="text.markdown",
         url="https://raw.githubusercontent.com/streamlit/streamlit/master/docs/api-examples-source/text.markdown.py",
         is_awesome=False,
         tags=[CODE, APP_IN_GALLERY],
-        author=STREAMLIT,
+        author=STREAMLIT_COMPONENT_AUTHOR,
     ),
     Resource(
         name="text.subheader",
         url="https://raw.githubusercontent.com/streamlit/streamlit/master/docs/api-examples-source/text.subheader.py",
         is_awesome=False,
         tags=[CODE, APP_IN_GALLERY],
-        author=STREAMLIT,
+        author=STREAMLIT_COMPONENT_AUTHOR,
     ),
     Resource(
         name="text.text",
         url="https://raw.githubusercontent.com/streamlit/streamlit/master/docs/api-examples-source/text.text.py",
         is_awesome=False,
         tags=[CODE, APP_IN_GALLERY],
-        author=STREAMLIT,
+        author=STREAMLIT_COMPONENT_AUTHOR,
     ),
     Resource(
         name="text.title",
         url="https://raw.githubusercontent.com/streamlit/streamlit/master/docs/api-examples-source/text.title.py",
         is_awesome=False,
         tags=[CODE, APP_IN_GALLERY],
-        author=STREAMLIT,
+        author=STREAMLIT_COMPONENT_AUTHOR,
     ),
     Resource(
         name="text.write1",
         url="https://raw.githubusercontent.com/streamlit/streamlit/master/docs/api-examples-source/text.write1.py",
         is_awesome=False,
         tags=[CODE, APP_IN_GALLERY],
-        author=STREAMLIT,
+        author=STREAMLIT_COMPONENT_AUTHOR,
     ),
     Resource(
         name="text.write2",
         url="https://raw.githubusercontent.com/streamlit/streamlit/master/docs/api-examples-source/text.write2.py",
         is_awesome=False,
         tags=[CODE, APP_IN_GALLERY],
-        author=STREAMLIT,
+        author=STREAMLIT_COMPONENT_AUTHOR,
     ),
     Resource(
         name="text.write3",
         url="https://raw.githubusercontent.com/streamlit/streamlit/master/docs/api-examples-source/text.write3.py",
         is_awesome=False,
         tags=[CODE, APP_IN_GALLERY],
-        author=STREAMLIT,
+        author=STREAMLIT_COMPONENT_AUTHOR,
     ),
     Resource(
         name="widget.button",
         url="https://raw.githubusercontent.com/streamlit/streamlit/master/docs/api-examples-source/widget.button.py",
         is_awesome=False,
         tags=[CODE, APP_IN_GALLERY],
-        author=STREAMLIT,
+        author=STREAMLIT_COMPONENT_AUTHOR,
     ),
     Resource(
         name="widget.checkbox",
         url="https://raw.githubusercontent.com/streamlit/streamlit/master/docs/api-examples-source/widget.checkbox.py",
         is_awesome=False,
         tags=[CODE, APP_IN_GALLERY],
-        author=STREAMLIT,
+        author=STREAMLIT_COMPONENT_AUTHOR,
     ),
     Resource(
         name="widget.date_input",
         url="https://raw.githubusercontent.com/streamlit/streamlit/master/docs/api-examples-source/widget.date_input.py",
         is_awesome=False,
         tags=[CODE, APP_IN_GALLERY],
-        author=STREAMLIT,
+        author=STREAMLIT_COMPONENT_AUTHOR,
     ),
     Resource(
         name="widget.radio",
         url="https://raw.githubusercontent.com/streamlit/streamlit/master/docs/api-examples-source/widget.radio.py",
         is_awesome=False,
         tags=[CODE, APP_IN_GALLERY],
-        author=STREAMLIT,
+        author=STREAMLIT_COMPONENT_AUTHOR,
     ),
     Resource(
         name="widget.selectbox",
         url="https://raw.githubusercontent.com/streamlit/streamlit/master/docs/api-examples-source/widget.selectbox.py",
         is_awesome=False,
         tags=[CODE, APP_IN_GALLERY],
-        author=STREAMLIT,
+        author=STREAMLIT_COMPONENT_AUTHOR,
     ),
     Resource(
         name="widget.slider",
         url="https://raw.githubusercontent.com/streamlit/streamlit/master/docs/api-examples-source/widget.slider.py",
         is_awesome=False,
         tags=[CODE, APP_IN_GALLERY],
-        author=STREAMLIT,
+        author=STREAMLIT_COMPONENT_AUTHOR,
     ),
     Resource(
         name="widget.text_area",
         url="https://raw.githubusercontent.com/streamlit/streamlit/master/docs/api-examples-source/widget.text_area.py",
         is_awesome=False,
         tags=[CODE, APP_IN_GALLERY],
-        author=STREAMLIT,
+        author=STREAMLIT_COMPONENT_AUTHOR,
     ),
     Resource(
         name="widget.text_input",
         url="https://raw.githubusercontent.com/streamlit/streamlit/master/docs/api-examples-source/widget.text_input.py",
         is_awesome=False,
         tags=[CODE, APP_IN_GALLERY],
-        author=STREAMLIT,
+        author=STREAMLIT_COMPONENT_AUTHOR,
     ),
     Resource(
         name="widget.time_input",
         url="https://raw.githubusercontent.com/streamlit/streamlit/master/docs/api-examples-source/widget.time_input.py",
         is_awesome=False,
         tags=[CODE, APP_IN_GALLERY],
-        author=STREAMLIT,
+        author=STREAMLIT_COMPONENT_AUTHOR,
     ),
 ]
 
@@ -292,37 +300,37 @@ RESOURCES = [
     Resource(
         name="Streamlit.io",
         url="https://streamlit.io/",
-        tags=[STREAMLITIO],
+        tags=[STREAMLIT_TAG],
         is_awesome=True,
     ),
     Resource(
         name="Streamlit Docs",
         url="https://streamlit.io/docs/",
-        tags=[STREAMLITIO],
+        tags=[STREAMLIT_TAG],
         is_awesome=True,
     ),
     Resource(
         name="Streamlit Community",
         url="https://discuss.streamlit.io/top/quarterly",
-        tags=[STREAMLITIO],
+        tags=[STREAMLIT_TAG],
         is_awesome=True,
     ),
     Resource(
         "The announcing blog",
         url="https://towardsdatascience.com/coding-ml-tools-like-you-code-ml-models-ddba3357eace",
-        tags=[STREAMLITIO],
+        tags=[STREAMLIT_TAG],
         is_awesome=True,
     ),
     Resource(
         "The announcing community post",
         url="https://discuss.streamlit.io/t/streamlit-has-launched/105/3",
-        tags=[STREAMLITIO],
+        tags=[STREAMLIT_TAG],
         is_awesome=True,
     ),
     Resource(
         "LinkedIn post that started awesome-streamlit.org",
         url="https://www.linkedin.com/feed/update/urn:li:activity:6586497522896818176",
-        tags=[AWESOMESTREAMLIT, SOCIAL],
+        tags=[AWESOMESTREAMLIT_COMPONENT_AUTHOR, SOCIAL],
         is_awesome=True,
     ),
     Resource(
@@ -400,7 +408,7 @@ RESOURCES = [
         tags=[CODE],
         is_awesome=True,
     ),
-] + RESOURCES_STREAMLIT_APPS + RESOURCES_OTHER_APPS
+] + RESOURCES_STREAMLIT_COMPONENT_APPS + RESOURCES_OTHER_APPS
 
 TAGS = []
 for resource in RESOURCES:
