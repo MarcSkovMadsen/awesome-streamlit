@@ -21,18 +21,9 @@ STREAMLIT = Author(name="Streamlit", url="https://streamlit.io/")
 AWESOME_STREAMLIT = Author(
     name="Awsome-Streamlit", url="https://github.com/marcskovmadsen/awesome-streamlit"
 )
+INES = Author(name="Ines Montani", url="https://gist.github.com/ines")
 
-# Please note that in the README.md resources will be listed
-# under the first tag in the tags list only
-AUTHORS = [
-    Author(name="Streamlit", url="https://streamlit.io/"),
-    Author(
-        name="Awsome-Streamlit",
-        url="https://github.com/marcskovmadsen/awesome-streamlit",
-    ),
-]
-
-RESOURCES_STREAMLIT_COMPONENTS = [
+RESOURCES_STREAMLIT_APPS = [
     Resource(
         name="charts.area_chart",
         url="https://raw.githubusercontent.com/streamlit/streamlit/master/docs/api-examples-source/charts.area_chart.py",
@@ -280,7 +271,18 @@ RESOURCES_STREAMLIT_COMPONENTS = [
     ),
 ]
 
+RESOURCES_OTHER_APPS = [
+    Resource(
+        name="SpacyIO",
+        url="https://gist.githubusercontent.com/ines/b320cb8441b590eedf19137599ce6685/raw/6e0ead5a442fd9c5e3f621a76fba94241cc847ce/streamlit_spacy.py",
+        tags=[CODE, INGALLERY],
+        is_awesome=True,
+        author=INES,
+    ),
+]
+
 RESOURCES = [
+
     Resource(
         name="Streamlit.io",
         url="https://streamlit.io/",
@@ -399,7 +401,7 @@ RESOURCES = [
         tags=[CODE],
         is_awesome=True,
     ),
-] + RESOURCES_STREAMLIT_COMPONENTS
+] + RESOURCES_STREAMLIT_APPS + RESOURCES_OTHER_APPS
 
 TAGS = []
 for resource in RESOURCES:

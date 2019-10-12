@@ -27,7 +27,12 @@ def get_resources():
 
 @st.cache
 def get_authors(resources):
-    return list({resource.author for resource in resources})
+    return list({resource.author for resource in resources if resource.author})
+
+
+@st.cache
+def get_apps_by_author(apps, author):
+    return [app for app in apps if app.author == author]
 
 
 def write():
@@ -39,11 +44,16 @@ def write():
         authors = get_authors(apps)
 
     author = st.sidebar.selectbox("Select Author", authors)
+    apps_by_author = get_apps_by_author(apps, author)
+    run_app = st.sidebar.selectbox("Select the app", apps_by_author)
+    app_credits.markdown(
+        f"""
+            Author: [{run_app.author.name}]({run_app.author.url})
 
-    def format_func(x):
-        return x.name
+            Source: [url]({run_app.url})
+            """
+    )
 
-    run_app = st.sidebar.selectbox("Select the app", apps)
     show_source_code = st.sidebar.checkbox("Show Source Code", True)
 
     # Fetch the content
@@ -56,13 +66,6 @@ def write():
             with st.spinner("Loading ..."):
                 exec(python_code, globals())
             st.header("Source code")
-            app_credits.markdown(
-                f"""
-            Author: [{run_app.author.name}]({run_app.author.url})
-
-            Source: [url]({run_app.url})
-            """
-            )
             st.code(python_code)
         except Exception as e:
             st.write("Error occurred when executing [{0}]".format(run_app))
