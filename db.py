@@ -18,10 +18,27 @@ INGALLERY = Tag(name="In Gallery")
 
 # Authors
 STREAMLIT = Author(name="Streamlit", url="https://streamlit.io/")
-AWESOME_STREAMLIT = Author(
-    name="Awesome-Streamlit", url="https://github.com/marcskovmadsen/awesome-streamlit"
+MARC_SKOV_MADSEN = Author(
+    name="Marc Skov Madsen", url="https://datamodelsanalytics.com"
 )
 INES = Author(name="Ines Montani", url="https://gist.github.com/ines")
+
+RESOURCES_OTHER_APPS = [
+    Resource(
+        name="SpacyIO",
+        url="https://gist.githubusercontent.com/ines/b320cb8441b590eedf19137599ce6685/raw/6e0ead5a442fd9c5e3f621a76fba94241cc847ce/streamlit_spacy.py",
+        tags=[CODE, INGALLERY],
+        is_awesome=True,
+        author=INES,
+    ),
+    Resource(
+        name="Spreadsheet",
+        url="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-streamlit/master/src/pages/gallery/contributions/marc_skov_madsen/spreadsheet.py",
+        tags=[CODE, INGALLERY],
+        is_awesome=True,
+        author=MARC_SKOV_MADSEN,
+    )
+]
 
 RESOURCES_STREAMLIT_APPS = [
     Resource(
@@ -269,23 +286,6 @@ RESOURCES_STREAMLIT_APPS = [
         tags=[CODE, INGALLERY],
         author=STREAMLIT,
     ),
-]
-
-RESOURCES_OTHER_APPS = [
-    Resource(
-        name="SpacyIO",
-        url="https://gist.githubusercontent.com/ines/b320cb8441b590eedf19137599ce6685/raw/6e0ead5a442fd9c5e3f621a76fba94241cc847ce/streamlit_spacy.py",
-        tags=[CODE, INGALLERY],
-        is_awesome=True,
-        author=INES,
-    ),
-    Resource(
-        name="Spreadsheet",
-        url="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-streamlit/master/src/pages/gallery/spreadsheet.py",
-        tags=[CODE, INGALLERY],
-        is_awesome=True,
-        author=AWESOME_STREAMLIT,
-    )
 ]
 
 RESOURCES = [
