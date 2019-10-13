@@ -20,7 +20,7 @@ This application provides
 - A list of awesome Streamlit **resources**.
 - A **gallery** of awesome streamlit applications.
 - A **vision** on how awesome Streamlit can be.
-- A **best practices** example and **starter** template of a larger, multipage,
+- A **best practices** example and **starter template** of a larger, multipage,
 high quality app **developed using the power of Python and the magic of Streamlit**!
 
 ## The Magic of Streamlit

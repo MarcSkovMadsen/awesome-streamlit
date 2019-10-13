@@ -70,30 +70,42 @@ RESOURCES_OTHER_APPS = [
         author=STREAMLIT_AUTHOR,
     ),
 ]
+STREAMLIT_EXAMPLE_APPS_FAILED_TEST_FILES = [
+    "apocrypha.py",
+    "bart_vs_bikes.py",
+    "images.py",
+    "matplotlib_kwargs.py",
+    "mnist-cnn",
+    "reference.py",
+    "run_on_save.py",
+    "syntax_hilite.py",
+    #  "disable_client.py", RUNS TOO LONG DURING TESTS
+]
+STREAMLIT_EXAMPLE_APPS_FAILED_TEST = [
+    Resource(
+        name=file,
+        url=STREAMLIT_EXAMPLE_APPS_ROOT+file,
+        is_awesome=False,
+        tags=[CODE],
+        author=STREAMLIT_EXAMPLE_AUTHOR,
+    ) for file in STREAMLIT_EXAMPLE_APPS_FAILED_TEST_FILES
+]
+
 STREAMLIT_EXAMPLE_APPS_FILES = [
     "altair_example.py",
     "animation.py",
-    "apocrypha.py",
     "audio.py",
-    "bart_vs_bikes.py",
     "bokeh_example.py",
     "caching.py",
     "checkboxes.py",
     "dataframe_styling.py",
-    "disable_client.py",
     "empty_charts.py",
     "graphviz_example.py",
-    "images.py",
     "interactive_widgets.py",
     "keras_example.py",
     "lists.py",
-    "matplotlib_kwargs.py",
-    "mnist-cnn",
     "plotly_example.py",
-    "reference.py",
-    "run_on_save.py",
     "syntax_error.py",
-    "syntax_hilite.py",
     "table_styling.py",
 ]
 STREAMLIT_EXAMPLE_APPS = [
@@ -471,7 +483,7 @@ RESOURCES = [
         tags=[CODE],
         is_awesome=True,
     ),
-] + STREAMLIT_EXAMPLE_APPS + RESOURCES_STREAMLIT_COMPONENT_APPS + RESOURCES_OTHER_APPS + [DEFAULT_RESOURCE]
+] + STREAMLIT_EXAMPLE_APPS + STREAMLIT_EXAMPLE_APPS_FAILED_TEST + RESOURCES_STREAMLIT_COMPONENT_APPS + RESOURCES_OTHER_APPS + [DEFAULT_RESOURCE]
 
 TAGS = []
 for resource in RESOURCES:
