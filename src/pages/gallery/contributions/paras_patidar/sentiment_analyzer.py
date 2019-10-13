@@ -11,7 +11,7 @@ from sklearn.metrics import confusion_matrix
 import numpy as np
 import itertools
 import matplotlib.pyplot as plt
-import urllib
+import requests
 
 st.title("Sentiment Analyzer Based On Text Analysis ")
 st.subheader("Paras Patidar - MLAIT")
@@ -20,22 +20,16 @@ st.write("\n\n")
 
 @st.cache
 def get_all_data():
-    breakpoint()
     root = "https://raw.githubusercontent.com/patidarparas13/Sentiment-Analyzer-Tool/master/Datasets/"
-    with urllib.request.urlopen(root + "imdb_labelled.txt", "r") as text_file:
-        data = text_file.read().split("\n")
-
-    with urllib.request.urlopen(root + "amazon_cells_labelled.txt", "r") as text_file:
-        data += text_file.read().split("\n")
-
-    with urllib.request.urlopen(root + "yelp_labelled.txt", "r") as text_file:
-        data += text_file.read().split("\n")
+    data = requests.get(root + "imdb_labelled.txt").text.split("\n")
+    data += requests.get(root + "amazon_cells_labelled.txt").text.split("\n")
+    data += requests.get(root + "yelp_labelled.txt").text.split("\n")
 
     return data
 
 
-all_data = get_all_data()
-
+with st.spinner("Data"):
+    all_data = get_all_data()
 if st.checkbox("Show Dataset"):
     st.write(all_data)
 
