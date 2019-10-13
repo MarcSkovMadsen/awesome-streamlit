@@ -15,9 +15,25 @@ TECHNICAL = Tag(name="Technical")
 AWESOMESTREAMLIT_COMPONENT_AUTHOR = Tag(name="The beginning")
 APP_IN_GALLERY = Tag(name="App In Gallery")
 
+# STREAMLIT FILE ROOTS
+
+STREAMLIT_EXAMPLE_APPS_ROOT = (
+    "https://raw.githubusercontent.com/streamlit/streamlit/develop/examples/"
+)
+STREAMLIT_COMPONENTS_APPS_ROOT = (
+    "https://github.com/streamlit/streamlit/tree/develop/docs/api-examples-source"
+)
+
 # Authors
-STREAMLIT_COMPONENT_AUTHOR = Author(name="Streamlit - Components", url="https://streamlit.io/")
 STREAMLIT_AUTHOR = Author(name="Streamlit", url="https://streamlit.io/")
+STREAMLIT_EXAMPLE_AUTHOR = Author(
+    name="Streamlit/.../examples/",
+    url=STREAMLIT_EXAMPLE_APPS_ROOT
+    )
+STREAMLIT_COMPONENT_AUTHOR = Author(
+    name="Streamlit/.../api-examples-source",
+    url=STREAMLIT_COMPONENTS_APPS_ROOT
+    )
 MARC_SKOV_MADSEN = Author(
     name="Marc Skov Madsen", url="https://datamodelsanalytics.com"
 )
@@ -31,10 +47,9 @@ DEFAULT_RESOURCE = Resource(
         is_awesome=True,
         author=MARC_SKOV_MADSEN,
     )
-
 RESOURCES_OTHER_APPS = [
     Resource(
-        name = "Sentiment Analyzer",
+        name = "Sentiment Algorithm",
         url="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-streamlit/master/src/pages/gallery/contributions/marc_skov_madsen/sentiment_analyzer/sentiment_analyzer.py",
         tags=[CODE, APP_IN_GALLERY],
         is_awesome=True,
@@ -55,7 +70,41 @@ RESOURCES_OTHER_APPS = [
         author=STREAMLIT_AUTHOR,
     ),
 ]
-
+STREAMLIT_EXAMPLE_APPS_FILES = [
+    "altair_example.py",
+    "animation.py",
+    "apocrypha.py",
+    "audio.py",
+    "bart_vs_bikes.py",
+    "bokeh_example.py",
+    "caching.py",
+    "checkboxes.py",
+    "dataframe_styling.py",
+    "disable_client.py",
+    "empty_charts.py",
+    "graphviz_example.py",
+    "images.py",
+    "interactive_widgets.py",
+    "keras_example.py",
+    "lists.py",
+    "matplotlib_kwargs.py",
+    "mnist-cnn",
+    "plotly_example.py",
+    "reference.py",
+    "run_on_save.py",
+    "syntax_error.py",
+    "syntax_hilite.py",
+    "table_styling.py",
+]
+STREAMLIT_EXAMPLE_APPS = [
+    Resource(
+        name=file,
+        url=STREAMLIT_EXAMPLE_APPS_ROOT+file,
+        is_awesome=False,
+        tags=[CODE, APP_IN_GALLERY],
+        author=STREAMLIT_EXAMPLE_AUTHOR,
+    ) for file in STREAMLIT_EXAMPLE_APPS_FILES
+]
 RESOURCES_STREAMLIT_COMPONENT_APPS = [
     Resource(
         name="charts.area_chart",
@@ -305,7 +354,12 @@ RESOURCES_STREAMLIT_COMPONENT_APPS = [
 ]
 
 RESOURCES = [
-
+    Resource(
+        name="Streamlit ",
+        url="https://techcrunch.com/2019/10/01/streamlit-launches-open-source-machine-learning-application-development-framework/",
+        tags=[STREAMLIT_TAG],
+        is_awesome=True,
+    ),
     Resource(
         name="Streamlit.io",
         url="https://streamlit.io/",
@@ -417,7 +471,7 @@ RESOURCES = [
         tags=[CODE],
         is_awesome=True,
     ),
-] + RESOURCES_STREAMLIT_COMPONENT_APPS + RESOURCES_OTHER_APPS + [DEFAULT_RESOURCE]
+] + STREAMLIT_EXAMPLE_APPS + RESOURCES_STREAMLIT_COMPONENT_APPS + RESOURCES_OTHER_APPS + [DEFAULT_RESOURCE]
 
 TAGS = []
 for resource in RESOURCES:

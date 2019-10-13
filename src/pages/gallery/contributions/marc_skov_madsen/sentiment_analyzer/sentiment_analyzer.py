@@ -116,7 +116,7 @@ with st.spinner("Training algorithm..."):
     st.info("The algorithm was trained with **success**!")
 
 
-st.subheader("Try the algorithm here!")
+st.title("Try the algorithm here!")
 write_here = "Write Here..."
 review = st.text_input("Enter a review for classification by the algorithm", write_here)
 if st.button("Predict Sentiment"):
