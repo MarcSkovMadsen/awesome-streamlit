@@ -42,7 +42,7 @@ def write():
     app_credits = st.empty()
 
     app_credits.markdown(
-        f"""Urls: [{author.name}]({run_app.author.url}), [Source Code]({run_app.url})"""
+        f"""Resources: [{author.name}]({run_app.author.url}), [Source Code]({run_app.url})"""
     )
 
     show_source_code = st.sidebar.checkbox("Show Source Code", True)
