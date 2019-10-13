@@ -44,7 +44,7 @@ def write():
     app_credits.markdown(
         f"""Resources: [{author.name}]({run_app.author.url}), [Source Code]({run_app.url})"""
     )
-
+    st.sidebar.title("Gallery")
     show_source_code = st.sidebar.checkbox("Show Source Code", True)
 
     # Fetch the content

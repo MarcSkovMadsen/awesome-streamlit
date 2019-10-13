@@ -39,7 +39,7 @@ try:
     src.st_extensions.write_page(page)
 except Exception as _:
     st.error("Error. Something wen't wrong! Please refresh the app")
-st.sidebar.title("Contributions")
+st.sidebar.title("Contribute")
 st.sidebar.info(
     "You are very welcome to **contribute** your awesome comments, questions, "
     "resources, apps or code.\n"

@@ -65,7 +65,8 @@ def transform_grades_data(source_data: pd.DataFrame) -> pd.DataFrame:
 st.markdown(
     """
 This app illustrates that it's so easy to create high quality spreadsheet like apps
- with [Streamlit](https://streamlit.io)"""
+ with [Streamlit](https://streamlit.io). You can **change the sheet** or **hide/show**
+ the source data via the sidebar!"""
 )
 
 st.sidebar.title("Spreadsheet")
