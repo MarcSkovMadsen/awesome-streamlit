@@ -277,6 +277,23 @@ You can run all tests using
 invoke test.all
 ```
 
+### Streamlit Tests
+
+I've created a first version of an awesome streamlit test runner. You run it via
+
+```bash
+streamlit run test_runner_app.py
+```
+
+or in Docker
+
+```bash
+docker run -it -p 80:80 --entrypoint "streamlit" marcskovmadsen/awesome-streamlit:latest run test_runner_app.py
+```
+
+![Awesome Streamlit Test Runner](https://github.com/MarcSkovMadsen/awesome-streamlit/blob/master/assets/awesome-streamlit-test-runner.png)
+
+
 ### Workflow
 
 We use the power of [Invoke](http://www.pyinvoke.org/) to semi-automate the local workflow. You can see the list of available commands using

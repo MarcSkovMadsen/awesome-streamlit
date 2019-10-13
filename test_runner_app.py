@@ -91,7 +91,7 @@ def get_test_results_dataframe(resources: List[Resource]) -> pd.DataFrame:
 st_awesome.title("Test Runner")
 st.markdown(
     """
-    This test runner collects a list of one file apps and tests
+    This test runner collects a list of **one file apps** and tests
     if they can exec(ute) successfully.
 
     Exception Logs are collected.
