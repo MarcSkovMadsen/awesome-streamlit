@@ -101,7 +101,7 @@ with st.spinner("Extracting source data..."):
     source_data["sentiment"] = source_data["sentiment"].map(
         {"0": "Negative", "1": "Positive"}
     )
-    st.info(f"Source data succesfully extracted! ({len(source_data)} rows")
+    st.info(f"{len(source_data)} rows where extract with **succes**!")
 
 top = st.selectbox(
     "Select number of rows to show", [5, 10, 25, 50, 100, len(source_data)]
@@ -113,10 +113,10 @@ with st.spinner("Training algorithm..."):
     training_data, evaluation_data = preprocessing_step()
     vectorizer = CountVectorizer(binary="true")
     classifier = training_step(training_data, vectorizer)
-    st.info("Algorithm was successfully trained!")
+    st.info("The algorithm was trained with **success**!")
 
 
-st.subheader("Let user try the algorithm!")
+st.subheader("Try the algorithm here!")
 write_here = "Write Here..."
 review = st.text_input("Enter a review for classification by the algorithm", write_here)
 if st.button("Predict Sentiment"):
