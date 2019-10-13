@@ -1,4 +1,4 @@
-"""Gallery page used to navigate between examples
+"""The Gallery index page is used to navigate between examples
 
 Very much inspired by:
 Author: [Nhan Nguyen](https://github.com/virusvn)
@@ -15,6 +15,9 @@ import streamlit as st
 
 import db
 import src.st_awesome
+import src.st_extensions
+from typing import List
+import src.shared.models
 
 # Get an instance of a logger
 logging.basicConfig(format="%(asctime)s - %(message)s", level=logging.INFO)
@@ -22,42 +25,24 @@ logging.basicConfig(format="%(asctime)s - %(message)s", level=logging.INFO)
 JSON_URL = "https://raw.githubusercontent.com/virusvn/streamlit-components-demo/master/streamlit_apps.json"
 
 
-@st.cache
-def get_resources():
-    return [resource for resource in db.RESOURCES if db.APP_IN_GALLERY in resource.tags]
-
-
-@st.cache
-def get_authors(resources):
-    author_set = {resource.author for resource in resources if resource.author}
-    return sorted(list(author_set), key=lambda x: x.name)
-
-
-@st.cache
-def get_apps_by_author(apps, author):
-    return [app for app in apps if app.author == author]
-
-
 def write():
+    """This method writes the Gallery index page which is used to navigate between gallery apps"""
     src.st_awesome.title("Gallery")
-    app_credits = st.empty()
-
     with st.spinner("Loading Gallery ..."):
         apps = get_resources()
         authors = get_authors(apps)
-
-    author = st.sidebar.selectbox("Select Author", authors)
-    apps_by_author = get_apps_by_author(apps, author)
-    run_app = st.sidebar.selectbox("Select the app", apps_by_author)
+    index_default_author = authors.index(db.DEFAULT_RESOURCE.author)
+    author = st.selectbox("Select Author", authors, index=index_default_author)
+    apps_by_author = get_resources_by_author(apps, author)
+    if author == db.DEFAULT_RESOURCE.author:
+        app_index = apps_by_author.index(db.DEFAULT_RESOURCE)
+    else:
+        app_index = 0
+    run_app = st.selectbox("Select the app", apps_by_author, index=app_index)
+    app_credits = st.empty()
 
     app_credits.markdown(
-        f"""
-            ## {run_app.name}
-
-            Author: [{run_app.author.name}]({run_app.author.url})
-
-            Source: [url]({run_app.url})
-            """
+        f"""Urls: [{author.name}]({run_app.author.url}), [Source Code]({run_app.url})"""
     )
 
     show_source_code = st.sidebar.checkbox("Show Source Code", True)
@@ -69,32 +54,59 @@ def write():
     if python_code is not None:
         try:
             with st.spinner("Loading ..."):
-                exec(python_code, globals())
-            st.header("Source code")
-            st.code(python_code)
+                exec(python_code, globals())  # pylint: disable=exec-used
         except Exception as exception:
             st.write("Error occurred when executing [{0}]".format(run_app))
             st.error(str(exception))
             logging.error(exception)
 
-
-@st.cache
-def get_apps(url: str) -> Dict[str, str]:
-    json_obj = fetch_json(url)
-    apps = {}
-    for item in json_obj:
-        if item["url"] is not None and item["url"].endswith(".py"):
-            # can overwrite if same name
-            apps[item["name"]] = item["url"]
-
-    return apps
+        if show_source_code:
+            st.header("Source code")
+            st.code(python_code)
 
 
 @st.cache
-def fetch_json(url: str):
-    data = urllib.request.urlopen(url).read()
-    output = json.loads(data)
-    return output
+def get_resources() -> List[src.shared.models.Resource]:
+    """The list of resources
+
+    Returns:
+        List[src.shared.models.Resource] -- The list of resources
+    """
+    return [resource for resource in db.RESOURCES if db.APP_IN_GALLERY in resource.tags]
+
+
+@st.cache
+def get_authors(
+    resources: List[src.shared.models.Resource]
+) -> List[src.shared.models.Author]:
+    """The list of Authors of the specified resources
+
+    The list is sorted by Author.name
+
+    Arguments:
+        resources {List[src.shared.models.Resource]} -- A list of Resources
+
+    Returns:
+        List[src.shared.models.Author] -- [description]
+    """
+    author_set = {resource.author for resource in resources if resource.author}
+    return sorted(list(author_set), key=lambda x: x.name)
+
+
+@st.cache
+def get_resources_by_author(
+    resources: List[src.shared.models.Resource], author: src.shared.models.Author
+) -> List[src.shared.models.Resource]:
+    """The Resources by the specified Author
+
+    Arguments:
+        resources {List[src.shared.models.Resource]} -- A list of resources
+        author {src.shared.models.Author} -- A list of authors
+
+    Returns:
+        List[src.shared.models.Resource] -- [description]
+    """
+    return [resource for resource in resources if resource.author == author]
 
 
 @st.cache

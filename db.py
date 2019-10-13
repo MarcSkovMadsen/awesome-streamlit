@@ -23,6 +23,14 @@ MARC_SKOV_MADSEN = Author(
 )
 INES = Author(name="Ines Montani", url="https://gist.github.com/ines")
 
+DEFAULT_RESOURCE = Resource(
+        name="Spreadsheet",
+        url="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-streamlit/master/src/pages/gallery/contributions/marc_skov_madsen/spreadsheet.py",
+        tags=[CODE, APP_IN_GALLERY],
+        is_awesome=True,
+        author=MARC_SKOV_MADSEN,
+    )
+
 RESOURCES_OTHER_APPS = [
     Resource(
         name="SpacyIO",
@@ -30,13 +38,6 @@ RESOURCES_OTHER_APPS = [
         tags=[CODE, APP_IN_GALLERY],
         is_awesome=True,
         author=INES,
-    ),
-    Resource(
-        name="Spreadsheet",
-        url="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-streamlit/master/src/pages/gallery/contributions/marc_skov_madsen/spreadsheet.py",
-        tags=[CODE, APP_IN_GALLERY],
-        is_awesome=True,
-        author=MARC_SKOV_MADSEN,
     ),
     Resource(
         name="Uber NYC Pickups",
@@ -408,7 +409,7 @@ RESOURCES = [
         tags=[CODE],
         is_awesome=True,
     ),
-] + RESOURCES_STREAMLIT_COMPONENT_APPS + RESOURCES_OTHER_APPS
+] + RESOURCES_STREAMLIT_COMPONENT_APPS + RESOURCES_OTHER_APPS + [DEFAULT_RESOURCE]
 
 TAGS = []
 for resource in RESOURCES:

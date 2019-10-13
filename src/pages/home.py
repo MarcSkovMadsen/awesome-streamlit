@@ -21,9 +21,9 @@ The purpose of this application is to
 
 This an open source project and you are very welcome to **contribute** your awesome
 comments, questions, resources and apps as
-[issues](https://github.com/MarcSkovMadsen/awesome-streamlit/issues) or
-[pull requests](https://github.com/MarcSkovMadsen/awesome-streamlit/pulls).
-You can find the source of the app [here](https://github.com/MarcSkovMadsen/awesome-streamlit).
+[issues](https://github.com/MarcSkovMadsen/awesome-streamlit/issues) of or
+[pull requests](https://github.com/MarcSkovMadsen/awesome-streamlit/pulls)
+to the [source code](https://github.com/MarcSkovMadsen/awesome-streamlit).
 
 This app is maintained by Marc Skov Madsen. I'm not an experienced open source maintainer,
 so helpfull hints and suggestions are welcome.
