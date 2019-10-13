@@ -101,7 +101,7 @@ with st.spinner("Extracting source data..."):
     source_data["sentiment"] = source_data["sentiment"].map(
         {"0": "Negative", "1": "Positive"}
     )
-    st.info("Source data succesfully extracted!")
+    st.info(f"Source data succesfully extracted! ({len(source_data)} rows")
 
 top = st.selectbox(
     "Select number of rows to show", [5, 10, 25, 50, 100, len(source_data)]
