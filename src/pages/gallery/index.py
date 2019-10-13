@@ -4,18 +4,20 @@ Very much inspired by:
 Author: [Nhan Nguyen](https://github.com/virusvn)
 Source: https://github.com/virusvn/streamlit-components-demo/blob/master/app.py
 
-Thanks
+Credits to Nhan for sharing that code
 """
 import json
 import logging
 import urllib.request
-from typing import Dict, List
-import src.st_awesome
+from typing import Dict
+
 import streamlit as st
+
 import db
+import src.st_awesome
 
 # Get an instance of a logger
-logger = logging.getLogger(__name__)
+logging.basicConfig(format="%(asctime)s - %(message)s", level=logging.INFO)
 
 JSON_URL = "https://raw.githubusercontent.com/virusvn/streamlit-components-demo/master/streamlit_apps.json"
 
@@ -70,10 +72,10 @@ def write():
                 exec(python_code, globals())
             st.header("Source code")
             st.code(python_code)
-        except Exception as e:
+        except Exception as exception:
             st.write("Error occurred when executing [{0}]".format(run_app))
-            st.error(str(e))
-            logger.error(e)
+            st.error(str(exception))
+            logging.error(exception)
 
 
 @st.cache
@@ -96,7 +98,15 @@ def fetch_json(url: str):
 
 
 @st.cache
-def get_file_content_as_string(url: str):
+def get_file_content_as_string(url: str) -> str:
+    """The url content as a string
+
+    Arguments:
+        url {str} -- The url to request
+
+    Returns:
+        str -- The text of the url
+    """
     data = urllib.request.urlopen(url).read()
     return data.decode("utf-8")
 

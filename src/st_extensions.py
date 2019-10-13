@@ -26,7 +26,7 @@ def write_page(page):  # pylint: disable=redefined-outer-name
         try:
             importlib.import_module(page.__name__)
             importlib.reload(page)
-        except ImportError as identifier:
+        except ImportError as _:
             logging.info("3. Writing: %s", page)
             logging.info("4. In sys.modules: %s", page in sys.modules)
     page.write()

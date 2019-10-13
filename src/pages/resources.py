@@ -1,12 +1,13 @@
 """This page is for searching and viewing the list of awesome resources"""
+import logging
 from collections import defaultdict
+
 import streamlit as st
 
-import db
-import src.st_extensions
-import src.st_awesome
 import config
-import logging
+import db
+import src.st_awesome
+import src.st_extensions
 
 logging.basicConfig(format="%(asctime)s - %(message)s", level=logging.INFO)
 
@@ -46,6 +47,14 @@ def filter_by_is_awesome(resources):
 
 @st.cache
 def to_markdown(resources):
+    """Converts the specified resources to MarkDown
+
+    Arguments:
+        resources {[type]} -- [description]
+
+    Returns:
+        [type] -- [description]
+    """
     resources_dict = defaultdict(list)
     for resource in resources:
         resources_dict[resource.tags[0]].append(resource)
