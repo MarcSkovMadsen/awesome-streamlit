@@ -35,10 +35,10 @@ DEFAULT_RESOURCE = Resource(
 RESOURCES_OTHER_APPS = [
     Resource(
         name = "Sentiment Analyzer",
-        url="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-streamlit/master/src/pages/gallery/contributions/paras_patidar/sentiment_analyzer.py",
+        url="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-streamlit/master/src/pages/gallery/contributions/marc_skov_madsen/sentiment_analyzer/sentiment_analyzer.py",
         tags=[CODE, APP_IN_GALLERY],
         is_awesome=True,
-        author=PARAS_PATIDAR,
+        author=MARC_SKOV_MADSEN,
     ),
     Resource(
         name="SpacyIO",

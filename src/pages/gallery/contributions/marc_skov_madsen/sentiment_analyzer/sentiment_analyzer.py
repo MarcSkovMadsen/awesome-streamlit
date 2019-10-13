@@ -87,7 +87,7 @@ st.info(
 st.write(
     "The algorithm is trained on a collection of movie reviews and you can test it below."
 )
-st.subheader("Source data")
+st.subheader("Extract the data")
 file_markdown = "Source: \n"
 file_markdown += ", ".join([f"[{file}]({ROOT_URL+file})" for file in FILES])
 st.markdown(file_markdown)
@@ -108,7 +108,7 @@ top = st.selectbox(
 )
 st.table(source_data.head(top))
 
-st.subheader("Algorithm training")
+st.subheader("Train the algorithm")
 with st.spinner("Training algorithm..."):
     training_data, evaluation_data = preprocessing_step()
     vectorizer = CountVectorizer(binary="true")
@@ -116,14 +116,18 @@ with st.spinner("Training algorithm..."):
     st.info("Algorithm was successfully trained!")
 
 
-st.subheader("Test")
-st.info("**Enter a review** below and **press the button** to predict the sentiment.")
+st.subheader("Let user try the algorithm!")
 write_here = "Write Here..."
 review = st.text_input("Enter a review for classification by the algorithm", write_here)
 if st.button("Predict Sentiment"):
     result = print_result(analyse_text(classifier, vectorizer, review))
     if review != write_here:
         st.success(result[1])
-        st.error("For illustrative purposes only!")
+        st.error("For illustrative purposes only! :-)")
     else:
         st.error("You need to input a review for classification!")
+else:
+    st.info(
+        "**Enter a review** above and **press the button** to predict the sentiment."
+    )
+
