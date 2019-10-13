@@ -35,10 +35,13 @@ st.sidebar.title("Navigation")
 selection = st.sidebar.radio("Go to", list(PAGES.keys()))
 
 page = PAGES[selection]
+
 try:
-    src.st_extensions.write_page(page)
+    with st.spinner(f"Loading {selection} ..."):
+        src.st_extensions.write_page(page)
 except Exception as _:
     st.error("Error. Something wen't wrong! Please refresh the app")
+
 st.sidebar.title("Contribute")
 st.sidebar.info(
     "You are very welcome to **contribute** your awesome comments, questions, "

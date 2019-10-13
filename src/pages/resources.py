@@ -73,6 +73,7 @@ def to_markdown(resources):
 def write():
     """Writes content to the app"""
     src.st_awesome.title("Resources")
+    st.sidebar.title("Resources")
 
     tags = src.st_extensions.multiselect("Select Tag(s)", options=db.TAGS, default=[])
 

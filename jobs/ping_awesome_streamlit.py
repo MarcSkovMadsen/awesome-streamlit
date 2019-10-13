@@ -47,12 +47,11 @@ If not None the site will be pinged every sleeps_seconds seconds (default: {200}
             response.status_code,
             response.elapsed,
         )
-        text = response.text  # pylint: disable=unused-variable
-        print(text)
+        text_len = len(response.text)
         logging.info(
-            "Response text %s received, text[0:20]=%s, elapsed=%s",
+            "Response text %s received, len(text)=%s, elapsed=%s",
             count,
-            text[0:20],
+            text_len,
             response.elapsed,
         )
 
