@@ -13,28 +13,22 @@ def write():
 
 I believe Streamlit has the **potential to become the Iphone of Data Science Apps**. And maybe it can even become the Iphone of Technical Writing, Code, Micro Apps and Python.
 
-The purpose of this application is to
+The **purpose** of the awesome-streamlit project is to share knowledge on how Awesome [Streamlit](https://streamlit.io/) is and can become.
 
-- Share a list of awesome Streamlit **resources**.
-- Provide a **gallery** of awesome streamlit applications.
-- Share a **vision** on how awesome Streamlit can be.
+This application provides
 
-This an open source project and you are very welcome to **contribute** your awesome
-comments, questions, resources and apps as
-[issues](https://github.com/MarcSkovMadsen/awesome-streamlit/issues) of or
-[pull requests](https://github.com/MarcSkovMadsen/awesome-streamlit/pulls)
-to the [source code](https://github.com/MarcSkovMadsen/awesome-streamlit).
-
-This app is maintained by Marc Skov Madsen. I'm not an experienced open source maintainer,
-so helpfull hints and suggestions are welcome.
-You can learn more about me at [datamodelsanalytics.com](https://datamodelsanalytics.com)
+- A list of awesome Streamlit **resources**.
+- A **gallery** of awesome streamlit applications.
+- A **vision** on how awesome Streamlit can be.
+- A **best practices** example and **starter** template of a larger, multipage,
+high quality app **developed using the power of Python and the magic of Streamlit**!
 
 ## The Magic of Streamlit
 
 The only way to truly understand how magical Streamlit is to play around with it
 but if you need to be convinced first, then here is the **4 minute introduction** to Streamlit!
 
-Afterwards you can go to the [Streamlit docs](https://streamlit.io/docs/) to get started.
+Afterwards you can explore examples in the Gallery and go to the [Streamlit docs](https://streamlit.io/docs/) to get started.
 
 
 """

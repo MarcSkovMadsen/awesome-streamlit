@@ -70,29 +70,61 @@ def to_markdown(resources):
     return markdown
 
 
+@st.cache
+def get_sorted_resources(awesome_resources_only: bool = True):
+    """The list of resources sorted by name
+
+    Keyword Arguments:
+        awesome_resources_only {bool} -- If True only awesome resources
+will be included in the list (default: {True})
+
+    Returns:
+        [type] -- The list of resources sorted by name
+    """
+    resources = sorted(db.RESOURCES, key=lambda x: x.name)
+    if awesome_resources_only:
+        resources = filter_by_is_awesome(resources)
+    return resources
+
+
+@st.cache
+def get_resources_markdown(tags, awesome_resources_only=True) -> str:
+    """A bulleted Markdown list of resources filtered as specified
+
+    Arguments:
+        tags {[type]} -- A list of tags to filter to. If the list is empty [] then we
+do no filtering on Tags
+
+    Keyword Arguments:
+        awesome_resources_only {bool} -- [description] (default: {True})
+
+    Returns:
+        str -- A bulleted Markdown list of resources filtered as specified
+    """
+    resources = get_sorted_resources(awesome_resources_only)
+    resources = filter_by_tags(resources, tags)
+    return to_markdown(resources)
+
+
 def write():
     """Writes content to the app"""
     src.st_awesome.title("Resources")
     st.sidebar.title("Resources")
+    show_awesome_resources_only = st.sidebar.checkbox(
+        "Show Awesome Resources Only", value=True
+    )
 
     tags = src.st_extensions.multiselect("Select Tag(s)", options=db.TAGS, default=[])
-
-    with st.spinner("Loading resources ..."):
-        logging.info(tags)
-        resources = filter_by_tags(db.RESOURCES, tags)
-
-        if st.sidebar.checkbox("Show Awesome Resources Only", value=True):
-            resources = filter_by_is_awesome(resources)
-
-        resources = sorted(resources, key=lambda x: x.name)
 
     st.info(
         """Please note that resources can have multiple tags!
     We list each resource under **a most important tag only!**"""
     )
+    resource_section = st.empty()
 
-    markdown = to_markdown(resources)
-    st.write(markdown)
+    with st.spinner("Loading resources ..."):
+        markdown = get_resources_markdown(tags, show_awesome_resources_only)
+        resource_section.markdown(markdown)
 
     if st.sidebar.checkbox("Show Resource JSON"):
         st.subheader("Source JSON")

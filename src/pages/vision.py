@@ -5,11 +5,22 @@ import streamlit as st
 import src.st_awesome
 
 
-def write():
-    """Method used to write the page in the app.py file"""
+@st.cache
+def get_vision_markdown() -> str:
+    """Returns the Vision
+
+    Returns:
+        str -- The vision as a string of MarkDown
+    """
     url = pathlib.Path(__file__).parent.parent.parent / "AWESOME-STREAMLIT.md"
     with open(url, mode="r") as file:
         readme_md_contents = "".join(file.readlines())
-    readme_md_contents = readme_md_contents.split("\n", 3)[-1]
+    return readme_md_contents.split("\n", 3)[-1]
+
+
+def write():
+    """Method used to write the page in the app.py file"""
     src.st_awesome.title("Vision")
-    st.markdown(readme_md_contents)
+    with st.spinner("Loading Vision ..."):
+        vision = get_vision_markdown()
+    st.markdown(vision)

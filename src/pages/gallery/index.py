@@ -38,11 +38,11 @@ def write():
         app_index = apps_by_author.index(db.DEFAULT_RESOURCE)
     else:
         app_index = 0
-    run_app = st.selectbox("Select the app", apps_by_author, index=app_index)
+    run_app = st.selectbox("Select the App", apps_by_author, index=app_index)
     app_credits = st.empty()
 
     app_credits.markdown(
-        f"""Resources: [{author.name}]({run_app.author.url}), [Source Code]({run_app.url})"""
+        f"""Resources: [Author]({run_app.author.url}), [App Code]({run_app.url})"""
     )
     st.sidebar.title("Gallery")
     show_source_code = st.sidebar.checkbox("Show Source Code", True)

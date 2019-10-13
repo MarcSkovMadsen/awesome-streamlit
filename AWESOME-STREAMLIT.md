@@ -192,6 +192,10 @@ Problem: So many layers of abstraction to master. The api is not "magical".
 
 Implications:
 
+### Binder
+
+Not needed?
+
 ## Technical Writing
 
 Something like [this](https://insights.stackoverflow.com/survey/2019) and [this](https://streamlit.io/docs/api.html) will be so easy to develop in Streamlit.

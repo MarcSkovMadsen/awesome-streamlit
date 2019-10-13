@@ -8,14 +8,13 @@ The purpose of this project is to share knowledge on how Awesome [Streamlit](htt
 
 Streamlit has just been [announced](https://towardsdatascience.com/coding-ml-tools-like-you-code-ml-models-ddba3357eace) (Oct 2019) but I see the potential of becoming the **Iphone of Data Science Apps**. And maybe it can even become the Iphone of Technical Writing, Code, Micro Apps and Python.
 
-This project will consist of 3 things
+This project provides
 
-- A unofficial and curated [list](https://github.com/MarcSkovMadsen/awesome-streamlit#awesome-resources) of Awesome Streamlit **resources**. See below.
+- A curated [list](https://github.com/MarcSkovMadsen/awesome-streamlit#awesome-resources) of Awesome Streamlit **resources**. See below.
 - An [**awesome Streamlit application**](https://awesome-streamlit.azurewebsites.net/) with a **gallery** of Awesome Streamlit Apps.
   - Feel free to add your awesome app to the gallery via a [Pull request](https://github.com/MarcSkovMadsen/awesome-streamlit/pulls). It's easy (see below).
-- An [article](https://github.com/MarcSkovMadsen/awesome-streamlit/blob/master/AWESOME-STREAMLIT.md) on the **vision** of how awesome Streamlit is and can become.
-
-You can also use this project as inspiration or as a starter template for your awesome (multi-page) Streamlit app.
+- A [**vision**](https://github.com/MarcSkovMadsen/awesome-streamlit/blob/master/AWESOME-STREAMLIT.md) on how awesome Streamlit is and can become.
+- A **best practices** example and **starter** template of a larger, multipage, high quality app.
 
 ## Awesome-streamlit.org is not yet running
 

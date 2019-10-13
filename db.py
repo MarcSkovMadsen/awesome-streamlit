@@ -22,6 +22,7 @@ MARC_SKOV_MADSEN = Author(
     name="Marc Skov Madsen", url="https://datamodelsanalytics.com"
 )
 INES = Author(name="Ines Montani", url="https://gist.github.com/ines")
+PARAS_PATIDAR = Author(name="Paras Patidar", url="https://github.com/patidarparas13")
 
 DEFAULT_RESOURCE = Resource(
         name="Spreadsheet",
@@ -32,6 +33,13 @@ DEFAULT_RESOURCE = Resource(
     )
 
 RESOURCES_OTHER_APPS = [
+    Resource(
+        name = "Sentiment Analyzer",
+        url="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-streamlit/master/src/pages/gallery/contributions/paras_patidar/sentiment_analyzer.py",
+        tags=[CODE, APP_IN_GALLERY],
+        is_awesome=True,
+        author=PARAS_PATIDAR,
+    ),
     Resource(
         name="SpacyIO",
         url="https://gist.githubusercontent.com/ines/b320cb8441b590eedf19137599ce6685/raw/6e0ead5a442fd9c5e3f621a76fba94241cc847ce/streamlit_spacy.py",

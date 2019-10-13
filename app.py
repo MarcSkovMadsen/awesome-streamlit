@@ -36,22 +36,20 @@ selection = st.sidebar.radio("Go to", list(PAGES.keys()))
 
 page = PAGES[selection]
 
-try:
-    with st.spinner(f"Loading {selection} ..."):
-        src.st_extensions.write_page(page)
-except Exception as _:
-    st.error("Error. Something wen't wrong! Please refresh the app")
+with st.spinner(f"Loading {selection} ..."):
+    src.st_extensions.write_page(page)
 
 st.sidebar.title("Contribute")
 st.sidebar.info(
-    "You are very welcome to **contribute** your awesome comments, questions, "
-    "resources, apps or code.\n"
-    "- [Create Issue](https://github.com/MarcSkovMadsen/awesome-streamlit/issues)\n"
-    "- [Create Pull Request](https://github.com/MarcSkovMadsen/awesome-streamlit/pulls)\n"
-    "- [View Source Code](https://github.com/MarcSkovMadsen/awesome-streamlit)\n\n"
+    "This an open source project and you are very welcome to **contribute** your awesome "
+    "comments, questions, resources and apps as "
+    "[issues](https://github.com/MarcSkovMadsen/awesome-streamlit/issues) of or "
+    "[pull requests](https://github.com/MarcSkovMadsen/awesome-streamlit/pulls) "
+    "to the [source code](https://github.com/MarcSkovMadsen/awesome-streamlit). "
 )
 st.sidebar.title("About")
 st.sidebar.info(
     "This app is maintained by Marc Skov Madsen. "
+    "I'm not an experienced open source maintainer, so helpfull hints and suggestions are welcome. "
     "You can learn more about me at [datamodelsanalytics.com](https://datamodelsanalytics.com)."
 )
