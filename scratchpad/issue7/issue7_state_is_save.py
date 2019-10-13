@@ -4,7 +4,6 @@ import streamlit as st
 
 pages = ["Home", "Resources"]
 tags = ["Awesome", "Social"]
-resources = [{"name": ""}]
 
 page = st.sidebar.radio("Navigate", options=pages)
 st.title(page)
