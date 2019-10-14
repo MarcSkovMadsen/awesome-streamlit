@@ -14,7 +14,7 @@ This project provides
 - An [**awesome Streamlit application**](https://awesome-streamlit.org) with a **gallery** of Awesome Streamlit Apps.
   - Feel free to add your awesome app to the gallery via a [Pull request](https://github.com/MarcSkovMadsen/awesome-streamlit/pulls). It's easy (see below).
 - A [**vision**](https://github.com/MarcSkovMadsen/awesome-streamlit/blob/master/AWESOME-STREAMLIT.md) on how awesome Streamlit is and can become.
-- A **best practices** example and **starter** template of a larger, multipage, high quality app.
+- A **best practices** example and **starter template** of a larger, multipage, high quality app with an automated CI/ CD pipeline and deployed as a Docker container.
 
 ## Awesome-streamlit.org is not yet performant
 
