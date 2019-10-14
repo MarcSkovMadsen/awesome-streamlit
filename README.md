@@ -179,7 +179,7 @@ If you would like to sponsor my time or the infrastructure the platform is runni
 
 You can also just appreciate the work that has alredy been done if you
 
-[![Buy me a coffee](https://github.com/streamlit/streamlit/assets/buymeacoffee.png)](https://www.buymeacoffee.com/4jlTzBJyQ)
+[![Buy me a coffee](https://github.com/MarcSkovMadsen/awesome-streamlit/blob/master/assets/buymeacoffee.png?raw=true)](https://www.buymeacoffee.com/4jlTzBJyQ)
 
 Thanks
 
