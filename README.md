@@ -1,6 +1,6 @@
 # Awesome Streamlit [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/MarcSkovMadsen/awesome-streamlit)
 
-[<img src="https://github.com/MarcSkovMadsen/awesome-streamlit/blob/master/assets/streamlit-logo.png?raw=true" align="right" height="100">](https://streamlit.io)
+[<img src="https://github.com/MarcSkovMadsen/awesome-streamlit/blob/master/assets/streamlit-logo.png?raw=true" align="right" height="25">](https://streamlit.io)
 
 > The fastest way to build **Awesome Tools and Apps**! Powered by **Python**!
 
@@ -11,7 +11,7 @@ Streamlit has just been [announced](https://towardsdatascience.com/coding-ml-too
 This project provides
 
 - A curated [list](https://github.com/MarcSkovMadsen/awesome-streamlit#awesome-resources) of Awesome Streamlit **resources**. See below.
-- An [**awesome Streamlit application**](https://awesome-streamlit.azurewebsites.net/) with a **gallery** of Awesome Streamlit Apps.
+- An [**awesome Streamlit application**](https://awesome-streamlit.org) with a **gallery** of Awesome Streamlit Apps.
   - Feel free to add your awesome app to the gallery via a [Pull request](https://github.com/MarcSkovMadsen/awesome-streamlit/pulls). It's easy (see below).
 - A [**vision**](https://github.com/MarcSkovMadsen/awesome-streamlit/blob/master/AWESOME-STREAMLIT.md) on how awesome Streamlit is and can become.
 - A **best practices** example and **starter** template of a larger, multipage, high quality app.
