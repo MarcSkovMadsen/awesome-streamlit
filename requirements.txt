@@ -46,3 +46,4 @@ tensorflow==2.0.0
 seaborn==0.9.0
 pydot==1.4.1
 plotly==4.1.0
+twine==2.0.0
