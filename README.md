@@ -2,7 +2,7 @@
 
 [<img src="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-streamlit/master/streamlit-logo.png" align="right" width="86">](https://streamlit.io)
 
-> The fastest way to build **Magical Tools and Apps**! Powered by **Python**!
+> The fastest way to build **Awesome Tools and Apps**! Powered by **Python**!
 
 The purpose of this project is to share knowledge on how Awesome [Streamlit](https://streamlit.io/) is and can become. [Pull requests](https://github.com/MarcSkovMadsen/awesome-streamlit/pulls) are very welcome!
 
