@@ -179,7 +179,7 @@ If you would like to sponsor my time or the infrastructure the platform is runni
 
 You can also just appreciate the work that has alredy been done if you
 
-![[Buy me a coffee](https://www.buymeacoffee.com/4jlTzBJyQ)](https://bmc-cdn.nyc3.digitaloceanspaces.com/BMC-button-images/custom_images/purple_img.png)
+[![Buy me a coffee](https://bmc-cdn.nyc3.digitaloceanspaces.com/BMC-button-images/custom_images/purple_img.png)](https://www.buymeacoffee.com/4jlTzBJyQ)
 
 Thanks
 
