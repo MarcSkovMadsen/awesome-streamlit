@@ -4,6 +4,7 @@
 # In order for this to work they should be added to the pages.__init__ file
 # pylint: disable=invalid-name
 import streamlit as st
+import awesome_streamlit.experiments as ast
 
 # Import all needed packages
 # Dont write 'from src.pages import home'. Autoreload will not work!
@@ -38,7 +39,6 @@ page = PAGES[selection]
 
 with st.spinner(f"Loading {selection} ..."):
     src.st_extensions.write_page(page)
-
 st.sidebar.title("Contribute")
 st.sidebar.info(
     "This an open source project and you are very welcome to **contribute** your awesome "

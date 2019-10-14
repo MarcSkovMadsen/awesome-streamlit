@@ -344,6 +344,27 @@ The application is
 
 ![Azure Pipelines](https://github.com/MarcSkovMadsen/awesome-streamlit/blob/master/assets/azure-pricing-tier.png)
 
+### The Awesome-Streamlit Package
+
+You can build the package using
+
+```bash
+cd package
+python setup.py sdist bdist_wheel
+```
+
+If you wan't to publish the package to PyPi you should first
+
+update the version number in the setup.py file. The format is `YYYYmmdd.version`. For example `20191014.2`
+
+Then you run
+
+```bash
+twine upload dist/awesome-streamlit-YYYYmmdd.version.tar.gz -u <the-pypi-username> -p <the-pypi-password>
+```
+
+For more info see the package [README.md](https://github.com/MarcSkovMadsen/awesome-streamlit/blob/master/package/README.md)
+
 ### Project Layout
 
 The basic layout of a application is as simple as

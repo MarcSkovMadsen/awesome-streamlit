@@ -4,22 +4,27 @@ pip install -e .
 
 or similar where . is replaced by the path to package root
 """
-from setuptools import setup, find_packages
-import os
+import pathlib
 
-THIS_FILE_PATH = os.path.dirname(__file__)
-with open(f"{THIS_FILE_PATH}/README.md") as f:
+from setuptools import setup
+
+README_FILE_PATH = pathlib.Path(__file__).parent / "README.md"
+with open(README_FILE_PATH) as f:
     README = f.read()
 
-s = setup(
+s = setup(  # pylint: disable=invalid-name
     name="awesome-streamlit",
-    version="20191014.1",
+    version="20191014.4",
     license="MIT",
-    description=README,
+    description="""This package supports the Awesome Streamlit Project and
+    provides highly experimental features!""",
+    long_description_content_type="text/markdown",
+    long_description=README,
     url="https://github.com/marcskovmadsen/awesome-streamlit",
-    packages=find_packages("awesome_streamlit"),
-    install_requires=["streamlit>=0.47.4"],
-    python_requires=">= 3.7",
     author="Marc Skov Madsen",
     author_email="marc.skov.madsen@gmail.com",
+    packages=["awesome_streamlit"],
+    install_requires=["streamlit>=0.47.4"],
+    python_requires=">= 3.7",
+    zip_safe=False,
 )
