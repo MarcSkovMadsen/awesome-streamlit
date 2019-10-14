@@ -47,7 +47,7 @@ DEFAULT_RESOURCE = Resource(
         is_awesome=True,
         author=MARC_SKOV_MADSEN,
     )
-RESOURCES_OTHER_APPS = [
+APP_CONTRIBUTIONS = [
     Resource(
         name = "Sentiment Algorithm",
         url="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-streamlit/master/src/pages/gallery/contributions/marc_skov_madsen/sentiment_analyzer/sentiment_analyzer.py",
@@ -483,7 +483,7 @@ RESOURCES = [
         tags=[CODE],
         is_awesome=True,
     ),
-] + STREAMLIT_EXAMPLE_APPS + STREAMLIT_EXAMPLE_APPS_FAILED_TEST + RESOURCES_STREAMLIT_COMPONENT_APPS + RESOURCES_OTHER_APPS + [DEFAULT_RESOURCE]
+] + STREAMLIT_EXAMPLE_APPS + STREAMLIT_EXAMPLE_APPS_FAILED_TEST + RESOURCES_STREAMLIT_COMPONENT_APPS + APP_CONTRIBUTIONS + [DEFAULT_RESOURCE]
 
 TAGS = []
 for resource in RESOURCES:

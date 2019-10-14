@@ -115,7 +115,7 @@ The best way to contribute an awesome app is via a [Pull request](https://github
 In the pull request you should
 
 - describe why your contribution is awesome and should be included.
-- add your code in a new `your_app_name.py` file in the `src/pages/gallery` folder.
+- add your code in a new `your_app_name.py` file in the `src/pages/gallery/contributions/<insert your_name here>/` folder.
   - If your code is large feel free to add a `your_app_name` folder of files instead.
 - your code should look like
 
@@ -142,8 +142,8 @@ if __name__ == "__main__":
 
 - Please note magic in sub pages does not work. So **don't use magic**.
 - add the `your_app_name` to the
-  - list of APPS in the [src/gallery/index.py](https://github.com/MarcSkovMadsen/awesome-streamlit/blob/master/src/gallery/index.py).
-- import your page in the app.py to enable automatic reload. You need to use the full path `import src.pages.gallery.your_app_name as your_app_name` for automatic reload to work. Cf. this [issue](https://github.com/MarcSkovMadsen/awesome-streamlit/issues/2)
+  - list of APP_CONTRIBUTIONS in the [dp.py](https://github.com/MarcSkovMadsen/awesome-streamlit/blob/master/db.py).
+- import your page in the app.py to enable automatic reload. You need to use the full path `import src.pages.gallery.contributions.your_name.your_app_name as your_app_name` for automatic reload to work. Cf. this [issue](https://github.com/MarcSkovMadsen/awesome-streamlit/issues/2)
 - update the [requirements.txt](https://github.com/MarcSkovMadsen/awesome-streamlit/blob/master/requirements.txt) file.
     Please specify the required versions.
 - Run the automated tests using `invoke test.all` and fix all errors from your app
@@ -175,7 +175,7 @@ If you are in a Team please consider signing up for the beta of
 
 If you would like to sponsor my time or the infrastructure the platform is running on feel free to reach out via [datamodelsanalytics.com](https://datamodelsanalytics.com).
 
-You can also just appreciate the work that has alredy been done if you
+You can also just appreciate the work that has already been done if you
 
 [![Buy me a coffee](https://github.com/MarcSkovMadsen/awesome-streamlit/blob/master/assets/buymeacoffee.png?raw=true)](https://www.buymeacoffee.com/4jlTzBJyQ)
 
