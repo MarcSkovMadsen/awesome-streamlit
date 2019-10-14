@@ -175,9 +175,9 @@ If you are in a Team please consider signing up for the beta of
 
 ### How to sponsor the Awesome Streamlit project
 
-If you would like to sponsor my time or the infrastructure the platform is running on feel free to reach out via [datamodelsanalytics.com](https://datamodelsanalytics.com).
+If you would like to sponsor my time or the infrastructure the platform is running on, feel free to reach out via [datamodelsanalytics.com](https://datamodelsanalytics.com).
 
-You can also just appreciate the work that has already been done if you
+You can also appreciate the work I have already done if you
 
 [![Buy me a coffee](https://github.com/MarcSkovMadsen/awesome-streamlit/blob/master/assets/buymeacoffee.png?raw=true)](https://www.buymeacoffee.com/4jlTzBJyQ)
 
