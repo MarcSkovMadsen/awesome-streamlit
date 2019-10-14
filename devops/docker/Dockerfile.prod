@@ -3,6 +3,9 @@ FROM marcskovmadsen/awesome-streamlit_base:latest
 WORKDIR /app
 ADD . ./
 
+RUN pip install --upgrade pip && pip install --no-cache-dir -r requirements.txt \
+    && rm -rf requirements.txt
+
 # Default port for Azure Web App for containers is 80
 # Please note that port and serverPort in the config.toml file
 # should correspond to the exposed port

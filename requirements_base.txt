@@ -1,0 +1,49 @@
+# Streamlit
+streamlit==0.47.4
+
+# Utils
+# ------------------------------------------------------------------------------
+invoke==1.3.0 # Invoke is a Python task execution tool & library. See http://www.pyinvoke.org/
+
+# Data Engineering and Science
+pandas==0.24.2
+xlrd==1.2.0 # For importing xls files
+
+# Testing
+# ------------------------------------------------------------------------------
+pytest  # https://github.com/pytest-dev/pytest
+pytest-sugar  # https://github.com/Frozenball/pytest-sugar
+pytest-mock # https://github.com/pytest-dev/pytest-mock/
+pytest-cov # https://pypi.org/project/pytest-cov/
+
+# Code quality
+# ------------------------------------------------------------------------------
+# flake8==3.7.5  # https://github.com/PyCQA/flake8
+isort>=4.3.15 # Sort import statements. We need 4.3.15 to correctly sort dataclasses
+pylint # Linter.
+pylint2junit # Used to generate junit xml reports in azure pipelines https://pypi.org/project/pylint2junit/
+black # Auto formatter.
+autoflake # Automatically removes unused imports and unused variables. See https://github.com/myint/autoflake
+coverage  # https://github.com/nedbat/coveragepy
+mypy  # https://github.com/python/mypy
+bandit # Bandit is a tool designed to find common security issues in Python code. See https://pypi.org/project/bandit/
+
+# Documentation Quality
+doc8 # Doc8 is an opinionated style checker for rst (with basic support for plain text) styles of documentation. See https://github.com/openstack/doc8
+
+# Other
+spacy # Industrial-Strength Natural Language Processing https://spacy.io/
+# boto3
+# botocore
+# Pillow
+# requests
+bokeh==1.3.4
+graphviz==0.13
+matplotlib==3.1.1
+scipy==1.3.1
+sklearn
+tensorflow==2.0.0
+seaborn==0.9.0
+pydot==1.4.1
+plotly==4.1.0
+twine==2.0.0

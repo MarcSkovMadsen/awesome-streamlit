@@ -157,11 +157,33 @@ Feel free to reach out if you have comments, questions or need help.
 
 Thanks.
 
-### How to sponsor this project
+### How to contribute to the Streamlit Community
+
+Please sign up to and participate in the community at [discuss.streamlit.io](https://discuss.streamlit.io/)
+
+### How to contribute to the Streamlit Package
+
+Please contribute to improving the Streamlit package at [GitHub/streamlit/streamlit](https://github.com/streamlit/streamlit)
+
+### How to contribute to Streamlit.io
+
+Streamlit.io is in the (sometimes difficult) position of trying to balance building an awesome company and providing an awesome product to the open source community.
+
+If you are in a Team please consider signing up for the beta of
+
+- [Streamlit for teams](https://streamlit.io/forteams/)
+
+### How to sponsor the Awesome Streamlit project
 
 If you would like to sponsor my time or the infrastructure the platform is running on feel free to reach out via [datamodelsanalytics.com](https://datamodelsanalytics.com).
 
+You are also most welcome to
+
+<style>.bmc-button img{width: 27px !important;margin-bottom: 1px !important;box-shadow: none !important;border: none !important;vertical-align: middle !important;}.bmc-button{line-height: 36px !important;height:37px !important;text-decoration: none !important;display:inline-flex !important;color:#ffffff !important;background-color:#BB5794 !important;border-radius: 3px !important;border: 1px solid transparent !important;padding: 1px 9px !important;font-size: 22px !important;letter-spacing: 0.6px !important;box-shadow: 0px 1px 2px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important;margin: 0 auto !important;font-family:'Cookie', cursive !important;-webkit-box-sizing: border-box !important;box-sizing: border-box !important;-o-transition: 0.3s all linear !important;-webkit-transition: 0.3s all linear !important;-moz-transition: 0.3s all linear !important;-ms-transition: 0.3s all linear !important;transition: 0.3s all linear !important;}.bmc-button:hover, .bmc-button:active, .bmc-button:focus {-webkit-box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important;text-decoration: none !important;box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important;opacity: 0.85 !important;color:#ffffff !important;}</style><link href="https://fonts.googleapis.com/css?family=Cookie" rel="stylesheet"><a class="bmc-button" target="_blank" href="https://www.buymeacoffee.com/4jlTzBJyQ"><img src="https://bmc-cdn.nyc3.digitaloceanspaces.com/BMC-button-images/BMC-btn-logo.svg" alt="Buy me a coffee"><span style="margin-left:5px">Buy me a coffee</span></a>
+
 Thanks
+
+Marc
 
 ## LICENSE
 
