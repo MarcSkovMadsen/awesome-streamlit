@@ -16,9 +16,9 @@ This project provides
 - A [**vision**](https://github.com/MarcSkovMadsen/awesome-streamlit/blob/master/AWESOME-STREAMLIT.md) on how awesome Streamlit is and can become.
 - A **best practices** example and **starter** template of a larger, multipage, high quality app.
 
-## Awesome-streamlit.org is not yet running
+## Awesome-streamlit.org is not yet performant
 
-I'm working on getting it up and running but there is an issue. Cf.
+I'm working on getting it performant, but there is an issue. Cf.
 
 - [https://discuss.streamlit.io/t/streamlit-app-deployed-as-azure-webapp-for-containers-becomes-unresponsive-over-time/330]
   - [https://github.com/streamlit/streamlit/issues/367](https://github.com/streamlit/streamlit/issues/367)
@@ -165,7 +165,7 @@ Thanks
 
 ## LICENSE
 
-[MIT](https://github.com/MarcSkovMadsen/awesome-streamlit/blob/master/LICENSE.md)
+[Attribution-ShareAlike 4.0 International](https://github.com/MarcSkovMadsen/awesome-streamlit/blob/master/license.md)
 
 ## Getting Started with the Awesome Streamlit Application
 
@@ -263,7 +263,7 @@ docker run -it -p 80:80 --entrypoint "streamlit" marcskovmadsen/awesome-streamli
 We use
 
 - [isort](https://pypi.org/project/isort/) for sorting import statements
-- [autoflake] to remove unused imports and unused variables
+- [autoflake](https://github.com/myint/autoflake) to remove unused imports and unused variables
 - [black](https://pypi.org/project/black/) the opinionated code formatter
 - [pylint](https://www.pylint.org/) for static analysis
 - [mypy](https://github.com/python/mypy) for static type checking
