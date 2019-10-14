@@ -167,7 +167,7 @@ Please contribute to improving the Streamlit package at [GitHub/streamlit/stream
 
 ### How to contribute to Streamlit.io
 
-Streamlit.io is in the (sometimes difficult) position of trying to balance building an awesome company and providing an awesome product to the open source community.
+Streamlit.io is in the position of trying to balance building an awesome, succesfull business and providing an awesome product to the open source community.
 
 If you are in a Team please consider signing up for the beta of
 
@@ -179,7 +179,7 @@ If you would like to sponsor my time or the infrastructure the platform is runni
 
 You can also just appreciate the work that has alredy been done if you
 
-[![Buy me a coffee](https://bmc-cdn.nyc3.digitaloceanspaces.com/BMC-button-images/custom_images/purple_img.png)](https://www.buymeacoffee.com/4jlTzBJyQ)
+[![Buy me a coffee](https://github.com/streamlit/streamlit/assets/buymeacoffee.png)](https://www.buymeacoffee.com/4jlTzBJyQ)
 
 Thanks
 
