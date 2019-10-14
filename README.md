@@ -1,6 +1,6 @@
 # Awesome Streamlit [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/MarcSkovMadsen/awesome-streamlit)
 
-[<img src="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-streamlit/master/streamlit-logo.png" align="right" width="86">](https://streamlit.io)
+[<img src="https://github.com/MarcSkovMadsen/awesome-streamlit/blob/master/assets/streamlit-logo.png?raw=true" align="right" height="100">](https://streamlit.io)
 
 > The fastest way to build **Awesome Tools and Apps**! Powered by **Python**!
 
