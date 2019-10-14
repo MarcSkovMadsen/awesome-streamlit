@@ -144,7 +144,7 @@ if __name__ == "__main__":
 
 - Please note magic in sub pages does not work. So **don't use magic**.
 - add the `your_app_name` to the
-  - list of APP_CONTRIBUTIONS in the [dp.py](https://github.com/MarcSkovMadsen/awesome-streamlit/blob/master/db.py).
+  - list of APP_CONTRIBUTIONS in the [db.py](https://github.com/MarcSkovMadsen/awesome-streamlit/blob/master/db.py).
 - import your page in the app.py to enable automatic reload. You need to use the full path `import src.pages.gallery.contributions.your_name.your_app_name as your_app_name` for automatic reload to work. Cf. this [issue](https://github.com/MarcSkovMadsen/awesome-streamlit/issues/2)
 - update the [requirements.txt](https://github.com/MarcSkovMadsen/awesome-streamlit/blob/master/requirements.txt) file.
     Please specify the required versions.
