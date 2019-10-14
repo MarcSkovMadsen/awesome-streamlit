@@ -1,8 +1,8 @@
 # Awesome Streamlit [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/MarcSkovMadsen/awesome-streamlit)
 
-[<img src="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-streamlit/master/streamlit.png" align="right" width="86">](https://streamlit.io)
+[<img src="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-streamlit/master/streamlit-logo.png" align="right" width="86">](https://streamlit.io)
 
-> The fastest way to build custom ML tools
+> The fastest way to build **Magical Tools and Apps**! Powered by **Python**!
 
 The purpose of this project is to share knowledge on how Awesome [Streamlit](https://streamlit.io/) is and can become. [Pull requests](https://github.com/MarcSkovMadsen/awesome-streamlit/pulls) are very welcome!
 
@@ -33,8 +33,6 @@ The only way to truly understand how magical Streamlit is to play around with it
 Afterwards you can go to the [Streamlit docs](https://streamlit.io/docs/) to get started.
 
 [![Introduction to Streamlit](https://github.com/MarcSkovMadsen/awesome-streamlit/blob/master/assets/youtube-introduction-to-streamlit.png)](https://www.youtube.com/watch?v=B2iAodr0fOo&feature=youtu.be "Introduction to streamlit")
-
-## What is
 
 ## Awesome Resources
 
