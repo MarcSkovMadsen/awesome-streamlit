@@ -13,8 +13,6 @@ from typing import List
 import streamlit as st
 
 import awesome_streamlit as ast
-import src.st_awesome
-import src.st_extensions
 
 # Get an instance of a logger
 logging.basicConfig(format="%(asctime)s - %(message)s", level=logging.INFO)
@@ -25,7 +23,7 @@ master/streamlit_apps.json"""
 
 def write():
     """This method writes the Gallery index page which is used to navigate between gallery apps"""
-    src.st_awesome.title("Gallery")
+    ast.shared.components.title_awesome("Gallery")
     with st.spinner("Loading Gallery ..."):
         apps = get_resources()
         authors = get_authors(apps)

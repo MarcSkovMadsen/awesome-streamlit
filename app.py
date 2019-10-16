@@ -5,28 +5,16 @@
 # pylint: disable=invalid-name
 import streamlit as st
 
+import awesome_streamlit as ast
 # Import all needed packages
 # Dont write 'from src.pages import home'. Autoreload will not work!
 # Dont write 'import src.pages.home as home'. Autoreload will not work!
 # Use the same convention for importing in submodules. Otherwise Autoreload will not work!
 # cf. https://github.com/MarcSkovMadsen/awesome-streamlit/issues/2
-import config
 import src.pages.gallery.index
 import src.pages.home
 import src.pages.resources
 import src.pages.vision
-import src.st_extensions
-
-# import awesome_streamlit.experiments as ast
-
-
-# Please import all other modules that needs livereload here
-# Dont write 'from src.pages.gallery import spacyio'. Autoreload will not work!
-# Dont write 'from src.shared.components.st_awesome as st_awesome'. Autoreload will not work!
-# Use the same convention for importing in submodules. Otherwise Autoreload will not work!
-# cf. https://github.com/MarcSkovMadsen/awesome-streamlit/issues/2
-if config.DEBUG:
-    import src.st_awesome  # pylint: disable=unused-import
 
 PAGES = {
     "Home": src.pages.home,
@@ -40,7 +28,7 @@ selection = st.sidebar.radio("Go to", list(PAGES.keys()))
 page = PAGES[selection]
 
 with st.spinner(f"Loading {selection} ..."):
-    src.st_extensions.write_page(page)
+    ast.shared.components.write_page(page)
 st.sidebar.title("Contribute")
 st.sidebar.info(
     "This an open source project and you are very welcome to **contribute** your awesome "

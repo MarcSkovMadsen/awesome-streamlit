@@ -5,9 +5,6 @@ from collections import defaultdict
 import streamlit as st
 
 import awesome_streamlit as ast
-import config
-import src.st_awesome
-import src.st_extensions
 
 logging.basicConfig(format="%(asctime)s - %(message)s", level=logging.INFO)
 
@@ -64,8 +61,6 @@ def to_markdown(resources):
         for resource in resources_dict[tag]:
             markdown_bullets.append(resource.to_markdown_bullet())
     markdown = "\n".join(markdown_bullets)
-    if config.DEBUG:
-        print(markdown)
 
     return markdown
 
@@ -108,13 +103,13 @@ do no filtering on Tags
 
 def write():
     """Writes content to the app"""
-    src.st_awesome.title("Resources")
+    ast.shared.components.title_awesome("Resources")
     st.sidebar.title("Resources")
     show_awesome_resources_only = st.sidebar.checkbox(
         "Show Awesome Resources Only", value=True
     )
 
-    tags = src.st_extensions.multiselect(
+    tags = ast.shared.components.multiselect(
         "Select Tag(s)", options=ast.database.TAGS, default=[]
     )
 

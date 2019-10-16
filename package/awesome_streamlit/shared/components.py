@@ -1,14 +1,11 @@
-"""Extensions of the streamlit api
+"""Components for the Awesome Streamlit App and other use cases
 
-For now these are hacks and hopefully a lot of them will be removed again as the streamlit api is
-extended"""
+Hopefully a lot of the components  will be removed again as the streamlit api is extended"""
 import importlib
 import logging
 import sys
 
 import streamlit as st
-
-import config
 
 logging.basicConfig(format="%(asctime)s - %(message)s", level=logging.INFO)
 
@@ -21,15 +18,19 @@ def write_page(page):  # pylint: disable=redefined-outer-name
     Arguments:
         page {module} -- A module with a 'def write():' function
     """
-    if config.DEBUG:
-        logging.info("1. Writing: %s", page)
-        logging.info("2. In sys.modules: %s", page in sys.modules)
-        try:
-            importlib.import_module(page.__name__)
-            importlib.reload(page)
-        except ImportError as _:
-            logging.info("3. Writing: %s", page)
-            logging.info("4. In sys.modules: %s", page in sys.modules)
+
+    logging.info(
+        """--- Reload of module for live reload to work on deeply imported python modules.
+    Cf. https://github.com/streamlit/streamlit/issues/366 ---"""
+    )
+    logging.info("2.. Writing: %s", page)
+    logging.info("3. In sys.modules: %s", page in sys.modules)
+    try:
+        importlib.import_module(page.__name__)
+        importlib.reload(page)
+    except ImportError as _:
+        logging.info("4. Writing: %s", page)
+        logging.info("5. In sys.modules: %s", page in sys.modules)
     page.write()
 
 
@@ -65,3 +66,19 @@ def multiselect(label, options, default, format_func=str):
         label, options=list(options_.keys()), default=default_, format_func=format_func
     )
     return [options_[format_func(selection)] for selection in selections]
+
+
+def title_awesome(body: str):
+    """Uses st.write to write the title as f'Awesome Streamlit {body}'
+    - plus the awesome badge
+    - plus a link to the awesome-streamlit GitHub page
+
+    Arguments:
+        body {str} -- [description]
+    """
+    st.write(
+        f"# Awesome Streamlit {body} "
+        "[![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/"
+        "d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)]"
+        "(https://github.com/MarcSkovMadsen/awesome-streamlit)"
+    )

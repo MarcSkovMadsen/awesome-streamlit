@@ -1,4 +1,5 @@
 """The purpose of this app is to test that the list of resources can be executed be Streamlit"""
+import ast.shared.components as st_awesome
 import random
 # todo: Add timing to table and results
 # todo: Handle FutureWarning: set_value is deprecated and will be removed in a future release. Please use .at[] or .iat[] accessors instead
@@ -11,7 +12,6 @@ import pandas as pd
 import streamlit as st
 
 import db
-import src.st_awesome as st_awesome
 from awesome_streamlit.shared.models import Resource
 
 
