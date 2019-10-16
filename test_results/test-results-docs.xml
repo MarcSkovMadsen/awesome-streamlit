@@ -1,1 +1,37 @@
-<?xml version="1.0" encoding="utf-8"?><testsuites><testsuite errors="0" failures="0" hostname="PC70601" name="pytest" skipped="0" tests="15" time="1.943" timestamp="2019-10-16T05:52:35.767462"><testcase classname="tests.test_platform" file="tests\test_platform.py" line="5" name="test_64bit" time="0.003"></testcase><testcase classname="tests.test_platform" file="tests\test_platform.py" line="10" name="test_python_version" time="0.000"></testcase><testcase classname="tests.package.experiments.test_hello_world" file="tests\package\experiments\test_hello_world.py" line="4" name="test_awesome_streamlit_experiments_write_hello_world" time="0.003"></testcase><testcase classname="package.tests.test_hello_world" file="package\tests\test_hello_world.py" line="3" name="test_hello_world" time="0.001"></testcase><testcase classname="package.tests.test_package_imports" file="package\tests\test_package_imports.py" line="22" name="test_write_hello_world" time="0.001"></testcase><testcase classname="package.tests.database.test_database" file="package\tests\database\test_database.py" line="4" name="test_tags" time="0.002"></testcase><testcase classname="package.tests.database.test_database" file="package\tests\database\test_database.py" line="10" name="test_authors" time="0.000"></testcase><testcase classname="package.tests.database.test_database" file="package\tests\database\test_database.py" line="16" name="test_resources" time="0.001"></testcase><testcase classname="package.tests.shared.test_models" file="package\tests\shared\test_models.py" line="30" name="test_tag__init__" time="0.002"></testcase><testcase classname="package.tests.shared.test_models" file="package\tests\shared\test_models.py" line="35" name="test_tag__str__" time="0.001"></testcase><testcase classname="package.tests.shared.test_models" file="package\tests\shared\test_models.py" line="40" name="test_author__init__" time="0.000"></testcase><testcase classname="package.tests.shared.test_models" file="package\tests\shared\test_models.py" line="46" name="test_author__str__" time="0.003"></testcase><testcase classname="package.tests.shared.test_models" file="package\tests\shared\test_models.py" line="51" name="test_resource__init__" time="0.002"></testcase><testcase classname="package.tests.shared.test_models" file="package\tests\shared\test_models.py" line="60" name="test_resource__str__" time="0.000"></testcase><testcase classname="package.tests.shared.test_models" file="package\tests\shared\test_models.py" line="64" name="test_resource_to_markdown_bullet" time="0.002"></testcase></testsuite></testsuites>
+<?xml version="1.0" encoding="utf-8"?><testsuites><testsuite errors="2" failures="0" hostname="PC70601" name="pytest" skipped="0" tests="2" time="2.547" timestamp="2019-10-16T11:38:20.689173"><testcase classname="" file="package/tests/shared/test_components.py" name="package.tests.shared.test_components" time="0.000"><error message="collection failure">.venv\lib\site-packages\py\_path\local.py:701: in pyimport
+    __import__(modname)
+&lt;frozen importlib._bootstrap&gt;:983: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:967: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:677: in _load_unlocked
+    ???
+.venv\lib\site-packages\_pytest\assertion\rewrite.py:133: in exec_module
+    source_stat, co = _rewrite_test(fn, self.config)
+.venv\lib\site-packages\_pytest\assertion\rewrite.py:282: in _rewrite_test
+    tree = ast.parse(source, filename=fn)
+C:\Users\masma\AppData\Local\Programs\Python\Python37\lib\ast.py:35: in parse
+    return compile(source, filename, mode, PyCF_ONLY_AST)
+E     File &quot;C:\repos\private\awesomestreamlit\package\tests\shared\test_components.py&quot;, line 12
+E       ast.shared.components._reload_module(test_page):
+E                                                      ^
+E   SyntaxError: invalid syntax</error><error message="collection failure">.venv\lib\site-packages\_pytest\python.py:501: in _importtestmodule
+    mod = self.fspath.pyimport(ensuresyspath=importmode)
+.venv\lib\site-packages\py\_path\local.py:701: in pyimport
+    __import__(modname)
+&lt;frozen importlib._bootstrap&gt;:983: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:967: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:677: in _load_unlocked
+    ???
+.venv\lib\site-packages\_pytest\assertion\rewrite.py:133: in exec_module
+    source_stat, co = _rewrite_test(fn, self.config)
+.venv\lib\site-packages\_pytest\assertion\rewrite.py:282: in _rewrite_test
+    tree = ast.parse(source, filename=fn)
+C:\Users\masma\AppData\Local\Programs\Python\Python37\lib\ast.py:35: in parse
+    return compile(source, filename, mode, PyCF_ONLY_AST)
+E     File &quot;C:\repos\private\awesomestreamlit\package\tests\shared\test_components.py&quot;, line 12
+E       ast.shared.components._reload_module(test_page):
+E                                                      ^
+E   SyntaxError: invalid syntax</error></testcase></testsuite></testsuites>
