@@ -1,5 +1,10 @@
 """In this module we test the functionality of the utils module"""
+import pathlib
+
+import pytest
+
 from awesome_streamlit.testing import utils
+
 from . import test_module_example_folder
 from .test_module_example_folder import test_module_example_file
 
@@ -40,3 +45,12 @@ def test_collect_test_functions_in_module_with_submodules():
         (test_module_example_file, "test_st_function_1"),
         (test_module_example_file, "test_st_function_2"),
     ]
+
+@pytest.mark.xfail(reason="Not ImplementedError")
+def test_load_module_from_path():
+    """Test of load_module_from_path"""
+    # When
+    path = str(pathlib.Path(__file__).parent / "test_module_example_folder")
+    module = utils.load_module_from_path(path)
+    # Then
+    assert module == test_module_example_folder

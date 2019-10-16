@@ -1,6 +1,7 @@
 """Utils needed for testing of Streamlit applications"""
-from typing import List, Tuple
+import importlib.util
 from types import ModuleType
+from typing import List, Tuple
 
 ATTRS_NOT_TO_SEARCH = [
     "@py_builtins",
@@ -66,6 +67,7 @@ def collect_test_functions(
         List[Callable[[],[]] -- A list of Streamlit Test Functions
     """
     module_name = module.__name__.split(".")[-1]
+    # Collect functions in current module
     if module_name.startswith(module_startswith):
         test_functions = [
             (module, item)
@@ -75,6 +77,7 @@ def collect_test_functions(
     else:
         test_functions = []
 
+    # Collect functions in sub modules
     for sub_module in collect_test_sub_modules(module, startswith=module_startswith):
         test_functions += collect_test_functions(
             sub_module,
@@ -83,3 +86,15 @@ def collect_test_functions(
         )
 
     return test_functions
+
+
+def load_module_from_path(path: str) -> ModuleType:
+    """Loads a module from the specified path
+
+    Arguments:
+        path {str} -- The full path to the module
+
+    Returns:
+        ModuleType -- The module at the specified path
+    """
+    raise NotImplementedError()
