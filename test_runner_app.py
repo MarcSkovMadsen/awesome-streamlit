@@ -1,37 +1,20 @@
 """The purpose of this app is to test that the list of resources can be executed be Streamlit"""
-import random
-
 # todo: Add timing to table and results
 # todo: Handle FutureWarning: set_value is deprecated and will be removed in a future release. Please use .at[] or .iat[] accessors instead
-import traceback
-
 # pylint: disable=invalid-name
+import random
+import traceback
 import urllib.request
 from typing import List, NamedTuple, Optional
 
 import pandas as pd
 import streamlit as st
+
 import awesome_streamlit as ast
 from awesome_streamlit.shared.models import Resource
 
 
-class TestResult(NamedTuple):
-    resource: Resource
-    python_code: str
-    exception: Optional[Exception] = None
-    traceback: str = ""
 
-    @property
-    def result(self) -> bool:
-        if self.exception:
-            return False
-        return True
-
-    @property
-    def result_str(self) -> str:
-        if self.exception:
-            return "failed"
-        return "passed"
 
 
 @st.cache

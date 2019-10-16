@@ -1,5 +1,4 @@
 """Utils needed for testing of Streamlit applications"""
-import importlib.util
 from types import ModuleType
 from typing import List, Tuple
 
