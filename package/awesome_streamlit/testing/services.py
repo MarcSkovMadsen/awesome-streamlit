@@ -12,16 +12,16 @@ import streamlit as st
 
 import awesome_streamlit as ast
 from awesome_streamlit.shared.models import Resource
+from awesome_streamlit.testing.models import TestItem
 
 
 @st.cache
-def get_test_items_from_resources() -> List[Resource]:
-    """A list of TestItems generated from the Awesome Streamlit database of Resources
+def _get_test_resources() -> List[Resource]:
+    """The subset of all Resources that can be tested
 
     Returns:
         List[Resource] -- A list of TestItems
     """
-    raise NotImplementedError()
     resources = [
         resource
         for resource in ast.database.RESOURCES
@@ -29,3 +29,16 @@ def get_test_items_from_resources() -> List[Resource]:
     ] + ast.database.resources.STREAMLIT_EXAMPLE_APPS_FAILED_TEST
     random.shuffle(resources)
     return resources
+
+
+@st.cache
+def get_test_items_from_resources() -> List[TestItem]:
+    """A list of TestItems generated from the Awesome Streamlit database of Resources
+
+    Returns:
+        List[TestItem] -- A list of TestItems
+    """
+    return [
+        TestItem.create_from_app_file_resource(resource)
+        for resource in _get_test_resources()
+    ]

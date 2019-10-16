@@ -14,6 +14,7 @@ import awesome_streamlit as ast
 from awesome_streamlit.shared.models import Resource
 from awesome_streamlit.testing.models import TestItem
 from awesome_streamlit.core.services import get_file_content_as_string
+from awesome_streamlit import testing
 
 
 def get_test_item(resource) -> TestItem:
@@ -38,10 +39,19 @@ def get_test_item(resource) -> TestItem:
 
 
 @st.cache
-def get_test_items_dataframe(resources: List[Resource]) -> pd.DataFrame:
+def get_test_items_dataframe(test_items: List[TestItem]) -> pd.DataFrame:
+    def short_string(text):
+        if len(text) < 75:
+            return text
+        else:
+            return text[0:75] + "..."
+
     return pd.DataFrame(
-        [(resource.name, resource.author.name, "", "") for resource in app_resources],
-        columns=["test", "author", "result", "exception"],
+        [
+            (test_item.name, short_string(test_item.location), "", "")
+            for test_item in test_items
+        ],
+        columns=["test", "location", "result", "exception"],
     )
 
 
@@ -59,11 +69,11 @@ st.markdown(
 st.error("IMPORTANT: THIS IS WORK IN PROGRESS AND IMMATURE!")
 st.subheader("""Collect tests""")
 with st.spinner("Collecting ...."):
-    app_resources = get_test_items_from_resources()
+    test_items = testing.services.get_test_items_from_resources()
 
-tests_count = len(app_resources)
+tests_count = len(test_items)
 st.info(f"Collected {tests_count} items")
-test_items_dataframe = get_test_items_dataframe(app_resources)
+test_items_dataframe = get_test_items_dataframe(test_items)
 
 st.subheader("""Run tests""")
 test_items: List[TestItem] = []
@@ -85,7 +95,7 @@ st.subheader("----- SCREEN OUTPUT BELOW ------")
 
 result_section.table(test_items_dataframe)
 
-for index, resource in enumerate(app_resources):
+for index, resource in enumerate(test_items):
     progress = int(float(100 * index) / float(tests_count))
     test_run_progress.progress(progress)
     test_current_file_url.markdown(f"Current File: [{resource.url}](resource.ulr)")
@@ -113,7 +123,7 @@ for index, resource in enumerate(app_resources):
 
 test_items_dataframe = (
     test_items_dataframe.sort_values("test")
-    .sort_values("author")
+    .sort_values("location")
     .sort_values("result")
     .reset_index(drop=True)
 )

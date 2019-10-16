@@ -42,9 +42,9 @@ class TestItem:
     @classmethod
     def create_from_app_file_resource(cls, resource: Resource) -> "TestItem":
         """Creates a TestItem from a Resource"""
-        python_code = get_file_content_as_string(resource.url)
+        # python_code = get_file_content_as_string(resource.url)
 
-        return cls(name=resource.name, location=resource.url, python_code=python_code)
+        return cls(name=resource.name, location=resource.url)
 
     @classmethod
     def create_from_test_function(cls, module: ModuleType, function: str) -> "TestItem":
@@ -58,10 +58,9 @@ class TestItem:
             [TestItem] -- A TestItem
         """
         test_function = getattr(module, function)
-        python_code = inspect.getsource(test_function)
+        # python_code = inspect.getsource(test_function)
         return cls(
             name=function,
             location=f"{module.__name__}::{function}",
             test_function=test_function,
-            python_code=python_code,
         )
