@@ -1,7 +1,2 @@
-"""Dummy hello world function"""
-import streamlit as st
-
-
-def write_hello_world():
-    """Equivalent to st.write('Hello World!')"""
-    st.write("Hello world!")
+"""Imports that should be exposed outside the package"""
+from .hello_world import write_hello_world
