@@ -52,7 +52,7 @@ def test_create_from_app_file_resource(resource):
     # Then
     assert test_item.name == resource.name
     assert test_item.location == resource.url
-    assert test_item.python_code
+    assert not test_item.python_code
 
 
 def test_create_from_test_function():
@@ -70,8 +70,5 @@ def test_create_from_test_function():
     assert test_item.test_function == getattr(
         test_module_example_file, "test_st_function_1"
     )
-    assert (
-        test_item.python_code
-        == 'def test_st_function_1():\n    """This test function should be collected"""\n'
-    )
+    assert not test_item.python_code
 

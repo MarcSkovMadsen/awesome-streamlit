@@ -67,12 +67,16 @@ class TestItem:
         )
 
     def run_test(self):
-        self.exception_ = None
+        """Runs the TestItem"""
+        if self.test_function:
+            raise NotImplementedError()
+
+        self.exception = None
         self.traceback = ""
 
         try:
             self.python_code = get_file_content_as_string(self.location)
             exec(self.python_code, globals())  # pylint: disable=exec-used
-        except Exception as exception:
+        except Exception as exception:  # pylint: disable=broad-except
             self.traceback = traceback_module.format_exc()
             self.exception = exception
