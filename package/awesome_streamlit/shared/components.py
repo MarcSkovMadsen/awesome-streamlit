@@ -4,6 +4,7 @@ Hopefully a lot of the components  will be removed again as the streamlit api is
 import importlib
 import logging
 import sys
+from typing import Any, List
 
 import streamlit as st
 
@@ -60,14 +61,28 @@ def video_youtube(src: str, width="100%", height=315):
     )
 
 
-def multiselect(label, options, default, format_func=str):
+def multiselect(
+    label: str, options: List[Any], default: List[Any], format_func=str
+) -> List[Any]:
     """multiselect extension that enables default to be a subset list of the list of objects
-     - not a list of strings
+     - not a list of strings.
 
      Assumes that options have unique format_func representations
 
      cf. https://github.com/streamlit/streamlit/issues/352
-     """
+
+    Arguments:
+        label {str} -- A label to display above the multiselect
+        options {List[Any]} -- A list of objects
+        default {List[Any]} -- A list of objects to be selected by default
+
+    Keyword Arguments:
+        format_func {[type]} -- [description] (default: {str})
+
+    Returns:
+        [type] -- [description]
+    """
+
     options_ = {format_func(option): option for option in options}
     default_ = [format_func(option) for option in default]
     selections = st.multiselect(
