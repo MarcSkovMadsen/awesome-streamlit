@@ -12,34 +12,11 @@ import streamlit as st
 
 import awesome_streamlit as ast
 from awesome_streamlit.shared.models import Resource
-from awesome_streamlit.testing.models import TestResult
-
-@st.cache
-def get_file_content_as_string(url: str) -> str:
-    """The url content as a string
-
-    Arguments:
-        url {str} -- The url to request
-
-    Returns:
-        str -- The text of the url
-    """
-    data = urllib.request.urlopen(url).read()
-    return data.decode("utf-8")
+from awesome_streamlit.testing.models import TestItem
+from awesome_streamlit.core.services import get_file_content_as_string
 
 
-@st.cache
-def get_test_resources() -> List[Resource]:
-    resources = [
-        resource
-        for resource in ast.database.RESOURCES
-        if ast.database.resources.APP_IN_GALLERY in resource.tags
-    ] + ast.database.resources.STREAMLIT_EXAMPLE_APPS_FAILED_TEST
-    random.shuffle(resources)
-    return resources
-
-
-def get_test_result(resource) -> TestResult:
+def get_test_item(resource) -> TestItem:
     exception_ = None
     traceback_ = ""
 
@@ -52,7 +29,7 @@ def get_test_result(resource) -> TestResult:
         traceback_ = traceback.format_exc()
         exception_ = exception
 
-    return TestResult(
+    return TestItem(
         resource=resource,
         exception=exception_,
         traceback=traceback_,
@@ -61,7 +38,7 @@ def get_test_result(resource) -> TestResult:
 
 
 @st.cache
-def get_test_results_dataframe(resources: List[Resource]) -> pd.DataFrame:
+def get_test_items_dataframe(resources: List[Resource]) -> pd.DataFrame:
     return pd.DataFrame(
         [(resource.name, resource.author.name, "", "") for resource in app_resources],
         columns=["test", "author", "result", "exception"],
@@ -82,14 +59,14 @@ st.markdown(
 st.error("IMPORTANT: THIS IS WORK IN PROGRESS AND IMMATURE!")
 st.subheader("""Collect tests""")
 with st.spinner("Collecting ...."):
-    app_resources = get_test_resources()
+    app_resources = get_test_items_from_resources()
 
 tests_count = len(app_resources)
 st.info(f"Collected {tests_count} items")
-test_results_dataframe = get_test_results_dataframe(app_resources)
+test_items_dataframe = get_test_items_dataframe(app_resources)
 
 st.subheader("""Run tests""")
-test_results: List[TestResult] = []
+test_items: List[TestItem] = []
 log = ""
 
 
@@ -106,43 +83,43 @@ result_exception_section = st.empty()
 
 st.subheader("----- SCREEN OUTPUT BELOW ------")
 
-result_section.table(test_results_dataframe)
+result_section.table(test_items_dataframe)
 
 for index, resource in enumerate(app_resources):
     progress = int(float(100 * index) / float(tests_count))
     test_run_progress.progress(progress)
     test_current_file_url.markdown(f"Current File: [{resource.url}](resource.ulr)")
 
-    test_result = get_test_result(resource)
-    test_results.append(test_result)
-    # resource_filter = test_results_dataframe["test"] == resource.name
-    # test_results_dataframe[resource_filter]["result"] = test_result.passed
-    test_results_dataframe = test_results_dataframe.set_index("test")
-    test_results_dataframe = test_results_dataframe.set_value(
-        resource.name, "result", test_result.result_str
+    test_item = get_test_item(resource)
+    test_items.append(test_item)
+    # resource_filter = test_items_dataframe["test"] == resource.name
+    # test_items_dataframe[resource_filter]["result"] = test_item.passed
+    test_items_dataframe = test_items_dataframe.set_index("test")
+    test_items_dataframe = test_items_dataframe.set_value(
+        resource.name, "result", test_item.result_str
     )
-    test_results_dataframe = test_results_dataframe.set_value(
-        resource.name, "exception", str(test_result.exception)
+    test_items_dataframe = test_items_dataframe.set_value(
+        resource.name, "exception", str(test_item.exception)
     )
-    # test_results_dataframe = test_results_dataframe.sort_values("exception")
-    test_results_dataframe = test_results_dataframe.reset_index("test")
-    result_section.table(test_results_dataframe)
+    # test_items_dataframe = test_items_dataframe.sort_values("exception")
+    test_items_dataframe = test_items_dataframe.reset_index("test")
+    result_section.table(test_items_dataframe)
 
-    if not test_result.result:
-        log += f"------ {test_result.resource.name} ---------\n\n"
-        log += f"File: {test_result.resource.url}\n\n"
-        log += f"{test_result.traceback}\n\n"
+    if not test_item.result:
+        log += f"------ {test_item.resource.name} ---------\n\n"
+        log += f"File: {test_item.resource.url}\n\n"
+        log += f"{test_item.traceback}\n\n"
     result_exception_section.text(log)
 
-test_results_dataframe = (
-    test_results_dataframe.sort_values("test")
+test_items_dataframe = (
+    test_items_dataframe.sort_values("test")
     .sort_values("author")
     .sort_values("result")
     .reset_index(drop=True)
 )
-result_section.table(test_results_dataframe)
+result_section.table(test_items_dataframe)
 
-passed_count = sum([test_result.result for test_result in test_results])
+passed_count = sum([test_item.result for test_item in test_items])
 failed_count = tests_count - passed_count
 test_current_file_url.text("")
 test_run_progress.info(
