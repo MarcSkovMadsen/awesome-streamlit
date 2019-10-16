@@ -12,10 +12,7 @@ import streamlit as st
 
 import awesome_streamlit as ast
 from awesome_streamlit.shared.models import Resource
-
-
-
-
+from awesome_streamlit.testing.models import TestResult
 
 @st.cache
 def get_file_content_as_string(url: str) -> str:
