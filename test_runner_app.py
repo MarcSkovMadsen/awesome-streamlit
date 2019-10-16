@@ -1,17 +1,17 @@
 """The purpose of this app is to test that the list of resources can be executed be Streamlit"""
-import ast.shared.components as st_awesome
 import random
+
 # todo: Add timing to table and results
 # todo: Handle FutureWarning: set_value is deprecated and will be removed in a future release. Please use .at[] or .iat[] accessors instead
 import traceback
+
 # pylint: disable=invalid-name
 import urllib.request
 from typing import List, NamedTuple, Optional
 
 import pandas as pd
 import streamlit as st
-
-import db
+import awesome_streamlit as ast
 from awesome_streamlit.shared.models import Resource
 
 
@@ -51,8 +51,10 @@ def get_file_content_as_string(url: str) -> str:
 @st.cache
 def get_test_resources() -> List[Resource]:
     resources = [
-        resource for resource in db.RESOURCES if db.APP_IN_GALLERY in resource.tags
-    ] + db.STREAMLIT_EXAMPLE_APPS_FAILED_TEST
+        resource
+        for resource in ast.database.RESOURCES
+        if ast.database.resources.APP_IN_GALLERY in resource.tags
+    ] + ast.database.resources.STREAMLIT_EXAMPLE_APPS_FAILED_TEST
     random.shuffle(resources)
     return resources
 
@@ -86,7 +88,7 @@ def get_test_results_dataframe(resources: List[Resource]) -> pd.DataFrame:
     )
 
 
-st_awesome.title("Test Runner")
+ast.shared.components.title_awesome("Test Runner")
 st.markdown(
     """
     This test runner collects a list of **one file apps** and tests
