@@ -2,6 +2,8 @@
 import inspect
 from typing import Optional, Callable
 from types import ModuleType
+from awesome_streamlit.shared.models import Resource
+from awesome_streamlit.core.services import get_file_content_as_string
 
 
 class TestItem:
@@ -38,6 +40,13 @@ class TestItem:
         return "passed"
 
     @classmethod
+    def create_from_app_file_resource(cls, resource: Resource) -> "TestItem":
+        """Creates a TestItem from a Resource"""
+        python_code = get_file_content_as_string(resource.url)
+
+        return cls(name=resource.name, location=resource.url, python_code=python_code)
+
+    @classmethod
     def create_from_test_function(cls, module: ModuleType, function: str) -> "TestItem":
         """Creates a test_function from a module function
 
@@ -50,12 +59,9 @@ class TestItem:
         """
         test_function = getattr(module, function)
         python_code = inspect.getsource(test_function)
-
-        test_item = cls(
+        return cls(
             name=function,
-            location=f"{module}::{function}",
+            location=f"{module.__name__}::{function}",
             test_function=test_function,
             python_code=python_code,
         )
-
-        return test_item
