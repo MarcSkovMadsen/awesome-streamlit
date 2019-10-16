@@ -1,5 +1,5 @@
 """Test of the database module"""
-from awesome_streamlit.database import TAGS, RESOURCES, AUTHORS
+from awesome_streamlit.database import AUTHORS, RESOURCES, TAGS
 
 
 def test_tags():
@@ -18,4 +18,3 @@ def test_resources():
     """Test RESOURCES"""
     assert isinstance(RESOURCES, list)
     assert len(RESOURCES) > 0
-

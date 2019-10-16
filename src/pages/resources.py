@@ -4,8 +4,8 @@ from collections import defaultdict
 
 import streamlit as st
 
+import awesome_streamlit as ast
 import config
-import db
 import src.st_awesome
 import src.st_extensions
 
@@ -81,7 +81,7 @@ will be included in the list (default: {True})
     Returns:
         [type] -- The list of resources sorted by name
     """
-    resources = sorted(db.RESOURCES, key=lambda x: x.name)
+    resources = sorted(ast.database.RESOURCES, key=lambda x: x.name)
     if awesome_resources_only:
         resources = filter_by_is_awesome(resources)
     return resources
@@ -114,7 +114,9 @@ def write():
         "Show Awesome Resources Only", value=True
     )
 
-    tags = src.st_extensions.multiselect("Select Tag(s)", options=db.TAGS, default=[])
+    tags = src.st_extensions.multiselect(
+        "Select Tag(s)", options=ast.database.TAGS, default=[]
+    )
 
     st.info(
         """Please note that resources can have multiple tags!
@@ -128,7 +130,7 @@ def write():
 
     if st.sidebar.checkbox("Show Resource JSON"):
         st.subheader("Source JSON")
-        st.write(db.RESOURCES)
+        st.write(ast.database.RESOURCES)
 
     tags = None
 

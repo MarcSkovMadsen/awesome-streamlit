@@ -13,7 +13,6 @@ from typing import List
 import streamlit as st
 
 import awesome_streamlit as ast
-import db
 import src.st_awesome
 import src.st_extensions
 
@@ -30,11 +29,11 @@ def write():
     with st.spinner("Loading Gallery ..."):
         apps = get_resources()
         authors = get_authors(apps)
-    index_default_author = authors.index(db.DEFAULT_RESOURCE.author)
+    index_default_author = authors.index(ast.database.resources.DEFAULT_RESOURCE.author)
     author = st.selectbox("Select Author", authors, index=index_default_author)
     apps_by_author = get_resources_by_author(apps, author)
-    if author == db.DEFAULT_RESOURCE.author:
-        app_index = apps_by_author.index(db.DEFAULT_RESOURCE)
+    if author == ast.database.resources.DEFAULT_RESOURCE.author:
+        app_index = apps_by_author.index(ast.database.resources.DEFAULT_RESOURCE)
     else:
         app_index = 0
     run_app = st.selectbox("Select the App", apps_by_author, index=app_index)
@@ -71,7 +70,11 @@ def get_resources() -> List[ast.shared.models.Resource]:
     Returns:
         List[ast.shared.models.Resource] -- The list of resources
     """
-    return [resource for resource in db.RESOURCES if db.APP_IN_GALLERY in resource.tags]
+    return [
+        resource
+        for resource in ast.database.RESOURCES
+        if ast.database.tags.APP_IN_GALLERY in resource.tags
+    ]
 
 
 @st.cache
