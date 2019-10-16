@@ -1,5 +1,5 @@
 "Module containing Tags"
-from awesome_streamlit.database.models import Tag
+from awesome_streamlit.shared.models import Tag
 
 # Tags
 ALTERNATIVE = Tag(name="Alternatives")

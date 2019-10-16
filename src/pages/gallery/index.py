@@ -12,8 +12,8 @@ from typing import List
 
 import streamlit as st
 
+import awesome_streamlit as ast
 import db
-import src.shared.models
 import src.st_awesome
 import src.st_extensions
 
@@ -65,28 +65,28 @@ def write():
 
 
 @st.cache
-def get_resources() -> List[src.shared.models.Resource]:
+def get_resources() -> List[ast.shared.models.Resource]:
     """The list of resources
 
     Returns:
-        List[src.shared.models.Resource] -- The list of resources
+        List[ast.shared.models.Resource] -- The list of resources
     """
     return [resource for resource in db.RESOURCES if db.APP_IN_GALLERY in resource.tags]
 
 
 @st.cache
 def get_authors(
-    resources: List[src.shared.models.Resource]
-) -> List[src.shared.models.Author]:
+    resources: List[ast.shared.models.Resource]
+) -> List[ast.shared.models.Author]:
     """The list of Authors of the specified resources
 
     The list is sorted by Author.name
 
     Arguments:
-        resources {List[src.shared.models.Resource]} -- A list of Resources
+        resources {List[ast.shared.models.Resource]} -- A list of Resources
 
     Returns:
-        List[src.shared.models.Author] -- [description]
+        List[ast.shared.models.Author] -- [description]
     """
     author_set = {resource.author for resource in resources if resource.author}
     return sorted(list(author_set), key=lambda x: x.name)
@@ -94,16 +94,16 @@ def get_authors(
 
 @st.cache
 def get_resources_by_author(
-    resources: List[src.shared.models.Resource], author: src.shared.models.Author
-) -> List[src.shared.models.Resource]:
+    resources: List[ast.shared.models.Resource], author: ast.shared.models.Author
+) -> List[ast.shared.models.Resource]:
     """The Resources by the specified Author
 
     Arguments:
-        resources {List[src.shared.models.Resource]} -- A list of resources
-        author {src.shared.models.Author} -- A list of authors
+        resources {List[ast.shared.models.Resource]} -- A list of resources
+        author {ast.shared.models.Author} -- A list of authors
 
     Returns:
-        List[src.shared.models.Resource] -- [description]
+        List[ast.shared.models.Resource] -- [description]
     """
     return [resource for resource in resources if resource.author == author]
 

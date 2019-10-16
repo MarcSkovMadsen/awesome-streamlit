@@ -1,5 +1,5 @@
 """This module contains the list of Authors"""
-from awesome_streamlit.database import models
+from awesome_streamlit.shared import models
 
 Author = models.Author
 # Authors

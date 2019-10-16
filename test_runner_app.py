@@ -12,7 +12,7 @@ import streamlit as st
 
 import db
 import src.st_awesome as st_awesome
-from src.shared.models import Resource
+from awesome_streamlit.shared.models import Resource
 
 
 class TestResult(NamedTuple):

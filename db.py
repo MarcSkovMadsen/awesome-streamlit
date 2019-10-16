@@ -2,7 +2,7 @@
 
 Here you maintain the list of awesome resources
 """
-from src.shared.models import Author, Resource, Tag
+from awesome_streamlit.shared.models import Author, Resource, Tag
 
 # Tags
 ALTERNATIVE = Tag(name="Alternatives")
