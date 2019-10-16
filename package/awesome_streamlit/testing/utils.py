@@ -2,7 +2,7 @@
 from typing import List, Tuple
 from types import ModuleType
 
-ATTRS_TO_SKIP = [
+ATTRS_NOT_TO_SEARCH = [
     "@py_builtins",
     "@pytest_ar",
     "__builtins__",
@@ -35,7 +35,7 @@ def collect_test_sub_modules(
     test_modules: List[ModuleType] = []
 
     for item in dir(parent):
-        if item not in ATTRS_TO_SKIP:
+        if item not in ATTRS_NOT_TO_SEARCH:
             child = getattr(parent, item)
             if isinstance(child, ModuleType):
                 child_name = child.__name__.split(".")[-1]
