@@ -2,8 +2,51 @@
 from typing import List, Tuple
 from types import ModuleType
 
+ATTRS_TO_SKIP = [
+    "@py_builtins",
+    "@pytest_ar",
+    "__builtins__",
+    "__cached__",
+    "__doc__",
+    "__file__",
+    "__loader__",
+    "__name__",
+    "__package__",
+    "__spec__",
+]
 
-def collect_tests_in_module(
+
+def collect_test_sub_modules(
+    parent: ModuleType, startswith: str = "test_"
+) -> List[ModuleType]:
+    """A list of sub modules with names that starts with starts_with
+
+    Does NOT include the parent
+
+    Arguments:
+        module {ModuleType} -- The parent module from which to start
+
+    Keyword Arguments:
+        startswith {str} -- The module should start with this (default: {"test_"})
+
+    Returns:
+        List[ModuleType] -- A list of the submodules that starts with starts_with.
+    """
+    test_modules: List[ModuleType] = []
+
+    for item in dir(parent):
+        if item not in ATTRS_TO_SKIP:
+            child = getattr(parent, item)
+            if isinstance(child, ModuleType):
+                child_name = child.__name__.split(".")[-1]
+                if child_name.startswith(startswith):
+                    test_modules.append(child)
+                test_modules += collect_test_sub_modules(child)
+
+    return test_modules
+
+
+def collect_test_functions(
     module, module_startswith: str = "test_", function_startswith: str = "test_st_"
 ) -> List[Tuple[ModuleType, str]]:
     """A list of Streamlit Test Functions that satisfies
@@ -27,8 +70,16 @@ def collect_tests_in_module(
         test_functions = [
             (module, item)
             for item in dir(module)
-            if item.startswith(function_startswith)
+            if item.startswith(function_startswith) and callable(getattr(module, item))
         ]
     else:
         test_functions = []
+
+    for sub_module in collect_test_sub_modules(module, startswith=module_startswith):
+        test_functions += collect_test_functions(
+            sub_module,
+            module_startswith=module_startswith,
+            function_startswith=function_startswith,
+        )
+
     return test_functions

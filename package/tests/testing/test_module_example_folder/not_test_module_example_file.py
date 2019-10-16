@@ -11,4 +11,3 @@ def test_st_function_2():
 
 def test_functions():
     """This test function should NOT be collecedted"""
-

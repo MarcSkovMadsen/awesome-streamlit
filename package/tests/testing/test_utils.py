@@ -1,14 +1,42 @@
 """In this module we test the functionality of the utils module"""
 from awesome_streamlit.testing import utils
-from . import test_module_example
+from . import test_module_example_folder
+from .test_module_example_folder import test_module_example_file
 
 
-def test_collect_tests_in_module():
+def test_collect_test_modules_without_submodules():
     """Test of collect_tests_in_module"""
     # When
-    test_functions = utils.collect_tests_in_module(test_module_example)
+    test_modules = utils.collect_test_sub_modules(test_module_example_file)
+    # Then
+    assert test_modules == []
+
+
+def test_collect_test_modules_with_submodules():
+    """Test of collect_tests_in_module"""
+    # When
+    test_modules = utils.collect_test_sub_modules(test_module_example_folder)
+    # Then
+    assert test_modules == [test_module_example_file]
+
+
+def test_collect_test_functions_in_module_without_submodules():
+    """Test of collect_tests_in_module"""
+    # When
+    test_functions = utils.collect_test_functions(test_module_example_file)
     # Then
     assert test_functions == [
-        (test_module_example, "test_st_function_1"),
-        (test_module_example, "test_st_function_2"),
+        (test_module_example_file, "test_st_function_1"),
+        (test_module_example_file, "test_st_function_2"),
+    ]
+
+
+def test_collect_test_functions_in_module_with_submodules():
+    """Test of collect_tests_in_module"""
+    # When
+    test_functions = utils.collect_test_functions(test_module_example_folder)
+    # Then
+    assert test_functions == [
+        (test_module_example_file, "test_st_function_1"),
+        (test_module_example_file, "test_st_function_2"),
     ]
