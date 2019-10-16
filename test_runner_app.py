@@ -17,27 +17,6 @@ from awesome_streamlit.core.services import get_file_content_as_string
 from awesome_streamlit import testing
 
 
-def get_test_item(resource) -> TestItem:
-    exception_ = None
-    traceback_ = ""
-
-    # Run the child app
-    python_code = ""
-    try:
-        python_code = get_file_content_as_string(resource.url)
-        exec(python_code, globals())  # pylint: disable=exec-used
-    except Exception as exception:
-        traceback_ = traceback.format_exc()
-        exception_ = exception
-
-    return TestItem(
-        resource=resource,
-        exception=exception_,
-        traceback=traceback_,
-        python_code=python_code,
-    )
-
-
 @st.cache
 def get_test_items_dataframe(test_items: List[TestItem]) -> pd.DataFrame:
     def short_string(text):
@@ -76,7 +55,6 @@ st.info(f"Collected {tests_count} items")
 test_items_dataframe = get_test_items_dataframe(test_items)
 
 st.subheader("""Run tests""")
-test_items: List[TestItem] = []
 log = ""
 
 
@@ -95,31 +73,31 @@ st.subheader("----- SCREEN OUTPUT BELOW ------")
 
 result_section.table(test_items_dataframe)
 
-for index, resource in enumerate(test_items):
+for index, test_item in enumerate(test_items):
     progress = int(float(100 * index) / float(tests_count))
     test_run_progress.progress(progress)
-    test_current_file_url.markdown(f"Current File: [{resource.url}](resource.ulr)")
+    test_current_file_url.markdown(
+        f"Current File: [{test_item.location}](test_item.location)"
+    )
 
-    test_item = get_test_item(resource)
-    test_items.append(test_item)
-    # resource_filter = test_items_dataframe["test"] == resource.name
-    # test_items_dataframe[resource_filter]["result"] = test_item.passed
+    test_item.run_test()
+
     test_items_dataframe = test_items_dataframe.set_index("test")
     test_items_dataframe = test_items_dataframe.set_value(
-        resource.name, "result", test_item.result_str
+        test_item.name, "result", test_item.result_str
     )
     test_items_dataframe = test_items_dataframe.set_value(
-        resource.name, "exception", str(test_item.exception)
+        test_item.name, "exception", str(test_item.exception)
     )
     # test_items_dataframe = test_items_dataframe.sort_values("exception")
     test_items_dataframe = test_items_dataframe.reset_index("test")
     result_section.table(test_items_dataframe)
 
     if not test_item.result:
-        log += f"------ {test_item.resource.name} ---------\n\n"
-        log += f"File: {test_item.resource.url}\n\n"
+        log += f"# {test_item.name}\n\n"
+        log += f"File: [{test_item.location}]({test_item.location})\n\n"
         log += f"{test_item.traceback}\n\n"
-    result_exception_section.text(log)
+    result_exception_section.markdown(log)
 
 test_items_dataframe = (
     test_items_dataframe.sort_values("test")

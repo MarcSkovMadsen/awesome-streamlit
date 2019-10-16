@@ -1,9 +1,10 @@
 """Models related to testing"""
-import inspect
-from typing import Optional, Callable
+import traceback as traceback_module
 from types import ModuleType
-from awesome_streamlit.shared.models import Resource
+from typing import Callable, Optional
+
 from awesome_streamlit.core.services import get_file_content_as_string
+from awesome_streamlit.shared.models import Resource
 
 
 class TestItem:
@@ -64,3 +65,14 @@ class TestItem:
             location=f"{module.__name__}::{function}",
             test_function=test_function,
         )
+
+    def run_test(self):
+        self.exception_ = None
+        self.traceback = ""
+
+        try:
+            self.python_code = get_file_content_as_string(self.location)
+            exec(self.python_code, globals())  # pylint: disable=exec-used
+        except Exception as exception:
+            self.traceback = traceback_module.format_exc()
+            self.exception = exception
