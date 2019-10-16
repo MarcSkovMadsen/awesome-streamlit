@@ -1,10 +1,11 @@
 """Utils needed for testing of Streamlit applications"""
-from typing import List, Callable
+from typing import List, Tuple
+from types import ModuleType
 
 
 def collect_tests_in_module(
     module, module_startswith: str = "test_", function_startswith: str = "test_st_"
-) -> List[Callable]:
+) -> List[Tuple[ModuleType, str]]:
     """A list of Streamlit Test Functions that satisfies
 
     - Belonging to a file in the specified module or one of its submodules
@@ -21,4 +22,13 @@ def collect_tests_in_module(
     Returns:
         List[Callable[[],[]] -- A list of Streamlit Test Functions
     """
-    raise NotImplementedError()
+    module_name = module.__name__.split(".")[-1]
+    if module_name.startswith(module_startswith):
+        test_functions = [
+            (module, item)
+            for item in dir(module)
+            if item.startswith(function_startswith)
+        ]
+    else:
+        test_functions = []
+    return test_functions
