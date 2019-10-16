@@ -4,15 +4,16 @@ Original Source: https://github.com/patidarparas13/Sentiment-Analyzer-Tool
 Original Author: https://github.com/patidarparas13,
 """
 
+import itertools
+
+import matplotlib.pyplot as plt
+import numpy as np
+import pandas as pd
+import requests
 import streamlit as st
 from sklearn.feature_extraction.text import CountVectorizer
-from sklearn.naive_bayes import BernoulliNB
 from sklearn.metrics import confusion_matrix
-import numpy as np
-import itertools
-import matplotlib.pyplot as plt
-import requests
-import pandas as pd
+from sklearn.naive_bayes import BernoulliNB
 
 ROOT_URL = "https://raw.githubusercontent.com/MarcSkovMadsen/awesome-streamlit/master/src/pages/gallery/contributions/marc_skov_madsen/sentiment_analyzer/data/"
 FILES = ["imdb_labelled.txt", "amazon_cells_labelled.txt", "yelp_labelled.txt"]
@@ -130,4 +131,3 @@ else:
     st.info(
         "**Enter a review** above and **press the button** to predict the sentiment."
     )
-

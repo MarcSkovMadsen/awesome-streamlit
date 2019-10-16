@@ -6,23 +6,22 @@ Source: https://github.com/virusvn/streamlit-components-demo/blob/master/app.py
 
 Credits to Nhan for sharing that code
 """
-import json
 import logging
 import urllib.request
-from typing import Dict
+from typing import List
 
 import streamlit as st
 
 import db
+import src.shared.models
 import src.st_awesome
 import src.st_extensions
-from typing import List
-import src.shared.models
 
 # Get an instance of a logger
 logging.basicConfig(format="%(asctime)s - %(message)s", level=logging.INFO)
 
-JSON_URL = "https://raw.githubusercontent.com/virusvn/streamlit-components-demo/master/streamlit_apps.json"
+JSON_URL = """https://raw.githubusercontent.com/virusvn/streamlit-components-demo/
+master/streamlit_apps.json"""
 
 
 def write():
@@ -55,7 +54,7 @@ def write():
         try:
             with st.spinner(f"Loading {run_app.name} ..."):
                 exec(python_code, globals())  # pylint: disable=exec-used
-        except Exception as exception:
+        except Exception as exception:  # pylint: disable=broad-except
             st.write("Error occurred when executing [{0}]".format(run_app))
             st.error(str(exception))
             logging.error(exception)

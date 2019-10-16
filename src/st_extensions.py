@@ -2,9 +2,10 @@
 
 For now these are hacks and hopefully a lot of them will be removed again as the streamlit api is
 extended"""
+import importlib
 import logging
 import sys
-import importlib
+
 import streamlit as st
 
 import config

@@ -1,10 +1,8 @@
 """The purpose of this app is to test that the list of resources can be executed be Streamlit"""
 import random
-
 # todo: Add timing to table and results
 # todo: Handle FutureWarning: set_value is deprecated and will be removed in a future release. Please use .at[] or .iat[] accessors instead
 import traceback
-
 # pylint: disable=invalid-name
 import urllib.request
 from typing import List, NamedTuple, Optional

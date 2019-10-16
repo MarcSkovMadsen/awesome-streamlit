@@ -48,7 +48,7 @@ Running isort the Python code import sorter
 
 
 @task
-def pytest(command, test_files="tests", test_results="test_results"):
+def pytest(command, test_files="tests package/tests", test_results="test_results"):
     """Runs pytest to identify failing tests
 
     Arguments:
@@ -91,7 +91,7 @@ Running pytest the test framework
 
 
 @task()
-def pylint(command, files="tasks tests src app.py"):
+def pylint(command, files="tasks tests src package/awesome_streamlit app.py"):
     """Runs pylint (linter) on all .py files recursively to identify coding errors
 
     Arguments:
@@ -114,7 +114,7 @@ sniffs for code smells and offers simple refactoring suggestions.
 
 
 @task
-def mypy(command, files="tasks tests src app.py"):
+def mypy(command, files="tasks tests src package/awesome_streamlit app.py"):
     """Runs mypy (static type checker) on all .py files recursively
 
     Arguments:
@@ -148,8 +148,9 @@ Running autoflake to remove unused imports on all .py files recursively
     command.run("autoflake --imports=pytest --in-place --recursive .", echo=True)
 
 
+# Note: Get Black added in. black,
 @task(
-    pre=[isort, autoflake, black, pylint, mypy, pytest],
+    pre=[isort, autoflake, pylint, mypy, pytest],
     aliases=["pre_commit", "test"],
     name="all",
 )

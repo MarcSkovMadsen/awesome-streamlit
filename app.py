@@ -4,7 +4,6 @@
 # In order for this to work they should be added to the pages.__init__ file
 # pylint: disable=invalid-name
 import streamlit as st
-import awesome_streamlit.experiments as ast
 
 # Import all needed packages
 # Dont write 'from src.pages import home'. Autoreload will not work!
@@ -12,11 +11,14 @@ import awesome_streamlit.experiments as ast
 # Use the same convention for importing in submodules. Otherwise Autoreload will not work!
 # cf. https://github.com/MarcSkovMadsen/awesome-streamlit/issues/2
 import config
-import src.st_extensions
+import src.pages.gallery.index
 import src.pages.home
 import src.pages.resources
 import src.pages.vision
-import src.pages.gallery.index
+import src.st_extensions
+
+# import awesome_streamlit.experiments as ast
+
 
 # Please import all other modules that needs livereload here
 # Dont write 'from src.pages.gallery import spacyio'. Autoreload will not work!

@@ -1,9 +1,9 @@
 import json
-import logging
 import urllib.request
-from typing import Dict, List
-from src.shared.models import Resource, Tag, Author
-from db import STREAMLIT, APP_INGALLERY, CODE
+from typing import Dict
+
+from db import APP_INGALLERY, CODE, STREAMLIT
+from src.shared.models import Author, Resource, Tag
 
 JSON_URL = "https://raw.githubusercontent.com/virusvn/streamlit-components-demo/master/streamlit_apps.json"
 

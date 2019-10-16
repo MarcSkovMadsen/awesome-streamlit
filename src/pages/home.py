@@ -1,7 +1,9 @@
 """Home page shown when the user enters the application"""
 import streamlit as st
-import src.st_extensions
+
 import src.st_awesome
+import src.st_extensions
+
 
 # pylint: disable=line-too-long
 def write():

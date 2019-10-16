@@ -1,5 +1,6 @@
 """Here we import the different task submodules/ collections"""
 from invoke import Collection, task
+
 from tasks import docker, test
 
 # pylint: disable=invalid-name
