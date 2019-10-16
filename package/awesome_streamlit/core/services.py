@@ -6,6 +6,7 @@ pages of the Streamlit App.
   - Pandas transformations
 """
 import urllib.request
+
 import streamlit as st
 
 

@@ -1,9 +1,9 @@
 """Here we test the models in the testing package"""
-# pylint: disable=redefined-outer-name
-from awesome_streamlit.shared.models import Resource
-from awesome_streamlit.testing.models import TestItem
-from awesome_streamlit.shared.models import Tag, Author, Resource
 import pytest
+
+# pylint: disable=redefined-outer-name
+from awesome_streamlit.shared.models import Author, Resource, Tag
+from awesome_streamlit.testing.models import TestItem
 from tests.testing.test_module_example_folder import test_module_example_file
 
 
@@ -71,4 +71,3 @@ def test_create_from_test_function():
         test_module_example_file, "test_st_function_1"
     )
     assert not test_item.python_code
-

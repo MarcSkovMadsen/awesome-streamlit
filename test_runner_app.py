@@ -2,19 +2,16 @@
 # todo: Add timing to table and results
 # todo: Handle FutureWarning: set_value is deprecated and will be removed in a future release. Please use .at[] or .iat[] accessors instead
 # pylint: disable=invalid-name
-import random
-import traceback
-import urllib.request
-from typing import List, NamedTuple, Optional
+from typing import List
 
 import pandas as pd
 import streamlit as st
 
 import awesome_streamlit as ast
+from awesome_streamlit import testing
+from awesome_streamlit.core.services import get_file_content_as_string
 from awesome_streamlit.shared.models import Resource
 from awesome_streamlit.testing.models import TestItem
-from awesome_streamlit.core.services import get_file_content_as_string
-from awesome_streamlit import testing
 
 
 @st.cache

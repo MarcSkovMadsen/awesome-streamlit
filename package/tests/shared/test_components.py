@@ -1,8 +1,8 @@
 """Test of components module"""
+
+import awesome_streamlit.experiments.hello_world as test_page
 # pylint: disable=protected-access
 from awesome_streamlit.shared import components
-import awesome_streamlit.experiments.hello_world as test_page
-import pytest
 
 
 def test__reload_module():
