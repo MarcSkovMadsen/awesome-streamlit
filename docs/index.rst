@@ -11,7 +11,7 @@ This is the documentation of the **Awesome Streamlit Project** including the
 - **Awesome Streamlit Resources List** on `GitHub <https://github.com/marcskovmadsen/awesome-streamlit>`_
 - **Repo** on `GitHub <https://github.com/marcskovmadsen/awesome-streamlit>`_
 - **App** at `awesome-streamlit.org <https://awesome-streamlit.org>`_
-- **Docs** on `Read The Docs <https://cloud.docker.com/u/marcskovmadsen/repository/docker/read_nest_docs>`_
+- **Docs** on `Read The Docs <https://awesome-streamlit.readthedocs.io/en/latest/>`_
 - **Python Package** on `PyPi <https://pypi.org/project/awesome-streamlit/>`_
 - **Docker Image** on `Docker Hub <https://cloud.docker.com/u/marcskovmadsen/repository/docker/marcskovmadsen/awesome-streamlit>`_
 
