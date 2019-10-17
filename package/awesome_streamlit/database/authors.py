@@ -15,12 +15,15 @@ MARC_SKOV_MADSEN = Author(
 )
 INES = Author(name="Ines Montani", url="https://gist.github.com/ines")
 PARAS_PATIDAR = Author(name="Paras Patidar", url="https://github.com/patidarparas13")
-
+AWESOME_STREAMLIT_ORG = Author(
+    name="Awesome-Streamlit.org",
+    url="https://github.com/marcskovmadsen/awesome-streamlit",
+)
 AUTHORS = [
-    STREAMLIT_AUTHOR,
-    STREAMLIT_EXAMPLE_AUTHOR,
-    STREAMLIT_COMPONENT_AUTHOR,
-    MARC_SKOV_MADSEN,
     INES,
+    MARC_SKOV_MADSEN,
     PARAS_PATIDAR,
+    STREAMLIT_AUTHOR,
+    STREAMLIT_COMPONENT_AUTHOR,
+    STREAMLIT_EXAMPLE_AUTHOR,
 ]

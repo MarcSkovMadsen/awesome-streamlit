@@ -1,9 +1,45 @@
 """Module of tasks for running sphinx"""
-from invoke import task
 import logging
+import pathlib
+import shutil
+
+from invoke import task
+
+logging.basicConfig(format="%(asctime)s - %(message)s", level=logging.INFO)
+
+ROOT = pathlib.Path(__file__).parent.parent
+ROOT_FILES = [
+    "README.md",
+    "AWESOME-STREAMLIT.md",
+    "code-of-conduct.md",
+    "contributing.md",
+]
 
 
 @task
+def copy_from_project_root(command):
+    """We need to copy files like README.md into docs/_copy_of_project_root
+    for inclusion in the Docs"""
+    target = ROOT / "docs/_copy_of_project_root"
+    target.mkdir(parents=True, exist_ok=True)
+    for file in ROOT_FILES:
+        root_file = ROOT / file
+        if root_file.exists():
+            target_file = target / file
+            shutil.copy(root_file, target_file)
+            logging.info("Successfully copied %s to %s", root_file, target_file)
+        else:
+            logging.error("Error. Could not find %s!", root_file)
+
+    from distutils.dir_util import copy_tree
+
+    root_assets = ROOT / "assets"
+    target_assets = target / "assets"
+    copy_tree(str(root_assets), str(target_assets))
+    logging.info("Successfully copied %s to %s", root_assets, target_assets)
+
+
+@task(pre=[copy_from_project_root])
 def build(command):
     """Build local version of site and open in a browser
 
@@ -14,7 +50,7 @@ def build(command):
         command.run("start _build/index.html")
 
 
-@task()
+@task(pre=[copy_from_project_root])
 def livereload(command):
     """Start autobild documentation server and open in browser.
 

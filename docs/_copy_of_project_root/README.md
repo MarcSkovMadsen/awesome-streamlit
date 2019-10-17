@@ -30,7 +30,7 @@ If you know how to solve this please let me know. Thanks
 
 The only way to truly understand how magical Streamlit is to play around with it, but if you need to be convinced first, then here is the **4 minute introduction** to Streamlit!
 
-Afterwards you can go to the [Streamlit docs](https://streamlit.io/docs/) to get started. You might also visit [Awesome Streamlit docs](https://awesome-streamlit.readthedocs.io/en/latest/).
+Afterwards you can go to the [Streamlit docs](https://streamlit.io/docs/) to get started.
 
 [![Introduction to Streamlit](https://github.com/MarcSkovMadsen/awesome-streamlit/blob/master/assets/youtube-introduction-to-streamlit.png?raw=true)](https://www.youtube.com/watch?v=B2iAodr0fOo&feature=youtu.be "Introduction to streamlit")
 
@@ -44,31 +44,16 @@ A curated list of awesome streamlit resources. Inspired by [awesome-python](http
 - [Jupyter Voila](https://blog.jupyter.org/and-voil%C3%A0-f6a2c08a4a93)
 - [Plotly Dash](https://plot.ly/dash/)
 
-### App
+### Apps
 
 - [Kaggle Mushrooms Dashboard](https://github.com/pierpaolo28/Data-Visualization/tree/master/Streamlit)
 - [Sentiment Analyzer Tool](https://www.linkedin.com/posts/patidarparas13_code-ml-machinelearning-ugcPost-6585745929062703104-ttkv)
+- [SpacyIO Application](https://gist.github.com/ines/b320cb8441b590eedf19137599ce6685)
 - [Streamlit-components-demo App](https://fullstackstation.com/streamlit-components-demo)
-
-### Awesome-Streamlit.org
-
-- [App](https://awesome-streamlit.org>)
-- [Awesome Streamlit Resources List](ttps://github.com/marcskovmadsen/awesome-streamlit)
-- [Docker Image](https://cloud.docker.com/u/marcskovmadsen/repository/docker/marcskovmadsen/awesome-streamlit)
-- [Docs](https://awesome-streamlit.readthedocs.io/en/latest/)
-- [LinkedIn post that started awesome-streamlit.org](https://www.linkedin.com/feed/update/urn:li:activity:6586497522896818176)
-- [Python Package](https://pypi.org/project/awesome-streamlit/)
-- [Repo](https://github.com/marcskovmadsen/awesome-streamlit)
 
 ### Code
 
-- [Deploying Streamlit app to EC2 instance](https://medium.com/@pokepim/deploying-streamlit-app-to-ec2-instance-7a7edeffbb54)
-- [Sentiment Algorithm](https://raw.githubusercontent.com/MarcSkovMadsen/awesome-streamlit/master/src/pages/gallery/contributions/marc_skov_madsen/sentiment_analyzer/sentiment_analyzer.py)
-- [SpacyIO](https://gist.githubusercontent.com/ines/b320cb8441b590eedf19137599ce6685/raw/6e0ead5a442fd9c5e3f621a76fba94241cc847ce/streamlit_spacy.py)
-- [Spreadsheet](https://raw.githubusercontent.com/MarcSkovMadsen/awesome-streamlit/master/src/pages/gallery/contributions/marc_skov_madsen/spreadsheet.py)
 - [Streamlit-components-demo Code](https://github.com/virusvn/streamlit-components-demo)
-- [Uber Data Explorer App](https://dataexplorerlit.herokuapp.com/)
-- [Uber NYC Pickups](https://raw.githubusercontent.com/streamlit/demo-uber-nyc-pickups/master/app.py)
 
 ### Social
 
@@ -77,7 +62,6 @@ A curated list of awesome streamlit resources. Inspired by [awesome-python](http
 
 ### Streamlit.io
 
-- [Streamlit](https://techcrunch.com/2019/10/01/streamlit-launches-open-source-machine-learning-application-development-framework/)
 - [Streamlit Community](https://discuss.streamlit.io/top/quarterly)
 - [Streamlit Docs](https://streamlit.io/docs/)
 - [Streamlit.io](https://streamlit.io/)
@@ -87,6 +71,10 @@ A curated list of awesome streamlit resources. Inspired by [awesome-python](http
 ### Technical
 
 - [Hacker News technical discussion of how Streamlit work](https://news.ycombinator.com/item?id=21158487)
+
+### The beginning
+
+- [LinkedIn post that started awesome-streamlit.org](https://www.linkedin.com/feed/update/urn:li:activity:6586497522896818176)
 
 ## Governance
 

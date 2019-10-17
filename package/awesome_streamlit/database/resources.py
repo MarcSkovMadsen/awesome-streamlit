@@ -2,15 +2,27 @@
 
 Here you maintain the list of awesome resources
 """
-from awesome_streamlit.database.authors import (INES, MARC_SKOV_MADSEN,
-                                                STREAMLIT_AUTHOR,
-                                                STREAMLIT_COMPONENT_AUTHOR,
-                                                STREAMLIT_EXAMPLE_AUTHOR)
+from awesome_streamlit.database.authors import (
+    INES,
+    MARC_SKOV_MADSEN,
+    STREAMLIT_AUTHOR,
+    STREAMLIT_COMPONENT_AUTHOR,
+    STREAMLIT_EXAMPLE_AUTHOR,
+)
 from awesome_streamlit.database.tags import (
-    ALTERNATIVE, APP, APP_IN_GALLERY, AWESOMESTREAMLIT_COMPONENT_AUTHOR, CODE,
-    SOCIAL, STREAMLIT_TAG, TECHNICAL)
+    ALTERNATIVE,
+    APP,
+    APP_IN_GALLERY,
+    AWESOMESTREAMLIT_COMPONENT_AUTHOR,
+    CODE,
+    SOCIAL,
+    STREAMLIT_TAG,
+    TECHNICAL,
+)
+
 # pylint: disable=line-too-long
 from awesome_streamlit.shared.models import Resource
+from awesome_streamlit.database import tags, authors
 
 # STREAMLIT FILE ROOTS
 
@@ -22,12 +34,12 @@ STREAMLIT_COMPONENTS_APPS_ROOT = (
 )
 
 DEFAULT_RESOURCE = Resource(
-        name="Spreadsheet",
-        url="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-streamlit/master/src/pages/gallery/contributions/marc_skov_madsen/spreadsheet.py",
-        tags=[CODE, APP_IN_GALLERY],
-        is_awesome=True,
-        author=MARC_SKOV_MADSEN,
-    )
+    name="Spreadsheet",
+    url="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-streamlit/master/src/pages/gallery/contributions/marc_skov_madsen/spreadsheet.py",
+    tags=[CODE, APP_IN_GALLERY],
+    is_awesome=True,
+    author=MARC_SKOV_MADSEN,
+)
 APP_CONTRIBUTIONS = [
     Resource(
         name="Sentiment Algorithm",
@@ -65,11 +77,12 @@ STREAMLIT_EXAMPLE_APPS_FAILED_TEST_FILES = [
 STREAMLIT_EXAMPLE_APPS_FAILED_TEST = [
     Resource(
         name=file,
-        url=STREAMLIT_EXAMPLE_APPS_ROOT+file,
+        url=STREAMLIT_EXAMPLE_APPS_ROOT + file,
         is_awesome=False,
         tags=[CODE],
         author=STREAMLIT_EXAMPLE_AUTHOR,
-    ) for file in STREAMLIT_EXAMPLE_APPS_FAILED_TEST_FILES
+    )
+    for file in STREAMLIT_EXAMPLE_APPS_FAILED_TEST_FILES
 ]
 
 STREAMLIT_EXAMPLE_APPS_FILES = [
@@ -93,11 +106,12 @@ STREAMLIT_EXAMPLE_APPS_FILES = [
 STREAMLIT_EXAMPLE_APPS = [
     Resource(
         name=file,
-        url=STREAMLIT_EXAMPLE_APPS_ROOT+file,
+        url=STREAMLIT_EXAMPLE_APPS_ROOT + file,
         is_awesome=False,
         tags=[CODE, APP_IN_GALLERY],
         author=STREAMLIT_EXAMPLE_AUTHOR,
-    ) for file in STREAMLIT_EXAMPLE_APPS_FILES
+    )
+    for file in STREAMLIT_EXAMPLE_APPS_FILES
 ]
 RESOURCES_STREAMLIT_COMPONENT_APPS = [
     Resource(
@@ -347,125 +361,174 @@ RESOURCES_STREAMLIT_COMPONENT_APPS = [
     ),
 ]
 
-RESOURCES = [
-    Resource(
-        name="Streamlit ",
-        url="https://techcrunch.com/2019/10/01/streamlit-launches-open-source-machine-learning-application-development-framework/",
-        tags=[STREAMLIT_TAG],
-        is_awesome=True,
-    ),
-    Resource(
-        name="Streamlit.io",
-        url="https://streamlit.io/",
-        tags=[STREAMLIT_TAG],
-        is_awesome=True,
-    ),
-    Resource(
-        name="Streamlit Docs",
-        url="https://streamlit.io/docs/",
-        tags=[STREAMLIT_TAG],
-        is_awesome=True,
-    ),
-    Resource(
-        name="Streamlit Community",
-        url="https://discuss.streamlit.io/top/quarterly",
-        tags=[STREAMLIT_TAG],
-        is_awesome=True,
-    ),
-    Resource(
-        "The announcing blog",
-        url="https://towardsdatascience.com/coding-ml-tools-like-you-code-ml-models-ddba3357eace",
-        tags=[STREAMLIT_TAG],
-        is_awesome=True,
-    ),
-    Resource(
-        "The announcing community post",
-        url="https://discuss.streamlit.io/t/streamlit-has-launched/105/3",
-        tags=[STREAMLIT_TAG],
-        is_awesome=True,
-    ),
-    Resource(
-        "LinkedIn post that started awesome-streamlit.org",
-        url="https://www.linkedin.com/feed/update/urn:li:activity:6586497522896818176",
-        tags=[AWESOMESTREAMLIT_COMPONENT_AUTHOR, SOCIAL],
-        is_awesome=True,
-    ),
-    Resource(
-        "LinkedIn #streamlit",
-        url="https://www.linkedin.com/search/results/all/?keywords=%23streamlit",
-        tags=[SOCIAL],
-        is_awesome=True,
-    ),
-    Resource(
-        name="Twitter #streamlit",
-        url="https://twitter.com/search?q=%23streamlit&src=typed_query",
-        tags=[SOCIAL],
-        is_awesome=True,
-    ),
-    Resource(
-        name="Kaggle Mushrooms Dashboard",
-        url="https://github.com/pierpaolo28/Data-Visualization/tree/master/Streamlit",
-        tags=[APP],
-        is_awesome=True,
-    ),
-    Resource(
-        name="Hacker News technical discussion of how Streamlit work",
-        url="https://news.ycombinator.com/item?id=21158487",
-        tags=[TECHNICAL],
-        is_awesome=True,
-    ),
-    Resource(
-        name="Jupyter Voila",
-        url="https://blog.jupyter.org/and-voil%C3%A0-f6a2c08a4a93",
-        tags=[ALTERNATIVE],
-        is_awesome=True,
-    ),
-    Resource(
-        name="Plotly Dash",
-        url="https://plot.ly/dash/",
-        tags=[ALTERNATIVE],
-        is_awesome=True,
-    ),
-    Resource(
-        name="Bokeh",
-        url="https://bokeh.pydata.org/en/latest/index.html",
-        tags=[ALTERNATIVE],
-        is_awesome=True,
-    ),
-    Resource(
-        name="Sentiment Analyzer Tool",
-        url=(
-            "https://www.linkedin.com/posts/patidarparas13_code-ml-machinelearning-"
-            "ugcPost-6585745929062703104-ttkv"
+RESOURCES = (
+    [
+        Resource(
+            name="Awesome Streamlit Resources List",
+            url="ttps://github.com/marcskovmadsen/awesome-streamlit",
+            is_awesome=True,
+            tags=[tags.AWESOME_STREAMLIT_ORG],
+            author=authors.AWESOME_STREAMLIT_ORG,
         ),
-        tags=[APP, CODE, SOCIAL],
-        is_awesome=True,
-    ),
-    Resource(
-        name="Streamlit-components-demo App",
-        url=("https://fullstackstation.com/streamlit-components-demo"),
-        tags=[APP],
-        is_awesome=True,
-    ),
-    Resource(
-        name="Streamlit-components-demo Code",
-        url=("https://github.com/virusvn/streamlit-components-demo"),
-        tags=[CODE],
-        is_awesome=True,
-    ),
-    Resource(
-        name="Deploying Streamlit app to EC2 instance",
-        url="https://medium.com/@pokepim/deploying-streamlit-app-to-ec2-instance-7a7edeffbb54",
-        tags=[CODE],
-        is_awesome=True,
-    ),
-    Resource(
-        name="Uber Data Explorer App",
-        url="https://dataexplorerlit.herokuapp.com/",
-        tags=[CODE],
-        is_awesome=True,
-    ),
-] + STREAMLIT_EXAMPLE_APPS + STREAMLIT_EXAMPLE_APPS_FAILED_TEST + RESOURCES_STREAMLIT_COMPONENT_APPS + APP_CONTRIBUTIONS + [DEFAULT_RESOURCE]
+        Resource(
+            name="Repo",
+            url="https://github.com/marcskovmadsen/awesome-streamlit",
+            is_awesome=True,
+            tags=[tags.AWESOME_STREAMLIT_ORG],
+            author=authors.AWESOME_STREAMLIT_ORG,
+        ),
+        Resource(
+            name="App",
+            url="https://awesome-streamlit.org>",
+            is_awesome=True,
+            tags=[tags.AWESOME_STREAMLIT_ORG],
+            author=authors.AWESOME_STREAMLIT_ORG,
+        ),
+        Resource(
+            name="Docs",
+            url="https://awesome-streamlit.readthedocs.io/en/latest/",
+            is_awesome=True,
+            tags=[tags.AWESOME_STREAMLIT_ORG],
+            author=authors.AWESOME_STREAMLIT_ORG,
+        ),
+        Resource(
+            name="Python Package",
+            url="https://pypi.org/project/awesome-streamlit/",
+            is_awesome=True,
+            tags=[tags.AWESOME_STREAMLIT_ORG],
+            author=authors.AWESOME_STREAMLIT_ORG,
+        ),
+        Resource(
+            name="Docker Image",
+            url="https://cloud.docker.com/u/marcskovmadsen/repository/docker/marcskovmadsen/awesome-streamlit",
+            is_awesome=True,
+            tags=[tags.AWESOME_STREAMLIT_ORG],
+            author=authors.AWESOME_STREAMLIT_ORG,
+        ),
+        Resource(
+            name="Streamlit",
+            url="https://techcrunch.com/2019/10/01/streamlit-launches-open-source-machine-learning-application-development-framework/",
+            tags=[STREAMLIT_TAG],
+            is_awesome=True,
+        ),
+        Resource(
+            name="Streamlit.io",
+            url="https://streamlit.io/",
+            tags=[STREAMLIT_TAG],
+            is_awesome=True,
+        ),
+        Resource(
+            name="Streamlit Docs",
+            url="https://streamlit.io/docs/",
+            tags=[STREAMLIT_TAG],
+            is_awesome=True,
+        ),
+        Resource(
+            name="Streamlit Community",
+            url="https://discuss.streamlit.io/top/quarterly",
+            tags=[STREAMLIT_TAG],
+            is_awesome=True,
+        ),
+        Resource(
+            "The announcing blog",
+            url="https://towardsdatascience.com/coding-ml-tools-like-you-code-ml-models-ddba3357eace",
+            tags=[STREAMLIT_TAG],
+            is_awesome=True,
+        ),
+        Resource(
+            "The announcing community post",
+            url="https://discuss.streamlit.io/t/streamlit-has-launched/105/3",
+            tags=[STREAMLIT_TAG],
+            is_awesome=True,
+        ),
+        Resource(
+            "LinkedIn post that started awesome-streamlit.org",
+            url="https://www.linkedin.com/feed/update/urn:li:activity:6586497522896818176",
+            tags=[tags.AWESOME_STREAMLIT_ORG, SOCIAL],
+            is_awesome=True,
+        ),
+        Resource(
+            "LinkedIn #streamlit",
+            url="https://www.linkedin.com/search/results/all/?keywords=%23streamlit",
+            tags=[SOCIAL],
+            is_awesome=True,
+        ),
+        Resource(
+            name="Twitter #streamlit",
+            url="https://twitter.com/search?q=%23streamlit&src=typed_query",
+            tags=[SOCIAL],
+            is_awesome=True,
+        ),
+        Resource(
+            name="Kaggle Mushrooms Dashboard",
+            url="https://github.com/pierpaolo28/Data-Visualization/tree/master/Streamlit",
+            tags=[APP],
+            is_awesome=True,
+        ),
+        Resource(
+            name="Hacker News technical discussion of how Streamlit work",
+            url="https://news.ycombinator.com/item?id=21158487",
+            tags=[TECHNICAL],
+            is_awesome=True,
+        ),
+        Resource(
+            name="Jupyter Voila",
+            url="https://blog.jupyter.org/and-voil%C3%A0-f6a2c08a4a93",
+            tags=[ALTERNATIVE],
+            is_awesome=True,
+        ),
+        Resource(
+            name="Plotly Dash",
+            url="https://plot.ly/dash/",
+            tags=[ALTERNATIVE],
+            is_awesome=True,
+        ),
+        Resource(
+            name="Bokeh",
+            url="https://bokeh.pydata.org/en/latest/index.html",
+            tags=[ALTERNATIVE],
+            is_awesome=True,
+        ),
+        Resource(
+            name="Sentiment Analyzer Tool",
+            url=(
+                "https://www.linkedin.com/posts/patidarparas13_code-ml-machinelearning-"
+                "ugcPost-6585745929062703104-ttkv"
+            ),
+            tags=[APP, CODE, SOCIAL],
+            is_awesome=True,
+        ),
+        Resource(
+            name="Streamlit-components-demo App",
+            url=("https://fullstackstation.com/streamlit-components-demo"),
+            tags=[APP],
+            is_awesome=True,
+        ),
+        Resource(
+            name="Streamlit-components-demo Code",
+            url=("https://github.com/virusvn/streamlit-components-demo"),
+            tags=[CODE],
+            is_awesome=True,
+        ),
+        Resource(
+            name="Deploying Streamlit app to EC2 instance",
+            url="https://medium.com/@pokepim/deploying-streamlit-app-to-ec2-instance-7a7edeffbb54",
+            tags=[CODE],
+            is_awesome=True,
+        ),
+        Resource(
+            name="Uber Data Explorer App",
+            url="https://dataexplorerlit.herokuapp.com/",
+            tags=[CODE],
+            is_awesome=True,
+        ),
+    ]
+    + STREAMLIT_EXAMPLE_APPS
+    + STREAMLIT_EXAMPLE_APPS_FAILED_TEST
+    + RESOURCES_STREAMLIT_COMPONENT_APPS
+    + APP_CONTRIBUTIONS
+    + [DEFAULT_RESOURCE]
+)
 
 TAGS = []
 for resource in RESOURCES:

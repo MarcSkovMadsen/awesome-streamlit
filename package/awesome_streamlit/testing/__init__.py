@@ -1,3 +1,2 @@
-"""Here we import modules and functions to be exposed to the user
-of the awesome-streamlit package"""
+"""In the testing package we import and expose the models, services and utils modules"""
 from awesome_streamlit.testing import models, services, utils

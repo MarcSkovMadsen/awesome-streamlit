@@ -72,8 +72,7 @@ def to_dataframe(test_items: List[TesTItem]) -> pd.DataFrame:
         test_items {List[TesTItem]} -- A list of TesTItems
 
     Returns:
-        pd.DataFrame -- A pandas dataframe with
-columns columns=['test', 'location', 'result', 'exception']
+        pd.DataFrame -- A pandas dataframe with columns=['test', 'location', 'result', 'exception']
     """
 
     return pd.DataFrame(

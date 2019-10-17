@@ -8,18 +8,27 @@ Welcome to Awesome Streamlit's documentation!
 
 This is the documentation of the **Awesome Streamlit Project** including the
 
-- **Awesome Streamlit Resources List** on `GitHub <https://github.com/marcskovmadsen/awesome-streamlit>`_
-- **Repo** on `GitHub <https://github.com/marcskovmadsen/awesome-streamlit>`_
-- **App** at `awesome-streamlit.org <https://awesome-streamlit.org>`_
-- **Docs** on `Read The Docs <https://awesome-streamlit.readthedocs.io/en/latest/>`_
-- **Python Package** on `PyPi <https://pypi.org/project/awesome-streamlit/>`_
-- **Docker Image** on `Docker Hub <https://cloud.docker.com/u/marcskovmadsen/repository/docker/marcskovmadsen/awesome-streamlit>`_
+- `Awesome Streamlit Resources List <https://github.com/marcskovmadsen/awesome-streamlit>`_ on GitHub
+- `Repo <https://github.com/marcskovmadsen/awesome-streamlit>`_ on GitHub
+- `App <https://awesome-streamlit.org>`_ at awesome-streamlit.org
+- `Docs <https://awesome-streamlit.readthedocs.io/en/latest/>`_ on Read The Docs
+- `Python Package <https://pypi.org/project/awesome-streamlit/>`_ on PyPi
+- `Docker Image <https://cloud.docker.com/u/marcskovmadsen/repository/docker/marcskovmadsen/awesome-streamlit>`_ on Docker Hub
 
 .. toctree::
-   :maxdepth: 2
-   :caption: Contents:
+   :maxdepth: 1
+   :caption: Awesome Streamlit Docs!
 
+   Awesome Streamlit Resources list! <awesome-list.md>
+   Repo Introduction <_copy_of_project_root/README>
 
+.. toctree::
+   :maxdepth: 1
+   :caption: About the Project
+
+   Our Vision for Streamlit <_copy_of_project_root/AWESOME-STREAMLIT>
+   How to Contribute <_copy_of_project_root/contributing>
+   How to Conduct as a Contributor <_copy_of_project_root/code-of-conduct>
 
 Indices and tables
 ==================

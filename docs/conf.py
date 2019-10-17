@@ -7,9 +7,7 @@
 # http://www.sphinx-doc.org/en/master/config
 # pylint: disable=invalid-name
 from typing import Dict
-
 from recommonmark.parser import CommonMarkParser  # type: ignore
-
 
 # -- Project information -----------------------------------------------------
 
@@ -33,7 +31,7 @@ release = ""
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
-    # "sphinx.ext.autodoc",
+    "sphinx.ext.autodoc",
     # "sphinx.ext.doctest",
     # "sphinx.ext.todo",
     # "sphinx.ext.coverage",
@@ -193,3 +191,6 @@ epub_exclude_files = ["search.html"]
 # def setup(app):
 #     """Custom setup of the Sphinx app"""
 #     app.add_stylesheet("my_theme.css")
+
+# We copy the project root markdown files into the _copy_of_project_root folder for inclusion in
+# the docs

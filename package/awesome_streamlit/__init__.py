@@ -1,2 +1,2 @@
-"""Imports of the modules that should be exposed to the user of the package"""
+"""This modules exposes the database, experiments, shared and testing modules"""
 from awesome_streamlit import database, experiments, shared, testing
