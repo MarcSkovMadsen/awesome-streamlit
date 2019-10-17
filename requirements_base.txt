@@ -28,8 +28,17 @@ coverage  # https://github.com/nedbat/coveragepy
 mypy  # https://github.com/python/mypy
 bandit # Bandit is a tool designed to find common security issues in Python code. See https://pypi.org/project/bandit/
 
-# Documentation Quality
+# Documentation
+# ------------------------------------------------------------------------------
+Sphinx==1.8.4  # https://github.com/sphinx-doc/sphinx
+sphinx_rtd_theme # Documentation theme
+recommonmark # Documentation using Markdown
+sphinx-autobuild # Auto build and live reload server
 doc8 # Doc8 is an opinionated style checker for rst (with basic support for plain text) styles of documentation. See https://github.com/openstack/doc8
+# m2r # M2R converts a markdown file including reStructuredText (rst) markups to a valid rst format. See https://pypi.org/project/m2r/
+# sphinxcontrib-blockdiag # Creates diagram images from simple text files. See http://blockdiag.com/en/index.html
+# sphinxcontrib.actdiag # Creates diagram images from simple text files. See http://blockdiag.com/en/actdiag/index.html
+# nbsphinx # Enables you to write your documentation in Jupyter Notebooks. See https://nbsphinx.readthedocs.io/en/0.4.2/
 
 # Other
 spacy # Industrial-Strength Natural Language Processing https://spacy.io/

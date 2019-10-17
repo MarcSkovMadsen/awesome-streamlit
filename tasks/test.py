@@ -91,7 +91,7 @@ Running pytest the test framework
 
 
 @task()
-def pylint(command, files="tasks tests src package/awesome_streamlit app.py"):
+def pylint(command, files="tasks tests src docs package/awesome_streamlit app.py"):
     """Runs pylint (linter) on all .py files recursively to identify coding errors
 
     Arguments:
@@ -114,7 +114,7 @@ sniffs for code smells and offers simple refactoring suggestions.
 
 
 @task
-def mypy(command, files="tasks tests src package/awesome_streamlit app.py"):
+def mypy(command, files="tasks tests src docs package/awesome_streamlit app.py"):
     """Runs mypy (static type checker) on all .py files recursively
 
     Arguments:
