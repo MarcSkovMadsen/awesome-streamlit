@@ -88,6 +88,7 @@ STREAMLIT_EXAMPLE_APPS_FILES = [
     "plotly_example.py",
     "syntax_error.py",
     "table_styling.py",
+    "video.py",
 ]
 STREAMLIT_EXAMPLE_APPS = [
     Resource(
