@@ -22,6 +22,6 @@ def get_vision_markdown() -> str:
 def write():
     """Method used to write the page in the app.py file"""
     ast.shared.components.title_awesome("Vision")
-    with st.spinner("Loading Vision ..."):
+    with st.spinner("Loading  ..."):
         vision = get_vision_markdown()
-    st.markdown(vision)
+        st.markdown(vision)

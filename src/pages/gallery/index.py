@@ -23,10 +23,10 @@ master/streamlit_apps.json"""
 
 def write():
     """This method writes the Gallery index page which is used to navigate between gallery apps"""
+
     ast.shared.components.title_awesome("Gallery")
-    with st.spinner("Loading Gallery ..."):
-        apps = get_resources()
-        authors = get_authors(apps)
+    apps = get_resources()
+    authors = get_authors(apps)
     index_default_author = authors.index(ast.database.resources.DEFAULT_RESOURCE.author)
     author = st.selectbox("Select Author", authors, index=index_default_author)
     apps_by_author = get_resources_by_author(apps, author)
