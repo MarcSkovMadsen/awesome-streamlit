@@ -13,7 +13,7 @@ import streamlit as st
 
 import awesome_streamlit as ast
 from awesome_streamlit.shared.models import Resource
-from awesome_streamlit.testing.models import TestItem
+from awesome_streamlit.testing.models import TesTItem
 
 
 @st.cache
@@ -21,7 +21,7 @@ def _get_list_of_test_resources() -> List[Resource]:
     """The subset of all Resources that can be tested
 
     Returns:
-        List[Resource] -- A list of TestItems
+        List[Resource] -- A list of TesTItems
     """
     resources = [
         resource
@@ -33,14 +33,14 @@ def _get_list_of_test_resources() -> List[Resource]:
 
 
 @st.cache
-def get_from_resources() -> List[TestItem]:
-    """A list of TestItems generated from the Awesome Streamlit database of Resources
+def get_from_resources() -> List[TesTItem]:
+    """A list of TesTItems generated from the Awesome Streamlit database of Resources
 
     Returns:
-        List[TestItem] -- A list of TestItems
+        List[TesTItem] -- A list of TesTItems
     """
     return [
-        TestItem.create_from_app_file_resource(resource)
+        TesTItem.create_from_app_file_resource(resource)
         for resource in _get_list_of_test_resources()
     ]
 
@@ -65,11 +65,11 @@ def _to_short_string(text: str, max_length: int = 75) -> str:
 
 
 @st.cache
-def to_dataframe(test_items: List[TestItem]) -> pd.DataFrame:
-    """Converts a List of TestItems to a Pandas Dataframe
+def to_dataframe(test_items: List[TesTItem]) -> pd.DataFrame:
+    """Converts a List of TesTItems to a Pandas Dataframe
 
     Arguments:
-        test_items {List[TestItem]} -- A list of TestItems
+        test_items {List[TesTItem]} -- A list of TesTItems
 
     Returns:
         pd.DataFrame -- A pandas dataframe with

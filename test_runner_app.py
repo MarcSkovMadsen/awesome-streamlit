@@ -11,7 +11,7 @@ from awesome_streamlit import testing
 from awesome_streamlit.core.services import (get_file_content_as_string,
                                              test_item.to_dataframe)
 from awesome_streamlit.shared.models import Resource
-from awesome_streamlit.testing.models import TestItem
+from awesome_streamlit.testing.models import TesTItem
 
 ast.shared.components.title_awesome("Test Runner")
 st.markdown(

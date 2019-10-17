@@ -7,8 +7,12 @@ from awesome_streamlit.core.services import get_file_content_as_string
 from awesome_streamlit.shared.models import Resource
 
 
-class TestItem:
-    """Model of a TestItem"""
+class TesTItem:
+    """Model of a TesTItem
+
+    This class has been partially capitalized in order not to be collected by PyTest,
+    that normally collects classes starting with 'Test'.
+    """
 
     def __init__(  # pylint: disable=too-many-arguments
         self,
@@ -41,14 +45,14 @@ class TestItem:
         return "passed"
 
     @classmethod
-    def create_from_app_file_resource(cls, resource: Resource) -> "TestItem":
-        """Creates a TestItem from a Resource"""
+    def create_from_app_file_resource(cls, resource: Resource) -> "TesTItem":
+        """Creates a TesTItem from a Resource"""
         # python_code = get_file_content_as_string(resource.url)
 
         return cls(name=resource.name, location=resource.url)
 
     @classmethod
-    def create_from_test_function(cls, module: ModuleType, function: str) -> "TestItem":
+    def create_from_test_function(cls, module: ModuleType, function: str) -> "TesTItem":
         """Creates a test_function from a module function
 
         Arguments:
@@ -56,7 +60,7 @@ class TestItem:
             function {str} -- The function string
 
         Returns:
-            [TestItem] -- A TestItem
+            [TesTItem] -- A TesTItem
         """
         test_function = getattr(module, function)
         # python_code = inspect.getsource(test_function)
@@ -67,7 +71,7 @@ class TestItem:
         )
 
     def run_test(self):
-        """Runs the TestItem"""
+        """Runs the TesTItem"""
         if self.test_function:
             raise NotImplementedError()
 
