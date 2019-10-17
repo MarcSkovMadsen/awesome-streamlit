@@ -18,4 +18,4 @@ RUN cp config.prod.py config.py
 
 WORKDIR /app
 
-ENTRYPOINT [ "streamlit", "run", "app.py" ]
+ENTRYPOINT [ "/bin/bash", "./scripts/run_awesome_streamlit_with_ping.sh"]

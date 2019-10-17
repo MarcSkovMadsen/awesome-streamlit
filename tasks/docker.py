@@ -188,6 +188,37 @@ Running the '{image}:{tag}' Docker image
 
 
 @task
+def run_server_with_ping(c):  # pylint: disable=unused-argument
+    """Run the Docker image interactively.
+
+    Arguments:
+        c {[type]} -- Invoke command object
+
+    Keyword Arguments:
+        image {[type]} -- awesome-streamlit (default: {"prod"})
+        tag {str} -- Name of tag (default: {"latest"})
+    """
+
+    # Invoke cannot run interactive
+    image = "awesome-streamlit"
+    tag = "latest"
+    print(
+        f"""
+Running the '{image}:{tag}' Docker image
+========================================
+"""
+    )
+    command = (
+        'docker run -it -p 80:80 --entrypoint "/bin/bash" '
+        f"{DOCKER_REGISTRY}/{image}:{tag} "
+        "./scripts/run_awesome_streamlit_with_ping.sh"
+    )
+
+    print(command)
+    subprocess.run(command, check=True)
+
+
+@task
 def system_prune(c):
     """The docker system prune command will free up space
 

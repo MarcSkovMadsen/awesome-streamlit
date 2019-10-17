@@ -13,9 +13,8 @@ from awesome_streamlit import testing
 from awesome_streamlit.core.services import get_file_content_as_string
 from awesome_streamlit.shared.models import Resource
 from awesome_streamlit.testing.models import TesTItem
-from awesome_streamlit.testing.services.test_item import (
-    to_dataframe as test_items_to_dataframe,
-)
+from awesome_streamlit.testing.services.test_item import \
+    to_dataframe as test_items_to_dataframe
 
 
 def write_title():

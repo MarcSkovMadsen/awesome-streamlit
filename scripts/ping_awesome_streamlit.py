@@ -13,10 +13,7 @@ import requests
 logging.basicConfig(format="%(asctime)s - %(message)s", level=logging.INFO)
 
 
-def ping(
-    url: str = "https://awesome-streamlit.azurewebsites.net/",
-    sleep_secs: Optional[float] = 2,
-):
+def ping(url: str = "https://awesome-streamlit.org", sleep_secs: Optional[float] = 600):
     """Pings the url every sleep_secs seconds
 
     Awesome-streamlit uses this job to keep the web application awake. Cf
@@ -38,7 +35,7 @@ If not None the site will be pinged every sleeps_seconds seconds (default: {200}
     """
     count = 1
     while count == 1 or sleep_secs:
-        logging.info("Request %s sent", count)
+        logging.info("Request %s sent to %s", count, url)
 
         response = requests.get(url)
         logging.info(
@@ -62,4 +59,4 @@ If not None the site will be pinged every sleeps_seconds seconds (default: {200}
 
 
 if __name__ == "__main__":
-    ping(sleep_secs=60)
+    ping(sleep_secs=300)
