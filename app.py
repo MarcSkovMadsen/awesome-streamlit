@@ -49,7 +49,7 @@ st.sidebar.info(
     "You can learn more about me at [datamodelsanalytics.com](https://datamodelsanalytics.com)."
 )
 
-log_message = f"""To track down [performance issues](https://github.com/streamlit/streamlit/issues/367) we log the **time to run** on the server:
+log_message = f"""To track down [performance issues](https://github.com/streamlit/streamlit/issues/367) we log the **time to run** the script on the server:
 {(time_start - time.time()):.2} seconds
 """
 log.info(log_message)
