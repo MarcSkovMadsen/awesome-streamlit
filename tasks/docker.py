@@ -189,7 +189,8 @@ Running the '{image}:{tag}' Docker image
 
 @task
 def run_server_with_ping(c):  # pylint: disable=unused-argument
-    """Run the docker image with Streamlit server and a ping to awesome-streamlit.org every 5 minutes
+    """Run the docker image with Streamlit server and
+    a ping to awesome-streamlit.org every 5 minutes
     to keep it alive
 
     Arguments:

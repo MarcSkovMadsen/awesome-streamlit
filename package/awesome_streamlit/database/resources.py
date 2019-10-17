@@ -2,27 +2,16 @@
 
 Here you maintain the list of awesome resources
 """
-from awesome_streamlit.database.authors import (
-    INES,
-    MARC_SKOV_MADSEN,
-    STREAMLIT_AUTHOR,
-    STREAMLIT_COMPONENT_AUTHOR,
-    STREAMLIT_EXAMPLE_AUTHOR,
-)
+from awesome_streamlit.database import authors, tags
+from awesome_streamlit.database.authors import (INES, MARC_SKOV_MADSEN,
+                                                STREAMLIT_AUTHOR,
+                                                STREAMLIT_COMPONENT_AUTHOR,
+                                                STREAMLIT_EXAMPLE_AUTHOR)
 from awesome_streamlit.database.tags import (
-    ALTERNATIVE,
-    APP,
-    APP_IN_GALLERY,
-    AWESOMESTREAMLIT_COMPONENT_AUTHOR,
-    CODE,
-    SOCIAL,
-    STREAMLIT_TAG,
-    TECHNICAL,
-)
-
+    ALTERNATIVE, APP, APP_IN_GALLERY, CODE,
+    SOCIAL, STREAMLIT_TAG, TECHNICAL)
 # pylint: disable=line-too-long
 from awesome_streamlit.shared.models import Resource
-from awesome_streamlit.database import tags, authors
 
 # STREAMLIT FILE ROOTS
 

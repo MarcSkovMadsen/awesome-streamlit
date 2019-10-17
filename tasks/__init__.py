@@ -1,7 +1,7 @@
 """Here we import the different task submodules/ collections"""
 from invoke import Collection, task
 
-from tasks import docker, package, test, sphinx
+from tasks import docker, package, sphinx, test
 
 # pylint: disable=invalid-name
 # as invoke only recognizes lower case

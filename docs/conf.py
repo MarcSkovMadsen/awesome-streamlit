@@ -6,7 +6,7 @@
 # full list see the documentation:
 # http://www.sphinx-doc.org/en/master/config
 # pylint: disable=invalid-name
-from typing import Dict
+
 from recommonmark.parser import CommonMarkParser  # type: ignore
 
 # -- Project information -----------------------------------------------------
