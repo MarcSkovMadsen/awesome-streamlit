@@ -2,34 +2,16 @@
 # todo: Add timing to table and results
 # todo: Handle FutureWarning: set_value is deprecated and will be removed in a future release. Please use .at[] or .iat[] accessors instead
 # pylint: disable=invalid-name
-from typing import List
 
 import pandas as pd
 import streamlit as st
 
 import awesome_streamlit as ast
 from awesome_streamlit import testing
-from awesome_streamlit.core.services import get_file_content_as_string
+from awesome_streamlit.core.services import (get_file_content_as_string,
+                                             test_item.to_dataframe)
 from awesome_streamlit.shared.models import Resource
 from awesome_streamlit.testing.models import TestItem
-
-
-@st.cache
-def get_test_items_dataframe(test_items: List[TestItem]) -> pd.DataFrame:
-    def short_string(text):
-        if len(text) < 75:
-            return text
-        else:
-            return text[0:75] + "..."
-
-    return pd.DataFrame(
-        [
-            (test_item.name, short_string(test_item.location), "", "")
-            for test_item in test_items
-        ],
-        columns=["test", "location", "result", "exception"],
-    )
-
 
 ast.shared.components.title_awesome("Test Runner")
 st.markdown(
@@ -45,11 +27,11 @@ st.markdown(
 st.error("IMPORTANT: THIS IS WORK IN PROGRESS AND IMMATURE!")
 st.subheader("""Collect tests""")
 with st.spinner("Collecting ...."):
-    test_items = testing.services.get_test_items_from_resources()
+    test_items = testing.services.test_items.get_from_resources()
 
 tests_count = len(test_items)
 st.info(f"Collected {tests_count} items")
-test_items_dataframe = get_test_items_dataframe(test_items)
+test_items_dataframe = test_item.to_dataframe(test_items)
 
 st.subheader("""Run tests""")
 log = ""
