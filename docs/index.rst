@@ -8,7 +8,8 @@ Welcome to Awesome Streamlit's documentation!
 
 This is the documentation of the **Awesome Streamlit Project** including the
 
-- **Repo** and **Awesome Resources List** on `GitHub <https://github.com/marcskovmadsen/awesome-streamlit>`_
+- **Awesome Streamlit Resources List** on `GitHub <https://github.com/marcskovmadsen/awesome-streamlit>`_
+- **Repo** on `GitHub <https://github.com/marcskovmadsen/awesome-streamlit>`_
 - **App** at `awesome-streamlit.org <https://awesome-streamlit.org>`_
 - **Docs** on `Read The Docs <https://cloud.docker.com/u/marcskovmadsen/repository/docker/read_nest_docs>`_
 - **Python Package** on `PyPi <https://pypi.org/project/awesome-streamlit/>`_
