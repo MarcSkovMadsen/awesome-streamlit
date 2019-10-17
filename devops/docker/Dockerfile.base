@@ -15,4 +15,7 @@ RUN pip install --upgrade pip && pip install --no-cache-dir -r requirements_base
 RUN python -m spacy download en_core_web_sm \
     && python -m spacy download en_core_web_md \
     && python -m spacy download de_core_news_sm
+
+RUN apt-get update && apt-get install procps -y
+
 ENTRYPOINT [ "/bin/bash" ]

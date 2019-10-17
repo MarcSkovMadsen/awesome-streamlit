@@ -59,4 +59,4 @@ If not None the site will be pinged every sleeps_seconds seconds (default: {200}
 
 
 if __name__ == "__main__":
-    ping(sleep_secs=300)
+    ping(sleep_secs=60)
