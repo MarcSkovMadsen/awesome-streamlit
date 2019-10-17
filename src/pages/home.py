@@ -14,15 +14,13 @@ def write():
 
 I believe Streamlit has the **potential to become the Iphone of Data Science Apps**. And maybe it can even become the Iphone of Technical Writing, Code, Micro Apps and Python.
 
-The **purpose** of the awesome-streamlit project is to share knowledge on how Awesome [Streamlit](https://streamlit.io/) is and can become.
+The **purpose** of the *Awesome Streamlit Project* is to share knowledge on how Awesome [Streamlit](https://streamlit.io/) is and can become.
 
 This application provides
 
 - A list of awesome Streamlit **resources**.
 - A **gallery** of awesome streamlit applications.
 - A **vision** on how awesome Streamlit can be.
-- A **best practices** example and **starter template** of a larger, multipage,
-high quality app **developed using the power of Python and the magic of Streamlit**!
 
 ## The Magic of Streamlit
 
