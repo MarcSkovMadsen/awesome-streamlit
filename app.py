@@ -1,11 +1,15 @@
 """Main module for the streamlit app"""
+import time  # isort:skip
+
+time_start = time.time()  # isort:skip
 # IMPORTANT NOTES
 # - For now modules from pages have to be reloaded every time we use them
 # In order for this to work they should be added to the pages.__init__ file
 # pylint: disable=invalid-name
-import streamlit as st
+import streamlit as st  # isort:skip
 
 import awesome_streamlit as ast
+
 # Import all needed packages
 # Dont write 'from src.pages import home'. Autoreload will not work!
 # Dont write 'import src.pages.home as home'. Autoreload will not work!
@@ -22,6 +26,7 @@ PAGES = {
     "Gallery": src.pages.gallery.index,
     "Vision": src.pages.vision,
 }
+log = st.empty()
 st.sidebar.title("Navigation")
 selection = st.sidebar.radio("Go to", list(PAGES.keys()))
 
@@ -43,3 +48,8 @@ st.sidebar.info(
     "I'm not an experienced open source maintainer, so helpfull hints and suggestions are welcome. "
     "You can learn more about me at [datamodelsanalytics.com](https://datamodelsanalytics.com)."
 )
+
+log_message = f"""To track down [performance issues](https://github.com/streamlit/streamlit/issues/367) we log the **time to run** on the server:
+{(time_start - time.time()):.2} seconds
+"""
+log.info(log_message)
