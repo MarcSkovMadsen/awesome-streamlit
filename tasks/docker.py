@@ -116,7 +116,7 @@ def build(c, image="prod", tag="latest", rebuild=False):
 
 @task
 def run(c, image="awesome-streamlit", tag="latest"):  # pylint: disable=unused-argument
-    """Run the Docker container interactively.
+    """Run the Docker container bash terminal interactively.
 
     Arguments:
         c {[type]} -- Invoke command object
@@ -158,7 +158,7 @@ def push(c, image="awesome-streamlit", tag="latest"):
 
 @task
 def run_server(c):  # pylint: disable=unused-argument
-    """Run the Docker image interactively.
+    """Run the Docker image with the Streamlit server.
 
     Arguments:
         c {[type]} -- Invoke command object
@@ -189,7 +189,8 @@ Running the '{image}:{tag}' Docker image
 
 @task
 def run_server_with_ping(c):  # pylint: disable=unused-argument
-    """Run the Docker image interactively.
+    """Run the docker image with Streamlit server and a ping to awesome-streamlit.org every 5 minutes
+    to keep it alive
 
     Arguments:
         c {[type]} -- Invoke command object
