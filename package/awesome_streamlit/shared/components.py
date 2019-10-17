@@ -39,7 +39,7 @@ def write_page(page):  # pylint: disable=redefined-outer-name
     Arguments:
         page {module} -- A module with a 'def write():' function
     """
-    _reload_module(page)
+    # _reload_module(page)
     page.write()
 
 

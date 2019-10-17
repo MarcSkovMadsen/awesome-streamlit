@@ -20,6 +20,8 @@ import src.pages.home
 import src.pages.resources
 import src.pages.vision
 
+ast.core.services.other.set_logging_format()
+
 PAGES = {
     "Home": src.pages.home,
     "Resources": src.pages.resources,

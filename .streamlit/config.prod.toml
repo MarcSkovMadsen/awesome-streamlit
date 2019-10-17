@@ -52,7 +52,7 @@ fixMatplotlib = true
 # List of folders that should not be watched for changes. Relative paths will be taken as relative to the current working directory.
 # Example: ['/home/user1/env', 'relative/path/to/folder']
 # Default: []
-folderWatchBlacklist = []
+folderWatchBlacklist = ['']
 
 # If false, will attempt to open a browser window on start.
 # Default: false unless (1) we are on a Linux box where DISPLAY is unset, or (2) server.liveSave is set.
