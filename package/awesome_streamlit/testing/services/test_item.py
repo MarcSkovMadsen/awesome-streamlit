@@ -8,10 +8,9 @@ with the awesome_streamlit.testing package
 import random
 from typing import List
 
-import pandas as pd
 import streamlit as st
 
-import awesome_streamlit as ast
+from awesome_streamlit import database
 from awesome_streamlit.shared.models import Resource
 from awesome_streamlit.testing.models import TesTItem
 
@@ -25,9 +24,9 @@ def _get_list_of_test_resources() -> List[Resource]:
     """
     resources = [
         resource
-        for resource in ast.database.RESOURCES
-        if ast.database.resources.APP_IN_GALLERY in resource.tags
-    ] + ast.database.resources.STREAMLIT_EXAMPLE_APPS_FAILED_TEST
+        for resource in database.RESOURCES
+        if database.resources.APP_IN_GALLERY in resource.tags
+    ] + database.resources.STREAMLIT_EXAMPLE_APPS_FAILED_TEST
     random.shuffle(resources)
     return resources
 
@@ -45,40 +44,16 @@ def get_from_resources() -> List[TesTItem]:
     ]
 
 
-def _to_short_string(text: str, max_length: int = 75) -> str:
-    """Caps the string at 75 characters. If longer than 75 it's capped at max_length-3
-    and '...' is appended
-
-    Arguments:
-        text {str} -- A text string
-
-    Keyword Arguments:
-        max_length {int} -- The maximum number of characters (default: {75})
-
-    Returns:
-        str -- The capped string
-    """
-    if len(text) < max_length:
-        return text
-
-    return text[0:72] + "..."
+# Refactor to get_log_string
+def append_to_log(log: str, test_item: TesTItem) -> str:
+    if not test_item.result:
+        log += f"#### ---{test_item.name}---\n\n"
+        log += f"File: [{test_item.location}]({test_item.location})\n\n"
+        log += f"{test_item.traceback}\n\n"
+    return log
 
 
-@st.cache
-def to_dataframe(test_items: List[TesTItem]) -> pd.DataFrame:
-    """Converts a List of TesTItems to a Pandas Dataframe
-
-    Arguments:
-        test_items {List[TesTItem]} -- A list of TesTItems
-
-    Returns:
-        pd.DataFrame -- A pandas dataframe with columns=['test', 'location', 'result', 'exception']
-    """
-
-    return pd.DataFrame(
-        [
-            (test_item.name, _to_short_string(test_item.location), "", "")
-            for test_item in test_items
-        ],
-        columns=["test", "location", "result", "exception"],
-    )
+def to_test_results_summary(test_items: List[TesTItem]) -> str:
+    passed_count = sum([test_item.result for test_item in test_items])
+    failed_count = len(test_items) - passed_count
+    return f"All tests have run: {failed_count} failed, {passed_count} passed."

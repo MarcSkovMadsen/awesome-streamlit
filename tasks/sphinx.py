@@ -17,7 +17,7 @@ ROOT_FILES = [
 
 
 @task
-def copy_from_project_root(command):
+def copy_from_project_root(command):  # pylint: disable=unused-argument
     """We need to copy files like README.md into docs/_copy_of_project_root
     for inclusion in the Docs"""
     target = ROOT / "docs/_copy_of_project_root"
@@ -54,7 +54,8 @@ def build(command):
 def livereload(command):
     """Start autobild documentation server and open in browser.
 
-    The documentation server will automatically rebuild the documentation and refresh your browser when you update it.
+    The documentation server will automatically rebuild the documentation and
+    refresh your browser when you update it.
     """
     with command.cd("docs"):
         command.run("sphinx-autobuild . _build/html --open-browser --port 8003")
@@ -62,7 +63,8 @@ def livereload(command):
 
 @task(pre=[build])
 def test(command):
-    """Checks for broken internal and external links and runs the doc8 .rst linter to identify problems.
+    """Checks for broken internal and external links and
+    runs the doc8 .rst linter to identify problems.
 
     Runs
     - the Sphinx 'dummy' builder to identify internal problems.
@@ -72,13 +74,15 @@ def test(command):
     with command.cd("docs"):
         logging.info("\nRunning the 'dummy' builder")
         logging.info(
-            "The input is only parsed and checked for consistency. This is useful for linting purposes."
+            """The input is only parsed and checked for consistency.
+This is useful for linting purposes."""
         )
         command.run("sphinx-build . _build/ -b dummy", echo=True, warn=True)
 
         logging.info("\nRunning the 'linkcheck' builder")
         logging.info(
-            "echo This builder scans all documents for external links, tries to open them with requests"
+            "echo This builder scans all documents for external links and "
+            "tries to open them with requests"
         )
         command.run("sphinx-build . _build/ -b linkcheck", echo=True, warn=True)
 

@@ -1,18 +1,21 @@
+"""Configuration file for the Sphinx documentation builder.
+
+This file does only contain a selection of the most common options. For a
+full list see the documentation:
+http://www.sphinx-doc.org/en/master/config
+"""
 # -*- coding: utf-8 -*-
-#
-# Configuration file for the Sphinx documentation builder.
-#
-# This file does only contain a selection of the most common options. For a
-# full list see the documentation:
-# http://www.sphinx-doc.org/en/master/config
 # pylint: disable=invalid-name
+
+# -- Options for LaTeX output ------------------------------------------------
+from typing import Dict
 
 from recommonmark.parser import CommonMarkParser  # type: ignore
 
 # -- Project information -----------------------------------------------------
 
 project = "Awesome Streamlit"
-copyright = "2019, Marc Skov Madsen"
+copyright = "2019, Marc Skov Madsen"  # pylint: disable=redefined-builtin
 author = "Marc Skov Madsen"
 
 # The short X.Y version
@@ -105,9 +108,7 @@ html_static_path = ["_static"]
 htmlhelp_basename = "AwesomeStreamlitdoc"
 
 
-# -- Options for LaTeX output ------------------------------------------------
-
-latex_elements = {
+latex_elements: Dict[str, str] = {
     # The paper size ('letterpaper' or 'a4paper').
     #
     # 'papersize': 'letterpaper',

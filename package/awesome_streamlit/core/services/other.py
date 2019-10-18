@@ -5,8 +5,10 @@ pages of the Streamlit App.
   - REST API interactions, get, post, put, delete
   - Pandas transformations
 """
-import urllib.request
 import logging
+import urllib.request
+from typing import Optional
+
 import streamlit as st
 
 
@@ -25,11 +27,23 @@ def get_file_content_as_string(url: str) -> str:
 
 
 @st.cache
-def set_logging_format(format="%(asctime)s %(name)s: %(message)s") -> bool:
+def set_logging_format(
+    logging_formatter: Optional[str] = "%(asctime)s %(name)s: %(message)s"
+) -> bool:
+    """Sets the format of all 'streamlit' loggers
+
+    Keyword Arguments:
+        format {object} -- The formatter to apply (default: {"%(asctime)s %(name)s: %(message)s"})
+
+    Returns:
+        bool -- True
+    """
     loggers = [
-        name for name in logging.root.manager.loggerDict if name.startswith("streamlit")
+        name
+        for name in logging.root.manager.loggerDict  # type: ignore
+        if name.startswith("streamlit")
     ]
-    formatter = logging.Formatter(format)
+    formatter = logging.Formatter(logging_formatter)
     for name in loggers:
         logger = logging.getLogger(name)
         for handler in logger.handlers:
