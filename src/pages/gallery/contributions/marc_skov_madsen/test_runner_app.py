@@ -13,8 +13,4 @@ def test_items_collector() -> List[ast.testing.models.TesTItem]:
     return ast.testing.services.test_item.get_from_resources()
 
 
-def write():
-    ast.testing.test_runner_app.write(test_items_collector=test_items_collector)
-
-if __name__ == "__main__":
-    write()
+ast.testing.test_runner_app.write(test_items_collector=test_items_collector)
