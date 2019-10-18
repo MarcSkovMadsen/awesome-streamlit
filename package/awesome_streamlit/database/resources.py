@@ -3,13 +3,14 @@
 Here you maintain the list of awesome resources
 """
 from awesome_streamlit.database import authors, tags
-from awesome_streamlit.database.authors import (INES, MARC_SKOV_MADSEN,
+from awesome_streamlit.database.authors import (INES, KEVIN_ARVAI,
+                                                MARC_SKOV_MADSEN,
                                                 STREAMLIT_AUTHOR,
                                                 STREAMLIT_COMPONENT_AUTHOR,
                                                 STREAMLIT_EXAMPLE_AUTHOR)
-from awesome_streamlit.database.tags import (
-    ALTERNATIVE, APP, APP_IN_GALLERY, CODE,
-    SOCIAL, STREAMLIT_TAG, TECHNICAL)
+from awesome_streamlit.database.tags import (ALTERNATIVE, APP, APP_IN_GALLERY,
+                                             CODE, SOCIAL, STREAMLIT_TAG,
+                                             TECHNICAL)
 # pylint: disable=line-too-long
 from awesome_streamlit.shared.models import Resource
 
@@ -50,6 +51,13 @@ APP_CONTRIBUTIONS = [
         tags=[CODE, APP_IN_GALLERY],
         is_awesome=True,
         author=STREAMLIT_AUTHOR,
+    ),
+    Resource(
+        name="NBA Roster Turnover",
+        url="https://github.com/arvkevi/nba-roster-turnover/blob/master/roster_turnover.py",
+        tags=[CODE, APP_IN_GALLERY],
+        is_awesome=True,
+        author=KEVIN_ARVAI,
     ),
 ]
 STREAMLIT_EXAMPLE_APPS_FAILED_TEST_FILES = [
