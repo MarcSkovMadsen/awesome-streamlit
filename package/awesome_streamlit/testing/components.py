@@ -38,7 +38,11 @@ def test_collection_section(test_items_collector: Callable) -> List[TesTItem]:
 
     st.subheader("""Collect tests""")
     with st.spinner("Collecting ...."):
-        test_items = test_items_collector()
+        # We need to copy in order not to mutate cached resource
+        test_items = [
+            TesTItem(name=item.name, location=item.location)
+            for item in test_items_collector()
+        ]
 
     st.info(f"Collected {len(test_items)} items")
     return test_items
@@ -91,7 +95,7 @@ def test_run_section(test_items: List[TesTItem]):
     for index, test_item in enumerate(test_items):
         _progress_section(
             test_item,
-            index,
+            index + 1,
             test_items_count,
             test_runner_progress_bar,
             test_runner_current_file_url,
