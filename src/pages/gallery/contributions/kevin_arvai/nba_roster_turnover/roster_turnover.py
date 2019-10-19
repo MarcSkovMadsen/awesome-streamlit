@@ -21,6 +21,7 @@ Ideas for improvements:
 - Get dataframe to be wider
 - remove team= from plot
 - Maybe show source dataframes somewhere to easier understand what is possible with the data
+- Create an animation automatically incrementing the year every 4 seconds or so.
 """
 
 import os

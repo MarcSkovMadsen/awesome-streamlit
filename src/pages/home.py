@@ -23,6 +23,8 @@ This application provides
 - A **gallery** of awesome streamlit applications.
 - A **vision** on how awesome Streamlit can be.
 
+![Awesome Streamlit Org Animation]()
+
 ## The Magic of Streamlit
 
 The only way to truly understand how magical Streamlit is to play around with it.
