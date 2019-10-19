@@ -235,3 +235,11 @@ def system_prune(c):
 """
     )
     c.run("docker system prune", echo=True)
+
+@task
+def remove_unused(command):
+    """Removes all unused containers to free up space"""
+    print("RUN THESE")
+    print("docker rmi $(docker images -q)")
+    print("docker rm -v $(docker ps -qa)")
+

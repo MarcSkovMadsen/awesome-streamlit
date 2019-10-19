@@ -16,7 +16,6 @@ RUN cp .streamlit/config.prod.toml ~/.streamlit/config.toml
 RUN cp .streamlit/credentials.prod.toml ~/.streamlit/credentials.toml
 RUN cp config.prod.py config.py
 RUN invoke sphinx.copy-from-project-root
-RUN apt-get install libglib2.0-0
 WORKDIR /app
 
 ENTRYPOINT [ "/bin/bash", "./scripts/run_awesome_streamlit_with_ping.sh"]

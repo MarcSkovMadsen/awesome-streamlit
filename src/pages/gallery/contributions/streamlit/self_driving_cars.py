@@ -15,6 +15,8 @@
 
 # This demo lets you to explore the Udacity self-driving car image dataset.
 # More info: https://github.com/streamlit/demo-self-driving
+#
+# In order for this to run on linux you might need to run `apt-get install libglib2.0-0`
 
 import streamlit as st
 import altair as alt
@@ -37,18 +39,12 @@ The complete demo is [implemented in less than 300 lines of Python](https://gith
 Please ask in the [Streamlit community](https://discuss.streamlit.io).
 
 """)
-
-
-    info = st.empty()
-    if not info.checkbox("DOWNLOAD 250MB OF DATA TO THE SERVER. COULD TAKE 1 MINUTE!"):
+    # Download external dependencies.info = st.empty()
+    if not st.checkbox("MAYBE DOWNLOAD 250MB OF DATA TO THE SERVER. COULD TAKE 1 MINUTE!"):
         return
 
-
-    info.info("Downloading Data")
-    # Download external dependencies.
     for filename in EXTERNAL_DEPENDENCIES.keys():
         download_file(filename)
-    info.empty()
 
     st.sidebar.title("Self Driving Cars")
     run_the_app()
