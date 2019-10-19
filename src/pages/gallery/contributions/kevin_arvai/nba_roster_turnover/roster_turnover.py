@@ -24,8 +24,11 @@ Ideas for improvements:
 """
 
 import os
+from io import BytesIO
+
 import pandas as pd
 import plotly.express as px
+import requests
 import streamlit as st
 from PIL import Image
 from sportsreference.nba.teams import Teams
@@ -37,20 +40,20 @@ ROSTER_TURNOVER_SOURCE = (
 TEAMS_DATA_SOURCE = (
     "https://raw.githubusercontent.com/jimniels/teamcolors/master/src/teams.json"
 )
-ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
-st.write(ROOT_DIR)
 PLAYER_MINUTES = "data/NBA_player_minutes.2004-2019.csv"
 ROSTER_TURNOVER = "data/NBA_roster_turnover_wins.2004-2019.csv"
-TEAMS_DATA = (
-    "https://raw.githubusercontent.com/jimniels/teamcolors/master/src/teams.json"
-)
+IMAGE = "images/basketball.jpg"
+
 GITHUB_ROOT = (
     "https://raw.githubusercontent.com/MarcSkovMadsen/awesome-streamlit/master/"
     "src/pages/gallery/contributions/kevin_arvai/nba_roster_turnover/"
 )
 PLAYER_MINUTES_GITHUB = GITHUB_ROOT + PLAYER_MINUTES
 ROSTER_TURNOVER_GITHUB = GITHUB_ROOT + ROSTER_TURNOVER
-TEAMS_DATA_GITHUB = GITHUB_ROOT + TEAMS_DATA
+TEAMS_DATA_GITHUB = (
+    "https://raw.githubusercontent.com/jimniels/teamcolors/master/src/teams.json"
+)
+IMAGE_GITHUB = GITHUB_ROOT + "images/basketball.jpg"
 
 
 def main():
@@ -58,9 +61,9 @@ def main():
     st.header("Summary")
     st.info(
         """
-    **Roster turnover** is defined as the sum of the total difference between minutes played by each
-    player from year to year. There is a **significant negative correlation** with higher turnover and
-    regular season wins."""
+**Roster turnover** is defined as the sum of the total difference between minutes played by each
+player from year to year. There is a **significant negative correlation** with higher turnover and
+regular season wins."""
     )
     st.markdown(
         f"""
@@ -84,8 +87,8 @@ def main():
 
     st.write(f"Correlation Coefficient: {wins_turnover_corr[year]}")
     st.sidebar.image(image, use_column_width=True)
-    st.sidebar.text(
-        "Explore NBA roster turnover since\nthe 2003-04 season. Roster turnover is \ndefined as the "
+    st.sidebar.markdown(
+        "Explore NBA roster turnover since\nthe 2003-04 season. **Roster turnover** is \ndefined as the "
         "sum of the difference\nin total minutes played by each player\non a given team between any two "
         "years."
     )
@@ -110,19 +113,19 @@ def main():
 
 @st.cache
 def load_player_minutes():
-    return pd.read_csv(os.path.join(ROOT_DIR, PLAYER_MINUTES))
+    return pd.read_csv(PLAYER_MINUTES_GITHUB)
 
 
 @st.cache
 def load_roster_turnover():
-    roster_turnover = pd.read_csv(os.path.join(ROOT_DIR, ROSTER_TURNOVER))
+    roster_turnover = pd.read_csv(ROSTER_TURNOVER_GITHUB)
     roster_turnover.set_index("team", inplace=True)
     return roster_turnover
 
 
 @st.cache
 def load_teams_colors():
-    raw_team_colors = pd.read_json(TEAMS_DATA)
+    raw_team_colors = pd.read_json(TEAMS_DATA_GITHUB)
     # scrape a team's primary colors for the graphs below.
     team_colors = {}
 
@@ -160,7 +163,8 @@ def load_wins_turnover_corr(roster_turnover):
 
 @st.cache
 def get_image():
-    return Image.open(os.path.join(ROOT_DIR, "images/basketball.jpg"))
+    response = requests.get(IMAGE_GITHUB)
+    return Image.open(BytesIO(response.content))
 
 
 @st.cache
