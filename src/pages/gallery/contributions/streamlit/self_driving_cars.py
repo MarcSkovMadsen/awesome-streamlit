@@ -41,7 +41,7 @@ Please ask in the [Streamlit community](https://discuss.streamlit.io).
 
 """)
     # Download external dependencies.info = st.empty()
-    if not st.checkbox("MAYBE DOWNLOAD 250MB OF DATA TO THE SERVER. COULD TAKE 1 MINUTE!"):
+    if not st.checkbox("MAYBE DOWNLOAD 250MB OF DATA TO THE SERVER. THIS MIGHT TAKE A FEW MINUTES!"):
         return
 
     for filename in EXTERNAL_DEPENDENCIES.keys():
