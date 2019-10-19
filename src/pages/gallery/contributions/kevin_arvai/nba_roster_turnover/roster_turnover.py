@@ -1,12 +1,12 @@
 """
-App: NBO Roster Turnover
-Author: [YKevin Arvai](https://github.com/arvkevi))\n
+App: NBA Roster Turnover
+Author: [Kevin Arvai](https://github.com/arvkevi))\n
 Source: [Github Original](https://github.com/arvkevi/nba-roster-turnover)
 Credits: Marc Skov Madsen (for refactoring and improving)
 
 Explore NBA roster turnover from year to year and the correlation it has with team wins.
 
-*Roster turnover* is defined as the sum of the total difference between minutes played by each
+*Roster turnover* is defined as the sum of the absolute difference between minutes played by each
 player from year to year There is a significant negative correlation with higher turnover and
 regular season wins.
 
@@ -24,7 +24,6 @@ Ideas for improvements:
 - Create an animation automatically incrementing the year every 4 seconds or so.
 """
 
-import os
 from io import BytesIO
 
 import pandas as pd
@@ -62,7 +61,7 @@ def main():
     st.header("Summary")
     st.info(
         """
-**Roster turnover** is defined as the sum of the total difference between minutes played by each
+**Roster turnover** is defined as the sum of the absolute difference between minutes played by each
 player from year to year. There is a **significant negative correlation** with higher turnover and
 regular season wins."""
     )
