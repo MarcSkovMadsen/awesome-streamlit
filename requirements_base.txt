@@ -57,4 +57,3 @@ sportsreference==0.4.6
 pydot==1.4.1
 plotly==4.1.0
 twine==2.0.0
-sportsreference==0.4.6
