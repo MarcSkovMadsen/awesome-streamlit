@@ -61,7 +61,10 @@ APP_CONTRIBUTIONS = [
     ),
     Resource(
         name="NBA Roster Turnover",
-        url="https://github.com/arvkevi/nba-roster-turnover/blob/master/roster_turnover.py",
+        url=(
+            "https://raw.githubusercontent.com/MarcSkovMadsen/awesome-streamlit/master/src/"
+            "pages/gallery/contributions/kevin_arvai/nba_roster_turnover/roster_turnover.py"
+        ),
         tags=[CODE, APP_IN_GALLERY],
         is_awesome=True,
         author=KEVIN_ARVAI,

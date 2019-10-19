@@ -38,6 +38,7 @@ TEAMS_DATA_SOURCE = (
     "https://raw.githubusercontent.com/jimniels/teamcolors/master/src/teams.json"
 )
 ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
+st.write(ROOT_DIR)
 PLAYER_MINUTES = "data/NBA_player_minutes.2004-2019.csv"
 ROSTER_TURNOVER = "data/NBA_roster_turnover_wins.2004-2019.csv"
 TEAMS_DATA = (
