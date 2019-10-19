@@ -2,7 +2,7 @@
 App: NBO Roster Turnover
 Author: [YKevin Arvai](https://github.com/arvkevi))\n
 Source: [Github Original](https://github.com/arvkevi/nba-roster-turnover)
-Credits: Marc Skov Madsen
+Credits: Marc Skov Madsen (for refactoring and improving)
 
 Explore NBA roster turnover from year to year and the correlation it has with team wins.
 
@@ -19,6 +19,8 @@ Ideas for improvements:
 - Add best fit, linear regression to plot
 - Add coloring to the two tables identicating high/ low values
 - Get dataframe to be wider
+- remove team= from plot
+- Maybe show source dataframes somewhere to easier understand what is possible with the data
 """
 
 import os
@@ -48,6 +50,61 @@ GITHUB_ROOT = (
 PLAYER_MINUTES_GITHUB = GITHUB_ROOT + PLAYER_MINUTES
 ROSTER_TURNOVER_GITHUB = GITHUB_ROOT + ROSTER_TURNOVER
 TEAMS_DATA_GITHUB = GITHUB_ROOT + TEAMS_DATA
+
+
+def main():
+    st.title("NBA Roster Turnover vs Wins")
+    st.header("Summary")
+    st.info(
+        """
+    **Roster turnover** is defined as the sum of the total difference between minutes played by each
+    player from year to year. There is a **significant negative correlation** with higher turnover and
+    regular season wins."""
+    )
+    st.markdown(
+        f"""
+    Source Data: [Player Minutes]({PLAYER_MINUTES_GITHUB}), [Roster Turnover]({ROSTER_TURNOVER_GITHUB}),
+    [Teams Data]({TEAMS_DATA_GITHUB})
+        """
+    )
+
+    # Loading data
+    with st.spinner("Loading data ..."):
+        image = get_image()
+        player_minutes = load_player_minutes().copy(deep=True)
+        roster_turnover = load_roster_turnover().copy(deep=True)
+        team_colors = load_teams_colors()
+        wins_turnover_corr = load_wins_turnover_corr(roster_turnover)
+
+    st.header("Correlation by year")
+    year = st.slider("Select a Year", 2004, 2019)
+    teams = get_teams(year)
+    teams_colorscale = get_teams_colorscale(teams, team_colors)
+
+    st.write(f"Correlation Coefficient: {wins_turnover_corr[year]}")
+    st.sidebar.image(image, use_column_width=True)
+    st.sidebar.text(
+        "Explore NBA roster turnover since\nthe 2003-04 season. Roster turnover is \ndefined as the "
+        "sum of the difference\nin total minutes played by each player\non a given team between any two "
+        "years."
+    )
+    st.sidebar.table(
+        pd.DataFrame.from_dict(
+            wins_turnover_corr, orient="index", columns=["correlation"]
+        ).round(2)
+    )
+
+    # Data frame for the plot
+    fig = get_turnover_vs_wins_plot(roster_turnover, year, teams_colorscale)
+    st.plotly_chart(fig, width=1080, height=600)
+
+    # Show the roster DataFrame
+    st.header("Minutes Played Breakdown by Team")
+    selected_team = st.selectbox("Select a team", teams)
+    st.dataframe(
+        roster_turnover_pivot(player_minutes, team=selected_team, year=year), width=1080
+    )
+    st.text("* The numbers in the table are minutes played")
 
 
 @st.cache
@@ -141,8 +198,9 @@ def get_turnover_vs_wins_plot(roster_turnover, year, teams_colorscale):
     scatter_data = scatter_data.astype(
         dtype={"turnover": "int32", "wins": "int32", "year": "int32"}
     )
+    scatter_data = scatter_data.loc[scatter_data.reset_index()["year"] == year]
     return px.scatter(
-        scatter_data.loc[scatter_data.reset_index()["year"] == year],
+        scatter_data,
         x="turnover",
         y="wins",
         labels={
@@ -154,52 +212,4 @@ def get_turnover_vs_wins_plot(roster_turnover, year, teams_colorscale):
     )
 
 
-st.title("NBA Roster Turnover vs Wins")
-st.header("Summary")
-st.info(
-    """
-**Roster turnover** is defined as the sum of the total difference between minutes played by each
-player from year to year. There is a **significant negative correlation** with higher turnover and
-regular season wins."""
-)
-st.markdown(
-    f"""
-Source Data: [Player Minutes]({PLAYER_MINUTES_GITHUB}), [Roster Turnover]({ROSTER_TURNOVER_GITHUB}),
- [Teams Data]({TEAMS_DATA_GITHUB})
-    """
-)
-image = get_image()
-player_minutes = load_player_minutes().copy(deep=True)
-roster_turnover = load_roster_turnover().copy(deep=True)
-team_colors = load_teams_colors()
-wins_turnover_corr = load_wins_turnover_corr(roster_turnover)
-
-st.header("Correlation by year")
-year = st.slider("Select a Year", 2004, 2019)
-teams = get_teams(year)
-teams_colorscale = get_teams_colorscale(teams, team_colors)
-
-st.write(f"Correlation Coefficient: {wins_turnover_corr[year]}")
-st.sidebar.image(image, use_column_width=True)
-st.sidebar.text(
-    "Explore NBA roster turnover since\nthe 2003-04 season. Roster turnover is \ndefined as the "
-    "sum of the difference\nin total minutes played by each player\non a given team between any two "
-    "years."
-)
-st.sidebar.table(
-    pd.DataFrame.from_dict(
-        wins_turnover_corr, orient="index", columns=["correlation"]
-    ).round(2)
-)
-
-# Data frame for the plot
-fig = get_turnover_vs_wins_plot(roster_turnover, year, teams_colorscale)
-st.plotly_chart(fig, width=1080, height=600)
-
-# Show the roster DataFrame
-st.header("Minutes Played Breakdown by Team")
-selected_team = st.selectbox("Select a team", teams)
-st.dataframe(
-    roster_turnover_pivot(player_minutes, team=selected_team, year=year), width=1080
-)
-st.text("* The numbers in the table are minutes played")
+main()
