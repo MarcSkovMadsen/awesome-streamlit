@@ -1,6 +1,7 @@
 """Test of components module"""
 
 import awesome_streamlit.experiments.hello_world as test_page
+
 # pylint: disable=protected-access
 from awesome_streamlit.shared import components
 
@@ -55,3 +56,18 @@ def test_st_title_awesome():
     # Then the title should be written in Markdown
     # with the text 'Awesome Streamlet Gallery' and the Awesome badge on the right
     # raise NotImplementedError
+
+
+def test_st_write_svg():
+    """Test the write_svg component"""
+    # Given
+    svg = """
+<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100">
+<circle cx="50" cy="50" r="40" stroke="green" stroke-width="4" fill="yellow" />
+</svg>
+"""
+    # When
+    components.write_svg(svg=svg)
+    # Then
+    # raise notImplementedError because we annot yet test the result
+

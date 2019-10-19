@@ -1,6 +1,7 @@
 """Components for the Awesome Streamlit App and other use cases
 
 Hopefully a lot of the components  will be removed again as the streamlit api is extended"""
+import base64
 import importlib
 import logging
 import sys
@@ -105,3 +106,14 @@ def title_awesome(body: str):
         "d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)]"
         "(https://github.com/MarcSkovMadsen/awesome-streamlit)"
     )
+
+
+def write_svg(svg: str):
+    """Renders the given svg string.
+
+    Arguments:
+        svg {str} -- A string containing svgs
+    """
+    b64 = base64.b64encode(svg.encode("utf-8")).decode("utf-8")
+    html = r'<img src="data:image/svg+xml;base64,%s"/>' % b64
+    st.write(html, unsafe_allow_html=True)
