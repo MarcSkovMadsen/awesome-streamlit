@@ -37,23 +37,10 @@ def main():
     # Download external dependencies.
     for filename in EXTERNAL_DEPENDENCIES.keys():
         download_file(filename)
-    info.info("Data succesfully downloaded")
-    info.info("Select 'Run the app' in the sidebar to run the app")
+    info.empty()
 
-    # Once we have the dependencies, add a selector for the app mode on the sidebar.
-    st.sidebar.title("What to do")
-    app_mode = st.sidebar.selectbox("Choose the app mode",
-        ["Show instructions", "Run the app", "Show the source code"])
-    if app_mode == "Show instructions":
-        st.sidebar.success('To continue select "Run the app".')
-    elif app_mode == "Show the source code":
-        info.empty()
-        readme_text.empty()
-        st.code(get_file_content_as_string("app.py"))
-    elif app_mode == "Run the app":
-        info.empty()
-        readme_text.empty()
-        run_the_app()
+    st.sidebar.title("Self Driving Cars")
+    run_the_app()
 
 # This file downloader demonstrates Streamlit animation.
 def download_file(file_path):
