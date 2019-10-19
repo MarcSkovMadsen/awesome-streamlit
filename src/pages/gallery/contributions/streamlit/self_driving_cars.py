@@ -16,7 +16,8 @@
 # This demo lets you to explore the Udacity self-driving car image dataset.
 # More info: https://github.com/streamlit/demo-self-driving
 #
-# In order for this to run on linux you might need to run `apt-get install libglib2.0-0`
+# In order for this to run on in docker/ on linux you might need to run
+# `apt-get install -y libsm6 libxext6 libxrender-dev libglib2.0-0`
 
 import streamlit as st
 import altair as alt
