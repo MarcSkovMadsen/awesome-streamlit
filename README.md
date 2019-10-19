@@ -16,15 +16,9 @@ This project provides
 - A [**vision**](https://github.com/MarcSkovMadsen/awesome-streamlit/blob/master/AWESOME-STREAMLIT.md) on how awesome Streamlit is and can become.
 - A **best practices** example and **starter template** of an awesome, multipage app with an automated CI/ CD pipeline, deployed to the cloud and running in a Docker container.
 
-## Awesome-streamlit.org is not yet performant
+Visit the app at [awesome-streamlit.org](https://awesome-streamlit.org)!
 
-I'm working on getting it performant, but there is an issue. Cf.
-
-- [https://discuss.streamlit.io/t/streamlit-app-deployed-as-azure-webapp-for-containers-becomes-unresponsive-over-time/330]
-  - [https://github.com/streamlit/streamlit/issues/367](https://github.com/streamlit/streamlit/issues/367)
-  - [https://github.com/MarcSkovMadsen/awesome-streamlit/issues/6](https://github.com/MarcSkovMadsen/awesome-streamlit/issues/6)
-
-If you know how to solve this please let me know. Thanks
+![Awesome Streamlit Org Animation](https://github.com/MarcSkovMadsen/awesome-streamlit/blob/master/assets/awesome-streamlit-org-animation.gif?raw=true)
 
 ## The Magic of Streamlit
 
