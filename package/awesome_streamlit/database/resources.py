@@ -384,6 +384,13 @@ RESOURCES_STREAMLIT_COMPONENT_APPS = [
 RESOURCES = (
     [
         Resource(
+            name="Hello-streamlit deployed on Glitch",
+            url="https://glitch.com/~hello-streamlit",
+            is_awesome=True,
+            tags=[tags.DEPLOYMENT],
+            author="Alexander Garcia",
+        ),
+        Resource(
             name="Awesome Streamlit Resources List",
             url="ttps://github.com/marcskovmadsen/awesome-streamlit",
             is_awesome=True,
