@@ -27,9 +27,18 @@ def main():
     # Render the readme as markdown using st.markdown.
     readme_text = st.markdown(get_file_content_as_string("instructions.md"))
 
+
+    info = st.empty()
+    if not info.checkbox("DOWNLOAD 250MB OF DATA TO THE SERVER. COULD TAKE 1 MINUTE!"):
+        return
+
+
+    info.info("Downloading Data")
     # Download external dependencies.
     for filename in EXTERNAL_DEPENDENCIES.keys():
         download_file(filename)
+    info.info("Data succesfully downloaded")
+    info.info("Select 'Run the app' in the sidebar to run the app")
 
     # Once we have the dependencies, add a selector for the app mode on the sidebar.
     st.sidebar.title("What to do")
@@ -38,9 +47,11 @@ def main():
     if app_mode == "Show instructions":
         st.sidebar.success('To continue select "Run the app".')
     elif app_mode == "Show the source code":
+        info.empty()
         readme_text.empty()
         st.code(get_file_content_as_string("app.py"))
     elif app_mode == "Run the app":
+        info.empty()
         readme_text.empty()
         run_the_app()
 

@@ -41,7 +41,7 @@ doc8 # Doc8 is an opinionated style checker for rst (with basic support for plai
 # nbsphinx # Enables you to write your documentation in Jupyter Notebooks. See https://nbsphinx.readthedocs.io/en/0.4.2/
 
 # Other
-spacy # Industrial-Strength Natural Language Processing https://spacy.io/
+spacy==2.2.1 # Industrial-Strength Natural Language Processing https://spacy.io/
 # boto3
 # botocore
 # Pillow
@@ -57,3 +57,4 @@ sportsreference==0.4.6
 pydot==1.4.1
 plotly==4.1.0
 twine==2.0.0
+opencv-python==4.1.1.26

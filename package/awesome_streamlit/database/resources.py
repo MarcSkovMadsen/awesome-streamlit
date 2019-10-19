@@ -32,6 +32,13 @@ DEFAULT_RESOURCE = Resource(
 )
 APP_CONTRIBUTIONS = [
     Resource(
+        name = "Self Driving Cars",
+        url = "https://raw.githubusercontent.com/MarcSkovMadsen/awesome-streamlit/master/src/pages/gallery/contributions/streamlit/self_driving_cars.py",
+        tags=[CODE, APP_IN_GALLERY],
+        is_awesome=True,
+        author=authors.STREAMLIT_AUTHOR,
+    ),
+    Resource(
         name="Awesome Streamlit Test Runner",
         url="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-streamlit/master/src/pages/gallery/contributions/marc_skov_madsen/test_runner_app.py",
         tags=[CODE, APP_IN_GALLERY],
