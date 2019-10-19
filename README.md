@@ -28,7 +28,7 @@ If you know how to solve this please let me know. Thanks
 
 ## The Magic of Streamlit
 
-The only way to truly understand how magical Streamlit is to play around with it, but if you need to be convinced first, then here is the **4 minute introduction** to Streamlit!
+The only way to truly understand how magical Streamlit is to play around with it. But if you need to be convinced first, then here is the **4 minute introduction** to Streamlit!
 
 Afterwards you can go to the [Streamlit docs](https://streamlit.io/docs/) to get started. You might also visit [Awesome Streamlit docs](https://awesome-streamlit.readthedocs.io/en/latest/).
 

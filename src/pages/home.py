@@ -25,8 +25,8 @@ This application provides
 
 ## The Magic of Streamlit
 
-The only way to truly understand how magical Streamlit is to play around with it
-but if you need to be convinced first, then here is the **4 minute introduction** to Streamlit!
+The only way to truly understand how magical Streamlit is to play around with it.
+But if you need to be convinced first, then here is the **4 minute introduction** to Streamlit!
 
 Afterwards you can explore examples in the Gallery and go to the [Streamlit docs](https://streamlit.io/docs/) to get started.
 
