@@ -25,7 +25,18 @@ import os, urllib, cv2
 # Streamlit encourages well-structured code, like starting execution in a main() function.
 def main():
     # Render the readme as markdown using st.markdown.
-    readme_text = st.markdown(get_file_content_as_string("instructions.md"))
+    readme_text = st.markdown("""
+# Streamlit Demo: The Udacity Self-driving Car Image Browser
+
+This project demonstrates the [Udacity self-driving-car dataset](https://github.com/udacity/self-driving-car) and [YOLO object detection](https://pjreddie.com/darknet/yolo) into an interactive [Streamlit](https://streamlit.io) app.
+
+The complete demo is [implemented in less than 300 lines of Python](https://github.com/streamlit/demo-self-driving/blob/master/app.py) and illustrates all the major building blocks of Streamlit.
+
+### Questions? Comments?
+
+Please ask in the [Streamlit community](https://discuss.streamlit.io).
+
+""")
 
 
     info = st.empty()
