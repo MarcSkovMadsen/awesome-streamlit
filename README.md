@@ -18,7 +18,8 @@ This project provides
 
 Visit the app at [awesome-streamlit.org](https://awesome-streamlit.org)!
 
-![Awesome Streamlit Org Animation](https://github.com/MarcSkovMadsen/awesome-streamlit/blob/master/assets/awesome-streamlit-org-animation.gif?raw=true)
+
+![Awesome Streamlit Org Animation](https://github.com/WaylonWalker/awesome-streamlit/blob/master/assets/awesome-streamlit-full-branded.gif?raw=true)
 
 ## The Magic of Streamlit
 
