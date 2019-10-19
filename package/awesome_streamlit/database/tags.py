@@ -2,9 +2,9 @@
 from awesome_streamlit.shared.models import Tag
 
 # Tags
-ALTERNATIVE = Tag(name="Alternatives")
-APP = Tag("App")
-APP_IN_GALLERY = Tag(name="App In Gallery")
+ALTERNATIVE = Tag(name="Alternative")
+APP = Tag("Streamlit App")
+APP_IN_GALLERY = Tag(name="Streamlit App In Gallery")
 AWESOME_STREAMLIT_ORG = Tag(name="Awesome-Streamlit.org")
 AWESOMESTREAMLIT_COMPONENT_AUTHOR = Tag(name="The beginning")
 CODE = Tag("Code")

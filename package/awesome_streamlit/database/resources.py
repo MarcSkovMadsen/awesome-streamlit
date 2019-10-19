@@ -111,6 +111,12 @@ STREAMLIT_EXAMPLE_APPS = [
 ]
 RESOURCES_STREAMLIT_COMPONENT_APPS = [
     Resource(
+        name="Panel",
+        url="http://panel.pyviz.org/",
+        is_awesome=True,
+        tags=[ALTERNATIVE],
+    ),
+    Resource(
         name="charts.area_chart",
         url="https://raw.githubusercontent.com/streamlit/streamlit/master/docs/api-examples-source/charts.area_chart.py",
         is_awesome=False,
