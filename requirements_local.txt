@@ -6,3 +6,4 @@ rope # for refactoring in VS Code
 jupyter # For comparisons with voila
 voila # For comparisons with voila
 bqplot # For comparisons with voila
+selenium==3.141.0

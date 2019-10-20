@@ -399,7 +399,7 @@ RESOURCES = (
         ),
         Resource(
             name="Awesome Streamlit Resources List",
-            url="ttps://github.com/marcskovmadsen/awesome-streamlit",
+            url="https://github.com/marcskovmadsen/awesome-streamlit",
             is_awesome=True,
             tags=[tags.AWESOME_STREAMLIT_ORG],
             author=authors.AWESOME_STREAMLIT_ORG,
@@ -413,7 +413,7 @@ RESOURCES = (
         ),
         Resource(
             name="App",
-            url="https://awesome-streamlit.org>",
+            url="https://awesome-streamlit.org",
             is_awesome=True,
             tags=[tags.AWESOME_STREAMLIT_ORG],
             author=authors.AWESOME_STREAMLIT_ORG,
