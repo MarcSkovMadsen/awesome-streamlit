@@ -73,9 +73,10 @@ def intro_section():
 This example is a Streamlit implementation of an interactive Gaussian plot.
 
 The purpose of this example is to test what we can do and cannot (yet) do in Streamlit compared
-to [Voila](https://github.com/voila-dashboards/voila) and
-list how the development experience and the end result compares
+to the combination of [Jupyter Notebook](https://jupyter.org/) and [Voila](https://github.com/voila-dashboards/voila).
 
+
+As of today (2019-10-20) both Voila and Streamlit are released for Beta Testing only.
 """
     )
 
@@ -88,16 +89,19 @@ def findings_section():
 ### Pros of Voila
 
 - The plot **updates very, very fast** when the user changes the mu and sigma settings
-- Well tested slider widget
-- Layout options like HBox and VBox.
+- **Well tested slider** widget
+- **Layout options** like HBox and VBox.
+- The **plot stays in the same position** when moving the sliders.
 
 ### Pros of Streamlit
 
-- Very fast and simple development cycle of develop-test-refactor
-because of very fast, automatic hot reload.
-- You can use your editor of choice
+- You can use your **editor of choice**
   - Streamlit does not require knowing something like how to install and use a notebook editor.
   - You you can use integrated, automatic tests like pylint, mypy etc. to help  produce quality code.
+- Very fast and **simple development cycle** of develop-test-refactor
+because of very fast, automatic hot reload and ease of navigation in editor.
+- End result is a **code file** that works very well with Git.
+- End result comes with a **multiuser, production ready server** out of the box.
 
 ### Issues
 

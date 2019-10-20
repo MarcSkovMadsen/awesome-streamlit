@@ -12,6 +12,7 @@ DEPLOYMENT = Tag(name="Deployment")
 SOCIAL = Tag(name="Social")
 STREAMLIT_TAG = Tag(name="Streamlit.io")
 TECHNICAL = Tag(name="Technical")
+VOILA = Tag(name="Voila")
 
 TAGS = [
     ALTERNATIVE,
@@ -24,4 +25,5 @@ TAGS = [
     SOCIAL,
     STREAMLIT_TAG,
     TECHNICAL,
+    VOILA,
 ]
