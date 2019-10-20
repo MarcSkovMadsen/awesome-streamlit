@@ -57,7 +57,8 @@ We compare to the Gaussian Density plot in the Voila Gallery. See
 - [Source](https://github.com/voila-gallery/gaussian-density)
 - [Binder](https://mybinder.org/v2/gh/voila-gallery/gaussian-density/master?urlpath=voila%2Frender%2Findex.ipynb)
 
-![Reference](interactive_gaussian_plot_reference.png)
+[![Binder](https://github.com/MarcSkovMadsen/awesome-streamlit/blob/master/package/awesome_streamlit/app/pages/contributions/interactive_gaussian_plot/interactive_gaussian_plot_reference.png?raw=true)](https://mybinder.org/v2/gh/voila-gallery/gaussian-density/master?urlpath=voila%2Frender%2Findex.ipynb)
+
 """
     )
 
@@ -88,18 +89,15 @@ def findings_section():
 
 - The plot **updates very, very fast** when the user changes the mu and sigma settings
 - Well tested slider widget
-- Layout options like HBox and VBox. But for this example they are not nescessary.
+- Layout options like HBox and VBox.
 
 ### Pros of Streamlit
 
 - Very fast and simple development cycle of develop-test-refactor
 because of very fast, automatic hot reload.
-- You can use your one editor of choice
+- You can use your editor of choice
   - Streamlit does not require knowing something like how to install and use a notebook editor.
   - You you can use integrated, automatic tests like pylint, mypy etc. to help  produce quality code.
-- The plot updates very, very fast when the user changes the mu and sigma settings
-- Well tested widgets
-- Layout options like HBox and VBox. But for this example they are not nescessary
 
 ### Issues
 
