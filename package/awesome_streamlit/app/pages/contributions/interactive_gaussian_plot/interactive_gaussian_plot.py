@@ -97,8 +97,9 @@ because of very fast, automatic hot reload.
 - You can use your one editor of choice
   - Streamlit does not require knowing something like how to install and use a notebook editor.
   - You you can use integrated, automatic tests like pylint, mypy etc. to help  produce quality code.
-- End result is a code file that works very well with Git.
-- End result can very easily be deployed to multiuser production ready server.
+- The plot updates very, very fast when the user changes the mu and sigma settings
+- Well tested widgets
+- Layout options like HBox and VBox. But for this example they are not nescessary
 
 ### Issues
 
