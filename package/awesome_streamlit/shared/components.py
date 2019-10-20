@@ -117,3 +117,16 @@ def write_svg(svg: str):
     b64 = base64.b64encode(svg.encode("utf-8")).decode("utf-8")
     html = r'<img src="data:image/svg+xml;base64,%s"/>' % b64
     st.write(html, unsafe_allow_html=True)
+
+
+def horizontal_ruler(in_sidebar: bool = False):
+    """Inserts a horizontal ruler (like <hr> in HTML)
+
+    Keyword Arguments:
+        in_sidebar {bool} -- If True the ruler is inserted in the sidebar (default: {False})
+    """
+    if in_sidebar:
+        return st.sidebar.markdown("---")
+    else:
+        return st.markdown("---")
+
