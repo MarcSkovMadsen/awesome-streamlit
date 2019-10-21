@@ -23,7 +23,6 @@ master/streamlit_apps.json"""
 
 def write():
     """This method writes the Gallery index page which is used to navigate between gallery apps"""
-
     ast.shared.components.title_awesome("Gallery")
     apps = get_resources()
     authors = get_authors(apps)
@@ -61,7 +60,6 @@ def write():
             st.code(python_code)
 
 
-@st.cache
 def get_resources() -> List[ast.shared.models.Resource]:
     """The list of resources
 
