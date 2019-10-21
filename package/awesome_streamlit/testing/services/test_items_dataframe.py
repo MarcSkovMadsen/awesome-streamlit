@@ -50,6 +50,15 @@ def create_from_test_items(test_items: List[TesTItem]) -> pd.DataFrame:
 
 
 def update(test_items_dataframe: pd.DataFrame, test_item: TesTItem) -> pd.DataFrame:
+    """Updates the test_items_dataframe with the result and exception of the test_item
+
+    Arguments:
+        test_items_dataframe {pd.DataFrame} -- A DataFrame of TesTItems to be updated
+        test_item {TesTItem} -- The TesTItem to use for the update
+
+    Returns:
+        pd.DataFrame -- A new, updated dataframe
+    """
     test_items_dataframe = test_items_dataframe.set_index("test")
     test_items_dataframe = test_items_dataframe.set_value(
         test_item.name, "result", test_item.result_str
@@ -62,9 +71,17 @@ def update(test_items_dataframe: pd.DataFrame, test_item: TesTItem) -> pd.DataFr
 
 
 def sort(test_items_dataframe: pd.DataFrame) -> pd.DataFrame:
+    """Sorts the TesTItems dataframe by result, test, location and resets the index
+
+    Arguments:
+        test_items_dataframe {pd.DataFrame} -- A TesTItem dataframe
+
+    Returns:
+        pd.DataFrame -- A new, sorted TesTItem dataframe
+    """
     return (
-        test_items_dataframe.sort_values("test")
-        .sort_values("location")
+        test_items_dataframe.sort_values("location")
+        .sort_values("test")
         .sort_values("result")
         .reset_index(drop=True)
     )

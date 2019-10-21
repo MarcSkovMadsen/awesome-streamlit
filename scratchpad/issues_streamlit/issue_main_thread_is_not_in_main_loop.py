@@ -1,8 +1,8 @@
-import streamlit as st
-import numpy as np
-from scipy.stats import norm
-import pandas as pd
 import matplotlib.pyplot as plt
+import numpy as np
+import pandas as pd
+import streamlit as st
+from scipy.stats import norm
 
 
 def write():

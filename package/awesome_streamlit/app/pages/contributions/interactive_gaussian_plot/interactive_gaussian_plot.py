@@ -9,12 +9,12 @@ The benchmark example from Voila is https://github.com/voila-gallery/gaussian-de
 Author: Marc Skov Madsen https://github.com/marcskovmadsen
 
 """
-import streamlit as st
+import matplotlib.pyplot as plt
 import numpy as np
-from scipy.stats import norm
 import pandas as pd
 import plotly.express as px
-import matplotlib.pyplot as plt
+import streamlit as st
+from scipy.stats import norm
 
 
 def write():

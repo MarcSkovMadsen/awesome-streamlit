@@ -1,4 +1,4 @@
-import os
+import logging
 import pathlib
 import subprocess
 import time
@@ -6,7 +6,7 @@ import urllib.request
 
 from PIL import Image
 from selenium import webdriver
-import logging
+
 import awesome_streamlit as ast
 
 ROOT = pathlib.Path(__file__).parent.parent / "assets/resources_screenshots"

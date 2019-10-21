@@ -19,11 +19,15 @@
 # In order for this to run on in docker/ on linux you might need to run
 # `apt-get install -y libsm6 libxext6 libxrender-dev libglib2.0-0`
 
-import streamlit as st
+import os
+import urllib
+
 import altair as alt
-import pandas as pd
+import cv2
 import numpy as np
-import os, urllib, cv2
+import pandas as pd
+import streamlit as st
+
 
 # Streamlit encourages well-structured code, like starting execution in a main() function.
 def main():

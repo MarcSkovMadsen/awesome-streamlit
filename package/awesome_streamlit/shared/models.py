@@ -32,7 +32,7 @@ class Author(NamedTuple):
 class Resource:
     """Model of a Resource"""
 
-    def __init__(
+    def __init__(  # pylint: disable=too-many-arguments
         self,
         name: str,
         url: str,

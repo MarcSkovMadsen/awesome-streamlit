@@ -1,10 +1,8 @@
 """This module provides services related to Resources"""
-import logging
 from collections import defaultdict
+from typing import List, Dict, Optional
 
-import streamlit as st
-from typing import List
-import awesome_streamlit as ast
+from awesome_streamlit.database.resources import RESOURCES
 from awesome_streamlit.shared.models import Resource, Tag
 
 
@@ -51,7 +49,20 @@ def sort_resources(resources: List[Resource]) -> List[Resource]:
 def get_resources(
     tags: List[Tag], awesome_resources_only: bool = True
 ) -> List[Resource]:
-    resources = ast.database.RESOURCES
+    """A list of resources
+
+    Arguments:
+        tags {List[Tag]} -- If non-empty then the list of Resources is reduced to
+        Resources having one of the specified tags
+
+    Keyword Arguments:
+        awesome_resources_only {bool} -- If True then the list is reduced to
+        Resources with is_awesome equal to True(default: {True})
+
+    Returns:
+        List[Resource] -- A list of Resources
+    """
+    resources = RESOURCES
     if awesome_resources_only:
         resources = filter_by_is_awesome(resources)
     resources = sort_resources(resources)
@@ -68,7 +79,8 @@ def to_markdown(resources: List[Resource]) -> str:
     Returns:
         [str] -- Bulleted Markdown List of Resources
     """
-    resources_dict = defaultdict(list)
+
+    resources_dict: Dict[Tag, List[Resource]] = defaultdict(list)
     for resource in resources:
         resources_dict[resource.tags[0]].append(resource)
     markdown_bullets = []

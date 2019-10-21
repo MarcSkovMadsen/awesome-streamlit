@@ -236,10 +236,10 @@ def system_prune(c):
     )
     c.run("docker system prune", echo=True)
 
+
 @task
-def remove_unused(command):
+def remove_unused(command):  # pylint: disable=unused-argument
     """Removes all unused containers to free up space"""
     print("RUN THESE")
     print("docker rmi $(docker images -q)")
     print("docker rm -v $(docker ps -qa)")
-

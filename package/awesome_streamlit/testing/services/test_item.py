@@ -46,6 +46,15 @@ def get_from_resources() -> List[TesTItem]:
 
 # Refactor to get_log_string
 def append_to_log(log: str, test_item: TesTItem) -> str:
+    """Appends the traceback a TesTItem to the log
+
+    Arguments:
+        log {str} -- A log
+        test_item {TesTItem} -- A TesTItem
+
+    Returns:
+        str -- A new log with the exception appended
+    """
     if not test_item.result:
         log += f"#### ---{test_item.name}---\n\n"
         log += f"File: [{test_item.location}]({test_item.location})\n\n"
@@ -54,6 +63,14 @@ def append_to_log(log: str, test_item: TesTItem) -> str:
 
 
 def to_test_results_summary(test_items: List[TesTItem]) -> str:
+    """Summary of failed and passed tests count
+
+    Arguments:
+        test_items {List[TesTItem]} -- A list of TesTItems
+
+    Returns:
+        str -- Summary of failed and passed tests count
+    """
     passed_count = sum([test_item.result for test_item in test_items])
     failed_count = len(test_items) - passed_count
     return f"All tests have run: {failed_count} failed, {passed_count} passed."

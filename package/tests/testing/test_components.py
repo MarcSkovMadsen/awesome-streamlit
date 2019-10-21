@@ -22,4 +22,6 @@ def test_st_test_collection_section():
     actual = components.test_collection_section(
         test_items_collector=test_items_collector
     )
-    assert actual == test_items
+    assert len(actual) == 1
+    assert actual[0].name == test_items[0].name
+    assert actual[0].location == test_items[0].location

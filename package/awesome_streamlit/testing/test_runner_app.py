@@ -1,6 +1,7 @@
 """The purpose of this app is to test that the list of resources can be executed be Streamlit"""
 # pylint: disable=invalid-name
-from typing import List, Callable
+from typing import Callable, List
+
 from awesome_streamlit.shared.components import title_awesome
 from awesome_streamlit.testing import components
 from awesome_streamlit.testing.models import TesTItem

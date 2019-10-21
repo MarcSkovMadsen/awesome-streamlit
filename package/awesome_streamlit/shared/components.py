@@ -127,6 +127,5 @@ def horizontal_ruler(in_sidebar: bool = False):
     """
     if in_sidebar:
         return st.sidebar.markdown("---")
-    else:
-        return st.markdown("---")
 
+    return st.markdown("---")

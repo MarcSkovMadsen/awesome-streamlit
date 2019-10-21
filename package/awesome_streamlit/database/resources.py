@@ -32,15 +32,15 @@ DEFAULT_RESOURCE = Resource(
 )
 APP_CONTRIBUTIONS = [
     Resource(
-        name = "Interactive Gaussian Plot",
-        url = "https://raw.githubusercontent.com/MarcSkovMadsen/awesome-streamlit/master/package/awesome_streamlit/app/pages/contributions/interactive_gaussian_plot/interactive_gaussian_plot.py",
+        name="Interactive Gaussian Plot",
+        url="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-streamlit/master/package/awesome_streamlit/app/pages/contributions/interactive_gaussian_plot/interactive_gaussian_plot.py",
         tags=[CODE, APP_IN_GALLERY, tags.VOILA],
         is_awesome=True,
         author=authors.MARC_SKOV_MADSEN,
     ),
     Resource(
-        name = "Self Driving Cars",
-        url = "https://raw.githubusercontent.com/MarcSkovMadsen/awesome-streamlit/master/src/pages/gallery/contributions/streamlit/self_driving_cars.py",
+        name="Self Driving Cars",
+        url="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-streamlit/master/src/pages/gallery/contributions/streamlit/self_driving_cars.py",
         tags=[CODE, APP_IN_GALLERY],
         is_awesome=True,
         author=authors.STREAMLIT_AUTHOR,
@@ -395,7 +395,7 @@ RESOURCES = (
             url="https://glitch.com/~hello-streamlit",
             is_awesome=True,
             tags=[tags.DEPLOYMENT],
-            author="Alexander Garcia",
+            author=authors.ALEXANDER_GARCIA,
         ),
         Resource(
             name="Awesome Streamlit Resources List",

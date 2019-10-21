@@ -10,9 +10,7 @@ STREAMLIT_EXAMPLE_AUTHOR = Author(
 STREAMLIT_COMPONENT_AUTHOR = Author(
     name="Streamlit/.../api-examples-source", url="https://streamlit.io/"
 )
-KEVIN_ARVAI = Author(
-    name="Kevin Arvai", url="https://github.com/arvkevi"
-)
+KEVIN_ARVAI = Author(name="Kevin Arvai", url="https://github.com/arvkevi")
 MARC_SKOV_MADSEN = Author(
     name="Marc Skov Madsen", url="https://datamodelsanalytics.com"
 )
@@ -22,6 +20,7 @@ AWESOME_STREAMLIT_ORG = Author(
     name="Awesome-Streamlit.org",
     url="https://github.com/marcskovmadsen/awesome-streamlit",
 )
+ALEXANDER_GARCIA = Author(name="Alexander Garcia", url="https://github.com/djauxel")
 AUTHORS = [
     KEVIN_ARVAI,
     INES,
@@ -30,4 +29,5 @@ AUTHORS = [
     STREAMLIT_AUTHOR,
     STREAMLIT_COMPONENT_AUTHOR,
     STREAMLIT_EXAMPLE_AUTHOR,
+    ALEXANDER_GARCIA,
 ]

@@ -1,7 +1,6 @@
 """Test of components module"""
 
 import awesome_streamlit.experiments.hello_world as test_page
-
 # pylint: disable=protected-access
 from awesome_streamlit.shared import components
 
@@ -70,4 +69,3 @@ def test_st_write_svg():
     components.write_svg(svg=svg)
     # Then
     # raise notImplementedError because we annot yet test the result
-

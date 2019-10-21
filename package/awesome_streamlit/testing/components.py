@@ -4,8 +4,8 @@ from typing import Callable, List
 
 import streamlit as st
 
-from awesome_streamlit.testing.models import TesTItem
 from awesome_streamlit.testing import services
+from awesome_streamlit.testing.models import TesTItem
 
 
 def intro_section():

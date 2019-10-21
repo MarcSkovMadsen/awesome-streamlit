@@ -1,8 +1,8 @@
 """This page is for searching and viewing the list of awesome resources"""
 import logging
-from collections import defaultdict
 
 import streamlit as st
+
 import awesome_streamlit as ast
 from awesome_streamlit.core.services import resources
 
