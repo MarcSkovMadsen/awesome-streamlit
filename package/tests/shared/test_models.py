@@ -68,3 +68,10 @@ def test_resource_to_markdown_bullet(resource):
         resource.to_markdown_bullet()
         == "- [awesome-streamlit.org](https://awesome-streamlit.org)"
     )
+
+
+def test_screenshot_file(resource):
+    # When:
+    resource.name = "Hello-streamlit deployed on Glitch"
+    # Then:
+    assert resource.screenshot_file == "hello-streamlit-deployed-on-glitch.png"

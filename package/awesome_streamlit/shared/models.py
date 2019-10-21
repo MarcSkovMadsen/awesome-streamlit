@@ -1,6 +1,8 @@
 """Models of app"""
 from typing import List, NamedTuple, Optional
 
+_IMAGE_DICT = {" ": "-", "#": ""}
+
 
 class Tag(NamedTuple):
     """Model of a Tag"""
@@ -27,14 +29,25 @@ class Author(NamedTuple):
         return self.name
 
 
-class Resource(NamedTuple):
+class Resource:
     """Model of a Resource"""
 
-    name: str
-    url: str
-    is_awesome: bool
-    tags: List[Tag] = []
-    author: Optional[Author] = None
+    def __init__(
+        self,
+        name: str,
+        url: str,
+        is_awesome: bool,
+        tags: Optional[List[Tag]] = None,
+        author: Optional[Author] = None,
+    ):
+        self.name = name
+        self.url = url
+        self.is_awesome = is_awesome
+        if tags:
+            self.tags = tags
+        else:
+            self.tags = []
+        self.author = author
 
     def to_markdown_bullet(self) -> str:
         """A markdown bullet string
@@ -48,3 +61,15 @@ class Resource(NamedTuple):
 
     def __str__(self):
         return self.name
+
+    @property
+    def screenshot_file(self) -> str:
+        """The file name of an associated image of the resource
+
+        Returns:
+            str -- The file name of an associated image
+        """
+        file = f"{self.name.lower()}.png"
+        for original, new in _IMAGE_DICT.items():
+            file = file.replace(original, new)
+        return file
