@@ -128,13 +128,13 @@ because of very fast, automatic hot reload and ease of navigation in editor.
 ### Issues
 
 - Streamlit:
+  - [Performance issue 494](https://github.com/streamlit/streamlit/issues/494)
+  - [Streamlit crashes when using MatPlotLib issue 469](https://github.com/streamlit/streamlit/issues/469)
+  - [Compact and Dashboard layout needed issue 486](https://github.com/streamlit/streamlit/issues/486)
+  - [No Grid issues](https://github.com/streamlit/streamlit/issues?utf8=%E2%9C%93&q=is%3Aissue+is%3Aopen+grid)
   - [@st.cache @classmethod issue 481](https://github.com/streamlit/streamlit/issues/481)
   - [slider range method is not 'obvious' issue 482](https://github.com/streamlit/streamlit/issues/482)
   - [Plotly_chart and slider overlap issue 379](https://github.com/streamlit/streamlit/issues/379)
-  - [Compact and Dashboard layout needed issue 486](https://github.com/streamlit/streamlit/issues/486)
-  - [No Grid issues](https://github.com/streamlit/streamlit/issues?utf8=%E2%9C%93&q=is%3Aissue+is%3Aopen+grid)
-  - [Streamlit crashes when using MatPlotLib issue 469](https://github.com/streamlit/streamlit/issues/469)
-  - [Performance issue 494](https://github.com/streamlit/streamlit/issues/494)
 """
     )
 

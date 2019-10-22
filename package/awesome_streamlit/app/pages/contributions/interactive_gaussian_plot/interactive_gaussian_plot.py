@@ -106,10 +106,10 @@ because of very fast, automatic hot reload and ease of navigation in editor.
 Both Streamlit and Jupyter Notebook crashed during development
 
 - Streamlit:
-  - [Matplotlib Crash issue 469](https://github.com/streamlit/streamlit/issues/469)
-  - [Slider issue 470](https://github.com/streamlit/streamlit/issues/470)
-  - [No Grid issues](https://github.com/streamlit/streamlit/issues?utf8=%E2%9C%93&q=is%3Aissue+is%3Aopen+grid)
   - [Performance issue 494](https://github.com/streamlit/streamlit/issues/494)
+  - [Matplotlib Crash issue 469](https://github.com/streamlit/streamlit/issues/469)
+  - [No Grid issues](https://github.com/streamlit/streamlit/issues?utf8=%E2%9C%93&q=is%3Aissue+is%3Aopen+grid)
+  - [Slider issue 470](https://github.com/streamlit/streamlit/issues/470)
 """
     )
 
