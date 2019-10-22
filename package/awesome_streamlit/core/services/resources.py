@@ -7,7 +7,7 @@ from awesome_streamlit.shared.models import Resource, Tag
 
 
 def filter_by_tags(resources: List[Resource], tags: List[Tag]) -> List[Resource]:
-    """The resources having one of the specified Tags
+    """The resources having all of the specified Tags
 
     If tags is the empty list all resources are returned
 
@@ -21,7 +21,7 @@ def filter_by_tags(resources: List[Resource], tags: List[Tag]) -> List[Resource]
     if tags:
         resources_ = []
         for resource in resources:
-            if set(resource.tags).intersection(tags):
+            if set(tags).issubset(resource.tags):
                 resources_.append(resource)
         return resources_
 
@@ -70,24 +70,32 @@ def get_resources(
     return resources
 
 
-def to_markdown(resources: List[Resource]) -> str:
+def to_markdown(resources: List[Resource], report_by_tag: bool = True) -> str:
     """Converts the specified resources to MarkDown
 
     Arguments:
         resources {List[Resource]} -- [description]
 
+    Optional Arguments:
+        report_by_tag {bool} - If True the text is split into sections by Tags
+
     Returns:
         [str] -- Bulleted Markdown List of Resources
     """
 
-    resources_dict: Dict[Tag, List[Resource]] = defaultdict(list)
-    for resource in resources:
-        resources_dict[resource.tags[0]].append(resource)
-    markdown_bullets = []
-    for tag in sorted(resources_dict.keys(), key=lambda x: x.name):
-        markdown_bullets.append(f"\n### {tag.name}\n")
-        for resource in resources_dict[tag]:
-            markdown_bullets.append(resource.to_markdown_bullet())
+    if report_by_tag:
+        markdown_bullets = []
+        resources_dict: Dict[Tag, List[Resource]] = defaultdict(list)
+        for resource in resources:
+            resources_dict[resource.tags[0]].append(resource)
+
+        for tag in sorted(resources_dict.keys(), key=lambda x: x.name):
+            markdown_bullets.append(f"\n### {tag.name}\n")
+            for resource in resources_dict[tag]:
+                markdown_bullets.append(resource.to_markdown_bullet())
+    else:
+        markdown_bullets = [resource.to_markdown_bullet() for resource in resources]
+
     markdown = "\n".join(markdown_bullets)
 
     return markdown
@@ -107,4 +115,4 @@ do no filtering on Tags
         str -- A bulleted Markdown list of resources filtered as specified
     """
     resources = get_resources(tags, awesome_resources_only)
-    return to_markdown(resources)
+    return to_markdown(resources, not tags)

@@ -398,6 +398,47 @@ RESOURCES_STREAMLIT_COMPONENT_APPS = [
 RESOURCES = (
     [
         Resource(
+            name="Streamlit Demo",
+            url="https://github.com/Poseyy/StreamlitDemo",
+            is_awesome=True,
+            tags=[tags.APP, tags.CODE],
+            author=authors.POSEY,
+        ),
+        Resource(
+            name="Building an Iris EDA App with Streamlit and Python",
+            url=(
+                "https://github.com/Jcharis/Streamlit_DataScience_Apps/tree/"
+                "master/NLP_App_with_Streamlit_Python"
+            ),
+            is_awesome=True,
+            tags=[tags.APP, tags.CODE],
+            author=authors.JCHARIS,
+        ),
+        Resource(
+            name="Building an Iris EDA App with Streamlit and Python",
+            url="https://www.youtube.com/watch?v=L_mZcEMFUIc",
+            is_awesome=True,
+            tags=[tags.TUTORIAL, tags.VIDEO],
+            author=authors.JCHARIS,
+        ),
+        Resource(
+            name="Streamlit Python Tutorial (Crash Course)",
+            url="https://www.youtube.com/watch?v=_9WiB2PDO7k",
+            is_awesome=True,
+            tags=[tags.TUTORIAL, tags.VIDEO],
+            author=authors.JCHARIS,
+        ),
+        Resource(
+            name="Building a ui for your latest ai",
+            url=(
+                "https://towardsdatascience.com/full-stack-ai-building-a-ui-for-your-latest-ai"
+                "-project-in-no-time-at-all-7e5c8fd4eafd  "
+            ),
+            is_awesome=True,
+            tags=[tags.TUTORIAL, tags.ARTICLE],
+            author=authors.POSEY,
+        ),
+        Resource(
             name="Hello-streamlit deployed on Glitch",
             url="https://glitch.com/~hello-streamlit",
             is_awesome=True,

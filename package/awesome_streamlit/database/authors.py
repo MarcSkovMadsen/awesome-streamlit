@@ -21,13 +21,17 @@ AWESOME_STREAMLIT_ORG = Author(
     url="https://github.com/marcskovmadsen/awesome-streamlit",
 )
 ALEXANDER_GARCIA = Author(name="Alexander Garcia", url="https://github.com/djauxel")
+JCHARIS = Author(name="Jesse E. Agbe (JCharis)", url="https://github.com/Jcharis")
+POSEY = Author(name="", url="https://github.com/Poseyy")
 AUTHORS = [
-    KEVIN_ARVAI,
+    ALEXANDER_GARCIA,
     INES,
+    JCHARIS,
+    KEVIN_ARVAI,
     MARC_SKOV_MADSEN,
     PARAS_PATIDAR,
+    POSEY,
     STREAMLIT_AUTHOR,
     STREAMLIT_COMPONENT_AUTHOR,
     STREAMLIT_EXAMPLE_AUTHOR,
-    ALEXANDER_GARCIA,
 ]
