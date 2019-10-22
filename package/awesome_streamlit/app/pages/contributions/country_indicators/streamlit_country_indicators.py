@@ -133,6 +133,7 @@ because of very fast, automatic hot reload and ease of navigation in editor.
   - [Plotly_chart and slider overlap issue 379](https://github.com/streamlit/streamlit/issues/379)
   - [Compact and Dashboard layout needed issue 486](https://github.com/streamlit/streamlit/issues/486)
   - [No Grid issues](https://github.com/streamlit/streamlit/issues?utf8=%E2%9C%93&q=is%3Aissue+is%3Aopen+grid)
+  - [Streamlit crashes when using MatPlotLib issue 469](https://github.com/streamlit/streamlit/issues/469)
 """
     )
 
