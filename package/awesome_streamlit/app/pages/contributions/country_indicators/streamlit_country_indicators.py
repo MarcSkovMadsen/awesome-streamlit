@@ -16,12 +16,16 @@ from typing import Tuple
 import pandas as pd
 import plotly.express as px
 import streamlit as st
+import pathlib
 
-DATA_PATH = (
+
+DATA_LOCAL = pathlib.Path(__file__).parent / "country_indicators.csv"
+
+DATA_URL = (
     "https://raw.githubusercontent.com/MarcSkovMadsen/awesome-streamlit/master/package/"
     "awesome_streamlit/app/pages/contributions/country_indicators/country_indicators.csv"
 )
-DATA_URL = (
+DATA_ORIGINAL = (
     "https://gist.githubusercontent.com/chriddyp/cb5392c35661370d95f300086accea51/"
     "raw/8e0768211f6b747c0db42a9ce9a0937dafcbd8b2/indicators.csv"
 )
@@ -74,7 +78,7 @@ def streamlit_section():
 
 """
     )
-    App.from_url(DATA_PATH)
+    App.create_from_url(DATA_URL, DATA_LOCAL)
 
 
 def voila_section():
@@ -90,7 +94,7 @@ We compare to the Country Indicator app in the Voila Gallery.
 
 Voila also shows a nice spinner by it self while running some of the cells
 
-![Executing 3 of 6 spinner](https://github.com/MarcSkovMadsen/awesome-streamlit/blob/master/package/awesome_streamlit/app/pages/contributions/country_indicators/executing_3_of_6.png?raw=true)
+![Executing 3 of 6 spinner](https://github.com/MarcSkovMadsen/awesome-streamlit/blob/master/package/awesome_streamlit/app/pages/contributions/country_indicators/voila_executing_3_of_6.png?raw=true)
 """
     )
 
@@ -102,13 +106,17 @@ def findings_section():
 
 ### Pros of Voila
 
-- The label and widget are independent. I.e. you don't have to have a label.
-- How to get a range slider is very explicit, i.e. IntRangeSlider.
-- You can have columnar and row layout with HBox and VBox
+- The **image updates very, very fast** when changing a selection
+- The **label and widget are independent**.
+I.e. you don't have to have a label if you need a more compact layout.
+- How to get a **range slider is very explicit**, i.e. IntRangeSlider.
+- You can have columnar and row layout with **HBox and VBox**
+- It's ok to **style** via HTML and <style> tags
 
 ### Pros of Streamlit
 
-- The label is a part of the widget. I.e. the developer will not forget to put on a label.
+- There is an easy to use **sidebar**
+- The **label is a part of the widget**. I.e. the developer will not forget to put on a label.
 - You can use your **editor of choice**
   - Streamlit does not require knowing something like how to install and use a notebook editor.
   - You you can use integrated, automatic tests like pylint, mypy etc. to help  produce quality code.
@@ -162,9 +170,13 @@ class App:
         return pd.read_csv(url)
 
     @classmethod
-    def from_url(cls, url) -> "App":
+    def create_from_url(cls, url: str, local: pathlib.Path) -> "App":
         """Creates an instance of the App with data from the url"""
-        df = cls._get_dataframe(url)
+        if local.exists():
+            df = cls._get_dataframe(local)
+        else:
+            df = cls._get_dataframe(url)
+            df.to_csv(local, index=False)  # We save it to speed up load times next time
         return cls(df)
 
     def _create_plot(
