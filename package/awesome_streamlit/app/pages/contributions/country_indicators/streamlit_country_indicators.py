@@ -103,7 +103,8 @@ def findings_section():
 ### Pros of Voila
 
 - The label and widget are independent. I.e. you don't have to have a label.
-- You don't need to know a trick to get a IntRangeSlider.
+- How to get a range slider is very explicit, i.e. IntRangeSlider.
+- You can have columnar and row layout with HBox and VBox
 
 ### Pros of Streamlit
 

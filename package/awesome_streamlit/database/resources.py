@@ -32,7 +32,14 @@ DEFAULT_RESOURCE = Resource(
 )
 APP_CONTRIBUTIONS = [
     Resource(
-        name="Interactive Gaussian Plot",
+        name="Country Indicators",
+        url="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-streamlit/master/package/awesome_streamlit/app/pages/contributions/country_indicators/streamlit_country_indicators.py",
+        tags=[CODE, APP_IN_GALLERY, tags.VOILA],
+        is_awesome=True,
+        author=authors.MARC_SKOV_MADSEN,
+    ),
+    Resource(
+        name="Gaussian Plot",
         url="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-streamlit/master/package/awesome_streamlit/app/pages/contributions/interactive_gaussian_plot/interactive_gaussian_plot.py",
         tags=[CODE, APP_IN_GALLERY, tags.VOILA],
         is_awesome=True,
