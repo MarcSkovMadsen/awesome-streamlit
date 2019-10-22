@@ -26,6 +26,12 @@ def write():
     ast.shared.components.title_awesome("Gallery")
     apps = get_apps()
 
+    st.sidebar.title("Gallery")
+    is_awesome = st.sidebar.checkbox("Awesome apps only", True)
+    show_source_code = st.sidebar.checkbox("Show Source Code", True)
+    if is_awesome:
+        apps = ast.core.services.resources.filter_by_is_awesome(apps)
+
     tags = st.multiselect("Select Tag(s)", get_tags(apps))
     apps = ast.core.services.resources.filter_by_tags(apps, tags)
 
@@ -48,8 +54,6 @@ def write():
     app_credits.markdown(
         f"""Resources: [Author]({run_app.author.url}), [App Code]({run_app.url})"""
     )
-    st.sidebar.title("Gallery")
-    show_source_code = st.sidebar.checkbox("Show Source Code", True)
 
     # Fetch the content
     python_code = get_file_content_as_string(run_app.url)

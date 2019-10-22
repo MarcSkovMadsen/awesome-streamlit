@@ -62,7 +62,7 @@ APP_CONTRIBUTIONS = [
         url="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-streamlit/master/src/pages/gallery/contributions/marc_skov_madsen/sentiment_analyzer/sentiment_analyzer.py",
         tags=[CODE, APP_IN_GALLERY, tags.MACHINE_LEARNING],
         is_awesome=True,
-        author=MARC_SKOV_MADSEN,
+        author=authors.PARAS_PATIDAR,
     ),
     Resource(
         name="SpacyIO",
