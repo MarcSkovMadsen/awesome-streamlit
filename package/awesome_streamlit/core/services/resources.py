@@ -3,7 +3,7 @@ from collections import defaultdict
 from typing import List, Dict, Optional
 
 from awesome_streamlit.database.resources import RESOURCES
-from awesome_streamlit.shared.models import Resource, Tag
+from awesome_streamlit.shared.models import Resource, Tag, Author
 
 
 def filter_by_tags(resources: List[Resource], tags: List[Tag]) -> List[Resource]:
@@ -37,6 +37,15 @@ def filter_by_is_awesome(resources: List[Resource]) -> List[Resource]:
     return [resource for resource in resources if resource.is_awesome]
 
 
+def filter_by_author(resources: List[Resource], author: Author) -> List[Resource]:
+    """The resources by the specified author
+
+    Arguments:
+        resources {List[Resource]} -- A list of resources
+    """
+    return [resource for resource in resources if resource.author == author]
+
+
 def sort_resources(resources: List[Resource]) -> List[Resource]:
     """The list of resources sorted by name
 
@@ -47,7 +56,9 @@ def sort_resources(resources: List[Resource]) -> List[Resource]:
 
 
 def get_resources(
-    tags: List[Tag], awesome_resources_only: bool = True
+    tags: List[Tag],
+    author: Optional[Author] = None,
+    awesome_resources_only: bool = True,
 ) -> List[Resource]:
     """A list of resources
 
@@ -56,6 +67,8 @@ def get_resources(
         Resources having one of the specified tags
 
     Keyword Arguments:
+        author {Author} -- If an author is specified the list of resources is reduced to
+        resources by that author (default: {None})
         awesome_resources_only {bool} -- If True then the list is reduced to
         Resources with is_awesome equal to True(default: {True})
 
@@ -63,6 +76,8 @@ def get_resources(
         List[Resource] -- A list of Resources
     """
     resources = RESOURCES
+    if author:
+        resources = filter_by_author(resources, author)
     if awesome_resources_only:
         resources = filter_by_is_awesome(resources)
     resources = sort_resources(resources)
@@ -101,18 +116,24 @@ def to_markdown(resources: List[Resource], report_by_tag: bool = True) -> str:
     return markdown
 
 
-def get_resources_markdown(tags: List[Tag], awesome_resources_only: bool = True) -> str:
+def get_resources_markdown(
+    tags: List[Tag],
+    author: Optional[Author] = None,
+    awesome_resources_only: bool = True,
+) -> str:
     """A bulleted Markdown list of resources filtered as specified
 
     Arguments:
-        tags {[type]} -- A list of tags to filter to. If the list is empty [] then we
+        tags {List[Tag]} -- A list of tags to filter to. If the list is empty [] then we
 do no filtering on Tags
 
     Keyword Arguments:
+        Author {Author} -- An author to filter to. If author is None
+then we do no filtering on author. (default: {None})
         awesome_resources_only {bool} -- [description] (default: {True})
 
     Returns:
         str -- A bulleted Markdown list of resources filtered as specified
     """
-    resources = get_resources(tags, awesome_resources_only)
+    resources = get_resources(tags, author, awesome_resources_only)
     return to_markdown(resources, not tags)

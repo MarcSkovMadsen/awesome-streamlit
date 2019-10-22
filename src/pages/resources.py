@@ -13,22 +13,25 @@ def write():
     """Writes content to the app"""
     ast.shared.components.title_awesome("Resources")
     st.sidebar.title("Resources")
-    show_awesome_resources_only = st.sidebar.checkbox(
-        "Show Awesome Resources Only", value=True
-    )
-
     tags = ast.shared.components.multiselect(
         "Select Tag(s)", options=ast.database.TAGS, default=[]
     )
 
-    st.info(
-        """Please note that resources can have multiple tags!
-    We list each resource under **a most important tag only!**"""
-    )
+    author_all = ast.shared.models.Author(name="All", url="")
+    author = st.selectbox("Select Author", options=[author_all] + ast.database.AUTHORS)
+    if author == author_all:
+        author = None
+    show_awesome_resources_only = st.checkbox("Show Awesome Resources Only", value=True)
+    if not tags:
+        st.info(
+            """Please note that **we list each resource under a most important tag only!**"""
+        )
     resource_section = st.empty()
 
     with st.spinner("Loading resources ..."):
-        markdown = resources.get_resources_markdown(tags, show_awesome_resources_only)
+        markdown = resources.get_resources_markdown(
+            tags, author, show_awesome_resources_only
+        )
         resource_section.markdown(markdown)
 
     if st.sidebar.checkbox("Show Resource JSON"):

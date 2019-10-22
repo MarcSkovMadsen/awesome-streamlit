@@ -56,11 +56,18 @@ class Resource:
             [str] -- The Resource as a Markdown bullet string
         """
         result = f"- [{self.name}]({self.url})"
+        if self.author:
+            result += f" by [{self.author.name}]({self.author.url})"
+        if self.tags:
+            result += " (#" + ", #".join(sorted([tag.name for tag in self.tags])) + ")"
 
         return result
 
     def __str__(self):
         return self.name
+
+    def __repr__(self):
+        return f"Resource(name={self.name})"
 
     @property
     def screenshot_file(self) -> str:
