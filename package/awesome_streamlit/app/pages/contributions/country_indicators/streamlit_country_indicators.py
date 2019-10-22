@@ -70,7 +70,7 @@ def streamlit_section():
     """This section controls the Streamlit Country Indicators App"""
     st.markdown(
         """
-## Plot - Streamlit
+## Country Indicators - Streamlit version
 
 """
     )
@@ -81,7 +81,7 @@ def voila_section():
     """This section controls the Voila Reference Country Indicators App"""
     st.markdown(
         """
-## Plot - Voila
+## Country Indicators - Voila Version
 
 We compare to the Country Indicator app in the Voila Gallery.
 **Click the image**  to see the **source**.
