@@ -24,16 +24,25 @@ master/streamlit_apps.json"""
 def write():
     """This method writes the Gallery index page which is used to navigate between gallery apps"""
     ast.shared.components.title_awesome("Gallery")
-    apps = get_resources()
+    apps = get_apps()
+
+    tags = st.multiselect("Select Tag(s)", get_tags(apps))
+    apps = ast.core.services.resources.filter_by_tags(apps, tags)
+
     authors = get_authors(apps)
-    index_default_author = authors.index(ast.database.resources.DEFAULT_RESOURCE.author)
-    author = st.selectbox("Select Author", authors, index=index_default_author)
-    apps_by_author = get_resources_by_author(apps, author)
+    author_all = ast.shared.models.Author(name="All", url="")
+    authors = [author_all] + authors
+    author = st.selectbox("Select Author", authors)
+
+    if author != author_all:
+        apps = get_apps_by_author(apps, author)
+
+    app_index = 0
     if author == ast.database.resources.DEFAULT_RESOURCE.author:
-        app_index = apps_by_author.index(ast.database.resources.DEFAULT_RESOURCE)
-    else:
-        app_index = 0
-    run_app = st.selectbox("Select the App", apps_by_author, index=app_index)
+        if ast.database.resources.DEFAULT_RESOURCE in apps:
+            app_index = apps.index(ast.database.resources.DEFAULT_RESOURCE)
+
+    run_app = st.selectbox("Select the App", apps, index=app_index)
     app_credits = st.empty()
 
     app_credits.markdown(
@@ -60,7 +69,7 @@ def write():
             st.code(python_code)
 
 
-def get_resources() -> List[ast.shared.models.Resource]:
+def get_apps() -> List[ast.shared.models.Resource]:
     """The list of resources
 
     Returns:
@@ -73,6 +82,21 @@ def get_resources() -> List[ast.shared.models.Resource]:
     ]
 
 
+def get_tags(
+    resources: List[ast.shared.models.Resource]
+) -> List[ast.shared.models.Tag]:
+    """The list of Tags
+
+    Returns:
+        List[ast.shared.models.Resource] -- The list of Tags
+    """
+    tags = set()
+    for resource in resources:
+        for tag in resource.tags:
+            tags.add(tag)
+    return sorted(list(tags), key=lambda x: x.name)
+
+
 @st.cache
 def get_authors(
     resources: List[ast.shared.models.Resource]
@@ -83,16 +107,17 @@ def get_authors(
 
     Arguments:
         resources {List[ast.shared.models.Resource]} -- A list of Resources
+        tags {List[ast.shared.models.Resource]} -- A list of Tags
 
     Returns:
         List[ast.shared.models.Author] -- [description]
     """
-    author_set = {resource.author for resource in resources if resource.author}
-    return sorted(list(author_set), key=lambda x: x.name)
+    authors = list({resource.author for resource in resources if resource.author})
+    return sorted(authors, key=lambda x: x.name)
 
 
 @st.cache
-def get_resources_by_author(
+def get_apps_by_author(
     resources: List[ast.shared.models.Resource], author: ast.shared.models.Author
 ) -> List[ast.shared.models.Resource]:
     """The Resources by the specified Author
