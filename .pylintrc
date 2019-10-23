@@ -1,4 +1,5 @@
 [master]
+load-plugins=pylint.extensions.mccabe, pylint.extensions.docparams
 
 [FORMAT]
 max-line-length=100
@@ -8,6 +9,7 @@ disable=bad-continuation
 
 [DESIGN]
 max-parents=13
+max-complexity=10
 
 [TYPECHECK]
 generated-members=REQUEST,acl_users,aq_parent,"[a-zA-Z]+_set{1,2}",save,delete

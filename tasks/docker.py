@@ -55,11 +55,11 @@ class Image:
     registry: str = DOCKER_REGISTRY
 
     @property
-    def image(self):
+    def image(self) -> str:
         """The full name of the image, i.e. registry/name
 
         Returns:
-            [type] -- [description]
+            str -- [description]
         """
 
         return f"{self.registry}/{self.name}"

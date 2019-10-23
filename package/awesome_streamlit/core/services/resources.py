@@ -33,6 +33,9 @@ def filter_by_is_awesome(resources: List[Resource]) -> List[Resource]:
 
     Arguments:
         resources {List[Resource]} -- A list of resources
+
+    Returns:
+        List[Resource] - A list of awesome resources
     """
     return [resource for resource in resources if resource.is_awesome]
 
@@ -42,6 +45,9 @@ def filter_by_author(resources: List[Resource], author: Author) -> List[Resource
 
     Arguments:
         resources {List[Resource]} -- A list of resources
+
+    Returns:
+        List[Resource] - A list of resources by the specified author
     """
     return [resource for resource in resources if resource.author == author]
 

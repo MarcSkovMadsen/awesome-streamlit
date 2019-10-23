@@ -235,13 +235,19 @@ On Linux, OsX or in a Windows Git Bash terminal it's
 source .venv/Scripts/activate
 ```
 
+or alternatively
+
+```bash
+source .venv/bin/activate
+```
+
 In a Windows terminal it's
 
 ```bash
 .venv/Scripts/activate.bat
 ```
 
-The you should install the local requirements
+Then you should install the local requirements
 
 ```bash
 pip install -r requirements_local.txt
