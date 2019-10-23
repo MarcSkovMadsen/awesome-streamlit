@@ -132,7 +132,7 @@ def test_run_section(test_items: List[TesTItem]):
 #                 name="Test 1",
 #                 location=(
 #                     "https://raw.githubusercontent.com/MarcSkovMadsen/awesome-streamlit/master/"
-#                     "src/pages/gallery/contributions/marc_skov_madsen/spreadsheet.py",
+#                     "gallery/spreadsheet.py",
 #                 ),
 #             )
 #         ]

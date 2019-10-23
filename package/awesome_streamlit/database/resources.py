@@ -23,7 +23,7 @@ STREAMLIT_COMPONENTS_APPS_ROOT = (
 
 DEFAULT_RESOURCE = Resource(
     name="Spreadsheet",
-    url="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-streamlit/master/src/pages/gallery/contributions/marc_skov_madsen/spreadsheet.py",
+    url="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-streamlit/master/gallery/spreadsheet.py",
     tags=[CODE, APP_IN_GALLERY],
     is_awesome=True,
     author=MARC_SKOV_MADSEN,
@@ -45,21 +45,21 @@ APP_CONTRIBUTIONS = [
     ),
     Resource(
         name="Self Driving Cars",
-        url="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-streamlit/master/src/pages/gallery/contributions/streamlit/self_driving_cars.py",
+        url="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-streamlit/master/gallery/self_driving_cars.py",
         tags=[CODE, APP_IN_GALLERY],
         is_awesome=True,
         author=authors.STREAMLIT_AUTHOR,
     ),
     Resource(
         name="Awesome Streamlit Test Runner",
-        url="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-streamlit/master/src/pages/gallery/contributions/marc_skov_madsen/test_runner_app.py",
+        url="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-streamlit/master/gallery/test_runner_app.py",
         tags=[CODE, APP_IN_GALLERY],
         is_awesome=True,
         author=MARC_SKOV_MADSEN,
     ),
     Resource(
         name="Sentiment Algorithm",
-        url="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-streamlit/master/src/pages/gallery/contributions/marc_skov_madsen/sentiment_analyzer/sentiment_analyzer.py",
+        url="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-streamlit/master/gallery/sentiment_analyzer/sentiment_analyzer.py",
         tags=[CODE, APP_IN_GALLERY, tags.MACHINE_LEARNING],
         is_awesome=True,
         author=authors.PARAS_PATIDAR,

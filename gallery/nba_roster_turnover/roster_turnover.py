@@ -46,7 +46,7 @@ IMAGE = "images/basketball.jpg"
 
 GITHUB_ROOT = (
     "https://raw.githubusercontent.com/MarcSkovMadsen/awesome-streamlit/master/"
-    "src/pages/gallery/contributions/kevin_arvai/nba_roster_turnover/"
+    "gallery/nba_roster_turnover/"
 )
 PLAYER_MINUTES_GITHUB = GITHUB_ROOT + PLAYER_MINUTES
 ROSTER_TURNOVER_GITHUB = GITHUB_ROOT + ROSTER_TURNOVER

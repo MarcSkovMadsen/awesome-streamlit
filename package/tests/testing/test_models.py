@@ -25,7 +25,7 @@ def resource(author, tag) -> Resource:
 
     return Resource(
         name="Sentiment Algorithm",
-        url="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-streamlit/master/src/pages/gallery/contributions/marc_skov_madsen/sentiment_analyzer/sentiment_analyzer.py",
+        url="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-streamlit/master/gallery/sentiment_analyzer/sentiment_analyzer.py",
         is_awesome=True,
         tags=[tag],
         author=author,

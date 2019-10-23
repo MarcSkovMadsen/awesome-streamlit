@@ -35,7 +35,7 @@ if simple or advanced:
                     name="Spreadsheet",
                     location=(
                         "https://raw.githubusercontent.com/MarcSkovMadsen/awesome-streamlit/master"
-                        "/src/pages/gallery/contributions/marc_skov_madsen/spreadsheet.py"
+                        "/gallery/spreadsheet.py"
                     ),
                 )
             ]
@@ -56,7 +56,7 @@ if simple or advanced:
 else:
     location = (
         "https://raw.githubusercontent.com/MarcSkovMadsen/awesome-streamlit/master"
-        "/src/pages/gallery/contributions/marc_skov_madsen/test_runner_app.py"
+        "/gallery/test_runner_app.py"
     )
     # Todo: Get code from local file instead of url to make sure it's always updated
     python_code = ast.core.services.other.get_file_content_as_string(location)

@@ -58,9 +58,9 @@ A curated list of awesome streamlit resources. Inspired by [awesome-python](http
 ### Code
 
 - [Deploying Streamlit app to EC2 instance](https://medium.com/@pokepim/deploying-streamlit-app-to-ec2-instance-7a7edeffbb54)
-- [Sentiment Algorithm](https://raw.githubusercontent.com/MarcSkovMadsen/awesome-streamlit/master/src/pages/gallery/contributions/marc_skov_madsen/sentiment_analyzer/sentiment_analyzer.py)
+- [Sentiment Algorithm](https://raw.githubusercontent.com/MarcSkovMadsen/awesome-streamlit/master/gallery/sentiment_analyzer/sentiment_analyzer.py)
 - [SpacyIO](https://gist.githubusercontent.com/ines/b320cb8441b590eedf19137599ce6685/raw/6e0ead5a442fd9c5e3f621a76fba94241cc847ce/streamlit_spacy.py)
-- [Spreadsheet](https://raw.githubusercontent.com/MarcSkovMadsen/awesome-streamlit/master/src/pages/gallery/contributions/marc_skov_madsen/spreadsheet.py)
+- [Spreadsheet](https://raw.githubusercontent.com/MarcSkovMadsen/awesome-streamlit/master/gallery/spreadsheet.py)
 - [Streamlit-components-demo Code](https://github.com/virusvn/streamlit-components-demo)
 - [Uber Data Explorer App](https://dataexplorerlit.herokuapp.com/)
 - [Uber NYC Pickups](https://raw.githubusercontent.com/streamlit/demo-uber-nyc-pickups/master/app.py)

@@ -15,7 +15,7 @@ from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.metrics import confusion_matrix
 from sklearn.naive_bayes import BernoulliNB
 
-ROOT_URL = "https://raw.githubusercontent.com/MarcSkovMadsen/awesome-streamlit/master/src/pages/gallery/contributions/marc_skov_madsen/sentiment_analyzer/data/"
+ROOT_URL = "https://raw.githubusercontent.com/MarcSkovMadsen/awesome-streamlit/master/gallery/sentiment_analyzer/data/"
 FILES = ["imdb_labelled.txt", "amazon_cells_labelled.txt", "yelp_labelled.txt"]
 
 
