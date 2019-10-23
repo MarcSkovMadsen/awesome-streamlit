@@ -1,4 +1,42 @@
-# Notes on using Streamlit with VS Code
+# How to use Streamlit with VS Code
+
+## Running Your Streamlit App
+
+You can use the **multi-command** extension to configure a short cut to execute `streamlit run <relativeFile.py>`
+
+You start by installing the multi-command extension and adding the configuration shown to your settings.json file.
+
+![VS Code multi-command](_static/images/vscode_multi-command.png)
+
+```json
+{
+    "command": "multiCommand.streamlitActiveFile",
+    "label": "Streamlit: Run Active File",
+    "description": "Streamlit run active file in active terminal",
+    "sequence": [
+        "workbench.action.terminal.focus",
+        {
+            "command": "workbench.action.terminal.sendSequence",
+            "args": {
+                "text": "streamlit run '${relativeFile}'\u000D"
+            }
+        }
+    ]
+},
+```
+
+The you can execute you *streamlit run* command via the command palette (CTRL+SHIFT+P)
+
+![VS Code multi-command execute](_static/images/vscode_multi-command_execute.png)
+
+![VS Code multi-command Streamlit Run](_static/images/vscode_multi-command_streamlit_run.png)
+
+Or you can setup a keyboard shortcut in your keybindings.json file to run Streamlit
+
+![VS Code keybindings](_static/images/vscode_keybindings_json.png)
+
+![VS Code terminal](_static/images/vscode_terminal.png)
+
 
 ## Debugging
 
@@ -6,7 +44,7 @@
 
 You can **debug mannually** by inserting a `breakpoint()` (Python 3.7+) or `import pdb;pdb.set_trace()` (Python 3.6 or below) in your code.
 
-![Debugging via breakpoint()](_static/images/vscode_breakpoint.png)
+![Debugging via breakpoint](_static/images/vscode_breakpoint.png)
 
 ### Integrated Debugging
 

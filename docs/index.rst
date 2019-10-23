@@ -32,7 +32,7 @@ This is the documentation of the **Awesome Streamlit Project** including the
 
 .. toctree::
    :maxdepth: 1
-   :caption: Other
+   :caption: Tutorials
 
    How to use VS Code with Streamlit <vscode.md>
 
