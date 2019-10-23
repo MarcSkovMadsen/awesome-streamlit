@@ -23,7 +23,7 @@ STREAMLIT_COMPONENTS_APPS_ROOT = (
 
 DEFAULT_RESOURCE = Resource(
     name="Spreadsheet",
-    url="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-streamlit/master/gallery/spreadsheet.py",
+    url="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-streamlit/master/gallery/spreadsheet/spreadsheet.py",
     tags=[CODE, APP_IN_GALLERY],
     is_awesome=True,
     author=MARC_SKOV_MADSEN,
@@ -45,14 +45,14 @@ APP_CONTRIBUTIONS = [
     ),
     Resource(
         name="Self Driving Cars",
-        url="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-streamlit/master/gallery/self_driving_cars.py",
+        url="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-streamlit/master/gallery/self_driving_cars/self_driving_cars.py",
         tags=[CODE, APP_IN_GALLERY],
         is_awesome=True,
         author=authors.STREAMLIT_AUTHOR,
     ),
     Resource(
         name="Awesome Streamlit Test Runner",
-        url="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-streamlit/master/gallery/test_runner_app.py",
+        url="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-streamlit/master/gallery/test_runner_app/test_runner_app.py",
         tags=[CODE, APP_IN_GALLERY],
         is_awesome=True,
         author=MARC_SKOV_MADSEN,
