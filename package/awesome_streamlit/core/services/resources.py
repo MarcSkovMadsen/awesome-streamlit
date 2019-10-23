@@ -1,9 +1,9 @@
 """This module provides services related to Resources"""
 from collections import defaultdict
-from typing import List, Dict, Optional
+from typing import Dict, List, Optional
 
 from awesome_streamlit.database.resources import RESOURCES
-from awesome_streamlit.shared.models import Resource, Tag, Author
+from awesome_streamlit.shared.models import Author, Resource, Tag
 
 
 def filter_by_tags(resources: List[Resource], tags: List[Tag]) -> List[Resource]:

@@ -11,13 +11,12 @@ The benchmark example from Voila is
 Author: Marc Skov Madsen https://github.com/marcskovmadsen
 
 """
+import pathlib
 from typing import Tuple
 
 import pandas as pd
 import plotly.express as px
 import streamlit as st
-import pathlib
-
 
 DATA_LOCAL = pathlib.Path(__file__).parent / "country_indicators.csv"
 

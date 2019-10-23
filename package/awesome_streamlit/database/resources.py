@@ -3,9 +3,7 @@
 Here you maintain the list of awesome resources
 """
 from awesome_streamlit.database import authors, tags
-from awesome_streamlit.database.authors import (INES, KEVIN_ARVAI,
-                                                MARC_SKOV_MADSEN,
-                                                STREAMLIT_AUTHOR,)
+from awesome_streamlit.database.apps_in_gallery import APPS_IN_GALLERY
 from awesome_streamlit.database.tags import (ALTERNATIVE, APP, APP_IN_GALLERY,
                                              CODE, SOCIAL, STREAMLIT_TAG,
                                              TECHNICAL)
@@ -20,75 +18,6 @@ STREAMLIT_EXAMPLE_APPS_ROOT = (
 STREAMLIT_COMPONENTS_APPS_ROOT = (
     "https://github.com/streamlit/streamlit/tree/develop/docs/api-examples-source"
 )
-
-DEFAULT_RESOURCE = Resource(
-    name="Spreadsheet",
-    url="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-streamlit/master/gallery/spreadsheet/spreadsheet.py",
-    tags=[CODE, APP_IN_GALLERY],
-    is_awesome=True,
-    author=MARC_SKOV_MADSEN,
-)
-APP_CONTRIBUTIONS = [
-    Resource(
-        name="Country Indicators",
-        url="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-streamlit/master/gallery/country_indicators/streamlit_country_indicators.py",
-        tags=[CODE, APP_IN_GALLERY, tags.VOILA],
-        is_awesome=True,
-        author=authors.MARC_SKOV_MADSEN,
-    ),
-    Resource(
-        name="Gaussian Plot",
-        url="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-streamlit/master/gallery/interactive_gaussian_plot/interactive_gaussian_plot.py",
-        tags=[CODE, APP_IN_GALLERY, tags.VOILA],
-        is_awesome=True,
-        author=authors.MARC_SKOV_MADSEN,
-    ),
-    Resource(
-        name="Self Driving Cars",
-        url="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-streamlit/master/gallery/self_driving_cars/self_driving_cars.py",
-        tags=[CODE, APP_IN_GALLERY],
-        is_awesome=True,
-        author=authors.STREAMLIT_AUTHOR,
-    ),
-    Resource(
-        name="Awesome Streamlit Test Runner",
-        url="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-streamlit/master/gallery/test_runner_app/test_runner_app.py",
-        tags=[CODE, APP_IN_GALLERY],
-        is_awesome=True,
-        author=MARC_SKOV_MADSEN,
-    ),
-    Resource(
-        name="Sentiment Algorithm",
-        url="https://raw.githubusercontent.com/MarcSkovMadsen/awesome-streamlit/master/gallery/sentiment_analyzer/sentiment_analyzer.py",
-        tags=[CODE, APP_IN_GALLERY, tags.MACHINE_LEARNING],
-        is_awesome=True,
-        author=authors.PARAS_PATIDAR,
-    ),
-    Resource(
-        name="SpacyIO",
-        url="https://gist.githubusercontent.com/ines/b320cb8441b590eedf19137599ce6685/raw/6e0ead5a442fd9c5e3f621a76fba94241cc847ce/streamlit_spacy.py",
-        tags=[CODE, APP_IN_GALLERY, tags.NLP],
-        is_awesome=True,
-        author=INES,
-    ),
-    Resource(
-        name="Uber NYC Pickups",
-        url="https://raw.githubusercontent.com/streamlit/demo-uber-nyc-pickups/master/app.py",
-        tags=[CODE, APP_IN_GALLERY],
-        is_awesome=True,
-        author=STREAMLIT_AUTHOR,
-    ),
-    Resource(
-        name="NBA Roster Turnover",
-        url=(
-            "https://raw.githubusercontent.com/MarcSkovMadsen/awesome-streamlit/master/src/"
-            "pages/gallery/contributions/kevin_arvai/nba_roster_turnover/roster_turnover.py"
-        ),
-        tags=[CODE, APP_IN_GALLERY],
-        is_awesome=True,
-        author=KEVIN_ARVAI,
-    ),
-]
 STREAMLIT_EXAMPLE_APPS_FAILED_TEST_FILES = [
     "apocrypha.py",
     "bart_vs_bikes.py",
@@ -606,8 +535,7 @@ RESOURCES = (
     + STREAMLIT_EXAMPLE_APPS
     + STREAMLIT_EXAMPLE_APPS_FAILED_TEST
     + RESOURCES_STREAMLIT_COMPONENT_APPS
-    + APP_CONTRIBUTIONS
-    + [DEFAULT_RESOURCE]
+    + APPS_IN_GALLERY
 )
 
 TAGS = []

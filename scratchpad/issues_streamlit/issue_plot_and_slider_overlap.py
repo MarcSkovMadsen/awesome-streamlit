@@ -1,6 +1,6 @@
 import pandas as pd
-import streamlit as st
 import plotly.express as px
+import streamlit as st
 
 data = {"x": [1, 2, 3, 4], "y": [2, 4, 6, 8]}
 

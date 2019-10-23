@@ -7,7 +7,6 @@ Source: https://github.com/virusvn/streamlit-components-demo/blob/master/app.py
 Credits to Nhan for sharing that code
 """
 import logging
-import urllib.request
 from typing import List
 
 import streamlit as st
@@ -44,9 +43,9 @@ def write():
         apps = get_apps_by_author(apps, author)
 
     app_index = 0
-    if author == ast.database.resources.DEFAULT_RESOURCE.author:
-        if ast.database.resources.DEFAULT_RESOURCE in apps:
-            app_index = apps.index(ast.database.resources.DEFAULT_RESOURCE)
+    if author == ast.database.apps_in_gallery.DEFAULT_APP_IN_GALLERY.author:
+        if ast.database.apps_in_gallery.DEFAULT_APP_IN_GALLERY in apps:
+            app_index = apps.index(ast.database.apps_in_gallery.DEFAULT_APP_IN_GALLERY)
 
     run_app = st.selectbox("Select the App", apps, index=app_index)
     app_credits = st.empty()

@@ -64,9 +64,9 @@ def test_resource__str__(resource):
 
 def test_resource_to_markdown_bullet(resource):
     """I can convert a resource to a a markdown bullet string"""
-    assert (
-        resource.to_markdown_bullet()
-        == "- [awesome-streamlit.org](https://awesome-streamlit.org)"
+    assert resource.to_markdown_bullet() == (
+        "- [awesome-streamlit.org](https://awesome-streamlit.org) by "
+        "[Marc Skov Madsen](https://awesome-streamlit.org) (#new tag)"
     )
 
 

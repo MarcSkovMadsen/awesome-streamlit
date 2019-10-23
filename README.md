@@ -110,8 +110,7 @@ The best way to contribute an awesome link is via a [Pull request](https://githu
 In the pull request you should
 
 - describe why your contribution is awesome and should be included.
-- update the [README.md](https://github.com/MarcSkovMadsen/awesome-streamlit/blob/master/README.md) file
-- update the list of RESOURCES in the [src/db.py](https://github.com/MarcSkovMadsen/awesome-streamlit/blob/master/src/db.py) file.
+- add your resource the list of RESOURCES in the [package/awesome_streamlit/database/resources.py](https://github.com/MarcSkovMadsen/awesome-streamlit/blob/master/package/awesome_streamlit/database/resources.py) file.
 
 Thanks.
 
@@ -122,37 +121,35 @@ The best way to contribute an awesome app is via a [Pull request](https://github
 In the pull request you should
 
 - describe why your contribution is awesome and should be included.
-- add your code in a new `your_app_name.py` file in the `src/pages/gallery/contributions/<insert your_name here>/` folder.
-  - If your code is large feel free to add a `your_app_name` folder of files instead.
-- your code should look like
+- create a new folder `gallery/<your_app_name>` and app file `gallery/<your_app_name>/<your_app_name.py>`.
+- Add your app code conforming to the template
 
 ```python
-"""APP DESCRIPTION"""
+"""
+## APP NAME
+
+DESCRIPTION
+
+Author: [YOUR NAME](https://URL_TO_YOU))\n
+Source: [Github](https://github.com/URL_TO_CODE)
+"""
 import streamlit as st
 
-# Your imports go below
+# Your imports goes below
 
-def write():
-    st.markdown(
-        """
-        ## APP NAME
+def main():
+    st.title("APP NAME")
+    st.markdown("DESCRIPTION")
 
-        DESCRIPTION
-
-        Author: [YOUR NAME](https://URL_TO_YOU))\n
-        Source: [Github](https://github.com/URL_TO_CODE)
-        """
-    )
     # Your code goes below
 
 if __name__ == "__main__":
-    write()
+    main()
 ```
 
 - Please note magic in sub pages does not work. So **don't use magic**.
 - add the `your_app_name` to the
-  - list of APP_CONTRIBUTIONS in the [db.py](https://github.com/MarcSkovMadsen/awesome-streamlit/blob/master/db.py).
-- import your page in the app.py to enable automatic reload. You need to use the full path `import src.pages.gallery.contributions.your_name.your_app_name as your_app_name` for automatic reload to work. Cf. this [issue](https://github.com/MarcSkovMadsen/awesome-streamlit/issues/2)
+  - list of APPS_IN_GALLERY in the [package\awesome_streamlit\database\apps_in_gallery.py](https://github.com/MarcSkovMadsen/awesome-streamlit/blob/master/package\awesome_streamlit\database\apps_in_gallery.py).
 - update the [requirements_base.txt](https://github.com/MarcSkovMadsen/awesome-streamlit/blob/master/requirements_base.txt) file.
     Please specify the required versions.
 - Run the automated tests using `invoke test.all` and fix all errors from your app

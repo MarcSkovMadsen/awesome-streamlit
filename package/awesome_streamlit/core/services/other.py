@@ -6,12 +6,13 @@ pages of the Streamlit App.
   - Pandas transformations
 """
 import logging
+import pathlib
 import urllib.request
 from typing import Optional
 
 import streamlit as st
+
 from awesome_streamlit.database.settings import GITHUB_RAW_URL
-import pathlib
 
 
 @st.cache
@@ -28,16 +29,16 @@ def get_file_content_as_string(url: str) -> str:
     if url.startswith(GITHUB_RAW_URL):
         path = pathlib.Path.cwd() / url.replace(GITHUB_RAW_URL, "")
         if path.exists():
-            with open(path) as file:
+            with open(path, encoding="utf8") as file:
                 content = file.read()
             return content
 
     # Load web else
     try:
         data = urllib.request.urlopen(url).read()
-    except urllib.error.HTTPError as exception:
+    except urllib.error.HTTPError as exception:  # type: ignore
         msg = f"{exception.msg}: {url}"
-        raise urllib.error.HTTPError(
+        raise urllib.error.HTTPError(  # type: ignore
             code=exception.code, msg=msg, hdrs=exception.hdrs, fp=exception.fp, url=url
         ).with_traceback(exception.__traceback__)
 
