@@ -5,8 +5,10 @@ from typing import List
 import streamlit as st
 
 import awesome_streamlit as ast
-from awesome_streamlit.testing.models import \
-    TesTItem  # Special Capitalization is due to PyTest
+from awesome_streamlit.database.apps_in_gallery import GITHUB_RAW_GALLERY_URL
+from awesome_streamlit.testing.models import (
+    TesTItem,
+)  # Special Capitalization is due to PyTest
 
 st.markdown(
     """# Important Notes
@@ -33,10 +35,7 @@ if simple or advanced:
             return [
                 TesTItem(
                     name="Spreadsheet",
-                    location=(
-                        "https://raw.githubusercontent.com/MarcSkovMadsen/awesome-streamlit/master"
-                        "/gallery/spreadsheet.py"
-                    ),
+                    location=GITHUB_RAW_GALLERY_URL + "spreadsheet/spreadsheet.py",
                 )
             ]
 
@@ -54,10 +53,7 @@ if simple or advanced:
     simple = False
     advanced = False
 else:
-    location = (
-        "https://raw.githubusercontent.com/MarcSkovMadsen/awesome-streamlit/master"
-        "/gallery/test_runner_app.py"
-    )
+    location = GITHUB_RAW_GALLERY_URL + "test_runner_app/test_runner_app.py"
     # Todo: Get code from local file instead of url to make sure it's always updated
     python_code = ast.core.services.other.get_file_content_as_string(location)
     st.markdown("### Source Code")

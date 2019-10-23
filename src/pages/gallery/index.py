@@ -47,6 +47,7 @@ def write():
         if ast.database.apps_in_gallery.DEFAULT_APP_IN_GALLERY in apps:
             app_index = apps.index(ast.database.apps_in_gallery.DEFAULT_APP_IN_GALLERY)
 
+    apps = ast.core.services.resources.sort_resources(apps)
     run_app = st.selectbox("Select the App", apps, index=app_index)
     app_credits = st.empty()
 
@@ -132,7 +133,8 @@ def get_apps_by_author(
     Returns:
         List[ast.shared.models.Resource] -- [description]
     """
-    return [resource for resource in resources if resource.author == author]
+    resources = [resource for resource in resources if resource.author == author]
+    return sorted(resources, key=lambda x: x.name)
 
 
 if __name__ == "__main__":
