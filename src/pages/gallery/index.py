@@ -56,7 +56,7 @@ def write():
     )
 
     # Fetch the content
-    python_code = get_file_content_as_string(run_app.url)
+    python_code = ast.core.services.other.get_file_content_as_string(run_app.url)
 
     # Run the child app
     if python_code is not None:
@@ -134,20 +134,6 @@ def get_apps_by_author(
         List[ast.shared.models.Resource] -- [description]
     """
     return [resource for resource in resources if resource.author == author]
-
-
-@st.cache
-def get_file_content_as_string(url: str) -> str:
-    """The url content as a string
-
-    Arguments:
-        url {str} -- The url to request
-
-    Returns:
-        str -- The text of the url
-    """
-    data = urllib.request.urlopen(url).read()
-    return data.decode("utf-8")
 
 
 if __name__ == "__main__":

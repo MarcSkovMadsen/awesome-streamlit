@@ -90,11 +90,11 @@ def voila_section():
 We compare to the Country Indicator app in the Voila Gallery.
 **Click the image**  to see the **source**.
 
-[![Voila country indicators](https://github.com/MarcSkovMadsen/awesome-streamlit/blob/master/package/awesome_streamlit/app/pages/contributions/country_indicators/voila_country_indicators.png?raw=true)](https://github.com/voila-gallery/voila-gallery-country-indicators)
+[![Voila country indicators](https://github.com/MarcSkovMadsen/awesome-streamlit/blob/master/gallery/country_indicators/voila_country_indicators.png?raw=true)](https://github.com/voila-gallery/voila-gallery-country-indicators)
 
 Voila also shows a nice spinner by it self while running some of the cells
 
-![Executing 3 of 6 spinner](https://github.com/MarcSkovMadsen/awesome-streamlit/blob/master/package/awesome_streamlit/app/pages/contributions/country_indicators/voila_executing_3_of_6.png?raw=true)
+![Executing 3 of 6 spinner](https://github.com/MarcSkovMadsen/awesome-streamlit/blob/master/gallery/country_indicators/voila_executing_3_of_6.png?raw=true)
 """
     )
 

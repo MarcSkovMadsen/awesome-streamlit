@@ -55,7 +55,7 @@ def plot_voila_section():
 We compare to the Gaussian Density plot in the Voila Gallery.
 **Click the image** to try it out on Binder. Or click [here](https://github.com/voila-gallery/gaussian-density) to see the source.
 
-[![Binder](https://github.com/MarcSkovMadsen/awesome-streamlit/blob/master/package/awesome_streamlit/app/pages/contributions/interactive_gaussian_plot/interactive_gaussian_plot_reference.png?raw=true)](https://mybinder.org/v2/gh/voila-gallery/gaussian-density/master?urlpath=voila%2Frender%2Findex.ipynb)
+[![Binder](https://github.com/MarcSkovMadsen/awesome-streamlit/blob/master/gallery/interactive_gaussian_plot/interactive_gaussian_plot_reference.png?raw=true)](https://mybinder.org/v2/gh/voila-gallery/gaussian-density/master?urlpath=voila%2Frender%2Findex.ipynb)
 
 """
     )

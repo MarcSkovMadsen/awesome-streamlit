@@ -22,7 +22,16 @@ def get_file_content_as_string(url: str) -> str:
     Returns:
         str -- The text of the url
     """
-    data = urllib.request.urlopen(url).read()
+    try:
+        data = urllib.request.urlopen(url).read()
+    except urllib.error.HTTPError as exception:
+        msg = f"{exception.msg}: {url}"
+        raise urllib.error.HTTPError(
+            code=exception.code, msg=msg, hdrs=exception.hdrs, fp=exception.fp, url=url
+        ).with_traceback(exception.__traceback__)
+
+        # "HTTP Error 404: Not Found: " + url
+
     return data.decode("utf-8")
 
 

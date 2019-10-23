@@ -1,5 +1,8 @@
 """In this module we test the services"""
+import pytest
+
 from awesome_streamlit.core import services
+import urllib.request
 
 
 def test_get_file_content_as_string():
@@ -10,3 +13,16 @@ def test_get_file_content_as_string():
     result = services.get_file_content_as_string(url)
     # Then
     assert result.startswith("# Attribution-ShareAlike 4.0 International")
+
+
+def test_get_file_content_as_string_httperror():
+    """Test that filename is included in HTTPError description"""
+    # Given
+    url = (
+        "https://raw.githubusercontent.com/MarcSkovMadsen/this_file_does_not_exists.md"
+    )
+    # When/ Then
+    with pytest.raises(urllib.error.HTTPError) as exception:
+        result = services.get_file_content_as_string(url)
+    assert str(exception.value) == "HTTP Error 400: Bad Request: " + url
+
