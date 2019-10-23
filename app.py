@@ -6,6 +6,7 @@
 import streamlit as st  # isort:skip
 
 import awesome_streamlit as ast
+
 # Import all needed packages
 # Dont write 'from src.pages import home'. Autoreload will not work!
 # Dont write 'import src.pages.home as home'. Autoreload will not work!

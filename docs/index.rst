@@ -30,6 +30,12 @@ This is the documentation of the **Awesome Streamlit Project** including the
    How to Contribute <_copy_of_project_root/contributing>
    How to Conduct as a Contributor <_copy_of_project_root/code-of-conduct>
 
+.. toctree::
+   :maxdepth: 1
+   :caption: Other
+
+   How to use VS Code with Streamlit <vscode.md>
+
 Indices and tables
 ==================
 

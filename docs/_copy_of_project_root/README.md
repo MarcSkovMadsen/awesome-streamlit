@@ -16,21 +16,16 @@ This project provides
 - A [**vision**](https://github.com/MarcSkovMadsen/awesome-streamlit/blob/master/AWESOME-STREAMLIT.md) on how awesome Streamlit is and can become.
 - A **best practices** example and **starter template** of an awesome, multipage app with an automated CI/ CD pipeline, deployed to the cloud and running in a Docker container.
 
-## Awesome-streamlit.org is not yet performant
+Visit the app at [awesome-streamlit.org](https://awesome-streamlit.org)!
 
-I'm working on getting it performant, but there is an issue. Cf.
 
-- [https://discuss.streamlit.io/t/streamlit-app-deployed-as-azure-webapp-for-containers-becomes-unresponsive-over-time/330]
-  - [https://github.com/streamlit/streamlit/issues/367](https://github.com/streamlit/streamlit/issues/367)
-  - [https://github.com/MarcSkovMadsen/awesome-streamlit/issues/6](https://github.com/MarcSkovMadsen/awesome-streamlit/issues/6)
-
-If you know how to solve this please let me know. Thanks
+![Awesome Streamlit Org Animation](https://github.com/MarcSkovMadsen/awesome-streamlit/blob/master/assets/awesome-streamlit-full-branded.gif?raw=true)
 
 ## The Magic of Streamlit
 
 The only way to truly understand how magical Streamlit is to play around with it. But if you need to be convinced first, then here is the **4 minute introduction** to Streamlit!
 
-Afterwards you can go to the [Streamlit docs](https://streamlit.io/docs/) to get started.
+Afterwards you can go to the [Streamlit docs](https://streamlit.io/docs/) to get started. You might also visit [Awesome Streamlit docs](https://awesome-streamlit.readthedocs.io/en/latest/).
 
 [![Introduction to Streamlit](https://github.com/MarcSkovMadsen/awesome-streamlit/blob/master/assets/youtube-introduction-to-streamlit.png?raw=true)](https://www.youtube.com/watch?v=B2iAodr0fOo&feature=youtu.be "Introduction to streamlit")
 
@@ -44,16 +39,31 @@ A curated list of awesome streamlit resources. Inspired by [awesome-python](http
 - [Jupyter Voila](https://blog.jupyter.org/and-voil%C3%A0-f6a2c08a4a93)
 - [Plotly Dash](https://plot.ly/dash/)
 
-### Apps
+### App
 
 - [Kaggle Mushrooms Dashboard](https://github.com/pierpaolo28/Data-Visualization/tree/master/Streamlit)
 - [Sentiment Analyzer Tool](https://www.linkedin.com/posts/patidarparas13_code-ml-machinelearning-ugcPost-6585745929062703104-ttkv)
-- [SpacyIO Application](https://gist.github.com/ines/b320cb8441b590eedf19137599ce6685)
 - [Streamlit-components-demo App](https://fullstackstation.com/streamlit-components-demo)
+
+### Awesome-Streamlit.org
+
+- [App](https://awesome-streamlit.org>)
+- [Awesome Streamlit Resources List](ttps://github.com/marcskovmadsen/awesome-streamlit)
+- [Docker Image](https://cloud.docker.com/u/marcskovmadsen/repository/docker/marcskovmadsen/awesome-streamlit)
+- [Docs](https://awesome-streamlit.readthedocs.io/en/latest/)
+- [LinkedIn post that started awesome-streamlit.org](https://www.linkedin.com/feed/update/urn:li:activity:6586497522896818176)
+- [Python Package](https://pypi.org/project/awesome-streamlit/)
+- [Repo](https://github.com/marcskovmadsen/awesome-streamlit)
 
 ### Code
 
+- [Deploying Streamlit app to EC2 instance](https://medium.com/@pokepim/deploying-streamlit-app-to-ec2-instance-7a7edeffbb54)
+- [Sentiment Algorithm](https://raw.githubusercontent.com/MarcSkovMadsen/awesome-streamlit/master/gallery/sentiment_analyzer/sentiment_analyzer.py)
+- [SpacyIO](https://gist.githubusercontent.com/ines/b320cb8441b590eedf19137599ce6685/raw/6e0ead5a442fd9c5e3f621a76fba94241cc847ce/streamlit_spacy.py)
+- [Spreadsheet](https://raw.githubusercontent.com/MarcSkovMadsen/awesome-streamlit/master/gallery/spreadsheet.py)
 - [Streamlit-components-demo Code](https://github.com/virusvn/streamlit-components-demo)
+- [Uber Data Explorer App](https://dataexplorerlit.herokuapp.com/)
+- [Uber NYC Pickups](https://raw.githubusercontent.com/streamlit/demo-uber-nyc-pickups/master/app.py)
 
 ### Social
 
@@ -62,6 +72,7 @@ A curated list of awesome streamlit resources. Inspired by [awesome-python](http
 
 ### Streamlit.io
 
+- [Streamlit](https://techcrunch.com/2019/10/01/streamlit-launches-open-source-machine-learning-application-development-framework/)
 - [Streamlit Community](https://discuss.streamlit.io/top/quarterly)
 - [Streamlit Docs](https://streamlit.io/docs/)
 - [Streamlit.io](https://streamlit.io/)
@@ -71,10 +82,6 @@ A curated list of awesome streamlit resources. Inspired by [awesome-python](http
 ### Technical
 
 - [Hacker News technical discussion of how Streamlit work](https://news.ycombinator.com/item?id=21158487)
-
-### The beginning
-
-- [LinkedIn post that started awesome-streamlit.org](https://www.linkedin.com/feed/update/urn:li:activity:6586497522896818176)
 
 ## Governance
 
@@ -103,8 +110,7 @@ The best way to contribute an awesome link is via a [Pull request](https://githu
 In the pull request you should
 
 - describe why your contribution is awesome and should be included.
-- update the [README.md](https://github.com/MarcSkovMadsen/awesome-streamlit/blob/master/README.md) file
-- update the list of RESOURCES in the [src/db.py](https://github.com/MarcSkovMadsen/awesome-streamlit/blob/master/src/db.py) file.
+- add your resource the list of RESOURCES in the [package/awesome_streamlit/database/resources.py](https://github.com/MarcSkovMadsen/awesome-streamlit/blob/master/package/awesome_streamlit/database/resources.py) file.
 
 Thanks.
 
@@ -115,37 +121,35 @@ The best way to contribute an awesome app is via a [Pull request](https://github
 In the pull request you should
 
 - describe why your contribution is awesome and should be included.
-- add your code in a new `your_app_name.py` file in the `src/pages/gallery/contributions/<insert your_name here>/` folder.
-  - If your code is large feel free to add a `your_app_name` folder of files instead.
-- your code should look like
+- create a new folder `gallery/<your_app_name>` and app file `gallery/<your_app_name>/<your_app_name.py>`.
+- Add your app code conforming to the template
 
 ```python
-"""APP DESCRIPTION"""
+"""
+## APP NAME
+
+DESCRIPTION
+
+Author: [YOUR NAME](https://URL_TO_YOU))\n
+Source: [Github](https://github.com/URL_TO_CODE)
+"""
 import streamlit as st
 
-# Your imports go below
+# Your imports goes below
 
-def write():
-    st.markdown(
-        """
-        ## APP NAME
+def main():
+    st.title("APP NAME")
+    st.markdown("DESCRIPTION")
 
-        DESCRIPTION
-
-        Author: [YOUR NAME](https://URL_TO_YOU))\n
-        Source: [Github](https://github.com/URL_TO_CODE)
-        """
-    )
     # Your code goes below
 
 if __name__ == "__main__":
-    write()
+    main()
 ```
 
 - Please note magic in sub pages does not work. So **don't use magic**.
 - add the `your_app_name` to the
-  - list of APPS_IN_GALLERY in the [db.py](https://github.com/MarcSkovMadsen/awesome-streamlit/blob/master/db.py).
-- import your page in the app.py to enable automatic reload. You need to use the full path `import src.pages.gallery.contributions.your_name.your_app_name as your_app_name` for automatic reload to work. Cf. this [issue](https://github.com/MarcSkovMadsen/awesome-streamlit/issues/2)
+  - list of APPS_IN_GALLERY in the [package\awesome_streamlit\database\apps_in_gallery.py](https://github.com/MarcSkovMadsen/awesome-streamlit/blob/master/package\awesome_streamlit\database\apps_in_gallery.py).
 - update the [requirements_base.txt](https://github.com/MarcSkovMadsen/awesome-streamlit/blob/master/requirements_base.txt) file.
     Please specify the required versions.
 - Run the automated tests using `invoke test.all` and fix all errors from your app
