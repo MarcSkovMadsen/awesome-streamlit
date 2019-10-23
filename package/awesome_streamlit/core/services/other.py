@@ -10,6 +10,8 @@ import urllib.request
 from typing import Optional
 
 import streamlit as st
+from awesome_streamlit.database.settings import GITHUB_RAW_URL
+import pathlib
 
 
 @st.cache
@@ -22,6 +24,15 @@ def get_file_content_as_string(url: str) -> str:
     Returns:
         str -- The text of the url
     """
+    # Load local if possible
+    if url.startswith(GITHUB_RAW_URL):
+        path = pathlib.Path.cwd() / url.replace(GITHUB_RAW_URL, "")
+        if path.exists():
+            with open(path) as file:
+                content = file.read()
+            return content
+
+    # Load web else
     try:
         data = urllib.request.urlopen(url).read()
     except urllib.error.HTTPError as exception:
