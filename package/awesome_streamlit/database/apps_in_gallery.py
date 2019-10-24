@@ -28,14 +28,14 @@ APPS_IN_GALLERY = [
         is_awesome=True,
         author=authors.MARC_SKOV_MADSEN,
     ),
-    Resource(
-        name="Gaussian Plot",
-        url=GITHUB_RAW_GALLERY_URL
-        + "interactive_gaussian_plot/interactive_gaussian_plot.py",
-        tags=[tags.CODE, tags.APP_IN_GALLERY, tags.VOILA],
-        is_awesome=True,
-        author=authors.MARC_SKOV_MADSEN,
-    ),
+    # Resource(
+    #     name="Gaussian Plot",
+    #     url=GITHUB_RAW_GALLERY_URL
+    #     + "interactive_gaussian_plot/interactive_gaussian_plot.py",
+    #     tags=[tags.CODE, tags.APP_IN_GALLERY, tags.VOILA],
+    #     is_awesome=True,
+    #     author=authors.MARC_SKOV_MADSEN,
+    # ),
     Resource(
         name="Self Driving Cars",
         url=GITHUB_RAW_GALLERY_URL + "self_driving_cars/self_driving_cars.py",

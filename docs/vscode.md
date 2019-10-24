@@ -33,10 +33,11 @@ The you can execute you *streamlit run* command via the command palette (CTRL+SH
 
 Or you can setup a keyboard shortcut in your keybindings.json file to run Streamlit
 
+![VS Code open keyboard settings](_static/images/vscode_open_keyboardshortcuts.png)
+
 ![VS Code keybindings](_static/images/vscode_keybindings_json.png)
 
 ![VS Code terminal](_static/images/vscode_terminal.png)
-
 
 ## Debugging
 
