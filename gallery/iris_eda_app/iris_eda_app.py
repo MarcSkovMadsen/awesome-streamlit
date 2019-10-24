@@ -5,14 +5,14 @@ Source: [Github](https://github.com/Jcharis/Machine-Learning-Web-Apps/tree/maste
 Credits: Streamlit Team,Marc Skov Madsen(For Awesome-streamlit gallery)
 
 Description
-This is a simple Exploratory Data Analysis of the Iris Dataset depicting the various 
+This is a simple Exploratory Data Analysis of the Iris Dataset depicting the various
 species built with Streamlit.
 We can preview the dataset,column names as well as show some basic plot with matplotlib and
 seaborn.
 There is also an image manipulation of a specie with changeable contrast and width using st.slider()
 
 Purpose
-To show a simple EDA of Iris using Streamlit framework. 
+To show a simple EDA of Iris using Streamlit framework.
 
 """
 import os
@@ -42,7 +42,7 @@ def main():
     	+ This is a simple Exploratory Data Analysis  of the Iris Dataset depicting the various species built with Streamlit.
 
     	#### Purpose
-    	+ To show a simple EDA of Iris using Streamlit framework. 
+    	+ To show a simple EDA of Iris using Streamlit framework.
     	""")
 
     # Your code goes below
@@ -53,7 +53,7 @@ def main():
     @st.cache(persist=True)
     def explore_data(dataset):
     	df = pd.read_csv(os.path.join(dataset))
-    	return df 
+    	return df
 
     # Load Our Dataset
     data = explore_data(my_dataset)
@@ -167,6 +167,4 @@ def main():
     	st.text("Jesse E.Agbe(JCharis)")
     	st.text("Jesus Saves@JCharisTech")
 
-
-if __name__ == "__main__":
-    main()
+main()
