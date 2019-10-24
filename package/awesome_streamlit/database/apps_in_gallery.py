@@ -81,5 +81,12 @@ APPS_IN_GALLERY = [
         is_awesome=True,
         author=authors.KEVIN_ARVAI,
     ),
+    Resource(
+        name="Iris EDA App",
+        url=GITHUB_RAW_GALLERY_URL + "iris_eda_app/iris_eda_app.py",
+        tags=[tags.CODE, tags.APP_IN_GALLERY],
+        is_awesome=True,
+        author=authors.JCHARIS,
+    ),
     DEFAULT_APP_IN_GALLERY,
 ]
