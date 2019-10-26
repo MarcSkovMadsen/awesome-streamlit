@@ -57,7 +57,7 @@ Then you need to insert the following snippet in your code
 
 ```python
 import ptvsd
-ptvsd.enable_attach(address=(‘localhost’, 5678), redirect_output=True)
+ptvsd.enable_attach(address=('localhost', 5678), redirect_output=True)
 ptvsd.wait_for_attach()
 ```
 
@@ -100,3 +100,13 @@ Finally you can attach the debugger by clicking the debugger play button
 and you can debug away.
 
 ![Integrated Debugger](_static/images/vscode_integrated_debugger.png)
+
+#### Using the integraed Debugging Console
+
+When you are running your integrated debugging in VS Code you can use the *Debugging Console* with
+Streamlit of you `import awesome_streamlit as st`. Then you can write dataframes and charts to the browser window
+and take a better look at your data than you can in VS Code.
+
+![Import Streamlit](_static/images/vscode_debugging_console1.png)
+![Import Streamlit](_static/images/vscode_debugging_console2.png)
+![Import Streamlit](_static/images/vscode_debugging_console3.png)
