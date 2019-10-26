@@ -25,7 +25,7 @@ APPS_IN_GALLERY = [
         url=GITHUB_RAW_GALLERY_URL + "yahoo_finance_app/yahoo_finance_app.py",
         tags=[tags.CODE, tags.APP_IN_GALLERY, tags.FINANCE],
         is_awesome=True,
-        author=authors.MARC_SKOV_MADSEN,
+        author=authors.PADUEL,
     ),
     Resource(
         name="Country Indicators",
