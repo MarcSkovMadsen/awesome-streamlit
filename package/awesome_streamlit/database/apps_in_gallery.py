@@ -21,6 +21,13 @@ DEFAULT_APP_IN_GALLERY = Resource(
 )
 APPS_IN_GALLERY = [
     Resource(
+        name="Yahoo Finance",
+        url=GITHUB_RAW_GALLERY_URL + "yahoo_finance_app/yahoo_finance_app.py",
+        tags=[tags.CODE, tags.APP_IN_GALLERY, tags.FINANCE],
+        is_awesome=True,
+        author=authors.MARC_SKOV_MADSEN,
+    ),
+    Resource(
         name="Country Indicators",
         url=GITHUB_RAW_GALLERY_URL
         + "country_indicators/streamlit_country_indicators.py",

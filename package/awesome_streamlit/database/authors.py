@@ -17,6 +17,7 @@ AWESOME_STREAMLIT_ORG = Author(
 ALEXANDER_GARCIA = Author(name="Alexander Garcia", url="https://github.com/djauxel")
 JCHARIS = Author(name="Jesse E. Agbe (JCharis)", url="https://github.com/Jcharis")
 POSEY = Author(name="Luke Posey", url="https://github.com/Poseyy")
+PADUEL = Author(name="Paduel", url="https://github.com/paduel")
 AUTHORS = [
     ALEXANDER_GARCIA,
     INES,

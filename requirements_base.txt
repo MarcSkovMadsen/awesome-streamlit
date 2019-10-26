@@ -58,3 +58,5 @@ pydot==1.4.1
 plotly==4.1.0
 twine==2.0.0
 opencv-python==4.1.1.26
+yfinance==0.1.45
+lxml==4.4.1

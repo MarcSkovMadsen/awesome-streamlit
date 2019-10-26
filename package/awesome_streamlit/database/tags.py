@@ -10,6 +10,7 @@ AWESOME_STREAMLIT_ORG = Tag(name="Awesome-Streamlit.org")
 AWESOMESTREAMLIT_COMPONENT_AUTHOR = Tag(name="The beginning")
 CODE = Tag("Code")
 DEPLOYMENT = Tag(name="Deployment")
+FINANCE = Tag(name="Finance")
 MACHINE_LEARNING = Tag(name="Machine Learning")
 NLP = Tag(name="NLP")
 SOCIAL = Tag(name="Social")
@@ -30,6 +31,7 @@ TAGS = [
     AWESOMESTREAMLIT_COMPONENT_AUTHOR,
     CODE,
     DEPLOYMENT,
+    FINANCE,
     MACHINE_LEARNING,
     NLP,
     SOCIAL,
