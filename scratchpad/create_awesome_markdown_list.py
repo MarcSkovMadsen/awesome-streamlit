@@ -1,5 +1,5 @@
 from awesome_streamlit.database import RESOURCES
-from src.pages.resources import to_markdown
+from awesome_streamlit.core.services.resources import to_markdown
 
 resources = [resource for resource in RESOURCES if resource.is_awesome]
 resources = sorted(resources, key=lambda x: x.name)

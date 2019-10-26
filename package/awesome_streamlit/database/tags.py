@@ -11,6 +11,7 @@ AWESOMESTREAMLIT_COMPONENT_AUTHOR = Tag(name="The beginning")
 CODE = Tag("Code")
 DEPLOYMENT = Tag(name="Deployment")
 FINANCE = Tag(name="Finance")
+IMAGE_RECOGNITION = Tag(name="Image Recognition")
 MACHINE_LEARNING = Tag(name="Machine Learning")
 NLP = Tag(name="NLP")
 SOCIAL = Tag(name="Social")
@@ -24,20 +25,21 @@ VOILA = Tag(name="Voila")
 
 TAGS = [
     ALTERNATIVE,
-    APP_IN_GALLERY,
     APP,
+    APP_IN_GALLERY,
     ARTICLE,
     AWESOME_STREAMLIT_ORG,
     AWESOMESTREAMLIT_COMPONENT_AUTHOR,
     CODE,
     DEPLOYMENT,
     FINANCE,
+    IMAGE_RECOGNITION,
     MACHINE_LEARNING,
     NLP,
     SOCIAL,
+    STREAMLIT_TAG,
     STREAMLIT_COMPONENT,
     STREAMLIT_EXAMPLE,
-    STREAMLIT_TAG,
     TECHNICAL,
     TUTORIAL,
     VIDEO,

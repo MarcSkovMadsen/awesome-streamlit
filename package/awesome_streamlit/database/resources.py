@@ -316,8 +316,49 @@ RESOURCES_STREAMLIT_COMPONENT_APPS = [
     ),
 ]
 
-RESOURCES = (
-    [
+RESOURCES = [
+        Resource(
+            name="Full-Stack AI: Building a UI for Your Latest AI Project in No Time at All",
+            url="https://towardsdatascience.com/full-stack-ai-building-a-ui-for-your-latest-ai-project-in-no-time-at-all-7e5c8fd4eafd",
+            is_awesome=True,
+            tags=[tags.TUTORIAL, tags.ARTICLE, tags.IMAGE_RECOGNITION],
+        ),
+        Resource(
+            name="How To Deploy Streamlit Apps (Using Heroku)",
+            url="https://www.youtube.com/watch?v=skpiLtEN3yk&feature=youtu.be",
+            is_awesome=True,
+            tags=[tags.TUTORIAL, tags.VIDEO, tags.DEPLOYMENT],
+        ),
+        Resource(
+            name="How to create and deploy data exploration web app easily using python",
+            url="https://github.com/robmarkcole/mqtt-camera-streamer",
+            is_awesome=True,
+            tags=[tags.APP, tags.CODE, tags.DEPLOYMENT],
+        ),
+        Resource(
+            name="How to create and deploy data exploration web app easily using python",
+            url="https://medium.com/@ansjin/how-to-create-and-deploy-data-exploration-web-app-easily-using-python-a03c4b8a1f3e",
+            is_awesome=True,
+            tags=[tags.TUTORIAL, tags.ARTICLE, tags.DEPLOYMENT],
+        ),
+        Resource(
+            name="How to write web apps using simple python for data scientists",
+            url="https://towardsdatascience.com/how-to-write-web-apps-using-simple-python-for-data-scientists-a227a1a01582",
+            is_awesome=True,
+            tags=[tags.TUTORIAL, tags.ARTICLE],
+        ),
+        Resource(
+            name="A step by step guide to running streamlit pytorch and bert on a cheap aws instance",
+            url="https://fuzzyblog.io/blog/python/2019/10/17/a-step-by-step-guide-to-running-streamlit-pytorch-and-bert-on-a-cheap-aws-instance.html",
+            is_awesome=True,
+            tags=[tags.TUTORIAL, tags.ARTICLE, tags.DEPLOYMENT],
+        ),
+        Resource(
+            name="How to build your machine learning app in 3 simple steps",
+            url="https://towardsdatascience.com/how-to-build-your-machine-learning-app-in-3-simple-steps-d56ed910355c",
+            is_awesome=True,
+            tags=[tags.TUTORIAL, tags.ARTICLE, tags.DEPLOYMENT],
+        ),
         Resource(
             name="Panel",
             url="http://panel.pyviz.org/",
@@ -332,7 +373,7 @@ RESOURCES = (
             author=authors.POSEY,
         ),
         Resource(
-            name="Building an Iris EDA App with Streamlit and Python",
+            name="NLP Based App with Streamlit",
             url=(
                 "https://github.com/Jcharis/Streamlit_DataScience_Apps/tree/"
                 "master/NLP_App_with_Streamlit_Python"
@@ -369,11 +410,11 @@ RESOURCES = (
             name="Hello-streamlit deployed on Glitch",
             url="https://glitch.com/~hello-streamlit",
             is_awesome=True,
-            tags=[tags.DEPLOYMENT],
+            tags=[tags.APP, tags.DEPLOYMENT],
             author=authors.ALEXANDER_GARCIA,
         ),
         Resource(
-            name="Awesome Streamlit Resources List",
+            name="Resources List",
             url="https://github.com/marcskovmadsen/awesome-streamlit",
             is_awesome=True,
             tags=[tags.AWESOME_STREAMLIT_ORG],
@@ -531,12 +572,7 @@ RESOURCES = (
             tags=[CODE],
             is_awesome=True,
         ),
-    ]
-    + STREAMLIT_EXAMPLE_APPS
-    + STREAMLIT_EXAMPLE_APPS_FAILED_TEST
-    + RESOURCES_STREAMLIT_COMPONENT_APPS
-    + APPS_IN_GALLERY
-)
+    ] + STREAMLIT_EXAMPLE_APPS + STREAMLIT_EXAMPLE_APPS_FAILED_TEST + RESOURCES_STREAMLIT_COMPONENT_APPS + APPS_IN_GALLERY
 
 TAGS = []
 for resource in RESOURCES:
