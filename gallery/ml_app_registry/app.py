@@ -139,14 +139,14 @@ def get_local_path(file: str) -> pathlib.Path:
 @st.cache
 def get_pickle(file: str):
     """An instance of an object from the pickle file"""
-    local_file = get_local_path(file)
-    if local_file.exists() and False:
-        with open(local_file, "rb") as open_file:
-            return pickle.load(open_file)
-    else:
-        github_url = GITHUB_ROOT + file
-        with urllib.request.urlopen(github_url) as open_file:  # type: ignore
-            return pickle.load(open_file)
+    # local_file = get_local_path(file)
+    # if local_file.exists() and False:
+    #     with open(local_file, "rb") as open_file:
+    #         return pickle.load(open_file)
+    # else:
+    github_url = GITHUB_ROOT + file
+    with urllib.request.urlopen(github_url) as open_file:  # type: ignore
+        return pickle.load(open_file)
 
 
 main()
