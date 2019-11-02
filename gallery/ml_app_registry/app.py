@@ -138,13 +138,11 @@ def sentiment_analyzer_scores(sentence) -> str:
     return f"The Sentiment is ==> {score}"
 
 
-@st.cache
 def get_local_path(file: str) -> pathlib.Path:
     """A Path to the file"""
     return LOCAL_ROOT / file
 
 
-@st.cache(allow_output_mutation=True)
 def get_pickle(file: str):
     """An instance of an object from the pickle file"""
     local_file = get_local_path(file)
