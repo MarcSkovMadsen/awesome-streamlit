@@ -318,6 +318,20 @@ RESOURCES_STREAMLIT_COMPONENT_APPS = [
 
 RESOURCES = [
         Resource(
+            name="Mining and Classifying Medical Text Documents",
+            url="https://github.com/gtancev/MLML/blob/master/nlp_app.py",
+            is_awesome=True,
+            tags=[tags.CODE, tags.APP],
+            author=authors.GEORGI_TANCEV,
+        ),
+        Resource(
+            name="Mining and Classifying Medical Text Documents",
+            url="https://towardsdatascience.com/mining-and-classifying-medical-text-documents-1876462f73bc",
+            is_awesome=True,
+            tags=[tags.TUTORIAL, tags.ARTICLE, tags.NLP, tags.DEPLOYMENT],
+            author=authors.GEORGI_TANCEV,
+        ),
+        Resource(
             name="Full-Stack AI: Building a UI for Your Latest AI Project in No Time at All",
             url="https://towardsdatascience.com/full-stack-ai-building-a-ui-for-your-latest-ai-project-in-no-time-at-all-7e5c8fd4eafd",
             is_awesome=True,
