@@ -267,5 +267,4 @@ def get_mt_samples() -> pd.DataFrame:
     return pd.read_csv(location, index_col=0,usecols=[0,1,2,4]).dropna()
 
 
-if __name__ == "__main__":
-    main()
+main()
