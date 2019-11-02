@@ -1,4 +1,4 @@
-"""[summary]
+"""Medical Language Model Learner (MLML)
 
 Author: Georgi Tancev. https://github.com/gtancev
 Source: https://github.com/gtancev/MLML/blob/master/nlp_app.py
@@ -6,6 +6,11 @@ Article: https://towardsdatascience.com/mining-and-classifying-medical-text-docu
 Data: https://www.kaggle.com/tboyle10/medicaltranscriptions/
 Credits: Marc Skov Madsen (for refactoring)
 """
+# Todo:
+# 1. Do something about charts. They don't have the right size and the text characters do not
+# look well.
+# 2. Refactor into smaller functions. Some with @st.cache to speed up the application.
+
 from __future__ import division, unicode_literals
 
 import itertools
