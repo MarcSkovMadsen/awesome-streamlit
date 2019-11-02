@@ -318,6 +318,20 @@ RESOURCES_STREAMLIT_COMPONENT_APPS = [
 
 RESOURCES = [
         Resource(
+            name="Machine Learning App Registry",
+            url="https://ml-app-rig.herokuapp.com/",
+            is_awesome=False,
+            tags=[tags.APP],
+            author=authors.BOADZIE_DANIEL,
+        ),
+        Resource(
+            name="Machine Learning App Registry",
+            url="https://github.com/Boadzie/ML-App-Registry",
+            is_awesome=False,
+            tags=[tags.CODE, tags.APP],
+            author=authors.BOADZIE_DANIEL,
+        ),
+        Resource(
             name="Mining and Classifying Medical Text Documents",
             url="https://github.com/gtancev/MLML/blob/master/nlp_app.py",
             is_awesome=True,
