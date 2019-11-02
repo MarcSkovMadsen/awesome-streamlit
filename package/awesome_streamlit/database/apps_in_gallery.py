@@ -21,6 +21,13 @@ DEFAULT_APP_IN_GALLERY = Resource(
 )
 APPS_IN_GALLERY = [
     Resource(
+        name="ML App registry",
+        url=GITHUB_RAW_GALLERY_URL + "ml_app_registry/app.py",
+        tags=[tags.CODE, tags.APP_IN_GALLERY, tags.MACHINE_LEARNING],
+        is_awesome=True,
+        author=authors.BOADZIE_DANIEL,
+    ),
+    Resource(
         name="Medical Language Learner Model",
         url=GITHUB_RAW_GALLERY_URL
         + "medical_language_learner/medical_language_learner.py",
