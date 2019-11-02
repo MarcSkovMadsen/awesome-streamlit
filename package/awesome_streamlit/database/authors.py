@@ -18,7 +18,7 @@ ALEXANDER_GARCIA = Author(name="Alexander Garcia", url="https://github.com/djaux
 JCHARIS = Author(name="Jesse E. Agbe (JCharis)", url="https://github.com/Jcharis")
 POSEY = Author(name="Luke Posey", url="https://github.com/Poseyy")
 PADUEL = Author(name="Paduel", url="https://github.com/paduel")
-GEORGI_TANCEV = Author(name="Geori Tancev", url="https://github.com/gtancev")
+GEORGI_TANCEV = Author(name="Georgi Tancev", url="https://github.com/gtancev")
 AUTHORS = [
     ALEXANDER_GARCIA,
     GEORGI_TANCEV,

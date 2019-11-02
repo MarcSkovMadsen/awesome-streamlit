@@ -45,7 +45,7 @@ plt.rcParams['font.size'] = 6.0
 LOGGER = get_logger(__name__)
 
 def main():
-    st.title("Medical Language Model Learner (MLML)")
+    st.title("Medical Language Model Learner")
     st.sidebar.markdown("""
 Author: [Georgi Tancev](https://github.com/gtancev)
 
