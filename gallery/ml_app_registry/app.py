@@ -136,6 +136,7 @@ def get_local_path(file: str) -> pathlib.Path:
     return LOCAL_ROOT / file
 
 
+@st.cache
 def get_pickle(file: str):
     """An instance of an object from the pickle file"""
     local_file = get_local_path(file)
