@@ -21,6 +21,14 @@ DEFAULT_APP_IN_GALLERY = Resource(
 )
 APPS_IN_GALLERY = [
     Resource(
+        name="Medical Language Learner Model",
+        url=GITHUB_RAW_GALLERY_URL
+        + "medical_language_learner/medical_language_learner.py",
+        tags=[tags.CODE, tags.APP_IN_GALLERY, tags.NLP],
+        is_awesome=True,
+        author=authors.GEORGI_TANCEV,
+    ),
+    Resource(
         name="Yahoo Finance",
         url=GITHUB_RAW_GALLERY_URL + "yahoo_finance_app/yahoo_finance_app.py",
         tags=[tags.CODE, tags.APP_IN_GALLERY, tags.FINANCE],
