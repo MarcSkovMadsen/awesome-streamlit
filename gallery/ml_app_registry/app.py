@@ -69,22 +69,19 @@ def sallery_predictor_component():
     A user can input some of his developer features like years of experience and he will get a
     prediction of his sallery
     """
-
     st.markdown("## App 2: Salary Predictor For Techies")
-    model = get_pickle(MODEL_PKL_FILE)
 
     experience = st.number_input("Years of Experience")
     test_score = st.number_input("Aptitude Test score")
     interview_score = st.number_input("Interview Score")
 
-    features = [experience, test_score, interview_score]
-
-    final_features = [np.array(features)]
-
     if st.button("Predict"):
+        model = get_pickle(MODEL_PKL_FILE)
+        features = [experience, test_score, interview_score]
+        final_features = [np.array(features)]
         prediction = model.predict(final_features)
         st.balloons()
-        st.success(f"Your Salary per anum is: Ghc {prediction[0]}")
+        st.success(f"Your Salary per anum is: Ghc {prediction[0]:.0f}")
 
 
 def iris_predictor_component():
@@ -95,19 +92,15 @@ def iris_predictor_component():
     """
     st.markdown("## App 3: Iris Flower Classifier")
 
-    # load model
-    iris = get_pickle(IRIS_PKL_FILE)
-
     sepal_length = st.number_input("Sepal Length")
     sepal_width = st.number_input("Sepal Width")
     petal_length = st.number_input("Petal Length")
     petal_width = st.number_input("Petal Width")
 
-    features = [sepal_length, sepal_width, petal_length, petal_width]
-
-    final_features = [np.array(features)]
-
     if st.button("Report"):
+        iris = get_pickle(IRIS_PKL_FILE)
+        features = [sepal_length, sepal_width, petal_length, petal_width]
+        final_features = [np.array(features)]
         prediction = iris.predict(final_features)
         prediction = str(prediction).replace("']", "").split("-")
         st.balloons()
@@ -138,11 +131,13 @@ def sentiment_analyzer_scores(sentence) -> str:
     return f"The Sentiment is ==> {score}"
 
 
+@st.cache
 def get_local_path(file: str) -> pathlib.Path:
     """A Path to the file"""
     return LOCAL_ROOT / file
 
 
+@st.cache
 def get_pickle(file: str):
     """An instance of an object from the pickle file"""
     local_file = get_local_path(file)
@@ -151,7 +146,7 @@ def get_pickle(file: str):
             return pickle.load(open_file)
     else:
         github_url = GITHUB_ROOT + file
-        with urllib.request.urlopen(github_url, "rb") as open_file:  # type: ignore
+        with urllib.request.urlopen(github_url) as open_file:  # type: ignore
             return pickle.load(open_file)
 
 
