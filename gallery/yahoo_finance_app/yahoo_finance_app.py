@@ -18,7 +18,7 @@ def load_data():
     return components.drop("SEC filings", axis=1).set_index("Symbol")
 
 
-@st.cache(ignore_hash=True)
+@st.cache(allow_output_mutation=True)
 def load_quotes(asset):
     return yfinance.download(asset)
 
