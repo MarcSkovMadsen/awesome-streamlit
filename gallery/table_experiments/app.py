@@ -6,8 +6,8 @@ import pandas as pd
 import plotly.graph_objects as go
 import streamlit as st
 
-LOCAL_ROOT = pathlib.Path.cwd() / "gallery" / "table_exploration"
-GITHUB_ROOT = "https://raw.githubusercontent.com/MarcSkovMadsen/awesome-analytics-apps/master/gallery/table_exploration/"
+LOCAL_ROOT = pathlib.Path.cwd() / "gallery" / "table_experiments"
+GITHUB_ROOT = "https://raw.githubusercontent.com/MarcSkovMadsen/awesome-analytics-apps/master/gallery/table_experiments/"
 ZIP_FILE_2019 = "developer_survey_2019.zip"
 RESULTS_2019 = "survey_results_public.csv"
 SCHEMA_2019 = "survey_results_schema.csv"
@@ -17,7 +17,7 @@ DEFAULT_NUMBER_OF_COLUMNS = 5
 
 
 def main():
-    st.title("Table Explorations App")
+    st.title("Table Experiments")
     st.markdown(
         """
 The purpose of this app is to explore the possibilities for showing and working
@@ -30,12 +30,20 @@ NOTE. THIS IS WORK IN PROGRESS. FEEL FREE TO CONTRIBUTE.
     results = read_results()
 
     st.header("Possibilities for showing and working with dataframe")
-    table_type = st.radio("Select table type", options=["Streamlit dataframe", "Streamlit table", "Plotly table", "Slick Grid"])
-    if table_type=="Streamlit dataframe":
+    table_type = st.radio(
+        "Select table type",
+        options=[
+            "Streamlit dataframe",
+            "Streamlit table",
+            "Plotly table",
+            "Slick Grid",
+        ],
+    )
+    if table_type == "Streamlit dataframe":
         streamlit_dataframe(results)
-    elif table_type=="Streamlit table":
+    elif table_type == "Streamlit table":
         streamlit_table(results)
-    elif table_type=="Plotly table":
+    elif table_type == "Plotly table":
         plotly_table(results)
     else:
         slick_grid(results)
@@ -101,7 +109,6 @@ Cons
     )
 
 
-
 def plotly_table(results):
     st.header("Plotly Table (go.Table)")
     number_of_rows, number_of_columns, style = select_number_of_rows_and_columns(
@@ -118,10 +125,7 @@ def plotly_table(results):
         fig = go.Figure(
             data=[
                 go.Table(
-                    header=dict(
-                        values=header_values
-                    ),
-                    cells=dict(values=cell_values)
+                    header=dict(values=header_values), cells=dict(values=cell_values)
                 )
             ]
         )
@@ -158,20 +162,22 @@ References:
 """
     )
 
+
 def slick_grid(results):
     st.header("Slickgrid")
     st.markdown(
-"""
+        """
 The SlickGrid example does not work because I cannot inject javascript <script>...</script> tags.
 
 References:
 
 - [SlickGrid](https://slickgrid.net/)
 - [SlickGrid examples](https://github.com/mleibman/SlickGrid/tree/gh-pages/examples)
-""")
+"""
+    )
 
     st.markdown(
-"""
+        """
 <link rel="stylesheet" href="https://mleibman.github.io/SlickGrid/slick.grid.css" type="text/css"/>
 <link rel="stylesheet" href="https://mleibman.github.io/SlickGrid/css/smoothness/jquery-ui-1.8.16.custom.css" type="text/css"/>
 <link rel="stylesheet" href="https://mleibman.github.io/SlickGrid/examples/examples.css" type="text/css"/>
@@ -225,15 +231,16 @@ References:
     grid = new Slick.Grid("#myGrid", data, columns, options);
   })
 </script>
-""", unsafe_allow_html=True)
-
+""",
+        unsafe_allow_html=True,
+    )
 
 
 def select_number_of_rows_and_columns(results: pd.DataFrame, key: str):
     rows = st.selectbox(
         "Select number of table rows to display",
-        options=[5,10,50, 100,500, 1000,5000, 10000,50000, len(results)],
-        key=key
+        options=[5, 10, 50, 100, 500, 1000, 5000, 10000, 50000, len(results)],
+        key=key,
     )
     columns = st.slider(
         "Select number of table columns to display",
@@ -249,6 +256,7 @@ def select_number_of_rows_and_columns(results: pd.DataFrame, key: str):
 @st.cache
 def _filter_results(results, number_of_rows, number_of_columns) -> pd.DataFrame:
     return results.iloc[0:number_of_rows, 0:number_of_columns]
+
 
 def filter_results(results, number_of_rows, number_of_columns, style) -> pd.DataFrame:
     filter_table = _filter_results(results, number_of_rows, number_of_columns)
@@ -266,8 +274,7 @@ def set_styles(results):
         dict(selector="caption", props=[("caption-side", "bottom")]),
     ]
     return (
-        results.style
-        .set_table_styles(table_styles)
+        results.style.set_table_styles(table_styles)
         .set_properties(**{"background-color": "blue", "color": "white"})
         .set_caption("This is a caption")
     )

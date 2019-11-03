@@ -21,7 +21,7 @@ DEFAULT_APP_IN_GALLERY = Resource(
 )
 APPS_IN_GALLERY = [
     Resource(
-        name="Table Experiments App",
+        name="Table Experiments",
         url=GITHUB_RAW_GALLERY_URL + "table_experiments/app.py",
         tags=[tags.CODE, tags.APP_IN_GALLERY],
         is_awesome=True,
