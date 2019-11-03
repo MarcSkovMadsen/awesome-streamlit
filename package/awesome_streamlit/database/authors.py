@@ -20,6 +20,7 @@ POSEY = Author(name="Luke Posey", url="https://github.com/Poseyy")
 PADUEL = Author(name="Paduel", url="https://github.com/paduel")
 GEORGI_TANCEV = Author(name="Georgi Tancev", url="https://github.com/gtancev")
 BOADZIE_DANIEL = Author(name="Boadzie Daniel", url="https://github.com/Boadzie")
+NOAH_SAUNDERS = Author(name="Noah Saunders", url="https://morioh.com/p/7066169a0314")
 AUTHORS = [
     ALEXANDER_GARCIA,
     BOADZIE_DANIEL,
@@ -28,6 +29,7 @@ AUTHORS = [
     JCHARIS,
     KEVIN_ARVAI,
     MARC_SKOV_MADSEN,
+    NOAH_SAUNDERS,
     PARAS_PATIDAR,
     POSEY,
     STREAMLIT_AUTHOR,

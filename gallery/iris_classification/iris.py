@@ -43,6 +43,8 @@ def main():
     if not selected_species_df.empty:
         show_scatter_plot(selected_species_df)
         show_histogram_plot(selected_species_df)
+    else:
+        st.info("Please select one of more varieties above for further exploration.")
 
     show_machine_learning_model(source_df)
 
