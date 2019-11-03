@@ -15,7 +15,7 @@ from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 APP_FILE = "app.py"
 MODEL_PKL_FILE = "model.pkl"
 IRIS_PKL_FILE = "iris.pkl"
-GALLERY_FOLDER = "iris_classification"
+GALLERY_FOLDER = "ml_app_registry"
 LOCAL_ROOT = pathlib.Path(__file__).parent
 GITHUB_ROOT = (
     "https://raw.githubusercontent.com/MarcSkovMadsen/awesome-streamlit/"
