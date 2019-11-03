@@ -284,6 +284,7 @@ def _get_zip_file() -> zipfile.ZipFile:
     return zipfile.ZipFile(LOCAL_ROOT / ZIP_FILE_2019)
 
 
+@st.cache
 def read_results() -> pd.DataFrame:
     """The Stack Overflow Developer Survey Results
 
