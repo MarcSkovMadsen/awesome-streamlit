@@ -9,7 +9,6 @@ Source Data: https://gist.github.com/netj/8836201
 
 import pathlib
 import urllib.request
-from typing import Tuple
 
 import pandas as pd
 import plotly.express as px
@@ -29,81 +28,117 @@ GITHUB_ROOT = (
 
 
 def main():
+    """## Main function of Iris Classifier App
+
+    Run this to run the app.
+    """
     st.title("Iris Classifier")
     st.header("Data Exploration")
 
     source_df = read_iris_csv()
+    st.subheader("Source Data")
     if st.checkbox("Show Source Data"):
         st.write(source_df)
 
     selected_species_df = select_species(source_df)
-
-    show_scatter_plot(selected_species_df)
-
-    show_histogram_plot(selected_species_df)
+    if not selected_species_df.empty:
+        show_scatter_plot(selected_species_df)
+        show_histogram_plot(selected_species_df)
 
     show_machine_learning_model(source_df)
 
 
-def show_machine_learning_model(source_df):
-    st.header("Machine Learning models")
-    features = source_df[
-        ["sepal.length", "sepal.width", "petal.length", "petal.width"]
-    ].values
-    labels = source_df["variety"].values
-    X_train, X_test, y_train, y_test = train_test_split(
-        features, labels, train_size=0.7, random_state=1
+def select_species(source_df: pd.DataFrame) -> pd.DataFrame:
+    """## Component for selecting one of more species for exploration
+
+    Arguments:
+        source_df {pd.DataFrame} -- The source iris dataframe
+
+    Returns:
+        pd.DataFrame -- A sub dataframe having data for the selected species
+    """
+    selected_species = st.multiselect(
+        "Select iris varieties for further exploration below",
+        source_df["variety"].unique(),
     )
-    alg = ["Decision Tree", "Support Vector Machine"]
-    classifier = st.selectbox("Which algorithm?", alg)
-
-    if classifier == "Decision Tree":
-        dtc = DecisionTreeClassifier()
-        dtc.fit(X_train, y_train)
-        acc = dtc.score(X_test, y_test)
-        st.write("Accuracy: ", acc)
-        pred_dtc = dtc.predict(X_test)
-        cm_dtc = confusion_matrix(y_test, pred_dtc)
-        st.write("Confusion matrix: ", cm_dtc)
-    elif classifier == "Support Vector Machine":
-        svm = SVC()
-        svm.fit(X_train, y_train)
-        acc = svm.score(X_test, y_test)
-        st.write("Accuracy: ", acc)
-        pred_svm = svm.predict(X_test)
-        cm = confusion_matrix(y_test, pred_svm)
-        st.write("Confusion matrix: ", cm)
+    selected_species_df = source_df[(source_df["variety"].isin(selected_species))]
+    if selected_species:
+        st.write(selected_species_df)
+    return selected_species_df
 
 
-def show_histogram_plot(selected_species_df):
+def show_scatter_plot(selected_species_df: pd.DataFrame):
+    """## Component to show a scatter plot of two features for the selected species
+
+    Arguments:
+        selected_species_df {pd.DataFrame} -- A DataFrame with the same columns as the
+            source_df iris dataframe
+    """
+    st.subheader("Scatter plot")
+    feature_x = st.selectbox("Which feature on x?", selected_species_df.columns[0:4])
+    feature_y = st.selectbox("Which feature on y?", selected_species_df.columns[0:4])
+
+    fig = px.scatter(selected_species_df, x=feature_x, y=feature_y, color="variety")
+    st.plotly_chart(fig)
+
+
+def show_histogram_plot(selected_species_df: pd.DataFrame):
+    """## Component to show a histogram of the selected species and a selected feature
+
+    Arguments:
+        selected_species_df {pd.DataFrame} -- A DataFrame with the same columns as the
+            source_df iris dataframe
+    """
     st.subheader("Histogram")
     feature = st.selectbox("Which feature?", selected_species_df.columns[0:4])
     fig2 = px.histogram(selected_species_df, x=feature, color="variety", marginal="rug")
     st.plotly_chart(fig2)
 
 
-def select_species(source_df):
-    selected_species = st.multiselect(
-        "Select iris varieties for further exploration", source_df["variety"].unique()
+def show_machine_learning_model(source_df: pd.DataFrame):
+    """Component to show the performance of an ML Algo trained on the iris data set
+
+    Arguments:
+        source_df {pd.DataFrame} -- The source iris data set
+
+    Raises:
+        NotImplementedError: Raised if a not supported model is selected
+    """
+    st.header("Machine Learning models")
+    features = source_df[
+        ["sepal.length", "sepal.width", "petal.length", "petal.width"]
+    ].values
+    labels = source_df["variety"].values
+    x_train, x_test, y_train, y_test = train_test_split(
+        features, labels, train_size=0.7, random_state=1
     )
-    selected_species_df = source_df[(source_df["variety"].isin(selected_species))]
-    st.write(selected_species_df)
-    return selected_species_df
+    alg = ["Decision Tree", "Support Vector Machine"]
+    classifier = st.selectbox("Which algorithm?", alg)
 
+    if classifier == "Decision Tree":
+        model = DecisionTreeClassifier()
+    elif classifier == "Support Vector Machine":
+        model = SVC()
+    else:
+        raise NotImplementedError()
 
-def show_scatter_plot(selected_species_df: pd.DataFrame):
-    st.subheader("Scatter plot")
-    col1 = st.selectbox("Which feature on x?", selected_species_df.columns[0:4])
-    col2 = st.selectbox("Which feature on y?", selected_species_df.columns[0:4])
-
-    fig = px.scatter(selected_species_df, x=col1, y=col2, color="variety")
-    st.plotly_chart(fig)
+    model.fit(x_train, y_train)
+    acc = model.score(x_test, y_test)
+    st.write("Accuracy: ", acc.round(2))
+    pred_model = model.predict(x_test)
+    cm_model = confusion_matrix(y_test, pred_model)
+    st.write("Confusion matrix: ", cm_model)
 
 
 @st.cache
 def read_iris_csv() -> pd.DataFrame:
-    return pd.read_csv(LOCAL_ROOT / IRIS_CSV_FILE)
-    # return pd.read_csv(GITHUB_ROOT + IRIS_CSV_FILE)
+    """## Iris DataFrame
+
+    Returns:
+        pd.DataFrame -- A dataframe with the source iris data
+    """
+    # return pd.read_csv(LOCAL_ROOT / IRIS_CSV_FILE)
+    return pd.read_csv(GITHUB_ROOT + IRIS_CSV_FILE)
 
 
 main()
