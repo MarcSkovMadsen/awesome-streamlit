@@ -3,7 +3,7 @@ App: Iris Classifier
 
 Author: Noah Saunders
 Credits: Marc Skov Madsen (for refactoring)
-Source Code: https://morioh.com/p/7066169a0314
+Source Code/ Article: https://morioh.com/p/7066169a0314
 Source Data: https://gist.github.com/netj/8836201
 """
 
