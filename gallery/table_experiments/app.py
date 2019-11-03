@@ -6,7 +6,7 @@ import pandas as pd
 import plotly.graph_objects as go
 import streamlit as st
 
-LOCAL_ROOT = pathlib.Path(__file__).parent
+LOCAL_ROOT = pathlib.Path.cwd() / "gallery" / "table_exploration"
 GITHUB_ROOT = "https://raw.githubusercontent.com/MarcSkovMadsen/awesome-analytics-apps/master/gallery/table_exploration/"
 ZIP_FILE_2019 = "developer_survey_2019.zip"
 RESULTS_2019 = "survey_results_public.csv"
