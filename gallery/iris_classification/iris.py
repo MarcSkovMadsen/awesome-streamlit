@@ -8,7 +8,6 @@ Source Data: https://gist.github.com/netj/8836201
 """
 
 import pathlib
-import urllib.request
 
 import pandas as pd
 import plotly.express as px
