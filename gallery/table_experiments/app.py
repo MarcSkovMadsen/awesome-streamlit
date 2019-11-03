@@ -22,6 +22,8 @@ def main():
         """
 The purpose of this app is to explore the possibilities for showing and working
 with tables in Streamlit
+
+NOTE. THIS IS WORK IN PROGRESS. FEEL FREE TO CONTRIBUTE.
 """
     )
 
