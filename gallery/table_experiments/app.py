@@ -246,7 +246,7 @@ def select_number_of_rows_and_columns(results: pd.DataFrame, key: str):
     return rows, columns, style
 
 
-# @st.cache
+@st.cache
 def _filter_results(results, number_of_rows, number_of_columns) -> pd.DataFrame:
     return results.iloc[0:number_of_rows, 0:number_of_columns]
 
@@ -277,7 +277,7 @@ def _get_zip_file() -> zipfile.ZipFile:
     return zipfile.ZipFile(LOCAL_ROOT / ZIP_FILE_2019)
 
 
-# @st.cache
+@st.cache
 def read_results() -> pd.DataFrame:
     """The Stack Overflow Developer Survey Results
 
@@ -288,7 +288,7 @@ def read_results() -> pd.DataFrame:
         return pd.read_csv(file)
 
 
-# @st.cache
+@st.cache
 def read_schema() -> pd.DataFrame:
     """The Stack Overflow Developer Survey Questions
 
