@@ -1,7 +1,13 @@
 """This application experiments with the (grid) layout and some styling
 
 Can we make a compact dashboard across several columns and with a dark theme?"""
+from typing import List, Optional
+
+import markdown
+import pandas as pd
+import plotly as py
 import streamlit as st
+from plotly import express as px
 
 
 def main():
@@ -12,85 +18,168 @@ def main():
 # Layout and Style Experiments
 
 The basic question is. Can we create a multi-column dashboard with plots, numbers and text using
-the CSS Grid? And preferably with a dark theme.
+the [CSS Grid](https://gridbyexample.com/examples)? And preferably with a dark theme.
 """
     )
 
     select_block_container_style()
+    add_resources_section()
+    with Grid("1 1") as grid:
+        grid.cell(
+            class_="a",
+            grid_column_start=2,
+            grid_column_end=3,
+            grid_row_start=1,
+            grid_row_end=2,
+        ).markdown("# This is A Markdown Cell")
+        grid.cell("b", 2, 3, 2, 3).text("The cell to the left is a dataframe")
+        grid.cell("c", 3, 4, 2, 3).plotly_chart(get_plotly_fig())
+        grid.cell("d", 1, 2, 1, 3).dataframe(get_dataframe())
+        grid.cell("e", 3, 4, 1, 2).text("This is E Text Cell")
 
-    st.markdown(
+
+
+def add_resources_section():
+    st.sidebar.header("Add_resources_section")
+    st.sidebar.markdown(
         """
-    <style>
-       .wrapper {
-        display: grid;
-        grid-template-columns: 100px 100px 100px;
-        grid-gap: 10px;
-        background-color: #fff;
-        color: #444;
-        }
-
-        .box {
-        background-color: #444;
-        color: #fff;
-        border-radius: 5px;
-        padding: 20px;
-        font-size: 150%;
-        }
-
-        .a {
-                grid-column-start: 2;
-                grid-column-end: 3;
-                grid-row-start: 1;
-                grid-row-end: 2;
-            }
-        .b {
-            grid-column-start: 2;
-            grid-column-end: 3;
-            grid-row-start: 2;
-            grid-row-end: 3;
-        }
-        .c {
-            grid-column-start: 3;
-            grid-column-end: 4;
-            grid-row-start: 2;
-            grid-row-end: 3;
-        }
-        .d {
-            grid-column-start: 1;
-            grid-column-end: 2;
-            grid-row-start: 1;
-            grid-row-end: 2;
-        }
-        .e {
-            grid-column-start: 1;
-            grid-column-end: 2;
-            grid-row-start: 2;
-            grid-row-end: 3;
-        }
-        .f {
-            grid-column-start: 3;
-            grid-column-end: 4;
-            grid-row-start: 1;
-            grid-row-end: 2;
-        }
-    </style>
-    <div class="wrapper">
-    <div class="box a">A</div>
-    <div class="box b">B</div>
-    <div class="box c">C</div>
-    <div class="box d">D</div>
-    <div class="box e">E</div>
-    <div class="box f">F</div>
-    </div>
-""",
-        unsafe_allow_html=True,
+- [gridbyexample.com] (https://gridbyexample.com/examples/)
+"""
     )
+
+
+class Cell:
+    def __init__(
+        self,
+        class_: str = None,
+        grid_column_start: Optional[int] = None,
+        grid_column_end: Optional[int] = None,
+        grid_row_start: Optional[int] = None,
+        grid_row_end: Optional[int] = None,
+    ):
+        self.class_ = class_
+        self.grid_column_start = grid_column_start
+        self.grid_column_end = grid_column_end
+        self.grid_row_start = grid_row_start
+        self.grid_row_end = grid_row_end
+        self.inner_html = ""
+
+    def to_style(self):
+        return f"""
+.{self.class_} {{
+    grid-column-start: {self.grid_column_start};
+    grid-column-end: {self.grid_column_end};
+    grid-row-start: {self.grid_row_start};
+    grid-row-end: {self.grid_row_end};
+}}
+"""
+
+    def text(self, text: str = ""):
+        self.inner_html = text
+
+    def markdown(self, text):
+        self.inner_html = markdown.markdown(text)
+
+    def dataframe(self, dataframe: pd.DataFrame):
+        self.inner_html = dataframe.to_html()
+
+    def plotly_chart(self, fig):
+        self.inner_html = f"""
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<body>
+    <p>This should have been a plotly plot.
+    But since *script* tags are removed when inserting MarkDown/ HTML i cannot get it to work</p>
+    <div id='divPlotly'></div>
+    <script>
+        var plotly_data = {fig.to_json()}
+        Plotly.react('divPlotly', plotly_data.data, plotly_data.layout);
+    </script>
+</body>
+"""
+
+    def to_html(self):
+        return f"""<div class="box {self.class_}">{self.inner_html}</div>"""
+
+
+class Grid:
+    def __init__(
+        self, template_columns="1 1 1", gap="10px", background_color="#fff", color="#444"
+    ):
+        self.template_columns = template_columns
+        self.gap = gap
+        self.background_color = background_color
+        self.color = color
+        self.cells: List[Cell] = []
+
+    def __enter__(self):
+        return self
+
+    def __exit__(self, type, value, traceback):
+        st.markdown(self._get_grid_style(), unsafe_allow_html=True)
+        st.markdown(self._get_cells_style(), unsafe_allow_html=True)
+        st.markdown(self._get_cells_html(), unsafe_allow_html=True)
+
+    def _get_grid_style(self):
+        return f"""
+<style>
+    .wrapper {{
+    display: grid;
+    grid-template-columns: {self.template_columns};
+    grid-gap: {self.gap};
+    background-color: {self.background_color};
+    color: {self.color};
+    }}
+    .box {{
+    background-color: {self.color};
+    color: {self.background_color};
+    border-radius: 5px;
+    padding: 20px;
+    font-size: 150%;
+    }}
+    table {{
+        color: {self.color}
+    }}
+</style>
+"""
+
+    def _get_cells_style(self):
+        return (
+            "<style>" + "\n".join([cell.to_style() for cell in self.cells]) + "</style>"
+        )
+
+    def _get_cells_html(self):
+        return (
+            '<div class="wrapper">'
+            + "\n".join([cell.to_html() for cell in self.cells])
+            + "</div>"
+        )
+
+    def cell(
+        self,
+        class_: str = None,
+        grid_column_start: Optional[int] = None,
+        grid_column_end: Optional[int] = None,
+        grid_row_start: Optional[int] = None,
+        grid_row_end: Optional[int] = None,
+    ):
+        cell = Cell(
+            class_=class_,
+            grid_column_start=grid_column_start,
+            grid_column_end=grid_column_end,
+            grid_row_start=grid_row_start,
+            grid_row_end=grid_row_end,
+        )
+        self.cells.append(cell)
+        return cell
 
 
 def select_block_container_style():
     st.sidebar.header("Block Container Style")
-    max_width = st.sidebar.slider("Select max-width in px", 100, 2000, 1200, 100)
     max_width_100_percent = st.sidebar.checkbox("Max-width: 100%?", False)
+    if not max_width_100_percent:
+        max_width = st.sidebar.slider("Select max-width in px", 100, 2000, 1200, 100)
+    else:
+        max_width = 1200
     padding_top = st.sidebar.number_input("Select padding top in rem", 0, 200, 5, 1)
     padding_right = st.sidebar.number_input("Select padding right in rem", 0, 200, 1, 1)
     padding_left = st.sidebar.number_input("Select padding left in rem", 0, 200, 1, 1)
@@ -134,5 +223,20 @@ def set_block_container_style(
         unsafe_allow_html=True,
     )
 
+@st.cache
+def get_dataframe() -> pd.DataFrame():
+    data = [
+        {"quantity": 1, "price": 2},
+        {"quantity": 3, "price": 5},
+        {"quantity": 4, "price": 8},
+    ]
+    return pd.DataFrame(data)
+
+def get_plotly_fig():
+    return px.line(
+        data_frame=get_dataframe(),
+        x="quantity",
+        y="price"
+    )
 
 main()
