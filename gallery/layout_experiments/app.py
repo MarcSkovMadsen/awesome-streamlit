@@ -1,12 +1,18 @@
 """This application experiments with the (grid) layout and some styling
 
 Can we make a compact dashboard across several columns and with a dark theme?"""
+import io
 from typing import List, Optional
 
 import markdown
+import matplotlib
+import matplotlib.pyplot as plt
 import pandas as pd
 import streamlit as st
 from plotly import express as px
+
+# matplotlib.use("TkAgg")
+matplotlib.use("Agg")
 
 
 def main():
@@ -40,7 +46,17 @@ Can have a dark theme?
         grid.cell("b", 2, 3, 2, 3).text("The cell to the left is a dataframe")
         grid.cell("c", 3, 4, 2, 3).plotly_chart(get_plotly_fig())
         grid.cell("d", 1, 2, 1, 3).dataframe(get_dataframe())
-        grid.cell("e", 3, 4, 1, 2).markdown("Try changing the **block container style** in the sidebar!")
+        grid.cell("e", 3, 4, 1, 2).markdown(
+            "Try changing the **block container style** in the sidebar!"
+        )
+        grid.cell("f", 1, 3, 3, 4).text(
+            "The cell to the right is a matplotlib svg image"
+        )
+        grid.cell("g", 3, 4, 3, 4).pyplot(get_matplotlib_plt())
+
+
+MAT_PLOTLIB_SVG_REPLACE = '<?xml version="1.0" encoding="utf-8" standalone="no"?>\n<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"\n  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">\n<!-- Created with matplotlib (https://matplotlib.org/) -->\n"'
+
 
 def add_resources_section():
     """Adds a resources section to the sidebar"""
@@ -54,6 +70,7 @@ def add_resources_section():
 
 class Cell:
     """A Cell can hold text, markdown, plots etc."""
+
     def __init__(
         self,
         class_: str = None,
@@ -93,7 +110,8 @@ class Cell:
 <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 <body>
     <p>This should have been a plotly plot.
-    But since *script* tags are removed when inserting MarkDown/ HTML i cannot get it to work</p>
+    But since *script* tags are removed when inserting MarkDown/ HTML i cannot get it to workto work.
+    But I could potentially save to svg and insert that.</p>
     <div id='divPlotly'></div>
     <script>
         var plotly_data = {fig.to_json()}
@@ -102,14 +120,26 @@ class Cell:
 </body>
 """
 
-    def to_html(self):
+    def pyplot(self, fig=None, **kwargs):
+        string_io = io.StringIO()
+        plt.savefig(string_io, format="svg", fig=(2, 2))
+        svg = string_io.getvalue()[215:]
+        plt.close(fig)
+        self.inner_html = '<div height="200px">' + svg + "</div>"
+
+    def _to_html(self):
         return f"""<div class="box {self.class_}">{self.inner_html}</div>"""
 
 
 class Grid:
     """A (CSS) Grid"""
+
     def __init__(
-        self, template_columns="1 1 1", gap="10px", background_color="#fff", color="#444"
+        self,
+        template_columns="1 1 1",
+        gap="10px",
+        background_color="#fff",
+        color="#444",
     ):
         self.template_columns = template_columns
         self.gap = gap
@@ -150,13 +180,15 @@ class Grid:
 
     def _get_cells_style(self):
         return (
-            "<style>" + "\n".join([cell._to_style() for cell in self.cells]) + "</style>"
+            "<style>"
+            + "\n".join([cell._to_style() for cell in self.cells])
+            + "</style>"
         )
 
     def _get_cells_html(self):
         return (
             '<div class="wrapper">'
-            + "\n".join([cell.to_html() for cell in self.cells])
+            + "\n".join([cell._to_html() for cell in self.cells])
             + "</div>"
         )
 
@@ -177,6 +209,7 @@ class Grid:
         )
         self.cells.append(cell)
         return cell
+
 
 def select_block_container_style():
     """Add selection section for setting setting the max-width and padding
@@ -230,6 +263,7 @@ def _set_block_container_style(
         unsafe_allow_html=True,
     )
 
+
 @st.cache
 def get_dataframe() -> pd.DataFrame():
     """Dummy DataFrame"""
@@ -240,12 +274,14 @@ def get_dataframe() -> pd.DataFrame():
     ]
     return pd.DataFrame(data)
 
+
 def get_plotly_fig():
     """Dummy Plotly Plot"""
-    return px.line(
-        data_frame=get_dataframe(),
-        x="quantity",
-        y="price"
-    )
+    return px.line(data_frame=get_dataframe(), x="quantity", y="price")
+
+
+def get_matplotlib_plt():
+    get_dataframe().plot(kind="line", x="quantity", y="price", figsize=(5, 3))
+
 
 main()
