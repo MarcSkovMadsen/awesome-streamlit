@@ -40,7 +40,7 @@ Can have a dark theme?
         grid.cell("b", 2, 3, 2, 3).text("The cell to the left is a dataframe")
         grid.cell("c", 3, 4, 2, 3).plotly_chart(get_plotly_fig())
         grid.cell("d", 1, 2, 1, 3).dataframe(get_dataframe())
-        grid.cell("e", 3, 4, 1, 2).text("This is E Text Cell")
+        grid.cell("e", 3, 4, 1, 2).markdown("Try changing the **block container style** in the sidebar!")
 
 def add_resources_section():
     """Adds a resources section to the sidebar"""
