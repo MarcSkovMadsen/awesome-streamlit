@@ -5,26 +5,31 @@ from typing import List, Optional
 
 import markdown
 import pandas as pd
-import plotly as py
 import streamlit as st
 from plotly import express as px
 
 
 def main():
+    """Main function. Run this to run the app"""
     st.sidebar.title("Layout and Style Experiments")
     st.sidebar.header("Settings")
     st.markdown(
         """
 # Layout and Style Experiments
 
-The basic question is. Can we create a multi-column dashboard with plots, numbers and text using
-the [CSS Grid](https://gridbyexample.com/examples)? And preferably with a dark theme.
+The basic question is: Can we create a multi-column dashboard with plots, numbers and text using
+the [CSS Grid](https://gridbyexample.com/examples)?
+
+Can we do it with a nice api?
+Can have a dark theme?
 """
     )
 
     select_block_container_style()
     add_resources_section()
-    with Grid("1 1") as grid:
+
+    # My preliminary idea of an API for generating a grid
+    with Grid("1 1 1") as grid:
         grid.cell(
             class_="a",
             grid_column_start=2,
@@ -37,9 +42,8 @@ the [CSS Grid](https://gridbyexample.com/examples)? And preferably with a dark t
         grid.cell("d", 1, 2, 1, 3).dataframe(get_dataframe())
         grid.cell("e", 3, 4, 1, 2).text("This is E Text Cell")
 
-
-
 def add_resources_section():
+    """Adds a resources section to the sidebar"""
     st.sidebar.header("Add_resources_section")
     st.sidebar.markdown(
         """
@@ -49,6 +53,7 @@ def add_resources_section():
 
 
 class Cell:
+    """A Cell can hold text, markdown, plots etc."""
     def __init__(
         self,
         class_: str = None,
@@ -64,7 +69,7 @@ class Cell:
         self.grid_row_end = grid_row_end
         self.inner_html = ""
 
-    def to_style(self):
+    def _to_style(self) -> str:
         return f"""
 .{self.class_} {{
     grid-column-start: {self.grid_column_start};
@@ -102,6 +107,7 @@ class Cell:
 
 
 class Grid:
+    """A (CSS) Grid"""
     def __init__(
         self, template_columns="1 1 1", gap="10px", background_color="#fff", color="#444"
     ):
@@ -144,7 +150,7 @@ class Grid:
 
     def _get_cells_style(self):
         return (
-            "<style>" + "\n".join([cell.to_style() for cell in self.cells]) + "</style>"
+            "<style>" + "\n".join([cell._to_style() for cell in self.cells]) + "</style>"
         )
 
     def _get_cells_html(self):
@@ -172,8 +178,9 @@ class Grid:
         self.cells.append(cell)
         return cell
 
-
 def select_block_container_style():
+    """Add selection section for setting setting the max-width and padding
+    of the main block container"""
     st.sidebar.header("Block Container Style")
     max_width_100_percent = st.sidebar.checkbox("Max-width: 100%?", False)
     if not max_width_100_percent:
@@ -186,7 +193,7 @@ def select_block_container_style():
     padding_bottom = st.sidebar.number_input(
         "Select padding bottom in rem", 0, 200, 10, 1
     )
-    set_block_container_style(
+    _set_block_container_style(
         max_width,
         max_width_100_percent,
         padding_top,
@@ -196,7 +203,7 @@ def select_block_container_style():
     )
 
 
-def set_block_container_style(
+def _set_block_container_style(
     max_width: int = 1200,
     max_width_100_percent: bool = False,
     padding_top: int = 5,
@@ -225,6 +232,7 @@ def set_block_container_style(
 
 @st.cache
 def get_dataframe() -> pd.DataFrame():
+    """Dummy DataFrame"""
     data = [
         {"quantity": 1, "price": 2},
         {"quantity": 3, "price": 5},
@@ -233,6 +241,7 @@ def get_dataframe() -> pd.DataFrame():
     return pd.DataFrame(data)
 
 def get_plotly_fig():
+    """Dummy Plotly Plot"""
     return px.line(
         data_frame=get_dataframe(),
         x="quantity",

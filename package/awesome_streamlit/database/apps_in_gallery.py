@@ -21,6 +21,13 @@ DEFAULT_APP_IN_GALLERY = Resource(
 )
 APPS_IN_GALLERY = [
     Resource(
+        name="Layout Experiments",
+        url=GITHUB_RAW_GALLERY_URL + "layout_experiments/app.py",
+        tags=[tags.CODE, tags.APP_IN_GALLERY],
+        is_awesome=True,
+        author=authors.MARC_SKOV_MADSEN,
+    ),
+    Resource(
         name="Table Experiments",
         url=GITHUB_RAW_GALLERY_URL + "table_experiments/app.py",
         tags=[tags.CODE, tags.APP_IN_GALLERY],
