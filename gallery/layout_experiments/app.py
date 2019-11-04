@@ -55,9 +55,6 @@ Can have a dark theme?
         grid.cell("g", 3, 4, 3, 4).pyplot(get_matplotlib_plt())
 
 
-MAT_PLOTLIB_SVG_REPLACE = '<?xml version="1.0" encoding="utf-8" standalone="no"?>\n<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"\n  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">\n<!-- Created with matplotlib (https://matplotlib.org/) -->\n"'
-
-
 def add_resources_section():
     """Adds a resources section to the sidebar"""
     st.sidebar.header("Add_resources_section")
