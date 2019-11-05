@@ -8,8 +8,10 @@ import markdown
 import matplotlib
 import matplotlib.pyplot as plt
 import pandas as pd
+import plotly.graph_objects as go
 import streamlit as st
 from plotly import express as px
+from plotly.subplots import make_subplots
 
 # matplotlib.use("TkAgg")
 matplotlib.use("Agg")
@@ -53,6 +55,8 @@ Can have a dark theme?
             "The cell to the right is a matplotlib svg image"
         )
         grid.cell("g", 3, 4, 3, 4).pyplot(get_matplotlib_plt())
+
+    st.plotly_chart(get_plotly_subplots())
 
 
 def add_resources_section():
@@ -279,6 +283,41 @@ def get_plotly_fig():
 
 def get_matplotlib_plt():
     get_dataframe().plot(kind="line", x="quantity", y="price", figsize=(5, 3))
+
+
+def get_plotly_subplots():
+    fig = make_subplots(
+        rows=2,
+        cols=2,
+        subplot_titles=("Plot 1", "Plot 2", "Plot 3", "Table 4"),
+        specs=[
+            [{"type": "scatter"}, {"type": "scatter"}],
+            [{"type": "scatter"}, {"type": "table"}],
+        ],
+    )
+
+    fig.add_trace(go.Scatter(x=[1, 2, 3], y=[4, 5, 6]), row=1, col=1)
+
+    fig.add_trace(go.Scatter(x=[20, 30, 40], y=[50, 60, 70]), row=1, col=2)
+
+    fig.add_trace(go.Scatter(x=[300, 400, 500], y=[600, 700, 800]), row=2, col=1)
+
+    # fig.add_trace(go.Scatter(x=[4000, 5000, 6000], y=[7000, 8000, 9000]), row=2, col=2)
+
+    # fig = go.Figure(data=[go.Table(header=dict(values=['A Scores', 'B Scores']),
+    #              cells=dict(values=[[100, 90, 80, 90], [95, 85, 75, 95]]))
+    #  ])
+    fig.add_table(
+        header=dict(values=["A Scores", "B Scores"]),
+        cells=dict(values=[[100, 90, 80, 90], [95, 85, 75, 95]]),
+        row=2,
+        col=2,
+    )
+
+    fig.update_layout(
+        height=500, width=700, title_text="Plotly Multiple Subplots with Titles"
+    )
+    return fig
 
 
 main()
