@@ -15,6 +15,8 @@ from plotly.subplots import make_subplots
 
 # matplotlib.use("TkAgg")
 matplotlib.use("Agg")
+COLOR = "black"
+BACKGROUND_COLOR = "#fff"
 
 
 def main():
@@ -37,7 +39,7 @@ Can have a dark theme?
     add_resources_section()
 
     # My preliminary idea of an API for generating a grid
-    with Grid("1 1 1") as grid:
+    with Grid("1 1 1", color=COLOR, background_color=BACKGROUND_COLOR) as grid:
         grid.cell(
             class_="a",
             grid_column_start=2,
@@ -139,8 +141,8 @@ class Grid:
         self,
         template_columns="1 1 1",
         gap="10px",
-        background_color="#fff",
-        color="#444",
+        background_color=COLOR,
+        color=BACKGROUND_COLOR,
     ):
         self.template_columns = template_columns
         self.gap = gap
@@ -221,12 +223,19 @@ def select_block_container_style():
         max_width = st.sidebar.slider("Select max-width in px", 100, 2000, 1200, 100)
     else:
         max_width = 1200
+    dark_theme = st.sidebar.checkbox("Dark Theme?", False)
     padding_top = st.sidebar.number_input("Select padding top in rem", 0, 200, 5, 1)
     padding_right = st.sidebar.number_input("Select padding right in rem", 0, 200, 1, 1)
     padding_left = st.sidebar.number_input("Select padding left in rem", 0, 200, 1, 1)
     padding_bottom = st.sidebar.number_input(
         "Select padding bottom in rem", 0, 200, 10, 1
     )
+    if dark_theme:
+        global COLOR
+        global BACKGROUND_COLOR
+        BACKGROUND_COLOR = "rgb(17,17,17)"
+        COLOR = "#fff"
+
     _set_block_container_style(
         max_width,
         max_width_100_percent,
@@ -258,6 +267,10 @@ def _set_block_container_style(
         padding-right: {padding_right}rem;
         padding-left: {padding_left}rem;
         padding-bottom: {padding_bottom}rem;
+    }}
+    .reportview-container .main {{
+        color: {COLOR};
+        background-color: {BACKGROUND_COLOR};
     }}
 </style>
 """,
@@ -302,11 +315,6 @@ def get_plotly_subplots():
 
     fig.add_trace(go.Scatter(x=[300, 400, 500], y=[600, 700, 800]), row=2, col=1)
 
-    # fig.add_trace(go.Scatter(x=[4000, 5000, 6000], y=[7000, 8000, 9000]), row=2, col=2)
-
-    # fig = go.Figure(data=[go.Table(header=dict(values=['A Scores', 'B Scores']),
-    #              cells=dict(values=[[100, 90, 80, 90], [95, 85, 75, 95]]))
-    #  ])
     fig.add_table(
         header=dict(values=["A Scores", "B Scores"]),
         cells=dict(values=[[100, 90, 80, 90], [95, 85, 75, 95]]),
@@ -314,8 +322,15 @@ def get_plotly_subplots():
         col=2,
     )
 
+    if COLOR == "black":
+        template="plotly"
+    else:
+        template ="plotly_dark"
     fig.update_layout(
-        height=500, width=700, title_text="Plotly Multiple Subplots with Titles"
+        height=500,
+        width=700,
+        title_text="Plotly Multiple Subplots with Titles",
+        template=template,
     )
     return fig
 
