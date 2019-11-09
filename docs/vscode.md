@@ -25,7 +25,7 @@ You start by installing the multi-command extension and adding the configuration
 },
 ```
 
-The you can execute you *streamlit run* command via the command palette (CTRL+SHIFT+P)
+Then you can execute your *streamlit run* command via the command palette (CTRL+SHIFT+P)
 
 ![VS Code multi-command execute](_static/images/vscode_multi-command_execute.png)
 
@@ -49,16 +49,18 @@ You can **debug mannually** by inserting a `breakpoint()` (Python 3.7+) or `impo
 
 ### Integrated Debugging
 
-You can also use the **integrated debugger** in VS Code via the [ptsvd](https://github.com/microsoft/ptvsd) python package
+You can also use the **integrated debugger** in VS Code via the [ptsvd](https://github.com/microsoft/ptvsd) Python package
+
+Please note that [andaag](https://github.com/andaag) reported the below to not work on ubuntu 18.04.3 LTS with Python 3.6.8. He gets a `ValueError: signal only works in main thread` error. See [issue 648](https://github.com/streamlit/streamlit/issues/648). It's working really well for me on Windows with Python 3.7.4 though.
 
 First you should `pip install ptsvd`.
 
-Then you need to insert the following snippet in your code
+Then you need to insert the following snippet in your `<your-app_name>.py` file.
 
 ```python
 import ptvsd
-ptvsd.enable_attach(address=('localhost', 5678), redirect_output=True)
-ptvsd.wait_for_attach()
+ptvsd.enable_attach(address=('localhost', 5678))
+ptvsd.wait_for_attach() # Only include this line if you always wan't to attach the debugger
 ```
 
 Then you can start your Streamlit app
@@ -73,7 +75,7 @@ Then you should configure your *Remote Attach: debug PTVSD option*
 
 ![Debug Configuration](_static/images/vscode_select_debugging_configuration.png)
 
-which should insert something similar to
+and update to the below in your launch.json file. Please make sure that you manually insert the *redirectOutput* setting below.
 
 ```json
 {
@@ -82,6 +84,7 @@ which should insert something similar to
     "request": "attach",
     "port": 5678,
     "host": "localhost",
+    "redirectOutput": true,
     "pathMappings": [
         {
             "localRoot": "${workspaceFolder}",
@@ -91,8 +94,6 @@ which should insert something similar to
 }
 ```
 
-into your launch.json file.
-
 Finally you can attach the debugger by clicking the debugger play button
 
 ![Python remote attach](_static/images/vscode_python_remote_attach.png)
@@ -101,12 +102,38 @@ and you can debug away.
 
 ![Integrated Debugger](_static/images/vscode_integrated_debugger.png)
 
+#### Using a dedicated app_debug_vscode.py file for debugging
+
+Adding and removing the *ptvsd* code above can be cumbersome. So a usefull trick is to setup a dedicated *app_debug_vscode.py* file for debugging.
+
+Assuming your app.py file has a `def main():` function, then your *app_debug_vscode.py* file should look as follows
+
+```python
+"""Use this module for development with VS Code and the integrated debugger"""
+import ptvsd
+
+import app
+
+ptvsd.enable_attach(address=("localhost", 5678))
+ptvsd.wait_for_attach() # Only include this line if you always wan't to connect the VS Code debugger
+
+app.main()
+```
+
+then you run `streamlit run app_debug_vscode.py` instead of `streamlit run app.py` and attach the debugger.
+
+For an example see my [app.py](https://github.com/MarcSkovMadsen/awesome-streamlit/blob/master/app.py) and [app_dev_vscode.py](https://github.com/MarcSkovMadsen/awesome-streamlit/blob/master/app_dev_vscode.py) files.
+
 #### Using the integrated Debugging Console
 
 When you are running your integrated debugging in VS Code, you can use the *Debugging Console* with
-Streamlit if you `import awesome_streamlit as st`. Then you can write dataframes and charts to the browser window
+Streamlit if you `import streamlit as st`. Then you can write dataframes and charts to the browser window
 and take a better look at your data, than you can in VS Code.
 
 ![Import Streamlit](_static/images/vscode_debugging_console1.png)
 ![Import Streamlit](_static/images/vscode_debugging_console2.png)
 ![Import Streamlit](_static/images/vscode_debugging_console3.png)
+
+You should also remember to *print* your dataframes to the debugger console to get a nice formatting.
+
+![Nice Print of DataFrame](_static/images/vscode_print_dataframe.png)
