@@ -84,6 +84,7 @@ and update to the below in your launch.json file. Please make sure that you manu
     "request": "attach",
     "port": 5678,
     "host": "localhost",
+    "justMyCode": true,
     "redirectOutput": true,
     "pathMappings": [
         {
@@ -93,6 +94,9 @@ and update to the below in your launch.json file. Please make sure that you manu
     ]
 }
 ```
+
+Please note that by default you will be debugging your own code only.
+If you wan't to debug into for example the streamlit code, then you can change the `justMyCode` setting from `true` to `false`.
 
 Finally you can attach the debugger by clicking the debugger play button
 
@@ -106,23 +110,39 @@ and you can debug away.
 
 Adding and removing the *ptvsd* code above can be cumbersome. So a usefull trick is to setup a dedicated *app_debug_vscode.py* file for debugging.
 
-Assuming your app.py file has a `def main():` function, then your *app_debug_vscode.py* file should look as follows
+Assuming your app.py file has a `def main():` function, then your *app_debug_vscode.py* file could look as follows
 
 ```python
 """Use this module for development with VS Code and the integrated debugger"""
 import ptvsd
+import streamlit as st
 
 import app
 
+# pylint: disable=invalid-name
+markdown = st.markdown(
+    """
+## Ready to attach the VS Code Debugger!
+
+![Python: Remote Attach](https://awesome-streamlit.readthedocs.io/en/latest/_images/vscode_python_remote_attach.png)
+
+for more info see the [VS Code section at awesome-streamlit.readthedocs.io]
+(https://awesome-streamlit.readthedocs.io/en/latest/vscode.html#integrated-debugging)
+"""
+)
+
+
 ptvsd.enable_attach(address=("localhost", 5678))
-ptvsd.wait_for_attach() # Only include this line if you always wan't to connect the VS Code debugger
+ptvsd.wait_for_attach()
+
+markdown.empty()
 
 app.main()
 ```
 
 then you run `streamlit run app_debug_vscode.py` instead of `streamlit run app.py` and attach the debugger.
 
-For an example see my [app.py](https://github.com/MarcSkovMadsen/awesome-streamlit/blob/master/app.py) and [app_dev_vscode.py](https://github.com/MarcSkovMadsen/awesome-streamlit/blob/master/app_dev_vscode.py) files.
+For a use case see my [app.py](https://github.com/MarcSkovMadsen/awesome-streamlit/blob/master/app.py) and [app_dev_vscode.py](https://github.com/MarcSkovMadsen/awesome-streamlit/blob/master/app_dev_vscode.py) files.
 
 #### Using the integrated Debugging Console
 
