@@ -1,17 +1,7 @@
 """Main module for the streamlit app"""
-# IMPORTANT NOTES
-# - For now modules from pages have to be reloaded every time we use them
-# In order for this to work they should be added to the pages.__init__ file
-# pylint: disable=invalid-name
-import streamlit as st  # isort:skip
+import streamlit as st
 
 import awesome_streamlit as ast
-
-# Import all needed packages
-# Dont write 'from src.pages import home'. Autoreload will not work!
-# Dont write 'import src.pages.home as home'. Autoreload will not work!
-# Use the same convention for importing in submodules. Otherwise Autoreload will not work!
-# cf. https://github.com/MarcSkovMadsen/awesome-streamlit/issues/2
 import src.pages.gallery.index
 import src.pages.home
 import src.pages.resources
