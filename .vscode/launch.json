@@ -17,6 +17,7 @@
             "request": "attach",
             "port": 5678,
             "host": "localhost",
+            "redirectOutput": true,
             "pathMappings": [
                 {
                     "localRoot": "${workspaceFolder}",
