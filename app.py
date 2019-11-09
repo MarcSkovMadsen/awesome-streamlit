@@ -26,7 +26,9 @@ PAGES = {
     "Vision": src.pages.vision,
 }
 
+
 def main():
+    """Main function of the App"""
     st.sidebar.title("Navigation")
     selection = st.sidebar.radio("Go to", list(PAGES.keys()))
 
@@ -44,10 +46,12 @@ def main():
     )
     st.sidebar.title("About")
     st.sidebar.info(
-        "This app is maintained by Marc Skov Madsen. "
-        "I'm not an experienced open source maintainer, so helpfull hints and suggestions are welcome. "
-        "You can learn more about me at [datamodelsanalytics.com](https://datamodelsanalytics.com)."
+        """
+        This app is maintained by Marc Skov Madsen. You can learn more about me at
+        [datamodelsanalytics.com](https://datamodelsanalytics.com).
+"""
     )
 
-if __name__=="__main__":
+
+if __name__ == "__main__":
     main()

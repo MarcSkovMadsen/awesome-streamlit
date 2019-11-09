@@ -6,9 +6,8 @@ import streamlit as st
 
 import awesome_streamlit as ast
 from awesome_streamlit.database.apps_in_gallery import GITHUB_RAW_GALLERY_URL
-from awesome_streamlit.testing.models import (
-    TesTItem,
-)  # Special Capitalization is due to PyTest
+from awesome_streamlit.testing.models import \
+    TesTItem  # Special Capitalization is due to PyTest
 
 st.markdown(
     """# Important Notes

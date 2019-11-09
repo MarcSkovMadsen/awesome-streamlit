@@ -15,18 +15,15 @@ Purpose
 To show a simple EDA of Iris using Streamlit framework.
 
 """
-import os
 from io import BytesIO
 
 # Plotting Pkgs
 import matplotlib
 import matplotlib.pyplot as plt
-
 # EDA Pkgs
 import numpy as np
 import pandas as pd
 import requests
-
 # Plotting Pkgs
 import seaborn as sns
 import streamlit as st
