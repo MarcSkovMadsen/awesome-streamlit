@@ -156,4 +156,4 @@ and take a better look at your data, than you can in VS Code.
 
 You should also remember to *print* your dataframes to the debugger console to get a nice formatting.
 
-![Nice Print of DataFrame](_static/images/vscode_print_dataframe.png)
+![Nice Print of DataFrame](_static/images/vscode_print_nice_dataframe.png)
