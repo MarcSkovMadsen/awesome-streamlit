@@ -190,7 +190,7 @@ That's it! Now I have a fork of the original streamlit/streamlit repository.
 
 ![Fork of Streamlit](_static/images/streamlit_fork.png)
 
-## Setting up the Streamlit Repo as a a Visual Studio Online Environment
+### Setting up the Streamlit Repo as a a Visual Studio Online Environment
 
 Visual Studio Online is a new experiment for working in VS Code locally, but running everything inside a docker container environment in the cloud.
 
