@@ -157,3 +157,114 @@ and take a better look at your data, than you can in VS Code.
 You should also remember to *print* your dataframes to the debugger console to get a nice formatting.
 
 ![Nice Print of DataFrame](_static/images/vscode_print_nice_dataframe.png)
+
+## Installing the streamlit repo for development using Visual Studio Online
+
+I would like to experiment with and maybe contribute to the [streamlit/streamlit](https://github.com/streamlit/streamlit) repo.
+
+There is an official Streamlit [Contributing guide](https://github.com/streamlit/streamlit/wiki/Contributing) I can follow to get up and running.
+
+But I'm running on Windows 8.1 so it's a it problematic getting it up and running.
+
+- I cannot install directly on Windows because the Makefile and associated tools are very dependent on Linux.
+- I cannot use *Visual Studio Code Remote - Containers* as described [here](https://code.visualstudio.com/docs/remote/containers) because it requires Windows 10 (not 8.1) and Docker (not Docker Toolbox)
+- Maybe I could have installed Linux on my machine. But ...
+- I guess I could install in a Docker container locally but not integrate with VS Code. But that would not be efficient.
+
+I then settled on trying out the new [Visual Studio Online](https://visualstudio.microsoft.com/services/visual-studio-online/) experience.
+
+I got this working successfully after some time. Below I will describe the steps.
+
+### Forking the streamlit repo
+
+Forking a repository is a simple two-step process.
+
+1 On GitHub navigate to the [streamlit/streamlit](https://github.com/streamlit/streamlit) repository
+2 In the top-right corner of the page, click Fork
+
+![Fork Button](https://help.github.com/assets/images/help/repository/fork_button.jpg)
+
+That's it! Now I have a fork of the original streamlit/streamlit repository.
+
+![Fork of Streamlit](_static/images/streamlit_fork.png)
+
+### Creating the Streamlit Visual Studio Online environment
+
+To create a docker container containing the streamlit/streamlit repo I followed step 1-4 of the offical [VS Code Quickstart Guide](https://docs.microsoft.com/en-us/visualstudio/online/quickstarts/vscode). But I replaced the `microsoft/vsonline-quickstart` with `<my-user-name>/streamlit`.
+
+![Replicate with streamlit/streamlit](_static/images/vscode_vso_quickstarts_streamlitstreamlit.png)sp
+
+Finally the environment was created
+
+![Environment created](_static/images/vscode_vso_environment_created.png)
+
+and I click the connect button and it connects.
+
+![Environment connected](_static/images/vscode_vso_connected.png)
+
+SEE THE TROUBLESHOOTING SECTION BELOW IF THE CONNECTION DOES NOT FINISH.
+
+### Verifying the Environment
+
+It's nice to see what is in the environment
+
+```bash
+vsonline:~/workspace$ python
+Python 2.7.13 (default, Sep 26 2018, 18:42:22)
+[GCC 6.3.0 20170516] on linux2
+Type "help", "copyright", "credits" or "license" for more information.
+>>> exit()
+vsonline:~/workspace$ python3
+Python 3.5.3 (default, Sep 27 2018, 17:25:39)
+[GCC 6.3.0 20170516] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> exit
+Use exit() or Ctrl-D (i.e. EOF) to exit
+>>> exit()
+vsonline:~/workspace$ cat /etc/os-release
+PRETTY_NAME="Debian GNU/Linux 9 (stretch)"
+NAME="Debian GNU/Linux"
+VERSION_ID="9"
+VERSION="9 (stretch)"
+VERSION_CODENAME=stretch
+ID=debian
+HOME_URL="https://www.debian.org/"
+SUPPORT_URL="https://www.debian.org/support"
+BUG_REPORT_URL="https://bugs.debian.org/"
+vsonline:~/workspace/Python-3.7.4$ nproc
+4
+vsonline:~/workspace$```
+
+### Installing Python 3.7.4
+
+I followed [this](https://linuxize.com/post/how-to-install-python-3-7-on-debian-9/) guide with
+
+- `3.7.3` replaced by `3.7.4`.
+- `make -j 8`replaced by `make -j 4`
+
+Please note that there will be plenty of time for coffea as the installation and tests take 30 minutes!
+
+After verifying the installation I removed the temporary `Python-3.7.4.tar.xz` file and `Python-3.7.4` folder.
+
+```bash
+rm Python-3.7.4.tar.xz
+rm -r Python-3.7.4
+```
+
+Note I also tried using **pyenv**. And it could install Python 3.7.4. But I never got it working with pipenv.
+
+### Troubleshooting
+
+#### Connecting to remote
+
+Quite often VS Code cannot open the remote. I've filed an issue at [MicrosoftDocs/vsonline issue #153](https://github.com/MicrosoftDocs/vsonline/issues/153)
+
+![Opening Remote issue](_static/images/vscode_vso_openingremote.png)
+
+I have experienced a few times that if I **toggle Developer Tools** under the Help menu item then it starts reconnecting and succeeds. Strange :-)
+
+![Developer Tools](_static/images/vscode_vso_developertools.png)
+
+#### Following the Contributing guide
+
+I could not exactly follow the [Contributing guide](https://github.com/streamlit/streamlit/wiki/Contributing). I've filed the issues I saw as [streamlit/streamlit issue #665](https://github.com/streamlit/streamlit/issues/665).
