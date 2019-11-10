@@ -158,7 +158,7 @@ You should also remember to *print* your dataframes to the debugger console to g
 
 ![Nice Print of DataFrame](_static/images/vscode_print_nice_dataframe.png)
 
-## Installing the streamlit repo for development using Visual Studio Online
+## Installing the Streamlit Repo for Development using Visual Studio Online
 
 I would like to experiment with and maybe contribute to the [streamlit/streamlit](https://github.com/streamlit/streamlit) repo.
 
@@ -171,11 +171,11 @@ But I'm running on Windows 8.1 so it's a it problematic getting it up and runnin
 - Maybe I could have installed Linux on my machine. But ...
 - I guess I could install in a Docker container locally but not integrate with VS Code. But that would not be efficient.
 
-I then settled on trying out the new [Visual Studio Online](https://visualstudio.microsoft.com/services/visual-studio-online/) experience.
+I then settled on trying out the new [Visual Studio Online](https://visualstudio.microsoft.com/services/visual-studio-online/) experience. I got it working successfully after some time. Below I will describe the steps.
 
-I got this working successfully after some time. Below I will describe the steps.
+DISCLAIMER: THE BELOW WAS SO COMPLICATED AND HAD TO BE REPEATED SEVERAL TIMES THAT I CANNOT GUARENTEE THAT IT WILL WORK 100%. BUT I HOPE IT STILL HELPS A LOT.
 
-### Forking the streamlit repo
+### Forking the Streamlit Repo
 
 Forking a repository is a simple two-step process.
 
@@ -188,9 +188,11 @@ That's it! Now I have a fork of the original streamlit/streamlit repository.
 
 ![Fork of Streamlit](_static/images/streamlit_fork.png)
 
-### Creating the Streamlit Visual Studio Online environment
+## Setting up the streamlit repo as a a Visual Studio Online Environment
 
-To create a docker container containing the streamlit/streamlit repo I followed step 1-4 of the offical [VS Code Quickstart Guide](https://docs.microsoft.com/en-us/visualstudio/online/quickstarts/vscode). But I replaced the `microsoft/vsonline-quickstart` with `<my-user-name>/streamlit`.
+Visual Studio Online is a new experiement for working in VS Code locally inside a docker container environment in the cloud.
+
+To create a docker container environment containing the streamlit/streamlit repo I followed step 1-4 of the offical [VS Code Quickstart Guide](https://docs.microsoft.com/en-us/visualstudio/online/quickstarts/vscode). But I replaced the `microsoft/vsonline-quickstart` with `<my-user-name>/streamlit`.
 
 ![Replicate with streamlit/streamlit](_static/images/vscode_vso_quickstarts_streamlitstreamlit.png)sp
 
@@ -202,9 +204,9 @@ and I click the connect button and it connects.
 
 ![Environment connected](_static/images/vscode_vso_connected.png)
 
-SEE THE TROUBLESHOOTING SECTION BELOW IF THE CONNECTION DOES NOT FINISH.
+IF THE CONNECTION DOES NOT FINISH, THEN SEE THE TROUBLE SHOOTING GUIDE BELOW.
 
-### Verifying the Environment
+### Were running Python 3.5.3 on Debian!
 
 It's nice to see what is in the environment
 
@@ -218,8 +220,6 @@ vsonline:~/workspace$ python3
 Python 3.5.3 (default, Sep 27 2018, 17:25:39)
 [GCC 6.3.0 20170516] on linux
 Type "help", "copyright", "credits" or "license" for more information.
->>> exit
-Use exit() or Ctrl-D (i.e. EOF) to exit
 >>> exit()
 vsonline:~/workspace$ cat /etc/os-release
 PRETTY_NAME="Debian GNU/Linux 9 (stretch)"
@@ -233,29 +233,114 @@ SUPPORT_URL="https://www.debian.org/support"
 BUG_REPORT_URL="https://bugs.debian.org/"
 vsonline:~/workspace/Python-3.7.4$ nproc
 4
-vsonline:~/workspace$```
+```
+
+### Set Up My Base Environment
+
+I then followed the [Ubuntu](https://github.com/streamlit/streamlit/wiki/Contributing#ubuntu) section
+
+with
+
+- `sudo apt install graphviz python3-distutils` replaced by `sudo apt install graphviz`
+  - See the troubleshouting guide wrt `python3-distutils`.
+- and pyenv added to the path of the ~/.bashrc file
+
+![Pyenv and .bashrc](_static/images/vscode_vso_pyenv.png)
 
 ### Installing Python 3.7.4
 
-I followed [this](https://linuxize.com/post/how-to-install-python-3-7-on-debian-9/) guide with
-
-- `3.7.3` replaced by `3.7.4`.
-- `make -j 8`replaced by `make -j 4`
-
-Please note that there will be plenty of time for coffea as the installation and tests take 30 minutes!
-
-After verifying the installation I removed the temporary `Python-3.7.4.tar.xz` file and `Python-3.7.4` folder.
+I used pyenv to install Python 3.7.4
 
 ```bash
-rm Python-3.7.4.tar.xz
-rm -r Python-3.7.4
+vsonline:~/workspace/lib$ pyenv install 3.7.4
 ```
 
-Note I also tried using **pyenv**. And it could install Python 3.7.4. But I never got it working with pipenv.
+### Grab the code
+
+Nothing to do here as it's already installed.
+
+### Create a new Python environment
+
+```bash
+vsonline:~/workspace/lib$ pyenv global 3.7.4
+vsonline:~/workspace/lib$ python3
+Python 3.7.4 (default, Nov 10 2019, 11:50:45)
+[GCC 6.3.0 20170516] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> exit()
+vsonline:~/workspace/lib$ python3 -m venv ~/.venv
+vsonline:~/workspace/lib$ source ~/.venv/bin/activate
+```
+
+```bash
+(.venv) vsonline:~/workspace/lib$ pipenv install
+Creating a virtualenv for this project…
+Pipfile: /home/vsonline/workspace/lib/Pipfile
+Using /home/vsonline/.pyenv/versions/3.7.4/bin/python3.7 (3.7.4) to create virtualenv…
+⠼ Creating virtual environment...Already using interpreter /home/vsonline/.pyenv/versions/3.7.4/bin/python3.7
+Using base prefix '/home/vsonline/.pyenv/versions/3.7.4'
+New python executable in /home/vsonline/.local/share/virtualenvs/lib-vom9Vlgm/bin/python3.7
+Also creating executable in /home/vsonline/.local/share/virtualenvs/lib-vom9Vlgm/bin/python
+Installing setuptools, pip, wheel...
+done.
+
+✔ Successfully created virtual environment!
+Virtualenv location: /home/vsonline/.local/share/virtualenvs/lib-vom9Vlgm
+```
+
+activate the environment
+
+```bash
+pipenv shell
+```
+
+#### Onetime setup
+
+Disable Tensorflow in the Pipfile
+
+![Tensorflow removed from pipenv file](_static/images/vscode_vso_pipfile_tensorflow.png)
+
+![Tensorflow removed from pipenv file](_static/images/vscode_vso_pipfile_tensorflow2.png)
+
+and install it manually
+
+```bash
+pip install tensorflow>=2.0.0
+```
+
+then run
+
+```bash
+make all-devel
+```
+
+#### Start the dev server
+
+As described in the documentation
+
+#### Run Streamlit
+
+As described in the documentation
+
+Now we have the servers running
+
+[!Servers running](_static/images/vscode_vso_servers_running.png)
+
+#### Forwarding the ports
+
+In order to open Streamlit in your browser you need to forward the ports 3000 and 8501.
+
+![Forward ports](_static/images/vscode_vso_forward_ports.png)
+
+#### Streamlit hello
+
+And finally it works
+
+![Servers running](_static/images/vscode_vso_streamlit_hello.png)
 
 ### Troubleshooting
 
-#### Connecting to remote
+#### Connecting to the Remote never finished
 
 Quite often VS Code cannot open the remote. I've filed an issue at [MicrosoftDocs/vsonline issue #153](https://github.com/MicrosoftDocs/vsonline/issues/153)
 
@@ -265,6 +350,100 @@ I have experienced a few times that if I **toggle Developer Tools** under the He
 
 ![Developer Tools](_static/images/vscode_vso_developertools.png)
 
-#### Following the Contributing guide
+#### The Contributing Guide Does Not Work for me
 
 I could not exactly follow the [Contributing guide](https://github.com/streamlit/streamlit/wiki/Contributing). I've filed the issues I saw as [streamlit/streamlit issue #665](https://github.com/streamlit/streamlit/issues/665).
+
+#### Build Python3.7.4 from scratch
+
+At some stage i could not get pyenv to work. So I followed the [How to Install Python 3.7 on Debian 9 Guide](https://linuxize.com/post/how-to-install-python-3-7-on-debian-9/) with
+
+- `3.7.3` replaced by `3.7.4`.
+- `make -j 8` replaced by `make -j 4`
+
+Please note that there will be **plenty of time for coffea** as the installation and tests take 30 minutes!
+
+After verifying the installation I removed the temporary `Python-3.7.4.tar.xz` file and `Python-3.7.4` folder.
+
+```bash
+rm Python-3.7.4.tar.xz
+sudo rm -rf Python-3.7.4
+```
+
+#### Package python3-distutils is not Available
+
+Maybe because of building 3.7.4 from scratch I ran into
+
+```bash
+vsonline:~/workspace$ sudo apt install python3-distutils
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+Package python3-distutils is not available, but is referred to by another package.
+This may mean that the package is missing, has been obsoleted, or
+is only available from another source
+However the following packages replace it:
+  libpython3.7-stdlib
+
+E: Package 'python3-distutils' has no installation candidate
+vsonline:~/workspace$ sudo apt install libpython3.7-stdlib
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+Package libpython3.7-stdlib is not available, but is referred to by another package.
+This may mean that the package is missing, has been obsoleted, or
+is only available from another source
+However the following packages replace it:
+  idle-python3.7 python3-tk python3-lib2to3 python3-distutils
+
+E: Package 'libpython3.7-stdlib' has no installation candidate
+vsonline:~/workspace$ sudo apt install idle-python3.7 python3-tk python3-lib2to3 python3-distutils
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+Package python3-distutils is not available, but is referred to by another package.
+This may mean that the package is missing, has been obsoleted, or
+is only available from another source
+However the following packages replace it:
+  libpython3.7-stdlib
+
+Package python3-lib2to3 is not available, but is referred to by another package.
+This may mean that the package is missing, has been obsoleted, or
+is only available from another source
+
+Package idle-python3.7 is not available, but is referred to by another package.
+This may mean that the package is missing, has been obsoleted, or
+is only available from another source
+
+E: Package 'idle-python3.7' has no installation candidate
+E: Package 'python3-lib2to3' has no installation candidate
+E: Package 'python3-distutils' has no installation candidate
+```
+
+### Makefile:46: recipe for target 'pipenv-install' failed
+
+When running
+
+```bash
+make all-devel
+```
+
+I get the below error.
+
+```bash
+pip/_internal/utils/misc.py", line 703, in call_subprocess
+    raise InstallationError(
+pipenv.patched.notpip._internal.exceptions.InstallationError: Command "python setup.py egg_info" failed with error code 1 in /tmp/tmp5wxfmdotbuild/functools32/
+Makefile:46: recipe for target 'pipenv-install' failed
+make: *** [pipenv-install] Error 1
+```
+
+The root cause is Tensorflow. Tensorflow does not support installation with pipenv according to [pyp/pipenv issue #2619](https://github.com/pypa/pipenv/issues/2619) and similar issues.
+
+The solution is to remove it from the Piplock File and install it manually
+
+```bash
+pip install tensorflow = ">=2.0.0"
+```
+
+![Tensorflow removed from pipenv file](_static/images/vscode_vso_pipfile_tensorflow.png)
