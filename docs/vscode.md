@@ -175,6 +175,8 @@ I then settled on trying out the new [Visual Studio Online](https://visualstudio
 
 DISCLAIMER: THE BELOW WAS SO COMPLICATED AND HAD TO BE REPEATED SEVERAL TIMES THAT I CANNOT GUARENTEE THAT IT WILL WORK 100%. BUT I HOPE IT STILL HELPS A LOT.
 
+IF SOMETHING GOES WRONG TAKE A LOOK AT THE TROUBLE SHOOTING SECTION BELOW.
+
 ### Forking the Streamlit Repo
 
 Forking a repository is a simple two-step process.
@@ -188,13 +190,13 @@ That's it! Now I have a fork of the original streamlit/streamlit repository.
 
 ![Fork of Streamlit](_static/images/streamlit_fork.png)
 
-## Setting up the streamlit repo as a a Visual Studio Online Environment
+## Setting up the Streamlit Repo as a a Visual Studio Online Environment
 
-Visual Studio Online is a new experiement for working in VS Code locally inside a docker container environment in the cloud.
+Visual Studio Online is a new experiment for working in VS Code locally, but running everything inside a docker container environment in the cloud.
 
-To create a docker container environment containing the streamlit/streamlit repo I followed step 1-4 of the offical [VS Code Quickstart Guide](https://docs.microsoft.com/en-us/visualstudio/online/quickstarts/vscode). But I replaced the `microsoft/vsonline-quickstart` with `<my-user-name>/streamlit`.
+To create a docker container environment containing the streamlit repo I followed step 1-4 of the offical [VS Code Quickstart Guide](https://docs.microsoft.com/en-us/visualstudio/online/quickstarts/vscode). But I replaced the `microsoft/vsonline-quickstart` with `<my-user-name>/streamlit`.
 
-![Replicate with streamlit/streamlit](_static/images/vscode_vso_quickstarts_streamlitstreamlit.png)sp
+![Replicate with streamlit/streamlit](_static/images/vscode_vso_quickstarts_streamlitstreamlit.png)
 
 Finally the environment was created
 
@@ -203,8 +205,6 @@ Finally the environment was created
 and I click the connect button and it connects.
 
 ![Environment connected](_static/images/vscode_vso_connected.png)
-
-IF THE CONNECTION DOES NOT FINISH, THEN SEE THE TROUBLE SHOOTING GUIDE BELOW.
 
 ### Were running Python 3.5.3 on Debian!
 
@@ -316,15 +316,13 @@ make all-devel
 
 #### Start the dev server
 
-As described in the documentation
+I just followed the steps in the Contributing guide
 
 #### Run Streamlit
 
-As described in the documentation
+I just followed the steps in the Contributing guide and the servers are running.
 
-Now we have the servers running
-
-[!Servers running](_static/images/vscode_vso_servers_running.png)
+![Servers running](_static/images/vscode_vso_servers_running.png)
 
 #### Forwarding the ports
 
@@ -336,7 +334,7 @@ In order to open Streamlit in your browser you need to forward the ports 3000 an
 
 And finally it works
 
-![Servers running](_static/images/vscode_vso_streamlit_hello.png)
+![Streamlit hello](_static/images/vscode_vso_streamlit_hello.png)
 
 ### Troubleshooting
 
