@@ -292,7 +292,7 @@ activate the environment
 pipenv shell
 ```
 
-#### Onetime setup
+### Onetime setup
 
 Disable Tensorflow in the Pipfile
 
@@ -312,23 +312,23 @@ then run
 make all-devel
 ```
 
-#### Start the dev server
+### Start the dev server
 
 I just followed the steps in the Contributing guide
 
-#### Run Streamlit
+### Run Streamlit
 
 I just followed the steps in the Contributing guide and the servers are running.
 
 ![Servers running](_static/images/vscode_vso_servers_running.png)
 
-#### Forwarding the ports
+### Forwarding the ports
 
 In order to open Streamlit in your browser you need to forward the ports 3000 and 8501.
 
 ![Forward ports](_static/images/vscode_vso_forward_ports.png)
 
-#### Streamlit hello
+### Streamlit hello
 
 And finally it works
 
