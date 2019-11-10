@@ -237,9 +237,7 @@ vsonline:~/workspace/Python-3.7.4$ nproc
 
 ### Set Up My Base Environment
 
-I then followed the [Ubuntu](https://github.com/streamlit/streamlit/wiki/Contributing#ubuntu) section
-
-with
+I then followed the [Ubuntu](https://github.com/streamlit/streamlit/wiki/Contributing#ubuntu) section with
 
 - `sudo apt install graphviz python3-distutils` replaced by `sudo apt install graphviz`
   - See the troubleshouting guide wrt `python3-distutils`.
@@ -338,13 +336,13 @@ And finally it works
 
 ### Troubleshooting
 
-#### Connecting to the Remote never finished
+#### Connecting to the Remote Never Finishes
 
-Quite often VS Code cannot open the remote. I've filed an issue at [MicrosoftDocs/vsonline issue #153](https://github.com/MicrosoftDocs/vsonline/issues/153)
+Sometimes VS Code cannot open the remote. I've filed an issue at [MicrosoftDocs/vsonline issue #153](https://github.com/MicrosoftDocs/vsonline/issues/153)
 
 ![Opening Remote issue](_static/images/vscode_vso_openingremote.png)
 
-I have experienced a few times that if I **toggle Developer Tools** under the Help menu item then it starts reconnecting and succeeds. Strange :-)
+I have experienced a few times that if I **Toggle Developer Tools** under the Help menu item then it starts reconnecting and succeeds. Strange :-)
 
 ![Developer Tools](_static/images/vscode_vso_developertools.png)
 
@@ -441,7 +439,8 @@ The root cause is Tensorflow. Tensorflow does not support installation with pipe
 The solution is to remove it from the Piplock File and install it manually
 
 ```bash
-pip install tensorflow = ">=2.0.0"
+pip install tensorflow>=2.0.0
 ```
 
 ![Tensorflow removed from pipenv file](_static/images/vscode_vso_pipfile_tensorflow.png)
+![Tensorflow removed from pipenv file](_static/images/vscode_vso_pipfile_tensorflow2.png)
