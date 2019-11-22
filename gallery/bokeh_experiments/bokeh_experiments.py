@@ -24,8 +24,18 @@ def main():
 
     You can use it in Streamlit to show charts via
     [`st.bokeh_chart`](https://streamlit.io/docs/api.html?highlight=bokeh_chart#streamlit.bokeh_chart)
+
+
+    ```python
+    circle_chart = bokeh.plotting.figure(sizing_mode="stretch_width", height=200)
+    circle_chart.circle(
+        [1, 2, 3, 4, 5], [6, 7, 2, 4, 5], size=20, color="navy", alpha=0.5
+    )
+    st.bokeh_chart(circle_chart)
+    ```
     """
     )
+    # st.echo causing error when run via eval. So I've included the code above directly
 
     sidebar_settings()
 
