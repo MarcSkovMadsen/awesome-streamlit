@@ -69,7 +69,7 @@ def main():
             plotting_panel(),
             layout_panel(),
             widgets_tables_panel(),
-            python_callbacks(),
+            widgets_panel(),
             js_callbacks_panel(),
             vision_panel(),
         ]
@@ -180,15 +180,14 @@ def vision_panel():
     text = """
 ## My Vision on the Bokeh Streamlit Integration
 
-I believe the integration with Bokeh can very easily be improved significantly to give Streamlit
-**Super Powers**.
+I believe the integration with Bokeh **can give Streamlit Super Powers** if improved slightly.
 
 For example
 
 - Wrapping the Bokeh api into a more **Streamlit like Api** like `st.bokeh.datatable(my_dataframe)`
 - Enabling **Python Callbacks** for advanced interactivity. I have a gut feeling it's easy to integrate because
-    - Streamlit and Bokeh are both Tornado Applications.
-    - There are already a lot of tutorials on integrations with Flask, Django and Jupyter Notebooks.
+  - Streamlit and Bokeh are both Tornado Applications.
+  - There are already a lot of tutorials on integrations with Flask, Django and Jupyter Notebooks.
 
 I believe the integration with Bokeh also can have a downside.
 Personally I find the Bokeh documentation and api hard to learn, navigate and use.
@@ -239,9 +238,9 @@ in JavaScript.
     return bokeh.models.Panel(child=layout, title="JS Callbacks")
 
 
-def python_callbacks():
+def widgets_panel():
     text = """
-## Widgets with Python Callbacks
+## Bokeh Widgets
 
 I don't yet know how to enable **Bokeh Widgets** with powerfull **Python Callbacks**.
 
@@ -261,7 +260,7 @@ For technical information see
 If we could get the integration working we would have access the full set of **Bokeh interactive widgets**
 as found in the [Bokeh User Guide](https://docs.bokeh.org/en/latest/docs/user_guide/interaction/widgets.html) and shown below
 
-## Try it out
+## Try it out!
 """
     button = bokeh.models.widgets.Button(label="Foo", button_type="success")
     checkbox_button_group = bokeh.models.widgets.CheckboxButtonGroup(
