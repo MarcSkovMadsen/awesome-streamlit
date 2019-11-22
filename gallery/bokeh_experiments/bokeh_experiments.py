@@ -2,9 +2,13 @@ import datetime
 import random
 
 import bokeh
+import bokeh.layouts
+import bokeh.models
+import bokeh.plotting
 import markdown
 import pandas as pd
 import streamlit as st
+
 
 def main():
     st.markdown(
