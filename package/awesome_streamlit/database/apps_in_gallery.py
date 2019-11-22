@@ -21,6 +21,13 @@ DEFAULT_APP_IN_GALLERY = Resource(
 )
 APPS_IN_GALLERY = [
     Resource(
+        name="Bokeh Experiments",
+        url=GITHUB_RAW_GALLERY_URL + "bokeh_experiments/bokeh_experiments.py",
+        tags=[tags.CODE, tags.APP_IN_GALLERY],
+        is_awesome=True,
+        author=authors.MARC_SKOV_MADSEN,
+    ),
+    Resource(
         name="Layout Experiments",
         url=GITHUB_RAW_GALLERY_URL + "layout_experiments/app.py",
         tags=[tags.CODE, tags.APP_IN_GALLERY],
