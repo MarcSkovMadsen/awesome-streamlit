@@ -29,12 +29,11 @@ def main():
 
     sidebar_settings()
 
-    with st.echo():
-        circle_chart = bokeh.plotting.figure(sizing_mode="stretch_width", height=200)
-        circle_chart.circle(
-            [1, 2, 3, 4, 5], [6, 7, 2, 4, 5], size=20, color="navy", alpha=0.5
-        )
-        st.bokeh_chart(circle_chart)
+    circle_chart = bokeh.plotting.figure(sizing_mode="stretch_width", height=200)
+    circle_chart.circle(
+        [1, 2, 3, 4, 5], [6, 7, 2, 4, 5], size=20, color="navy", alpha=0.5
+    )
+    st.bokeh_chart(circle_chart)
 
     st.markdown(
         """
@@ -301,6 +300,7 @@ width=500, height=100)
         file_input,
         multi_select,
         radio_group,
+        radio_button_group,
         select,
         slider,
         range_slider,
