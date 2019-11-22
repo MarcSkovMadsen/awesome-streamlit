@@ -194,6 +194,10 @@ Personally I find the Bokeh documentation and api hard to learn, navigate and us
 And I start spending a lot of time on layout and formatting because I can!
 Is it **Pandoras Box** that I've opened?
 
+I believe it should be considered whether the improved integration should be with Bokeh or
+[Panel](https://github.com/holoviz/panel). Panel could provide integration to the full suite of
+PyViz tools and more advanced layouts and widgets.
+
 I will be adding more examples when I get the time.
 """
     return bokeh.models.Panel(child=_markdown(text), title="Vision")
