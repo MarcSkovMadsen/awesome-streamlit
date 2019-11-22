@@ -244,6 +244,10 @@ cd into the project root folder
 cd awesome-streamlit
 ```
 
+#### Create virtual environment 
+
+##### via python
+
 Then you should create a virtual environment named .venv
 
 ```bash
@@ -269,6 +273,22 @@ In a Windows terminal it's
 ```bash
 .venv/Scripts/activate.bat
 ```
+
+##### or via anaconda
+
+Create virtual environment named awesome-streamlit
+
+```bash
+conda create -n awesome-streamlit python=3.7.4 
+```
+
+and activate environment.
+
+```bash
+activate awesome-streamlit
+```
+
+
 
 Then you should install the local requirements
 
