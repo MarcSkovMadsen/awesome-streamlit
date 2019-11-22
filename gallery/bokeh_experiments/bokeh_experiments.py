@@ -169,7 +169,7 @@ def widgets_tables_panel():
 <br>With Bokeh you can do advanced
 [bokeh.models.widgets.tables](https://docs.bokeh.org/en/latest/docs/reference/models/widgets.tables.html).
 
-Below a simple `bokeh.widgets.DataTable` is shown. I believe you can do very advanced things with
+Below a simple `bokeh.models.widgets.DataTable` is shown. I believe you can do very advanced things with
 the DataTable like filtering and formatting!
     """
     column = bokeh.layouts.Column(
