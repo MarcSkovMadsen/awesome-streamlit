@@ -27,6 +27,8 @@ def main():
 
 
     ```python
+    import streamlit as st
+    import bokeh.plotting
     circle_chart = bokeh.plotting.figure(sizing_mode="stretch_width", height=200)
     circle_chart.circle(
         [1, 2, 3, 4, 5], [6, 7, 2, 4, 5], size=20, color="navy", alpha=0.5
