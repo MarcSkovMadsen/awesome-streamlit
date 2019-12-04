@@ -21,7 +21,7 @@ DEFAULT_APP_IN_GALLERY = Resource(
 )
 APPS_IN_GALLERY = [
     Resource(
-        name="File Download workaround",
+        name="File Download Workaround",
         url=GITHUB_RAW_GALLERY_URL + "file_download/file_download.py",
         tags=[tags.CODE, tags.APP_IN_GALLERY],
         is_awesome=True,

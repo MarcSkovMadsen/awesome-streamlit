@@ -5,7 +5,8 @@ import base64
 st.header("File Download - A Workaround for small data")
 
 text = """\
-    There is currently (20191204) no official way of downloading data from Streamlit.
+    There is currently (20191204) no official way of downloading data from Streamlit. See for
+    example [Issue 400](https://github.com/streamlit/streamlit/issues/400)
 
     But I discovered a workaround
     [here](https://github.com/holoviz/panel/issues/839#issuecomment-561538340).
