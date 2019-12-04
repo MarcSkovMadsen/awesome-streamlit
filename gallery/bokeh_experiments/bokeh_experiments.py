@@ -83,7 +83,7 @@ def sidebar_settings():
     """Add selection section for setting setting the max-width and padding
     of the main block container"""
     st.sidebar.header("Bokeh Experiments")
-    max_width_100_percent = st.sidebar.checkbox("Max-width: 100%?", False)
+    max_width_100_percent = st.sidebar.checkbox("Max-width?", False)
     if not max_width_100_percent:
         max_width = st.sidebar.slider("Select max-width in px", 100, 2000, 1200, 100)
     else:
@@ -96,7 +96,7 @@ def _set_block_container_style(
     max_width: int = 1200, max_width_100_percent: bool = False
 ):
     if max_width_100_percent:
-        max_width_str = f"max-width: 100%;"
+        max_width_str = f"max-width: 95%;"
     else:
         max_width_str = f"max-width: {max_width}px;"
     st.markdown(
