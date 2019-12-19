@@ -46,6 +46,8 @@ A curated list of awesome streamlit resources. Inspired by [awesome-python](http
 - [How to create and deploy data exploration web app easily using python](https://github.com/robmarkcole/mqtt-camera-streamer) (#App, #Code, #Deployment)
 - [Kaggle Mushrooms Dashboard](https://github.com/pierpaolo28/Data-Visualization/tree/master/Streamlit) (#App)
 - [NLP Based App with Streamlit](https://github.com/Jcharis/Streamlit_DataScience_Apps/tree/master/NLP_App_with_Streamlit_Python) by [Jesse E. Agbe (JCharis)](https://github.com/Jcharis) (#App, #Code)
+- [Powering up Apache JMeter with Streamlit](https://qainsights.com/apache-jmeter-with-streamlit-for-machine-learning/) by [Naveen Kumar](https://github.com/QAInsights) (#App, #Code)
+- [Quickly Build and Deploy a Dashboard with Streamlit](https://towardsdatascience.com/quickly-build-and-deploy-an-application-with-streamlit-988ca08c7e83) by [Maarten Grootendorst](https://github.com/MaartenGr) (#App, #Code, #Deployment)
 - [Sentiment Analyzer Tool](https://www.linkedin.com/posts/patidarparas13_code-ml-machinelearning-ugcPost-6585745929062703104-ttkv) (#App, #Code, #Social)
 - [Streamlit Demo](https://github.com/Poseyy/StreamlitDemo) by [Luke Posey](https://github.com/Poseyy) (#App, #Code)
 - [Streamlit-components-demo App](https://fullstackstation.com/streamlit-components-demo) (#App)
@@ -63,18 +65,26 @@ A curated list of awesome streamlit resources. Inspired by [awesome-python](http
 ### Code
 
 - [Awesome Streamlit Test Runner](https://raw.githubusercontent.com/MarcSkovMadsen/awesome-streamlit/master/gallery/test_runner_app/test_runner_app.py) by [Marc Skov Madsen](https://datamodelsanalytics.com) (#App In Gallery, #Code)
+- [Bokeh Experiments](https://raw.githubusercontent.com/MarcSkovMadsen/awesome-streamlit/master/gallery/bokeh_experiments/bokeh_experiments.py) by [Marc Skov Madsen](https://datamodelsanalytics.com) (#App In Gallery, #Code)
 - [Country Indicators](https://raw.githubusercontent.com/MarcSkovMadsen/awesome-streamlit/master/gallery/country_indicators/streamlit_country_indicators.py) by [Marc Skov Madsen](https://datamodelsanalytics.com) (#App In Gallery, #Code, #Voila)
 - [Deploying Streamlit app to EC2 instance](https://medium.com/@pokepim/deploying-streamlit-app-to-ec2-instance-7a7edeffbb54) (#Code)
+- [File Download Workaround](https://raw.githubusercontent.com/MarcSkovMadsen/awesome-streamlit/master/gallery/file_download/file_download.py) by [Marc Skov Madsen](https://datamodelsanalytics.com) (#App In Gallery, #Code)
+- [Iris Classifier](https://raw.githubusercontent.com/MarcSkovMadsen/awesome-streamlit/master/gallery/iris_classification/iris.py) by [Noah Saunders](https://morioh.com/p/7066169a0314) (#App In Gallery, #Code, #Machine Learning)
 - [Iris EDA App](https://raw.githubusercontent.com/MarcSkovMadsen/awesome-streamlit/master/gallery/iris_eda_app/iris_eda_app.py) by [Jesse E. Agbe (JCharis)](https://github.com/Jcharis) (#App In Gallery, #Code)
+- [Layout Experiments](https://raw.githubusercontent.com/MarcSkovMadsen/awesome-streamlit/master/gallery/layout_experiments/app.py) by [Marc Skov Madsen](https://datamodelsanalytics.com) (#App In Gallery, #Code)
+- [ML App registry](https://raw.githubusercontent.com/MarcSkovMadsen/awesome-streamlit/master/gallery/ml_app_registry/app.py) by [Boadzie Daniel](https://github.com/Boadzie) (#App In Gallery, #Code, #Machine Learning)
+- [Medical Language Learner Model](https://raw.githubusercontent.com/MarcSkovMadsen/awesome-streamlit/master/gallery/medical_language_learner/medical_language_learner.py) by [Georgi Tancev](https://github.com/gtancev) (#App In Gallery, #Code, #NLP)
+- [Mining and Classifying Medical Text Documents](https://github.com/gtancev/MLML/blob/master/nlp_app.py) by [Georgi Tancev](https://github.com/gtancev) (#App, #Code)
 - [NBA Roster Turnover](https://raw.githubusercontent.com/MarcSkovMadsen/awesome-streamlit/master/gallery/nba_roster_turnover/roster_turnover.py) by [Kevin Arvai](https://github.com/arvkevi) (#App In Gallery, #Code)
 - [Self Driving Cars](https://raw.githubusercontent.com/MarcSkovMadsen/awesome-streamlit/master/gallery/self_driving_cars/self_driving_cars.py) by [Streamlit](https://streamlit.io/) (#App In Gallery, #Code)
 - [Sentiment Algorithm](https://raw.githubusercontent.com/MarcSkovMadsen/awesome-streamlit/master/gallery/sentiment_analyzer/sentiment_analyzer.py) by [Paras Patidar](https://github.com/patidarparas13) (#App In Gallery, #Code, #Machine Learning)
-- [SpacyIO](https://gist.githubusercontent.com/ines/b320cb8441b590eedf19137599ce6685/raw/6e0ead5a442fd9c5e3f621a76fba94241cc847ce/streamlit_spacy.py) by [Ines Montani](https://gist.github.com/ines) (#App In Gallery, #Code, #NLP)
+- [SpacyIO](https://raw.githubusercontent.com/MarcSkovMadsen/awesome-streamlit/master/gallery/spacyio/spacyio.py) by [Ines Montani](https://gist.github.com/ines) (#App In Gallery, #Code, #NLP)
 - [Spreadsheet](https://raw.githubusercontent.com/MarcSkovMadsen/awesome-streamlit/master/gallery/spreadsheet/spreadsheet.py) by [Marc Skov Madsen](https://datamodelsanalytics.com) (#App In Gallery, #Code)
 - [Streamlit-components-demo Code](https://github.com/virusvn/streamlit-components-demo) (#Code)
+- [Table Experiments](https://raw.githubusercontent.com/MarcSkovMadsen/awesome-streamlit/master/gallery/table_experiments/app.py) by [Marc Skov Madsen](https://datamodelsanalytics.com) (#App In Gallery, #Code)
 - [Uber Data Explorer App](https://dataexplorerlit.herokuapp.com/) (#Code)
 - [Uber NYC Pickups](https://raw.githubusercontent.com/streamlit/demo-uber-nyc-pickups/master/app.py) by [Streamlit](https://streamlit.io/) (#App In Gallery, #Code)
-- [Yahoo Finance](https://raw.githubusercontent.com/MarcSkovMadsen/awesome-streamlit/master/gallery/yahoo_finance_app/yahoo_finance_app.py) by [Marc Skov Madsen](https://datamodelsanalytics.com) (#App In Gallery, #Code, #Finance)
+- [Yahoo Finance](https://raw.githubusercontent.com/MarcSkovMadsen/awesome-streamlit/master/gallery/yahoo_finance_app/yahoo_finance_app.py) by [Paduel](https://github.com/paduel) (#App In Gallery, #Code, #Finance)
 
 ### Social
 
@@ -104,6 +114,7 @@ A curated list of awesome streamlit resources. Inspired by [awesome-python](http
 - [How to build your machine learning app in 3 simple steps](https://towardsdatascience.com/how-to-build-your-machine-learning-app-in-3-simple-steps-d56ed910355c) (#Article, #Deployment, #Tutorial)
 - [How to create and deploy data exploration web app easily using python](https://medium.com/@ansjin/how-to-create-and-deploy-data-exploration-web-app-easily-using-python-a03c4b8a1f3e) (#Article, #Deployment, #Tutorial)
 - [How to write web apps using simple python for data scientists](https://towardsdatascience.com/how-to-write-web-apps-using-simple-python-for-data-scientists-a227a1a01582) (#Article, #Tutorial)
+- [Mining and Classifying Medical Text Documents](https://towardsdatascience.com/mining-and-classifying-medical-text-documents-1876462f73bc) by [Georgi Tancev](https://github.com/gtancev) (#Article, #Deployment, #NLP, #Tutorial)
 - [Streamlit Python Tutorial (Crash Course)](https://www.youtube.com/watch?v=_9WiB2PDO7k) by [Jesse E. Agbe (JCharis)](https://github.com/Jcharis) (#Tutorial, #Video)
 
 ## Governance

@@ -322,13 +322,13 @@ RESOURCES = [
             url="https://towardsdatascience.com/quickly-build-and-deploy-an-application-with-streamlit-988ca08c7e83",
             is_awesome=True,
             tags=[tags.APP, tags.CODE, tags.DEPLOYMENT],
-            author=authors.NAVEEN_KUMAR,
+            author=authors.MAARTEN_GROOTENDORST,
         ),
         Resource(
             name="Powering up Apache JMeter with Streamlit",
             url="https://qainsights.com/apache-jmeter-with-streamlit-for-machine-learning/",
             is_awesome=True,
-            tags=[tags.APP, tags.CODE, tags.DEPLOYMENT],
+            tags=[tags.APP, tags.CODE],
             author=authors.NAVEEN_KUMAR,
         ),
         Resource(

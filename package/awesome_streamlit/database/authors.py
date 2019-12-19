@@ -18,7 +18,7 @@ PADUEL = Author(name="Paduel", url="https://github.com/paduel")
 GEORGI_TANCEV = Author(name="Georgi Tancev", url="https://github.com/gtancev")
 BOADZIE_DANIEL = Author(name="Boadzie Daniel", url="https://github.com/Boadzie")
 NOAH_SAUNDERS = Author(name="Noah Saunders", url="https://morioh.com/p/7066169a0314")
-NAVEEN_KUMAR = Author(name="Navenn Kumar", url="https://github.com/QAInsights")
+NAVEEN_KUMAR = Author(name="Naveen Kumar", url="https://github.com/QAInsights")
 MAARTEN_GROOTENDORST = Author(name="Maarten Grootendorst", url="https://github.com/MaartenGr")
 AUTHORS = [
     ALEXANDER_GARCIA,
