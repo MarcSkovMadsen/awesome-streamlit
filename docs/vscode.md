@@ -49,11 +49,11 @@ You can **debug mannually** by inserting a `breakpoint()` (Python 3.7+) or `impo
 
 ### Integrated Debugging
 
-You can also use the **integrated debugger** in VS Code via the [ptsvd](https://github.com/microsoft/ptvsd) Python package
+You can also use the **integrated debugger** in VS Code via the [ptvsd](https://github.com/microsoft/ptvsd) Python package
 
 Please note that [andaag](https://github.com/andaag) reported the below to not work on ubuntu 18.04.3 LTS with Python 3.6.8. He gets a `ValueError: signal only works in main thread` error. See [issue 648](https://github.com/streamlit/streamlit/issues/648). It's working really well for me on Windows with Python 3.7.4 though.
 
-First you should `pip install ptsvd`.
+First you should `pip install ptvsd`.
 
 Then you need to insert the following snippet in your `<your-app_name>.py` file.
 
