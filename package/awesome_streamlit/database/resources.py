@@ -600,6 +600,12 @@ RESOURCES = [
             tags=[CODE],
             is_awesome=True,
         ),
+        Resource(
+            name="Apache JMeter + Streamlit",
+            url="https://qainsights.com/apache-jmeter-with-streamlit-for-machine-learning/",
+            tags=[APP, CODE],
+            is_awesome=True,
+        ),
     ] + STREAMLIT_EXAMPLE_APPS + STREAMLIT_EXAMPLE_APPS_FAILED_TEST + RESOURCES_STREAMLIT_COMPONENT_APPS + APPS_IN_GALLERY
 
 TAGS = []

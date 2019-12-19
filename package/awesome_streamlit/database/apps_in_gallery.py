@@ -145,5 +145,12 @@ APPS_IN_GALLERY = [
         is_awesome=True,
         author=authors.JCHARIS,
     ),
+        Resource(
+        name="Apache JMeter",
+        url=GITHUB_RAW_GALLERY_URL + "streamlit_jmeter/streamlit_jmeter.py",
+        tags=[tags.CODE, tags.APP_IN_GALLERY],
+        is_awesome=True,
+        author=authors.JCHARIS,
+    ),
     DEFAULT_APP_IN_GALLERY,
 ]
