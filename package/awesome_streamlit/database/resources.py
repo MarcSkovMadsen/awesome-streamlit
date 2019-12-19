@@ -318,6 +318,20 @@ RESOURCES_STREAMLIT_COMPONENT_APPS = [
 
 RESOURCES = [
         Resource(
+            name="Quickly Build and Deploy a Dashboard with Streamlit",
+            url="https://towardsdatascience.com/quickly-build-and-deploy-an-application-with-streamlit-988ca08c7e83",
+            is_awesome=True,
+            tags=[tags.APP, tags.CODE, tags.DEPLOYMENT],
+            author=authors.NAVEEN_KUMAR,
+        ),
+        Resource(
+            name="Powering up Apache JMeter with Streamlit",
+            url="https://qainsights.com/apache-jmeter-with-streamlit-for-machine-learning/",
+            is_awesome=True,
+            tags=[tags.APP, tags.CODE, tags.DEPLOYMENT],
+            author=authors.NAVEEN_KUMAR,
+        ),
+        Resource(
             name="Machine Learning App Registry",
             url="https://ml-app-rig.herokuapp.com/",
             is_awesome=False,

@@ -124,7 +124,7 @@ Thanks
 
 GitHub [Issues](https://github.com/MarcSkovMadsen/awesome-streamlit/issues) and [Pull requests](https://github.com/MarcSkovMadsen/awesome-streamlit/pulls) are very welcome!
 
-If you believe Streamlit is awesome and would like to join as a Core Maintainer feel free to reach out via [datamodelsanalytics.com](https://datamodelsanalytics.com)
+If you believe Awesome Streamlit is awesome and would like to join as a Core Developer feel free to reach out via [datamodelsanalytics.com](https://datamodelsanalytics.com)
 
 ### How to contribute awesome links
 
@@ -244,7 +244,7 @@ cd into the project root folder
 cd awesome-streamlit
 ```
 
-#### Create virtual environment 
+#### Create virtual environment
 
 ##### via python
 
@@ -279,7 +279,7 @@ In a Windows terminal it's
 Create virtual environment named awesome-streamlit
 
 ```bash
-conda create -n awesome-streamlit python=3.7.4 
+conda create -n awesome-streamlit python=3.7.4
 ```
 
 and activate environment.

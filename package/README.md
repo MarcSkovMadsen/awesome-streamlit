@@ -2,10 +2,10 @@
 
 This package supports the [Awesome Streamlit Project](https://github.com/MarcSkovMadsen/awesome-streamlit) and provides features that are not yet and maybe never will be provided by the [Streamlit package](https://pypi.org/project/streamlit/).
 
-This package is **highly experimental** and
+This package is currently **highly experimental** and
 
 - The **api might change** dramatically and often!
-  - If the Streamlit package starts providing the functionality, then it will be removed from this package.
+  - If the Streamlit package starts providing the functionality, then it should be removed from this package.
 - If you find a version that works for you, then please **pin the version number**!
   - An example of pinning the version number is `awesome-streamlit==20191014.2`.
 

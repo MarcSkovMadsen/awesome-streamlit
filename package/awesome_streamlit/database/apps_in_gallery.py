@@ -116,10 +116,7 @@ APPS_IN_GALLERY = [
     ),
     Resource(
         name="SpacyIO",
-        url=(
-            "https://gist.githubusercontent.com/ines/b320cb8441b590eedf19137599ce6685/raw/"
-            "6e0ead5a442fd9c5e3f621a76fba94241cc847ce/streamlit_spacy.py"
-        ),
+        url=GITHUB_RAW_GALLERY_URL + "spacyio/spacyio.py",
         tags=[tags.CODE, tags.APP_IN_GALLERY, tags.NLP],
         is_awesome=True,
         author=authors.INES,
