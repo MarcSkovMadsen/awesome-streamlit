@@ -111,10 +111,6 @@ serverPort = 80
 # Default: (unset)
 #secretAccessKey =
 
-# Make the shared app visible only to users who have been granted view permission. If you are interested in this option, contact us at support@streamlit.io.
-# Default: false
-requireLoginToView = false
-
 # The "subdirectory" within the S3 bucket where to save apps.
 # S3 calls paths "keys" which is why the keyPrefix is like a subdirectory. Use "" to mean the root directory.
 # Default: ""
