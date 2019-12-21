@@ -318,6 +318,13 @@ RESOURCES_STREAMLIT_COMPONENT_APPS = [
 
 RESOURCES = [
         Resource(
+            "Awesome-Panel.Org",
+            url="https://awesome-panel.org",
+            is_awesome=True,
+            tags=[tags.SISTER_SITES],
+            author=authors.MARC_SKOV_MADSEN,
+        ),
+        Resource(
             name="Quickly Build and Deploy a Dashboard with Streamlit",
             url="https://towardsdatascience.com/quickly-build-and-deploy-an-application-with-streamlit-988ca08c7e83",
             is_awesome=True,

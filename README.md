@@ -18,7 +18,6 @@ This project provides
 
 Visit the app at [awesome-streamlit.org](https://awesome-streamlit.org)!
 
-
 ![Awesome Streamlit Org Animation](https://github.com/MarcSkovMadsen/awesome-streamlit/blob/master/assets/awesome-streamlit-full-branded.gif?raw=true)
 
 ## The Magic of Streamlit
@@ -71,6 +70,7 @@ A curated list of awesome streamlit resources. Inspired by [awesome-python](http
 - [File Download Workaround](https://raw.githubusercontent.com/MarcSkovMadsen/awesome-streamlit/master/gallery/file_download/file_download.py) by [Marc Skov Madsen](https://datamodelsanalytics.com) (#App In Gallery, #Code)
 - [Iris Classifier](https://raw.githubusercontent.com/MarcSkovMadsen/awesome-streamlit/master/gallery/iris_classification/iris.py) by [Noah Saunders](https://morioh.com/p/7066169a0314) (#App In Gallery, #Code, #Machine Learning)
 - [Iris EDA App](https://raw.githubusercontent.com/MarcSkovMadsen/awesome-streamlit/master/gallery/iris_eda_app/iris_eda_app.py) by [Jesse E. Agbe (JCharis)](https://github.com/Jcharis) (#App In Gallery, #Code)
+- [Kickstarter Dashboard](https://raw.githubusercontent.com/MarcSkovMadsen/awesome-streamlit/master/gallery/kickstarter_dashboard/kickstarter_dashboard.py) by [Marc Skov Madsen](https://datamodelsanalytics.com) (#App In Gallery, #Code)
 - [Layout Experiments](https://raw.githubusercontent.com/MarcSkovMadsen/awesome-streamlit/master/gallery/layout_experiments/app.py) by [Marc Skov Madsen](https://datamodelsanalytics.com) (#App In Gallery, #Code)
 - [ML App registry](https://raw.githubusercontent.com/MarcSkovMadsen/awesome-streamlit/master/gallery/ml_app_registry/app.py) by [Boadzie Daniel](https://github.com/Boadzie) (#App In Gallery, #Code, #Machine Learning)
 - [Medical Language Learner Model](https://raw.githubusercontent.com/MarcSkovMadsen/awesome-streamlit/master/gallery/medical_language_learner/medical_language_learner.py) by [Georgi Tancev](https://github.com/gtancev) (#App In Gallery, #Code, #NLP)
@@ -85,6 +85,10 @@ A curated list of awesome streamlit resources. Inspired by [awesome-python](http
 - [Uber Data Explorer App](https://dataexplorerlit.herokuapp.com/) (#Code)
 - [Uber NYC Pickups](https://raw.githubusercontent.com/streamlit/demo-uber-nyc-pickups/master/app.py) by [Streamlit](https://streamlit.io/) (#App In Gallery, #Code)
 - [Yahoo Finance](https://raw.githubusercontent.com/MarcSkovMadsen/awesome-streamlit/master/gallery/yahoo_finance_app/yahoo_finance_app.py) by [Paduel](https://github.com/paduel) (#App In Gallery, #Code, #Finance)
+
+### Sister Sites
+
+- [Awesome-Panel.Org](https://awesome-panel.org) by [Marc Skov Madsen](https://datamodelsanalytics.com) (#Sister Sites)
 
 ### Social
 
@@ -106,7 +110,8 @@ A curated list of awesome streamlit resources. Inspired by [awesome-python](http
 
 ### Tutorial
 
-- [A step by step guide to running streamlit pytorch and bert on a cheap aws instance](https://fuzzyblog.io/blog/python/2019/10/17/a-step-by-step-guide-to-running-streamlit-pytorch-and-bert-on-a-cheap-aws-instance.html) (#Article, #Deployment, #Tutorial)
+- [A step by step guide to running streamlit pytorch and bert on a cheap aws instance](https://fuzzyblog.io/blog/python/2019/10/17/a-step-by-step-guide-to-running-streamlit-pytorch-and-bert-on-a-cheap-aws-instance.html) (#Article, #Deployment,
+#Tutorial)
 - [Building a ui for your latest ai](https://towardsdatascience.com/full-stack-ai-building-a-ui-for-your-latest-ai-project-in-no-time-at-all-7e5c8fd4eafd  ) by [Luke Posey](https://github.com/Poseyy) (#Article, #Tutorial)
 - [Building an Iris EDA App with Streamlit and Python](https://www.youtube.com/watch?v=L_mZcEMFUIc) by [Jesse E. Agbe (JCharis)](https://github.com/Jcharis) (#Tutorial, #Video)
 - [Full-Stack AI: Building a UI for Your Latest AI Project in No Time at All](https://towardsdatascience.com/full-stack-ai-building-a-ui-for-your-latest-ai-project-in-no-time-at-all-7e5c8fd4eafd) (#Article, #Image Recognition, #Tutorial)
