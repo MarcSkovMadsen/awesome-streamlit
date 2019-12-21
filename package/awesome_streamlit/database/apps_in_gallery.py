@@ -21,6 +21,13 @@ DEFAULT_APP_IN_GALLERY = Resource(
 )
 APPS_IN_GALLERY = [
     Resource(
+        name="Kickstarter Dashboard",
+        url=GITHUB_RAW_GALLERY_URL + "kickstarter_dashboard/kickstarter_dashboard.py",
+        tags=[tags.CODE, tags.APP_IN_GALLERY],
+        is_awesome=True,
+        author=authors.MARC_SKOV_MADSEN,
+    ),
+    Resource(
         name="File Download Workaround",
         url=GITHUB_RAW_GALLERY_URL + "file_download/file_download.py",
         tags=[tags.CODE, tags.APP_IN_GALLERY],
