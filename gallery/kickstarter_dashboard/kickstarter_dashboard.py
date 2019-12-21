@@ -15,7 +15,6 @@ You can find the alternative version of this Dashboard in Panel at
 Here you find an implementation in Streamlit so that you can compare and contrast the frameworks.
 """
 import pathlib
-from datetime import date
 from typing import List, Optional
 
 import holoviews as hv
@@ -25,7 +24,6 @@ import panel as pn
 import param
 import streamlit as st
 
-KICKSTARTER_PATH = pathlib.Path(__file__).parent / "kickstarter-cleaned.csv"
 COLUMNS = ["created_at", "usd_pledged", "state", "category_slug"]
 DATE_COLUMNS = ["created_at"]
 N_SAMPLES = 10000
@@ -36,6 +34,20 @@ Please note that zooming on the parent, scatter chart and having the child, bar 
 accordingly is not currently not possible in Streamlit. Instead you can use the Sliders in the
 sidebar to zoom.
 """
+
+SEARCH_PATHS = [
+    pathlib.Path(__file__).parent / "kickstarter-cleaned.csv",
+    pathlib.Path(__file__).parent / "kickstarter_dashboard" / "kickstarter-cleaned.csv"
+]
+if SEARCH_PATHS[0].exists():
+    KICKSTARTER_PATH = str(SEARCH_PATHS[0])
+elif SEARCH_PATHS[1].exists():
+    KICKSTARTER_PATH = str(SEARCH_PATHS[1])
+else:
+    KICKSTARTER_PATH = (
+        "https://raw.githubusercontent.com/MarcSkovMadsen/awesome-streamlit/master/"
+        "gallery/kickstarter_dashboard/kickstarter-cleaned.csv"
+    )
 
 
 @st.cache()
@@ -77,7 +89,7 @@ def main():
     y_range = st.sidebar.slider("Select usd_pledged", 0.0, 5.0, (0.0, 5.0))
     filter_df = KickstarterDashboard.filter_on_categories(kickstarter_df, categories_selected)
     filter_df = kickstarter_dashboard.filter_on_ranges(
-        filter_df, (date(x_range[0], 1, 1), date(x_range[1], 12, 31)), y_range
+        filter_df, (pd.Timestamp(x_range[0], 1, 1), pd.Timestamp(x_range[1], 12, 31)), y_range
     )
     kickstarter_dashboard.scatter_df = filter_df
 
