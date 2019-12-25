@@ -6,6 +6,7 @@ import src.pages.gallery.index
 import src.pages.home
 import src.pages.resources
 import src.pages.vision
+import src.pages.about
 
 ast.core.services.other.set_logging_format()
 
@@ -14,6 +15,7 @@ PAGES = {
     "Resources": src.pages.resources,
     "Gallery": src.pages.gallery.index,
     "Vision": src.pages.vision,
+    "About": src.pages.about,
 }
 
 

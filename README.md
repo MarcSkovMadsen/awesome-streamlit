@@ -130,6 +130,8 @@ I'm Marc, Skov, Madsen, PhD, CFA®, Lead Data Scientist Developer at [Ørsted](h
 
 You can learn more about me at [datamodelsanalytics.com](https://datamodelsanalytics.com)
 
+[<img src="https://github.com/MarcSkovMadsen/awesome-streamlit/blob/master/assets/images/datamodelsanalytics.png?raw=true" style="max-width: 968px">](https://datamodelsanalytics.com)
+
 I try my best to govern and maintain this project in the spirit of the [Zen of Python](https://www.python.org/dev/peps/pep-0020/).
 
 But **i'm not an experienced open source maintainer** so helpfull suggestions are appreciated.
