@@ -8,7 +8,7 @@ import awesome_streamlit as ast
 def write():
     """Used to write the page in the app.py file"""
     with st.spinner("Loading About ..."):
-        ast.shared.components.title_awesome("About")
+        ast.shared.components.title_awesome(" - About")
         st.markdown(
             """## Contributions
 
@@ -27,7 +27,7 @@ This project is developed by Marc Skov Madsen. You can learn more about me at
 
 Feel free to reach out if you wan't to join the project as a developer. You can find my contact details at [datamodelsanalytics.com](https://datamodelsanalytics.com).
 
-[<img src="https://github.com/MarcSkovMadsen/awesome-streamlit/blob/master/assets/images/datamodelsanalytics.png?raw=true" style="max-width: 600px">](https://datamodelsanalytics.com)
+[<img src="https://github.com/MarcSkovMadsen/awesome-streamlit/blob/master/assets/images/datamodelsanalytics.png?raw=true" style="max-width: 700px">](https://datamodelsanalytics.com)
 """,
             unsafe_allow_html=True,
         )
