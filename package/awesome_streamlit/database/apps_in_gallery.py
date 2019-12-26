@@ -21,6 +21,13 @@ DEFAULT_APP_IN_GALLERY = Resource(
 )
 APPS_IN_GALLERY = [
     Resource(
+        name="File Uploader",
+        url=GITHUB_RAW_GALLERY_URL + "file_uploader/file_uploader.py",
+        tags=[tags.CODE, tags.APP_IN_GALLERY],
+        is_awesome=True,
+        author=authors.MARC_SKOV_MADSEN,
+    ),
+    Resource(
         name="Emojis",
         url=GITHUB_RAW_GALLERY_URL + "emojis/emojis.py",
         tags=[tags.CODE, tags.APP_IN_GALLERY],

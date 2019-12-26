@@ -53,6 +53,7 @@ def get_file_type(file: Union[BytesIO, StringIO]) -> FileType:
         or "from " in content
         or "def " in content
         or "class " in content
+        or "print(" in content
     ):
         return FileType.PYTHON
 
