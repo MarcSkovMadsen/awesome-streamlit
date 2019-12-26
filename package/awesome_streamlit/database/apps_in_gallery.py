@@ -21,6 +21,13 @@ DEFAULT_APP_IN_GALLERY = Resource(
 )
 APPS_IN_GALLERY = [
     Resource(
+        name="Emojis",
+        url=GITHUB_RAW_GALLERY_URL + "emojis/emojis.py",
+        tags=[tags.CODE, tags.APP_IN_GALLERY],
+        is_awesome=True,
+        author=authors.MARC_SKOV_MADSEN,
+    ),
+    Resource(
         name="Owid Dashboard",
         url=GITHUB_RAW_GALLERY_URL + "owid_dashboard/owid_dashboard.py",
         tags=[tags.CODE, tags.APP_IN_GALLERY],
