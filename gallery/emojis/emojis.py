@@ -1,7 +1,11 @@
 """Streamlit v. 0.52 supports emoji codes in Markdown :+1:.
 
-I've included a list here just for reference. It is based on a list at
-[Web FX](https://www.webfx.com/tools/emoji-cheat-sheet/)"""
+I've included a list here just for reference.
+
+It is based on the list at
+[Web FX](https://www.webfx.com/tools/emoji-cheat-sheet/).  I found out that **Streamlit currently
+does not support all the emojis in that list**. I've created the
+[issue 895](https://github.com/streamlit/streamlit/issues/895)"""
 from enum import Enum
 from typing import List
 
