@@ -17,7 +17,7 @@ data on [GitHub](https://github.com/owid/owid-datasets/tree/master/datasets).
 
 import json
 import pathlib
-from typing import Optional
+from typing import Optional, Union
 
 import pandas as pd
 import streamlit as st
@@ -27,7 +27,7 @@ from bokeh.plotting import figure
 
 import geopandas as gpd
 
-FILE_DIR = pathlib.Path(__file__).parent
+FILE_DIR = pathlib.Path.cwd() / "gallery/owid_dashboard"
 SHAPEFILE = FILE_DIR / "data/ne_110m_admin_0_countries.shp"
 OWIDDATASETS_FILE = FILE_DIR / "data/owid_datasets.csv"
 
@@ -102,8 +102,8 @@ class OwidDashboard:
             str: A HTML link
         """
         download_icon = (
-            '<img src="https://github.com/MarcSkovMadsen/awesome-streamlit/blob/master/assets/images/'
-            'icons/download_icon.png?raw=true" height="16px" width="16px"/>'
+            '<img src="https://github.com/MarcSkovMadsen/awesome-streamlit/blob/master/assets/'
+            'images/icons/download_icon.png?raw=true" height="16px" width="16px"/>'
         )
         if self.dataset_name:
             download_link = self.owid_data_sets.loc[self.dataset_name].url
