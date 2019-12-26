@@ -21,6 +21,13 @@ DEFAULT_APP_IN_GALLERY = Resource(
 )
 APPS_IN_GALLERY = [
     Resource(
+        name="Owid Dashboard",
+        url=GITHUB_RAW_GALLERY_URL + "owid_dashboard/owid_dashboard.py",
+        tags=[tags.CODE, tags.APP_IN_GALLERY],
+        is_awesome=True,
+        author=authors.MARC_SKOV_MADSEN,
+    ),
+    Resource(
         name="Kickstarter Dashboard",
         url=GITHUB_RAW_GALLERY_URL + "kickstarter_dashboard/kickstarter_dashboard.py",
         tags=[tags.CODE, tags.APP_IN_GALLERY],
@@ -71,8 +78,7 @@ APPS_IN_GALLERY = [
     ),
     Resource(
         name="Medical Language Learner Model",
-        url=GITHUB_RAW_GALLERY_URL
-        + "medical_language_learner/medical_language_learner.py",
+        url=GITHUB_RAW_GALLERY_URL + "medical_language_learner/medical_language_learner.py",
         tags=[tags.CODE, tags.APP_IN_GALLERY, tags.NLP],
         is_awesome=True,
         author=authors.GEORGI_TANCEV,
@@ -86,8 +92,7 @@ APPS_IN_GALLERY = [
     ),
     Resource(
         name="Country Indicators",
-        url=GITHUB_RAW_GALLERY_URL
-        + "country_indicators/streamlit_country_indicators.py",
+        url=GITHUB_RAW_GALLERY_URL + "country_indicators/streamlit_country_indicators.py",
         tags=[tags.CODE, tags.APP_IN_GALLERY, tags.VOILA],
         is_awesome=True,
         author=authors.MARC_SKOV_MADSEN,
