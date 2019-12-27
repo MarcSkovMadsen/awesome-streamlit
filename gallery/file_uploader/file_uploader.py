@@ -33,7 +33,8 @@ class FileType(Enum):
 
 def get_file_type(file: Union[BytesIO, StringIO]) -> FileType:
     """The file uploader widget does not provide information on the type of file uploaded so we have
-    to guess using rules or ML
+    to guess using rules or ML. See
+    [Issue 896](https://github.com/streamlit/streamlit/issues/896)
 
     I've implemented rules for now :-)
 
