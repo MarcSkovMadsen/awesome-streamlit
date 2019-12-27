@@ -46,7 +46,7 @@ def main():
         if not value in static_store.values():
             static_store[result] = value
     else:
-        static_store.clear()  # Hack to clear list of the user clears the cache and reloads the page
+        static_store.clear()  # Hack to clear list if the user clears the cache and reloads the page
         st.info("Upload one or more `.py` files.")
 
     if st.button("Clear file list"):
