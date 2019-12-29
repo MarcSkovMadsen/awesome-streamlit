@@ -18,7 +18,7 @@ file uploader widget programmatically.
 Based on the above list I created [Issue 897](https://github.com/streamlit/streamlit/issues/897)
 
 This example was based on
-[Discourse 1445](https://discuss.streamlit.io/t/uploading-multiple-files-with-file-uploader/1445)
+[Discuss 1445](https://discuss.streamlit.io/t/uploading-multiple-files-with-file-uploader/1445)
 """
 # pylint: enable=line-too-long
 from typing import Dict

@@ -70,7 +70,7 @@ STREAMLIT_EXAMPLE_APPS = [
 ]
 RESOURCES_STREAMLIT_COMPONENT_APPS = [
     Resource(
-        name="charts.area_chart",
+        name="pcharts.area_chart",
         url="https://raw.githubusercontent.com/streamlit/streamlit/master/docs/api-examples-source/charts.area_chart.py",
         is_awesome=False,
         tags=[CODE, APP_IN_GALLERY, tags.STREAMLIT_COMPONENT],
@@ -317,6 +317,13 @@ RESOURCES_STREAMLIT_COMPONENT_APPS = [
 ]
 
 RESOURCES = [
+        Resource(
+            "Intermediate Streamlit - Tips and Tricks for an evolving app",
+            url = "https://towardsdatascience.com/intermediate-streamlit-d5a1381daa65",
+            is_awesome=True,
+            tags=[tags.ARTICLE],
+            author=authors.PETER_BAUMGARTNER,
+        ),
         Resource(
             "Awesome-Panel.Org",
             url="https://awesome-panel.org",

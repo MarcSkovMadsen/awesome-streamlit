@@ -20,6 +20,13 @@ BOADZIE_DANIEL = Author(name="Boadzie Daniel", url="https://github.com/Boadzie")
 NOAH_SAUNDERS = Author(name="Noah Saunders", url="https://morioh.com/p/7066169a0314")
 NAVEEN_KUMAR = Author(name="Naveen Kumar", url="https://github.com/QAInsights")
 MAARTEN_GROOTENDORST = Author(name="Maarten Grootendorst", url="https://github.com/MaartenGr")
+PETER_BAUMGARTNER = Author(
+    name="Peter Baumgartner",
+    url="https://pmbaumgartner.github.io/",
+    # github_url="https://github.com/pmbaumgartner",
+    # github_avatar_url="https://avatars0.githubusercontent.com/u/5107405",
+)
+
 AUTHORS = [
     ALEXANDER_GARCIA,
     BOADZIE_DANIEL,
@@ -32,6 +39,7 @@ AUTHORS = [
     NAVEEN_KUMAR,
     NOAH_SAUNDERS,
     PARAS_PATIDAR,
+    PETER_BAUMGARTNER,
     POSEY,
     STREAMLIT_AUTHOR,
 ]
