@@ -16,7 +16,7 @@ import numpy as np
 import pandas as pd
 import streamlit as st
 from keras.applications import (
-    VGG16,
+    # VGG16,
     VGG19,
     InceptionV3,
     MobileNetV2,
@@ -104,7 +104,8 @@ class KerasApplication(NamedTuple):
             (id, prediction, probability)
         """
         report_progress_func(
-            f"Loading {self.name} model ... (This might take from seconds to several minutes)", 10
+            f"Loading {self.name} model ... (The first time this is done it may take several "
+            "minutes)", 10
         )
         model = self.get_model()
 
@@ -122,7 +123,7 @@ class KerasApplication(NamedTuple):
     @staticmethod
     def to_main_prediction_string(predictions) -> str:
         """A pretty string of the main prediction to output to the user"""
-        _, prediction, prob = predictions[0]
+        _, prediction, _ = predictions[0]
         return f"It's a **{prediction.capitalize()}**"
 
     @staticmethod
@@ -172,7 +173,8 @@ def get_resources_markdown(model: KerasApplication) -> str:
 # See https://keras.io/applications/
 KERAS_APPLICATIONS: List[KerasApplication] = [
     KerasApplication("ResNet50", ResNet50, url="https://keras.io/applications/#resnet"),
-    KerasApplication("VGG16", VGG16, url="https://keras.io/applications/#vgg16"),
+    # DOES NOT WORK FOR ME ON WINDOWS OR LINUX
+    # KerasApplication("VGG16", VGG16, url="https://keras.io/applications/#vgg16"),
     KerasApplication("VGG19", VGG19, url="https://keras.io/applications/#vgg19"),
     KerasApplication(
         "InceptionV3",
