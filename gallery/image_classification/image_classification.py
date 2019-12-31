@@ -1,14 +1,12 @@
-"""# Image Classification
+"""This is an image classifier app that enables a user to
 
-This is an image classifier app that enables a user to
+- select a classifier model (in the sidebar),
+- upload an image (in the main area)
 
-- select a **classifier model**,
-- upload an image
+and get a predicted classification in return.
 
-and get a prediction/ classification in return.
-
-This app is inspired by the [imageNet](https://github.com/iamatulsingh/imageNet-streamlit)
-application developed by awesome [Atul Kumar Singh](https://github.com/iamatulsingh)."""
+This app is inspired by the awesome [imageNet](https://github.com/iamatulsingh/imageNet-streamlit)
+application developed by [Atul Kumar Singh](https://github.com/iamatulsingh)."""
 import os
 from typing import Callable, List, NamedTuple, Tuple
 
@@ -145,7 +143,7 @@ class KerasApplication(NamedTuple):
         )
         return chart
 
-
+# pylint: disable=line-too-long
 def get_resources_markdown(model: KerasApplication) -> str:
     """Some info regarding Resources
 
@@ -164,8 +162,9 @@ def get_resources_markdown(model: KerasApplication) -> str:
 - Images
   - [ImageNet](http://www.image-net.org/)
   - [Awesome Images](https://github.com/heyalexej/awesome-images)
+  - [Awesome-Streamlit Images](https://github.com/MarcSkovMadsen/awesome-streamlit/tree/master/gallery/image_classification/images)
 """
-
+# pylint: enable=line-too-long
 
 # See https://keras.io/applications/
 KERAS_APPLICATIONS: List[KerasApplication] = [
@@ -203,10 +202,11 @@ def main():
 
     st.title("Image Classification with Keras and Tensorflow.")
     st.info(__doc__)
+    st.sidebar.subheader("Classifier")
     selected_model = st.sidebar.selectbox(
         "Pick an image classifier model", options=KERAS_APPLICATIONS, format_func=lambda x: x.name
     )
-    st.sidebar.info(get_resources_markdown(selected_model))
+    st.sidebar.markdown(get_resources_markdown(selected_model))
     image = st.file_uploader("Upload a file for classification", IMAGE_TYPES)
 
     if image:
