@@ -8,6 +8,7 @@ trigger:
     - devops/azure-pipelines/build.base.yml
     - devops/docker/Dockerfile.base
     - requirements_base.txt
+    - requirements.txt
 
 pool:
   vmImage: 'Ubuntu-16.04'
