@@ -123,7 +123,7 @@ class KerasApplication(NamedTuple):
     def to_main_prediction_string(predictions) -> str:
         """A pretty string of the main prediction to output to the user"""
         _, prediction, prob = predictions[0]
-        return f"It's a **{prediction.capitalize()}** with probability {prob * 100:.0f}%"
+        return f"It's a **{prediction.capitalize()}**"
 
     @staticmethod
     def to_predictions_chart(predictions) -> alt.Chart:
@@ -142,6 +142,7 @@ class KerasApplication(NamedTuple):
             )
         )
         return chart
+
 
 # pylint: disable=line-too-long
 def get_resources_markdown(model: KerasApplication) -> str:
@@ -162,8 +163,10 @@ def get_resources_markdown(model: KerasApplication) -> str:
 - Images
   - [ImageNet](http://www.image-net.org/)
   - [Awesome Images](https://github.com/heyalexej/awesome-images)
-  - [Awesome-Streamlit Images](https://github.com/MarcSkovMadsen/awesome-streamlit/tree/master/gallery/image_classification/images)
+  - [Awesome-Streamlit Images](https://github.com/MarcSkovMadsen/awesome-streamlit/tree/master/gallery/image_classifier/images)
 """
+
+
 # pylint: enable=line-too-long
 
 # See https://keras.io/applications/
