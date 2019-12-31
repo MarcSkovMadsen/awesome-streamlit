@@ -21,6 +21,13 @@ DEFAULT_APP_IN_GALLERY = Resource(
 )
 APPS_IN_GALLERY = [
     Resource(
+        name="Image Classsifier",
+        url=GITHUB_RAW_GALLERY_URL + "image_classifier/image_classifier.py",
+        tags=[tags.CODE, tags.APP_IN_GALLERY],
+        is_awesome=True,
+        author=authors.MARC_SKOV_MADSEN,
+    ),
+    Resource(
         name="File Uploader - Multiple Files",
         url=GITHUB_RAW_GALLERY_URL + "file_uploader_multiple_files/file_uploader_multiple_files.py",
         tags=[tags.CODE, tags.APP_IN_GALLERY],
