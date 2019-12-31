@@ -21,7 +21,7 @@ DEFAULT_APP_IN_GALLERY = Resource(
 )
 APPS_IN_GALLERY = [
     Resource(
-        name="Image Classsifier",
+        name="Image Classifier",
         url=GITHUB_RAW_GALLERY_URL + "image_classifier/image_classifier.py",
         tags=[tags.CODE, tags.APP_IN_GALLERY],
         is_awesome=True,
