@@ -65,4 +65,4 @@ lxml==4.4.1
 vaderSentiment==3.2.1 # A lexicon and rule-based sentiment analysis tool that is specifically attuned to sentiments expressed in social media. See https://github.com/cjhutto/vaderSentiment
 hvplot==0.5.2
 panel==0.7.0
-keras==2.0.0
+keras==2.3.1
