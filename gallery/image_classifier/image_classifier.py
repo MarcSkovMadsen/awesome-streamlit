@@ -142,7 +142,7 @@ class KerasApplication(NamedTuple):
             alt.Chart(dataframe)
             .mark_bar()
             .encode(
-                x="probability",
+                x=alt.X("probability:Q", scale=alt.Scale(domain=(0, 100))),
                 y=alt.Y(
                     "prediction:N",
                     sort=alt.EncodingSortField(field="probability", order="descending"),
