@@ -16,10 +16,15 @@ import numpy as np
 import pandas as pd
 import streamlit as st
 from keras.applications import (
+    # DOES NOT WORK FOR ME ON WINDOWS OR LINUX
     # VGG16,
-    VGG19,
+    # VGG19,
+    # DOES NOT PREDICT VERY WELL FOR ME
+    # MobileNetV2,
     InceptionV3,
-    MobileNetV2,
+    DenseNet121,
+    NASNetMobile,
+    NASNetLarge,
     ResNet50,
     Xception,
     imagenet_utils,
@@ -105,7 +110,8 @@ class KerasApplication(NamedTuple):
         """
         report_progress_func(
             f"Loading {self.name} model ... (The first time this is done it may take several "
-            "minutes)", 10
+            "minutes)",
+            10,
         )
         model = self.get_model()
 
@@ -173,9 +179,11 @@ def get_resources_markdown(model: KerasApplication) -> str:
 # See https://keras.io/applications/
 KERAS_APPLICATIONS: List[KerasApplication] = [
     KerasApplication("ResNet50", ResNet50, url="https://keras.io/applications/#resnet"),
+    KerasApplication("DenseNet121", DenseNet121, url="https://keras.io/applications/#densenet"),
+    KerasApplication("NASNetMobile", NASNetMobile, url="https://keras.io/applications/#nasnet"),
     # DOES NOT WORK FOR ME ON WINDOWS OR LINUX
     # KerasApplication("VGG16", VGG16, url="https://keras.io/applications/#vgg16"),
-    KerasApplication("VGG19", VGG19, url="https://keras.io/applications/#vgg19"),
+    # KerasApplication("VGG19", VGG19, url="https://keras.io/applications/#vgg19"),
     KerasApplication(
         "InceptionV3",
         InceptionV3,
@@ -190,7 +198,14 @@ KERAS_APPLICATIONS: List[KerasApplication] = [
         preprocess_input_func=inception_v3.preprocess_input,
         url="https://keras.io/applications/#xception",
     ),
-    KerasApplication("MobileNetV2", MobileNetV2, url="https://keras.io/applications/#mobilenet"),
+    # Predicts poorly for me
+    # KerasApplication("MobileNetV2", MobileNetV2, url="https://keras.io/applications/#mobilenet"),
+    KerasApplication(
+        "NASNetLarge",
+        NASNetLarge,
+        url="https://keras.io/applications/#nasnet",
+        input_shape=(331, 331),
+    ),
 ]
 
 IMAGE_TYPES = ["png", "jpg"]
