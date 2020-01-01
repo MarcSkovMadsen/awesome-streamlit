@@ -75,6 +75,7 @@ A curated list of awesome streamlit resources. Inspired by [awesome-python](http
 - [File Download Workaround](https://raw.githubusercontent.com/MarcSkovMadsen/awesome-streamlit/master/gallery/file_download/file_download.py) by [Marc Skov Madsen](https://datamodelsanalytics.com) (#App In Gallery, #Code)
 - [File Uploader](https://raw.githubusercontent.com/MarcSkovMadsen/awesome-streamlit/master/gallery/file_uploader/file_uploader.py) by [Marc Skov Madsen](https://datamodelsanalytics.com) (#App In Gallery, #Code)
 - [File Uploader - Multiple Files](https://raw.githubusercontent.com/MarcSkovMadsen/awesome-streamlit/master/gallery/file_uploader_multiple_files/file_uploader_multiple_files.py) by [Marc Skov Madsen](https://datamodelsanalytics.com) (#App In Gallery, #Code)
+- [Image Classifier](https://raw.githubusercontent.com/MarcSkovMadsen/awesome-streamlit/master/gallery/image_classifier/image_classifier.py) by [Marc Skov Madsen](https://datamodelsanalytics.com) (#App In Gallery, #Code)
 - [Iris Classifier](https://raw.githubusercontent.com/MarcSkovMadsen/awesome-streamlit/master/gallery/iris_classification/iris.py) by [Noah Saunders](https://morioh.com/p/7066169a0314) (#App In Gallery, #Code, #Machine Learning)
 - [Iris EDA App](https://raw.githubusercontent.com/MarcSkovMadsen/awesome-streamlit/master/gallery/iris_eda_app/iris_eda_app.py) by [Jesse E. Agbe (JCharis)](https://github.com/Jcharis) (#App In Gallery, #Code)
 - [Kickstarter Dashboard](https://raw.githubusercontent.com/MarcSkovMadsen/awesome-streamlit/master/gallery/kickstarter_dashboard/kickstarter_dashboard.py) by [Marc Skov Madsen](https://datamodelsanalytics.com) (#App In Gallery, #Code)
@@ -93,6 +94,10 @@ A curated list of awesome streamlit resources. Inspired by [awesome-python](http
 - [Uber Data Explorer App](https://dataexplorerlit.herokuapp.com/) (#Code)
 - [Uber NYC Pickups](https://raw.githubusercontent.com/streamlit/demo-uber-nyc-pickups/master/app.py) by [Streamlit](https://streamlit.io/) (#App In Gallery, #Code)
 - [Yahoo Finance](https://raw.githubusercontent.com/MarcSkovMadsen/awesome-streamlit/master/gallery/yahoo_finance_app/yahoo_finance_app.py) by [Paduel](https://github.com/paduel) (#App In Gallery, #Code, #Finance)
+
+### Guide
+
+- [Host Streamlit on Heroku with Nginx basic authentication](https://github.com/Taxuspt/heroku_streamlit_nginx) by [Alexandre Domingues](https://github.com/Taxuspt) (#Code, #Guide)
 
 ### Sister Sites
 
@@ -127,7 +132,7 @@ A curated list of awesome streamlit resources. Inspired by [awesome-python](http
 - [How to create and deploy data exploration web app easily using python](https://medium.com/@ansjin/how-to-create-and-deploy-data-exploration-web-app-easily-using-python-a03c4b8a1f3e) (#Article, #Deployment, #Tutorial)
 - [How to write web apps using simple python for data scientists](https://towardsdatascience.com/how-to-write-web-apps-using-simple-python-for-data-scientists-a227a1a01582) (#Article, #Tutorial)
 - [Mining and Classifying Medical Text Documents](https://towardsdatascience.com/mining-and-classifying-medical-text-documents-1876462f73bc) by [Georgi Tancev](https://github.com/gtancev) (#Article, #Deployment, #NLP, #Tutorial)
-- [Streamlit Python Tutorial (Crash Course)](https://www.youtube.com/watch?v=_9WiB2PDO7k) by [Jesse E. Agbe (JCharis)](https://github.com/Jcharis) (#Tutorial, #Video)
+- [Streamlit Python Tutorial (Crash Course)](https://www.youtube.com/watch?v=_9WiB2PDO7k) by [Jesse E. Agbe (JCharis)](https://github.com/Jcharis) (#Tutorial, #Video
 
 ## Governance
 

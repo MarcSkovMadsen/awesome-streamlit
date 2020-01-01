@@ -4,9 +4,16 @@ Here you maintain the list of awesome resources
 """
 from awesome_streamlit.database import authors, tags
 from awesome_streamlit.database.apps_in_gallery import APPS_IN_GALLERY
-from awesome_streamlit.database.tags import (ALTERNATIVE, APP, APP_IN_GALLERY,
-                                             CODE, SOCIAL, STREAMLIT_TAG,
-                                             TECHNICAL)
+from awesome_streamlit.database.tags import (
+    ALTERNATIVE,
+    APP,
+    APP_IN_GALLERY,
+    CODE,
+    SOCIAL,
+    STREAMLIT_TAG,
+    TECHNICAL,
+)
+
 # pylint: disable=line-too-long
 from awesome_streamlit.shared.models import Resource
 
@@ -316,10 +323,18 @@ RESOURCES_STREAMLIT_COMPONENT_APPS = [
     ),
 ]
 
-RESOURCES = [
+RESOURCES = (
+    [
+        Resource(
+            "Host Streamlit on Heroku with Nginx basic authentication",
+            url="https://github.com/Taxuspt/heroku_streamlit_nginx",
+            is_awesome=True,
+            tags=[tags.GUIDE, tags.CODE],
+            author=authors.ALEXANDRE_DOMINGUES,
+        ),
         Resource(
             "Intermediate Streamlit - Tips and Tricks for an evolving app",
-            url = "https://towardsdatascience.com/intermediate-streamlit-d5a1381daa65",
+            url="https://towardsdatascience.com/intermediate-streamlit-d5a1381daa65",
             is_awesome=True,
             tags=[tags.ARTICLE],
             author=authors.PETER_BAUMGARTNER,
@@ -415,12 +430,7 @@ RESOURCES = [
             is_awesome=True,
             tags=[tags.TUTORIAL, tags.ARTICLE, tags.DEPLOYMENT],
         ),
-        Resource(
-            name="Panel",
-            url="http://panel.pyviz.org/",
-            is_awesome=True,
-            tags=[ALTERNATIVE],
-        ),
+        Resource(name="Panel", url="http://panel.pyviz.org/", is_awesome=True, tags=[ALTERNATIVE]),
         Resource(
             name="Streamlit Demo",
             url="https://github.com/Poseyy/StreamlitDemo",
@@ -518,10 +528,7 @@ RESOURCES = [
             is_awesome=True,
         ),
         Resource(
-            name="Streamlit.io",
-            url="https://streamlit.io/",
-            tags=[STREAMLIT_TAG],
-            is_awesome=True,
+            name="Streamlit.io", url="https://streamlit.io/", tags=[STREAMLIT_TAG], is_awesome=True
         ),
         Resource(
             name="Streamlit Docs",
@@ -584,10 +591,7 @@ RESOURCES = [
             is_awesome=True,
         ),
         Resource(
-            name="Plotly Dash",
-            url="https://plot.ly/dash/",
-            tags=[ALTERNATIVE],
-            is_awesome=True,
+            name="Plotly Dash", url="https://plot.ly/dash/", tags=[ALTERNATIVE], is_awesome=True
         ),
         Resource(
             name="Bokeh",
@@ -628,7 +632,12 @@ RESOURCES = [
             tags=[CODE],
             is_awesome=True,
         ),
-    ] + STREAMLIT_EXAMPLE_APPS + STREAMLIT_EXAMPLE_APPS_FAILED_TEST + RESOURCES_STREAMLIT_COMPONENT_APPS + APPS_IN_GALLERY
+    ]
+    + STREAMLIT_EXAMPLE_APPS
+    + STREAMLIT_EXAMPLE_APPS_FAILED_TEST
+    + RESOURCES_STREAMLIT_COMPONENT_APPS
+    + APPS_IN_GALLERY
+)
 
 TAGS = []
 for resource in RESOURCES:
