@@ -16,19 +16,14 @@ import numpy as np
 import pandas as pd
 import streamlit as st
 from keras.applications import (
-    # DOES NOT WORK FOR ME ON WINDOWS OR LINUX
-    # VGG16,
-    # VGG19,
-    # DOES NOT PREDICT VERY WELL FOR ME
-    # MobileNetV2,
-    InceptionV3,
-    DenseNet121,
-    NASNetMobile,
-    NASNetLarge,
-    ResNet50,
-    Xception,
+    densenet,
     imagenet_utils,
     inception_v3,
+    mobilenet_v2,
+    nasnet,
+    resnet,
+    vgg19,
+    xception,
 )
 from keras.preprocessing.image import img_to_array, load_img
 from PIL import Image
@@ -43,9 +38,10 @@ class KerasApplication(NamedTuple):
     """We wrap a Keras Application into this class for ease of use"""
 
     name: str
-    keras_application: object
+    keras_application: Callable
     input_shape: Tuple[int, int] = (224, 224)
     preprocess_input_func: Callable = imagenet_utils.preprocess_input
+    decode_predictions_func: Callable = imagenet_utils.decode_predictions
     url: str = "https://keras.io/applications/"
 
     def load_image(self, image_path: str) -> Image:
@@ -88,6 +84,8 @@ class KerasApplication(NamedTuple):
         Returns:
             Image -- The preprocessed image
         """
+        # For an explanation see
+        # https://stackoverflow.com/questions/47555829/preprocess-input-method-in-keras
         image = self.to_input_shape(image)
         image = img_to_array(image)
         image = np.expand_dims(image, axis=0)
@@ -120,7 +118,7 @@ class KerasApplication(NamedTuple):
 
         report_progress_func(f"Classifying image with '{self.name}'... ", 85)
         predictions = model.predict(image)
-        top_predictions = imagenet_utils.decode_predictions(predictions)
+        top_predictions = self.decode_predictions_func(predictions)
 
         report_progress_func("", 0)
 
@@ -130,7 +128,10 @@ class KerasApplication(NamedTuple):
     def to_main_prediction_string(predictions) -> str:
         """A pretty string of the main prediction to output to the user"""
         _, prediction, _ = predictions[0]
-        return f"It's a **{prediction.capitalize()}**"
+        prediction_text = prediction.replace("_", " ").capitalize()
+        prediction_query = prediction.replace("_", "+")
+        prediction_url = f"http://www.image-net.org/search?q={prediction_query}"
+        return f"It's a **[{prediction_text}]({prediction_url})**"
 
     @staticmethod
     def to_predictions_chart(predictions) -> alt.Chart:
@@ -150,6 +151,74 @@ class KerasApplication(NamedTuple):
         )
         return chart
 
+
+# pylint: enable=line-too-long
+
+# See https://keras.io/applications/
+DEFAULT_KERAS_APPLICATION_INDEX = 2
+KERAS_APPLICATIONS: List[KerasApplication] = [
+    KerasApplication(
+        "DenseNet121",
+        keras_application=densenet.DenseNet121,
+        url="https://keras.io/applications/#densenet",
+        preprocess_input_func=densenet.preprocess_input,
+        decode_predictions_func=densenet.decode_predictions,
+    ),
+    KerasApplication(
+        "InceptionV3",
+        keras_application=inception_v3.InceptionV3,
+        input_shape=(299, 299),
+        url="https://keras.io/applications/#inceptionv3",
+        preprocess_input_func=inception_v3.preprocess_input,
+        decode_predictions_func=inception_v3.decode_predictions,
+    ),
+    KerasApplication(
+        "MobileNetV2",
+        keras_application=mobilenet_v2.MobileNetV2,
+        url="https://keras.io/applications/#mobilenet",
+        preprocess_input_func=mobilenet_v2.preprocess_input,
+        decode_predictions_func=mobilenet_v2.decode_predictions,
+    ),
+    KerasApplication(
+        "NASNetMobile",
+        keras_application=nasnet.NASNetMobile,
+        url="https://keras.io/applications/#nasnet",
+        preprocess_input_func=nasnet.preprocess_input,
+        decode_predictions_func=nasnet.decode_predictions,
+    ),
+    KerasApplication(
+        "NASNetLarge",
+        keras_application=nasnet.NASNetLarge,
+        input_shape=(331, 331),
+        url="https://keras.io/applications/#nasnet",
+        preprocess_input_func=nasnet.preprocess_input,
+        decode_predictions_func=nasnet.decode_predictions,
+    ),
+    KerasApplication(
+        "ResNet50",
+        keras_application=resnet.ResNet50,
+        url="https://keras.io/applications/#resnet",
+        preprocess_input_func=resnet.preprocess_input,
+        decode_predictions_func=resnet.decode_predictions,
+    ),
+    KerasApplication(
+        "VGG19",
+        keras_application=vgg19.VGG19,
+        url="https://keras.io/applications/#vgg19",
+        preprocess_input_func=vgg19.preprocess_input,
+        decode_predictions_func=vgg19.decode_predictions,
+    ),
+    KerasApplication(
+        "Xception",
+        keras_application=xception.Xception,
+        input_shape=(299, 299),
+        url="https://keras.io/applications/#inceptionv3",
+        preprocess_input_func=xception.preprocess_input,
+        decode_predictions_func=xception.decode_predictions,
+    ),
+]
+
+IMAGE_TYPES = ["png", "jpg"]
 
 # pylint: disable=line-too-long
 def get_resources_markdown(model: KerasApplication) -> str:
@@ -176,40 +245,6 @@ def get_resources_markdown(model: KerasApplication) -> str:
 
 # pylint: enable=line-too-long
 
-# See https://keras.io/applications/
-KERAS_APPLICATIONS: List[KerasApplication] = [
-    KerasApplication("ResNet50", ResNet50, url="https://keras.io/applications/#resnet"),
-    KerasApplication("DenseNet121", DenseNet121, url="https://keras.io/applications/#densenet"),
-    KerasApplication("NASNetMobile", NASNetMobile, url="https://keras.io/applications/#nasnet"),
-    # DOES NOT WORK FOR ME ON WINDOWS OR LINUX
-    # KerasApplication("VGG16", VGG16, url="https://keras.io/applications/#vgg16"),
-    # KerasApplication("VGG19", VGG19, url="https://keras.io/applications/#vgg19"),
-    KerasApplication(
-        "InceptionV3",
-        InceptionV3,
-        input_shape=(299, 299),
-        preprocess_input_func=inception_v3.preprocess_input,
-        url="https://keras.io/applications/#inceptionv3",
-    ),
-    KerasApplication(
-        "Xception",
-        Xception,
-        input_shape=(299, 299),
-        preprocess_input_func=inception_v3.preprocess_input,
-        url="https://keras.io/applications/#xception",
-    ),
-    # Predicts poorly for me
-    # KerasApplication("MobileNetV2", MobileNetV2, url="https://keras.io/applications/#mobilenet"),
-    KerasApplication(
-        "NASNetLarge",
-        NASNetLarge,
-        url="https://keras.io/applications/#nasnet",
-        input_shape=(331, 331),
-    ),
-]
-
-IMAGE_TYPES = ["png", "jpg"]
-
 
 def set_environ():
     """Sets environment variables for logging etc."""
@@ -224,7 +259,10 @@ def main():
     st.info(__doc__)
     st.sidebar.subheader("Classifier")
     selected_model = st.sidebar.selectbox(
-        "Pick an image classifier model", options=KERAS_APPLICATIONS, format_func=lambda x: x.name
+        "Pick an image classifier model",
+        options=KERAS_APPLICATIONS,
+        index=DEFAULT_KERAS_APPLICATION_INDEX,
+        format_func=lambda x: x.name,
     )
     st.sidebar.markdown(get_resources_markdown(selected_model))
     image = st.file_uploader("Upload a file for classification", IMAGE_TYPES)
