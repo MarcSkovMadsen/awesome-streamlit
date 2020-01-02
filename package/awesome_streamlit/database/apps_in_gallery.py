@@ -21,6 +21,13 @@ DEFAULT_APP_IN_GALLERY = Resource(
 )
 APPS_IN_GALLERY = [
     Resource(
+        name="Custom Widgets - Login",
+        url=GITHUB_RAW_GALLERY_URL + "custom_widgets/custom_login_widget.py",
+        tags=[tags.CODE, tags.APP_IN_GALLERY],
+        is_awesome=True,
+        author=authors.MARC_SKOV_MADSEN,
+    ),
+    Resource(
         name="Image Classifier",
         url=GITHUB_RAW_GALLERY_URL + "image_classifier/image_classifier.py",
         tags=[tags.CODE, tags.APP_IN_GALLERY],

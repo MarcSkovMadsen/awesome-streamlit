@@ -1,7 +1,7 @@
 """In this app we show how to create a custom login widget in Streamlit using some different hacks
 
-- `st.text_box` for transfering custom state like username and password between client and server
-    - A small js/ React snippet for setting the value and triggering the keypress of the text_box.
+- `st.input_element` for transfering custom state like username and password between client and server
+    - A small js/ React snippet for setting the value and triggering the keypress of the input_element.
 - `st.bokeh_chart` for using custom html, css and javascript.
 
 I see custom widgets as a way of enabling even more awesome analytics apps in Streamlit.
@@ -25,12 +25,11 @@ from bokeh.models import Div
 
 # Simplification. Don't store passwords in text! Store the hash values only
 USERS = {"admin": "logmeinplease!", "guest": "guest"}
-# The Path only works if the custom_state_initialize function is run at the top of your code
-CUSTOM_STATE_DIV_PATH = (
-    "#root > div:nth-child(1) > div > div > div > section.main > div > div:nth-child(1) > "
-    "div:nth-child(2)"
-)
-CUSTOM_STATE_INPUT_PATH = CUSTOM_STATE_DIV_PATH + " > div > div > div > input"
+# The CUSTOM_STATE_DIV_PATH only works if you update the ELEMENT_CONTAINER_INDEX according to where
+# your custom_state text_box element-container is positioned
+# I will try to find another way to set the display to none of the st.text_box element-container
+ELEMENT_CONTAINER_INDEX = 5
+CUSTOM_STATE_DIV_PATH = f"section.main div.element-container:nth-child({ELEMENT_CONTAINER_INDEX})"
 CUSTOM_STATE_STYLE = f"""
 <style>
 {CUSTOM_STATE_DIV_PATH} {{
@@ -44,13 +43,30 @@ CUSTOM_STATE_STYLE = f"""
 # pylint: enable=line-too-long
 DISPATCH_MESSAGE_CODE = f"""
 var message = JSON.stringify(message_obj);
-var channel = document.querySelectorAll('{CUSTOM_STATE_INPUT_PATH}')[0];
+console.log(message);
+var input_element = null;
 
+// Find input_element
+var containers = document.querySelectorAll('div.element-container div.Widget.row-widget.stTextInput'), i;
+for (i = 0; i < containers.length; ++i) {{
+  container = containers[i]
+  console.log(container);
+  label = document.querySelector('div.Widget.row-widget.stTextInput label');
+  if (label && label.innerHTML==='Custom State'){{
+      input = document.querySelector('div.Widget.row-widget.stTextInput input');
+      if (input){{
+          input_element = input;
+      }}
+  }}
+}}
+
+// Set input_element.value=message
 var nativeInputValueSetter = Object.getOwnPropertyDescriptor(window.HTMLInputElement.prototype, 'value').set;
-nativeInputValueSetter.call(channel, message);
+nativeInputValueSetter.call(input_element, message);
 var ev2 = new Event('input', {{ bubbles: true}});
-channel.dispatchEvent(ev2);
+input_element.dispatchEvent(ev2);
 
+// Press Enter on input_element to submit the message
 var ev = document.createEvent('Events');
 ev.initEvent('keypress', true, true);
 ev.keyCode = 13;
@@ -58,17 +74,12 @@ ev.which = 13;
 ev.charCode = 13;
 ev.key = 'Enter';
 ev.code = 'Enter';
-channel.dispatchEvent(ev);
+input_element.dispatchEvent(ev);
 """
 
 
 def main():
     """Run this function to run the app"""
-    # custom widgets and custom_state_initialize() must be run at the top of your app code for now!
-    custom_state_initialize()
-    if not st.sidebar.checkbox(label="Show Custom State?", value=False):
-        custom_state_hide()
-
     st.title("Custom Login Widget Hack")
     st.markdown(__doc__)
 
@@ -78,6 +89,9 @@ def main():
         )
         st.markdown(text)
 
+    custom_state_initialize()
+    if not st.sidebar.checkbox(label="Show Custom State?", value=False):
+        custom_state_hide()
     user = LoginWidget().login()
     if user:
         st.info(
@@ -109,7 +123,7 @@ def custom_state_initialize():
 
 
 def custom_state_hide():
-    """Hides the text_box used by the Custom State to communicate between client and server"""
+    """Hides the input_element used by the Custom State to communicate between client and server"""
     st.write(CUSTOM_STATE_STYLE, unsafe_allow_html=True)
 
 
@@ -148,7 +162,6 @@ var message_obj = {{
 """
 
         js_code = custom_state_wrap_message_obj(js_code)
-
         html_code = f"""
     <label for="username">Username:</label>
     <div style="width:100%"><input style="width:100%;background-color: #f0f2f6;border-style: none;" type="text" id="username" name="username" value="{self.username}"></div>

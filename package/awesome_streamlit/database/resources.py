@@ -326,6 +326,13 @@ RESOURCES_STREAMLIT_COMPONENT_APPS = [
 RESOURCES = (
     [
         Resource(
+            "Turn Python Scripts into Beautiful ML Tools | PyData LA 2019",
+            url="https://www.youtube.com/watch?v=0It8phQ1gkQ",
+            is_awesome=True,
+            tags=[tags.TUTORIAL, tags.VIDEO],
+            author=authors.ADRIAN_TREUILLE,
+        ),
+        Resource(
             "Host Streamlit on Heroku with Nginx basic authentication",
             url="https://github.com/Taxuspt/heroku_streamlit_nginx",
             is_awesome=True,

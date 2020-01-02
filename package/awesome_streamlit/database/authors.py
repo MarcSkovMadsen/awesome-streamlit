@@ -3,6 +3,7 @@ from awesome_streamlit.shared import models
 
 Author = models.Author
 # Authors
+ADRIAN_TREUILLE = Author(name="Adrian Treuille", url="http://www.cs.cmu.edu/~./treuille/")
 ALEXANDRE_DOMINGUES = Author(name="Alexandre Domingues", url="https://github.com/Taxuspt")
 STREAMLIT_AUTHOR = Author(name="Streamlit", url="https://streamlit.io/")
 KEVIN_ARVAI = Author(name="Kevin Arvai", url="https://github.com/arvkevi")
