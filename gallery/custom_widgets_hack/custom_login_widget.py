@@ -6,11 +6,11 @@
 
 I see custom widgets as a way of enabling even more awesome analytics apps in Streamlit.
 
+This hack could be generalized and wrapped into a more general api for creating custom widgets.
+
 So in principle you should be able to get your frontend developer to create custom widgets for
 clicks on tables, plots and Javascript libraries like
 [Amphion Robotics](https://github.com/rapyuta-robotics/amphion/blob/devel/examples/README.md)
-
-This hack could be generalized and wrapped into a more general api for creating custom widgets.
 
 Some time in the future the Streamlit developers would develop a secure and robust api for
 custom widgets making the need for this type of hack obsolete.
