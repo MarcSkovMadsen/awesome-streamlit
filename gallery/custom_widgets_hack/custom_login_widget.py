@@ -1,8 +1,11 @@
 """In this app we show how to create a custom login widget in Streamlit using some different hacks
 
-- `st.input_element` for transfering custom state like username and password between client and server
-    - A small js/ React snippet for setting the value and triggering the keypress of the input_element.
+- A hidden `st.text_box` for transfering custom state like username and password between \
+client and server
+    - A small js/ React snippet for setting the value and triggering the keypress of the text_box
 - `st.bokeh_chart` for using custom html, css and javascript.
+
+#### Perspectives
 
 I see custom widgets as a way of enabling even more awesome analytics apps in Streamlit.
 
@@ -13,9 +16,12 @@ clicks on tables, plots and Javascript libraries like
 [Amphion Robotics](https://github.com/rapyuta-robotics/amphion/blob/devel/examples/README.md)
 
 Some time in the future the Streamlit developers would develop a secure and robust api for
-custom widgets making the need for this type of hack obsolete.
+custom widgets making the need for this type of hack obsolete. See for example
+[Issue 428](https://github.com/streamlit/streamlit/issues/428)
 
-PLEASE NOTE THIS IS A HACK AND MAY NOT BE SECURE! **USE THIS AT YOUR OWN RISK!**
+#### Use this at your own risk!
+
+PLEASE NOTE THIS IS A HACK AND MAY NOT BE SECURE!
 """
 import json
 from typing import Dict, Optional
@@ -84,8 +90,8 @@ def main():
     st.markdown(__doc__)
 
     if st.sidebar.checkbox(label="Show valid usernames and passwords?", value=True):
-        text = "**Valid usernames/passwords**:\n" + "\n".join(
-            ["- " + user + "/" + password for user, password in USERS.items()]
+        text = "#### Valid usernames and passwords\n" + "\n".join(
+            ["- " + user + ", " + password for user, password in USERS.items()]
         )
         st.markdown(text)
 
