@@ -114,7 +114,7 @@ def get_custom_state() -> Dict:
 def custom_state_initialize():
     """Initialize the communication of Custom State between the client and the server
 
-    Needs to be at the top of your code. Don't use any Streamlit `st.X` method prior to using this.
+    Please update ELEMENT_CONTAINER_INDEX according to where this is run in your code!
     """
     custom_state = get_custom_state()
     custom_state_str = json.dumps(custom_state)
