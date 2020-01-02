@@ -28,7 +28,7 @@ USERS = {"admin": "logmeinplease!", "guest": "guest"}
 # The CUSTOM_STATE_DIV_PATH only works if you update the ELEMENT_CONTAINER_INDEX according to where
 # your custom_state text_box element-container is positioned
 # I will try to find another way to set the display to none of the st.text_box element-container
-ELEMENT_CONTAINER_INDEX = 5
+ELEMENT_CONTAINER_INDEX = 15
 CUSTOM_STATE_DIV_PATH = f"section.main div.element-container:nth-child({ELEMENT_CONTAINER_INDEX})"
 CUSTOM_STATE_STYLE = f"""
 <style>
