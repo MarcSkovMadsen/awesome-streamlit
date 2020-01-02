@@ -21,8 +21,8 @@ DEFAULT_APP_IN_GALLERY = Resource(
 )
 APPS_IN_GALLERY = [
     Resource(
-        name="Custom Widgets - Login",
-        url=GITHUB_RAW_GALLERY_URL + "custom_widgets/custom_login_widget.py",
+        name="Custom Widgets Hack - Login",
+        url=GITHUB_RAW_GALLERY_URL + "custom_widgets_hack/custom_login_widget.py",
         tags=[tags.CODE, tags.APP_IN_GALLERY],
         is_awesome=True,
         author=authors.MARC_SKOV_MADSEN,
