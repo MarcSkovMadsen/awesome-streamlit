@@ -86,7 +86,7 @@ input_element.dispatchEvent(ev);
 
 def main():
     """Run this function to run the app"""
-    st.title("Custom Login Widget Hack")
+    st.title("Custom Widgets Hack - Login")
     st.markdown(__doc__)
 
     if st.sidebar.checkbox(label="Show valid usernames and passwords?", value=True):
