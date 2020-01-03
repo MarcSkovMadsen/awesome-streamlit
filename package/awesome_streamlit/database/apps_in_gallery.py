@@ -21,6 +21,13 @@ DEFAULT_APP_IN_GALLERY = Resource(
 )
 APPS_IN_GALLERY = [
     Resource(
+        name="Notebook Style",
+        url=GITHUB_RAW_GALLERY_URL + "notebook_style/notebook_style.py",
+        tags=[tags.CODE, tags.APP_IN_GALLERY],
+        is_awesome=True,
+        author=authors.DAVID_CHEDZICKI,
+    ),
+    Resource(
         name="Custom Widgets Hack - Login",
         url=GITHUB_RAW_GALLERY_URL + "custom_widgets_hack/custom_login_widget.py",
         tags=[tags.CODE, tags.APP_IN_GALLERY],

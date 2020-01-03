@@ -28,6 +28,12 @@ PETER_BAUMGARTNER = Author(
     # github_url="https://github.com/pmbaumgartner",
     # github_avatar_url="https://avatars0.githubusercontent.com/u/5107405",
 )
+DAVID_CHEDZICKI = Author(
+    name="David Chudzicki",
+    url="http://www.davidchudzicki.com/",
+    #github_url="https://github.com/dchudz",
+    #github_avatar_url="https://avatars1.githubusercontent.com/u/1222726",
+)
 
 AUTHORS = [
     ALEXANDRE_DOMINGUES,
