@@ -11,7 +11,8 @@ Here we have modified it for inclusion in the gallery at awesome-streamlit.org.
 
 UNFORTUNATELY IT DOES NOT WORK (YET!) as apps in the gallery are run via an `exec` statement of the
 python file. See the [index.py]\
-(https://github.com/MarcSkovMadsen/awesome-streamlit/blob/master/src/pages/gallery/index.py) file.
+(https://github.com/MarcSkovMadsen/awesome-streamlit/blob/master/src/pages/gallery/index.py#L65)
+file.
 """
 import sys
 import traceback
