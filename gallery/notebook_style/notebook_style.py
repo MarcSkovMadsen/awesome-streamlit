@@ -8,11 +8,6 @@ The functionally was developed by [David Chudzicki](https://github.com/dchudz). 
 - [Repo](https://github.com/dchudz/streamlit_end_code_block)
 
 Here we have modified it for inclusion in the gallery at awesome-streamlit.org.
-
-UNFORTUNATELY IT DOES NOT WORK (YET!) as apps in the gallery are run via an `exec` statement of the
-python file. See the [index.py]\
-(https://github.com/MarcSkovMadsen/awesome-streamlit/blob/master/src/pages/gallery/index.py#L65)
-file.
 """
 import sys
 import traceback
@@ -28,7 +23,7 @@ assert sys.version_info >= (3, 4)
 
 
 def awesome_streamlit_hack(filename: str) -> str:
-    """We need this when running this file via the 'eval' statement as a part of the
+    """We need this when running this file via the 'exec' statement as a part of the
     awesome-streamlit.org gallery"""
     if filename == "<string>":
         return "gallery/notebook_style/notebook_style.py"
@@ -60,11 +55,11 @@ def end_code_block(display=True):
 
 
 _____ = end_code_block
-_____(display=False)
 
 
 def example():
     """An example of the use of end_code_block"""
+    _____(display=False)
     message = "hello world"
     st.write(message)
     _____()
@@ -78,5 +73,4 @@ def example():
 
 
 st.write(__doc__)
-_____(display=False)
 example()
