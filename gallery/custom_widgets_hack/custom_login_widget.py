@@ -1,4 +1,4 @@
-"""In this app we show how to create a custom login widget in Streamlit using some different hacks
+"""In this app I show how to create a custom login widget in Streamlit using some different hacks
 
 - A hidden `st.text_box` for transfering custom state like username and password between \
 client and server
