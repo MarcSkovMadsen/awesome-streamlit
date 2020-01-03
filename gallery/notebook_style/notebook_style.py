@@ -7,7 +7,11 @@ The functionally was developed by [David Chudzicki](https://github.com/dchudz). 
 (https://discuss.streamlit.io/t/implementation-of-end-code-block-using-streamlit-for-notebook/1505)
 - [Repo](https://github.com/dchudz/streamlit_end_code_block)
 
-Here we have modified it for including in the gallery at awesome-streamlit.org.
+Here we have modified it for inclusion in the gallery at awesome-streamlit.org.
+
+UNFORTUNATELY IT DOES NOT WORK (YET!) as apps in the gallery are run via an `exec` statement of the
+python file. See the [index.py]\
+(https://github.com/MarcSkovMadsen/awesome-streamlit/blob/master/src/pages/gallery/index.py) file.
 """
 import sys
 import traceback
@@ -27,8 +31,8 @@ def awesome_streamlit_hack(filename: str) -> str:
     awesome-streamlit.org gallery"""
     if filename == "<string>":
         return "gallery/notebook_style/notebook_style.py"
-    else:
-        return filename
+
+    return filename
 
 
 def end_code_block(display=True):
