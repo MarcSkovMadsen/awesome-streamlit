@@ -65,7 +65,7 @@ def example():
     _____()
 
     dataframe = pd.DataFrame({"x": [1, 2], "y": [2, 3]})
-    dataframe  # pylint: disable=pointless-statement
+    st.write(dataframe)  # pylint: disable=pointless-statement
     _____()
 
     st.write("bye")
