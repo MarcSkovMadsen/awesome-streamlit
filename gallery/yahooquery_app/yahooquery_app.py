@@ -82,6 +82,7 @@ def get_data(ticker: Ticker, attribute: str, *args) -> Dict:
 
 def main():
     """Run this to run the application"""
+    st.sidebar.subheader("YahooQuery")
     symbols = st.sidebar.text_input(
         "Enter symbol or list of symbols (comma separated)", value="aapl"
     )

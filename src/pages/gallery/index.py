@@ -60,7 +60,6 @@ def write():
 
     # Run the child app
     if python_code is not None:
-        breakpoint()
         try:
             with st.spinner(f"Loading {run_app.name} ..."):
                 exec(python_code, globals())  # pylint: disable=exec-used
