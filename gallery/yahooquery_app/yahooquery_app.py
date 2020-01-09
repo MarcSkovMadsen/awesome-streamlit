@@ -316,5 +316,4 @@ def history_view(tickers: Ticker, symbols: List[str]):
         st.dataframe(dataframe)
 
 
-if __name__ == "__main__":
-    main()
+main()
