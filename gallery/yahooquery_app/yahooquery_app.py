@@ -106,7 +106,9 @@ def main():
     else:
         history_view(tickers, symbols)
 
-
+# Ideas for Improvements
+# An image or video to catch the attention of the user and communicate what this is.
+# Maybe a Yahoo logo, maybe a small gif video or youtube video. Maybe a price chart.
 def homepage_view(tickers: Ticker, symbols: List[str]):
     """Provides the view of the Home Page
 
