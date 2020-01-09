@@ -198,7 +198,7 @@ APPS_IN_GALLERY = [
     ),
     Resource(
         name="YahooQuery",
-        url=GITHUB_RAW_GALLERY_URL + "yahooquery/yahooquery.py",
+        url=GITHUB_RAW_GALLERY_URL + "yahooquery_app/yahooquery_app.py",
         tags=[tags.CODE, tags.APP_IN_GALLERY, tags.FINANCE, tags.TUTORIAL],
         is_awesome=True,
         author=authors.DOUG_GUTHRIE,
