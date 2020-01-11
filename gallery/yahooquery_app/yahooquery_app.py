@@ -11,6 +11,7 @@ import datetime
 from typing import Dict, List
 
 import altair as alt
+import pandas as pd
 import streamlit as st
 from yahooquery import Ticker
 
@@ -48,6 +49,24 @@ BASE_ENDPOINTS = {
     "fund_top_holdings": "Fund Top Holdings",
 }
 
+def get_default_format(data: pd.DataFrame) -> Dict[str, str]:
+    """A dictionary of columns and formats for the Pandas DataFrame Styler
+
+    Arguments:
+        data {pd.DataFrame} -- A DataFrame of Data]
+
+    Returns:
+        Dict[str,str] -- A dictionary of default formats for the columns
+    """
+    format_dict = {}
+    for column in data.columns:
+        if data[column].dtype == "int64":
+            format_dict[column] = "{0:,.0f}"
+        elif data[column].dtype == "float64":
+            format_dict[column] = "{0:,.2f}"
+        else:
+            format_dict[column] = "{0:}"
+    return format_dict
 
 def format_func(option: str) -> str:
     """Convert the BASE_ENDPOINTS key to a value
@@ -174,15 +193,20 @@ def base_view(tickers: Ticker, symbols: List[str]):
     st.help(getattr(Ticker, endpoint))
     is_property = isinstance(getattr(Ticker, endpoint), property)
     if is_property:
-        st.code(f"Ticker({symbols}).{endpoint}", language="python")
+        st.code(f"Ticker('{symbols}').{endpoint}", language="python")
         data = get_data(tickers, endpoint)
     else:
         frequency = st.selectbox("Select Frequency", options=["Annual", "Quarterly"])
         arg = frequency[:1].lower()
-        st.code(f"Ticker({symbols}).{endpoint}(frequency='{arg}')")
+        st.code(f"Ticker('{symbols}').{endpoint}(frequency='{arg}')")
         data = get_data(tickers, endpoint, arg)
-    st.write(data)
 
+    if isinstance(data, pd.DataFrame):
+        data = data.reset_index(drop=True) # Hack - Otherwise we get error
+        format_dict = get_default_format(data)
+        st.dataframe(data.style.format(format_dict))
+    else:
+        st.json(data)
 
 def base_multiple_view(tickers: Ticker, symbols: List[str]):
     """A view of the basic functionality of Ticker.
