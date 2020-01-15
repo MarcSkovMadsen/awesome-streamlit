@@ -1,0 +1,20 @@
+##--- Pages defined in the app ---##
+
+# create temporary pages. Each page will provide drop-down menus to select the widgets for each page.
+    # could be used if selecting the widgets for each page is desired.
+    # selection from the sidebar to bring elements in?
+    # Each selected elements generates the necessary fields to fill in?
+    # for p in page_name:
+    #     if p != '':
+    #         p_name = p + ".py"
+    #         p_ath = os.path.join(wd_dir, "tmp", app_name, p_name)
+    #         with open(file=p_ath, mode="w") as f:
+    #             f.write('import streamlit as st'"\n)
+    #             f.write('\n')
+    #             f.write(f'PAGE_NAME = {p}\n')
+    #             f.write('\n')
+    #             f.write('option = st.selectbox()\n')
+
+# st.sidebar.title(body="Pages")
+# selection = st.sidebar.radio(label="", options=["Main"] + list(page_name))
+# how to get selection to show up? refresh of page not doable.
