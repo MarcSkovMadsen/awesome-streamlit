@@ -34,12 +34,8 @@ from PIL import Image
 from sportsreference.nba.teams import Teams
 
 PLAYER_MINUTES_SOURCE = "s3://nba-roster-turnover/NBA_player_minutes.2004-2019.csv"
-ROSTER_TURNOVER_SOURCE = (
-    "s3://nba-roster-turnover/NBA_roster_turnover_wins.2004-2019.csv"
-)
-TEAMS_DATA_SOURCE = (
-    "https://raw.githubusercontent.com/jimniels/teamcolors/master/src/teams.json"
-)
+ROSTER_TURNOVER_SOURCE = "s3://nba-roster-turnover/NBA_roster_turnover_wins.2004-2019.csv"
+TEAMS_DATA_SOURCE = "https://raw.githubusercontent.com/jimniels/teamcolors/master/src/teams.json"
 PLAYER_MINUTES = "data/NBA_player_minutes.2004-2019.csv"
 ROSTER_TURNOVER = "data/NBA_roster_turnover_wins.2004-2019.csv"
 IMAGE = "images/basketball.jpg"
@@ -50,9 +46,7 @@ GITHUB_ROOT = (
 )
 PLAYER_MINUTES_GITHUB = GITHUB_ROOT + PLAYER_MINUTES
 ROSTER_TURNOVER_GITHUB = GITHUB_ROOT + ROSTER_TURNOVER
-TEAMS_DATA_GITHUB = (
-    "https://raw.githubusercontent.com/jimniels/teamcolors/master/src/teams.json"
-)
+TEAMS_DATA_GITHUB = "https://raw.githubusercontent.com/jimniels/teamcolors/master/src/teams.json"
 IMAGE_GITHUB = GITHUB_ROOT + "images/basketball.jpg"
 
 
@@ -93,21 +87,17 @@ regular season wins."""
         "years."
     )
     st.sidebar.table(
-        pd.DataFrame.from_dict(
-            wins_turnover_corr, orient="index", columns=["correlation"]
-        ).round(2)
+        pd.DataFrame.from_dict(wins_turnover_corr, orient="index", columns=["correlation"]).round(2)
     )
 
     # Data frame for the plot
     fig = get_turnover_vs_wins_plot(roster_turnover, year, teams_colorscale)
-    st.plotly_chart(fig, width=1080, height=600)
+    st.plotly_chart(fig)
 
     # Show the roster DataFrame
     st.header("Minutes Played Breakdown by Team")
     selected_team = st.selectbox("Select a team", teams)
-    st.dataframe(
-        roster_turnover_pivot(player_minutes, team=selected_team, year=year), width=1080
-    )
+    st.dataframe(roster_turnover_pivot(player_minutes, team=selected_team, year=year), width=1080)
     st.text("* The numbers in the table are minutes played")
 
 
@@ -185,9 +175,7 @@ def roster_turnover_pivot(player_minutes, team="ATLANTA HAWKS", year=2004):
         & (player_minutes["team"] == team)
     ]
     result = (
-        pd.pivot_table(
-            pm_subset, values="minutes_played", index=["team", "name"], columns=["year"]
-        )
+        pd.pivot_table(pm_subset, values="minutes_played", index=["team", "name"], columns=["year"])
         .fillna(0)
         .reset_index()
         .drop(columns=["team"])
@@ -214,6 +202,7 @@ def get_turnover_vs_wins_plot(roster_turnover, year, teams_colorscale):
         },
         color="team",
         color_discrete_sequence=teams_colorscale,
+        height=600,
     )
 
 

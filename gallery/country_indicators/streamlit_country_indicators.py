@@ -162,7 +162,7 @@ class App:
         )
 
         fig = self._create_plot(x_indicator, y_indicator, year_range)
-        plotly_chart.plotly_chart(fig, width=0, height=300)
+        plotly_chart.plotly_chart(fig)
 
     @classmethod
     @st.cache
