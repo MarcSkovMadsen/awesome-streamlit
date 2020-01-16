@@ -2,7 +2,7 @@
 
 ## Running Your Streamlit App
 
-You can use the **multi-command** extension to configure a short cut to execute `streamlit run <relativeFile.py>`
+You can use the [multi-command extension](https://marketplace.visualstudio.com/items?itemName=ryuta46.multi-command) to configure a keyboard short cut to execute `streamlit run <relativeFile.py>`
 
 You start by installing the multi-command extension and adding the configuration shown to your settings.json file.
 
@@ -28,6 +28,13 @@ You start by installing the multi-command extension and adding the configuration
 Then you can execute your *streamlit run* command via the command palette (CTRL+SHIFT+P)
 
 ![VS Code multi-command execute](_static/images/vscode_multi-command_execute.png)
+
+```json
+{
+    "key": "ctrl+m ctrl+s",
+    "command": "multiCommand.streamlitActiveFile",
+},
+```
 
 ![VS Code multi-command Streamlit Run](_static/images/vscode_multi-command_streamlit_run.png)
 
@@ -105,6 +112,29 @@ Finally you can attach the debugger by clicking the debugger play button
 and you can debug away.
 
 ![Integrated Debugger](_static/images/vscode_integrated_debugger.png)
+
+#### Using a ptvsd snippet
+
+You can create a snippet in your `python.json` snippet configuration to insert the `import ptvsd...` code.
+
+![ptvsd code snippet](_static/images/vscode_configure_user_snippet.png)
+
+![ptvsd code snippet](_static/images/vscode_configure_user_snippet_python.png)
+
+![ptvsd code snippet](_static/images/vscode_ptvsd_snippet.png)
+
+```typescript
+"ptvsd": {
+    "prefix": "ptvsd debugging snippet",
+    "body": [
+        "import ptvsd",
+        "ptvsd.enable_attach(address=('localhost', 5678))",
+        "print('Ready to attach the VS Code debugger')",
+        "ptvsd.wait_for_attach() # Only include this line if you always wan't to attach the debugger",
+    ],
+    "description": "Inserts snippet to setup debugging via ptvsd"
+},
+```
 
 #### Using a dedicated app_debug_vscode.py file for debugging
 

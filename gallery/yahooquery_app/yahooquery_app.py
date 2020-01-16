@@ -209,9 +209,10 @@ def base_view(tickers: Ticker, symbols: List[str]):
         st.json(data)
 
 def base_multiple_view(tickers: Ticker, symbols: List[str]):
-    """A view of the basic functionality of Ticker.
+    """A view for multiple Ticker requests
 
-    The user can select an endpoint and the help text, code and result will be presented.
+    The user can select all or multiple endpoints and the help text, code and result will be 
+    presented.
 
     Arguments:
         tickers {Ticker} -- A yahaooquery Ticker object

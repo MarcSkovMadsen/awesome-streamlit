@@ -1,8 +1,8 @@
 import streamlit as st
-
 from yahooquery import Ticker
 
 data = Ticker("ORSTED.CO").balance_sheet(frequency="annual")
+print(data.to_dict())
 
 st.header("Raw Data")
 st.dataframe(data)

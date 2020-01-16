@@ -2,11 +2,11 @@
 import streamlit as st
 
 import awesome_streamlit as ast
+import src.pages.about
 import src.pages.gallery.index
 import src.pages.home
 import src.pages.resources
 import src.pages.vision
-import src.pages.about
 
 ast.core.services.other.set_logging_format()
 

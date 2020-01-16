@@ -17,15 +17,14 @@ data on [GitHub](https://github.com/owid/owid-datasets/tree/master/datasets).
 
 import json
 import pathlib
-from typing import Optional, Union
+from typing import Optional
 
+import geopandas as gpd
 import pandas as pd
 import streamlit as st
 from bokeh.models import ColorBar, GeoJSONDataSource, LinearColorMapper
 from bokeh.palettes import brewer  # pylint: disable=no-name-in-module
 from bokeh.plotting import figure
-
-import geopandas as gpd
 
 FILE_DIR = pathlib.Path.cwd() / "gallery/owid_dashboard"
 SHAPEFILE = FILE_DIR / "data/ne_110m_admin_0_countries.shp"

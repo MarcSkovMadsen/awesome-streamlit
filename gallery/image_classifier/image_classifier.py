@@ -15,16 +15,8 @@ import keras.backend.tensorflow_backend as tb
 import numpy as np
 import pandas as pd
 import streamlit as st
-from keras.applications import (
-    densenet,
-    imagenet_utils,
-    inception_v3,
-    mobilenet_v2,
-    nasnet,
-    resnet,
-    vgg19,
-    xception,
-)
+from keras.applications import (densenet, imagenet_utils, inception_v3,
+                                mobilenet_v2, nasnet, resnet, vgg19, xception)
 from keras.preprocessing.image import img_to_array, load_img
 from PIL import Image
 

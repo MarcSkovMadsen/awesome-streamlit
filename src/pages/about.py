@@ -31,4 +31,3 @@ Feel free to reach out if you wan't to join the project as a developer. You can 
 """,
             unsafe_allow_html=True,
         )
-

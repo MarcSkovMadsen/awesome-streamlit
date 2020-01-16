@@ -1,6 +1,7 @@
+import base64
+
 import pandas as pd
 import streamlit as st
-import base64
 
 st.header("File Download - A Workaround for small data")
 

@@ -1,8 +1,7 @@
-import streamlit as st
-import spacy
-from spacy import displacy
 import pandas as pd
-
+import spacy
+import streamlit as st
+from spacy import displacy
 
 SPACY_MODEL_NAMES = ["en_core_web_sm", "en_core_web_md", "de_core_news_sm"]
 DEFAULT_TEXT = "Mark Zuckerberg is the CEO of Facebook."

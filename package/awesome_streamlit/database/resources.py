@@ -4,16 +4,9 @@ Here you maintain the list of awesome resources
 """
 from awesome_streamlit.database import authors, tags
 from awesome_streamlit.database.apps_in_gallery import APPS_IN_GALLERY
-from awesome_streamlit.database.tags import (
-    ALTERNATIVE,
-    APP,
-    APP_IN_GALLERY,
-    CODE,
-    SOCIAL,
-    STREAMLIT_TAG,
-    TECHNICAL,
-)
-
+from awesome_streamlit.database.tags import (ALTERNATIVE, APP, APP_IN_GALLERY,
+                                             CODE, SOCIAL, STREAMLIT_TAG,
+                                             TECHNICAL)
 # pylint: disable=line-too-long
 from awesome_streamlit.shared.models import Resource
 
