@@ -45,7 +45,7 @@ FUEL_COLORS = {
     "Petcoke": "black",
     "Biomass": "green",
     "Waste": "green",
-    "Cogeneration": "green",
+    "Cogeneration": "gray",
     "Storage": "orange",
     "Wind": "green",
 }
@@ -63,7 +63,7 @@ class ViewStateComponent:
     def __init__(self):
         self.latitude = ORSTED_CPH_HQ["latitude"]
         self.longitude = ORSTED_CPH_HQ["longitude"]
-        self.zoom = 3
+        self.zoom = 1
         self.pitch = 40.0
 
     def edit_view(self):
@@ -72,7 +72,7 @@ class ViewStateComponent:
         self.latitude = LOCATIONS[location]["latitude"]
         self.longitude = LOCATIONS[location]["longitude"]
 
-        self.zoom = st.sidebar.slider("Zoom", min_value=0, max_value=11, value=self.zoom)
+        self.zoom = st.sidebar.slider("Zoom", min_value=0, max_value=20, value=self.zoom)
         self.pitch = st.sidebar.slider(
             "Pitch", min_value=0.0, max_value=100.0, value=self.pitch, step=10.0
         )
@@ -88,7 +88,7 @@ class ViewStateComponent:
             longitude=self.longitude,
             latitude=self.latitude,
             zoom=self.zoom,
-            min_zoom=1,
+            min_zoom=0,
             max_zoom=15,
             pitch=self.pitch,
             # bearing=-27.36,
@@ -179,11 +179,13 @@ class GlobalPowerPlantDatabaseApp:
         )
         st.json(FUEL_COLORS)
 
-        st.write("""Unfortunately **tooltips are not supported**. And there are also other issues.
+        st.write(
+            """Unfortunately **tooltips are not supported**. And there are also other issues.
 See
 
 - [Issue 984](https://github.com/streamlit/streamlit/issues/984)
-- [Issue 985](https://github.com/streamlit/streamlit/issues/985)""")
+- [Issue 985](https://github.com/streamlit/streamlit/issues/985)"""
+        )
 
 
 APP = GlobalPowerPlantDatabaseApp()
