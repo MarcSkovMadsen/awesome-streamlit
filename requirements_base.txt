@@ -1,5 +1,5 @@
 # Streamlit
-streamlit==0.52.2
+streamlit==0.53
 tornado==5.1.1
 
 # Utils
