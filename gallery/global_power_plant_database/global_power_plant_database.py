@@ -104,6 +104,7 @@ class GlobalPowerPlantDatabaseApp:
         self.show_data = False
 
     @staticmethod
+    @st.cache
     def get_data() -> pd.DataFrame:
         """The Global Power Plant data
 
