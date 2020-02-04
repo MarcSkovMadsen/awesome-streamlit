@@ -21,6 +21,13 @@ DEFAULT_APP_IN_GALLERY = Resource(
 )
 APPS_IN_GALLERY = [
     Resource(
+        name="Awesome Data Explorer",
+        url=GITHUB_RAW_GALLERY_URL + "awesome_data_explorer/app.py",
+        tags=[tags.CODE, tags.APP_IN_GALLERY],
+        is_awesome=True,
+        author=authors.ALI_AVNI_CIRIK,
+    ),
+    Resource(
         name="Global Power Plant Database",
         url=GITHUB_RAW_GALLERY_URL + "global_power_plant_database/global_power_plant_database.py",
         tags=[tags.CODE, tags.APP_IN_GALLERY],
