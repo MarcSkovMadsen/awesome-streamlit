@@ -16,6 +16,6 @@ RUN python -m spacy download en_core_web_sm \
     && python -m spacy download en_core_web_md \
     && python -m spacy download de_core_news_sm
 
-RUN apt-get update && apt-get install -y procps libsm6 libxext6 libxrender-dev libglib2.0-0
+RUN apt-get update && apt-get install -y procps libsm6 libxext6 libxrender-dev libglib2.0-0 git
 
 ENTRYPOINT [ "/bin/bash" ]
