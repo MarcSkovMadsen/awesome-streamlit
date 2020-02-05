@@ -1,4 +1,4 @@
-"""This app demonstrates the use of the awesome [deck.gl](https://deck.gl/#/) framework for visual
+"""This app demonstrates the use of the awesome [deck.gl]() framework for visual
 exploratory data analysis of large datasets.
 
 Deck.gl is now (as of Streamlit v. 0.53) supported via the
