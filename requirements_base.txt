@@ -66,7 +66,7 @@ yfinance==0.1.45
 lxml==4.4.1
 vaderSentiment==3.2.1 # A lexicon and rule-based sentiment analysis tool that is specifically attuned to sentiments expressed in social media. See https://github.com/cjhutto/vaderSentiment
 hvplot==0.5.2
-panel==0.7.0
+panel==0.8.0
 keras==2.3.1
 yahooquery==1.0.11
 pydeck==0.2.0
