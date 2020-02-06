@@ -10,13 +10,19 @@ import streamlit as st
 from bokeh.plotting import figure
 
 pn.config.sizing_mode = "stretch_width"
+pn.extension()
+pn.extension("vega")
+pn.extension("plotly")
 
 data = {"x": [1, 2, 3], "y": [1, 2, 3]}
 dataframe = pd.DataFrame(data)
 
 intro = """
 [Panel](https://panel.holoviz.org/index.html#) is a framework for creating awesome analytics apps
-in Python. It's a competing framework to Streamlit, but **Panel can also make Streamlit more
+in Python. It provides a strong integration to the [HoloViz](http://holoviz.org/) ecosystem and many
+other python packages.
+
+Panel is a competing framework to Streamlit, but **Panel can also make Streamlit more
 awesome**.
 
 Panel is build on top of [Bokeh](https://docs.bokeh.org/en/latest/) and some of it's powers can
@@ -44,7 +50,8 @@ Visit the sister site [awesome-panel.org](https://awesome-panel.org) or some of 
 resources like the [Reference Gallery](https://panel.holoviz.org/reference/index.html) and the
 [App Gallery](https://panel.holoviz.org/gallery/index.html) for more inspiration.
 
-![Reference Gallery](http://assets.holoviews.org/panel/thumbnails/index/gapminders.png)
+![Awesome-panel.org](https://github.com/MarcSkovMadsen/awesome-panel/blob/master/assets/images/awesome-panel-full-branded.gif?raw=true)
+![Reference Gallery](https://github.com/MarcSkovMadsen/awesome-streamlit/blob/master/gallery/panel_experiments/panel_reference_gallery.png?raw=true)
 """
 
 intro_pane = pn.pane.Markdown(intro, name="Introduction")
@@ -77,6 +84,12 @@ gspec[4:5, 2] = pn.Column(
     pn.widgets.FloatSlider(), pn.widgets.ColorPicker(), pn.widgets.Toggle(name="Toggle Me!")
 )
 
-tabs = pn.Tabs(intro_pane, hvplot_pane, altair_pane, plotly_pane, gspec).servable()
 
+if st.checkbox("Only hv_plot?"):
+    tabs = pn.Tabs(hvplot_pane)
+else:
+    tabs = pn.Tabs(intro_pane, hvplot_pane, altair_pane, plotly_pane, gspec)
+
+# tabs.servable()
 st.bokeh_chart(tabs.get_root())
+
