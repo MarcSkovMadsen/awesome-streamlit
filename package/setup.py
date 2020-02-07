@@ -14,7 +14,7 @@ with open(README_FILE_PATH) as f:
 
 s = setup(  # pylint: disable=invalid-name
     name="awesome-streamlit",
-    version="20191018.1",
+    version="20200208.1",
     license="MIT",
     description="""This package supports the Awesome Streamlit Project and
     provides highly experimental features!""",
