@@ -24,6 +24,7 @@ NOAH_SAUNDERS = Author(name="Noah Saunders", url="https://morioh.com/p/7066169a0
 NAVEEN_KUMAR = Author(name="Naveen Kumar", url="https://github.com/QAInsights")
 MAARTEN_GROOTENDORST = Author(name="Maarten Grootendorst", url="https://github.com/MaartenGr")
 DOUG_GUTHRIE = Author(name="Doug Guthrie", url="https://github.com/dpguthrie")
+ESTEE_TEY = Author(name="Tey Siew Wen", url="https://github.com/lyqht")
 PETER_BAUMGARTNER = Author(
     name="Peter Baumgartner",
     url="https://pmbaumgartner.github.io/",
@@ -36,7 +37,6 @@ DAVID_CHEDZICKI = Author(
     #github_url="https://github.com/dchudz",
     #github_avatar_url="https://avatars1.githubusercontent.com/u/1222726",
 )
-ESTEE_TEY = Author(name="Tey Siew Wen", url="https://github.com/lyqht")
 
 AUTHORS = [
     ALEXANDRE_DOMINGUES,

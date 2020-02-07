@@ -219,7 +219,7 @@ APPS_IN_GALLERY = [
     ),
     Resource(
       name="Google Playstore Analytics",
-      url=GITHUB_RAW_GALLERY_URL + "googleplaystore_analytics/main.py",
+      url=GITHUB_RAW_GALLERY_URL + "googleplaystore_analytics/app.py",
       is_awesome=True,
       author=authors.ESTEE_TEY,
     ),
