@@ -15,13 +15,20 @@ def main():
     # App
     st.title("Stream")
     st.header("A streamlit application template generator")
+
+    message = st.empty()
     
     st.write('<hr>', unsafe_allow_html=True)
     
     st.subheader("App location and name") # Directory section
     dir_ = st.text_input(label="Directory where to create the app.\nUse '\\\\' instead of '\\'.")
     st.write(dir_)
+
     app_name = st.text_input(label="Name of your application.")
+
+    if app_name != "" and os.path.lexists(os.path.join(dir_, app_name)):
+        message.error("Directory already exists.")
+
 
     # create temp directory for app - could be used for a future preview functionality
     if os.path.lexists(os.path.join(wd_dir, "tmp")):
@@ -48,17 +55,25 @@ def main():
             page_elt.append(page_elt_holder)
 
     if st.button("Create"):
-        struct.create_dir_structure(top_dir=dir_, name=app_name)
+        if os.environ.get('AWESOME_STREAMLIT_ORG') != None:
+            message.info("AWESOME_STREAMLIT_ORG environment variable exists, application not created.")
+        else:
+            if app_name != "" and os.path.lexists(os.path.join(dir_, app_name)):
+                message = st.error("Directory already exists.")
+            else:
+                struct.create_dir_structure(top_dir=dir_, name=app_name)
 
-        content.create_app_file(top_dir=dir_, name=app_name, pages=page_name)
-        content.create_default_pages(top_dir=dir_, name=app_name)
+                content.create_app_file(top_dir=dir_, name=app_name, pages=page_name)
+                content.create_default_pages(top_dir=dir_, name=app_name)
 
-        content.write_default_utils_functions(top_dir=dir_, name=app_name)
-        content.write_main_sidebar(top_dir=dir_, name=app_name, maintainer="Fred")
+                content.write_default_utils_functions(top_dir=dir_, name=app_name)
+                content.write_main_sidebar(top_dir=dir_, name=app_name, maintainer="Fred")
 
-        content.create_pages(top_dir=dir_, name=app_name, pages=page_name, elts=page_elt)
-        
-        content.create_batch_file(top_dir=dir_, name=app_name)
+                content.create_pages(top_dir=dir_, name=app_name, pages=page_name, elts=page_elt)
+                
+                content.create_batch_file(top_dir=dir_, name=app_name)
+                
+                message = st.info("Created application!")
         
 
 

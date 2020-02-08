@@ -5,8 +5,11 @@ DIRS = {'assets': ['db', 'images', 'sounds', 'videos'],
         }
 
 def create_dir_structure(top_dir, name, dir_list=DIRS):
-    if os.path.lexists(os.path.join(top_dir, name)) == False:
+
+    if os.path.lexists(top_dir) == False:
         os.mkdir(top_dir)
+
+    if os.path.lexists(os.path.join(top_dir, name)) == False:
         os.mkdir(os.path.join(top_dir, name))
 
     for i in range(len(dir_list)):
