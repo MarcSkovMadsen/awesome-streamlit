@@ -14,17 +14,19 @@ def create_app_file(top_dir, name, pages):
         ### IMPORT PAGES ###
         f.write('import src.sidebar.main_sidebar as msb\n')
         for p in pages:
-            f.write(f'import src.pages.{p} as {p}\n')
+            pr = p.replace(" ", "_")
+            f.write(f'import src.pages.{pr} as {pr}\n')
 
         ### DEFINE PAGES AS DICTIONARY ###
         f.write('\n')
         f.write('PAGES = {\n')
         i = 1
         for p in pages:
+            pr = p.replace(" ", "_")
             if i != len(pages):
-                f.write(f'\t"{p}": {p},\n')
+                f.write(f'\t"{p}": {pr},\n')
             else:
-                f.write(f'\t"{p}": {p}\n')
+                f.write(f'\t"{p}": {pr}\n')
             i+=1
         f.write('}')
 
@@ -57,7 +59,7 @@ def create_default_pages(top_dir, name, pages=PAGES_SRC):
 
 def create_pages(top_dir, name, pages, elts):
     for p,e in zip(pages,elts):
-        pp = p + ".py"
+        pp = p.replace(" ", "_") + ".py"
         path = os.path.join(top_dir, name, "src/pages", pp)
         with open(file=path, mode="w") as f:
             f.write('import streamlit as st\n')

@@ -39,7 +39,7 @@ def main():
     st.info(f'Current working directory: {wd_dir}')
 
     st.subheader("App pages") # Pages section
-    page_num = st.number_input(label="Number of pages in your app")
+    page_num = st.number_input(label="Number of pages in your app", min_value=1)
 
     st.write('<hr>', unsafe_allow_html=True)
 
