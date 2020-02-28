@@ -4,9 +4,16 @@ Here you maintain the list of awesome resources
 """
 from awesome_streamlit.database import authors, tags
 from awesome_streamlit.database.apps_in_gallery import APPS_IN_GALLERY
-from awesome_streamlit.database.tags import (ALTERNATIVE, APP, APP_IN_GALLERY,
-                                             CODE, SOCIAL, STREAMLIT_TAG,
-                                             TECHNICAL)
+from awesome_streamlit.database.tags import (
+    ALTERNATIVE,
+    APP,
+    APP_IN_GALLERY,
+    CODE,
+    SOCIAL,
+    STREAMLIT_TAG,
+    TECHNICAL,
+)
+
 # pylint: disable=line-too-long
 from awesome_streamlit.shared.models import Resource
 
@@ -318,6 +325,34 @@ RESOURCES_STREAMLIT_COMPONENT_APPS = [
 
 RESOURCES = (
     [
+        Resource(
+            "Streamlit Roadmap",
+            url="https://github.com/streamlit/streamlit/wiki/Roadmap",
+            is_awesome=True,
+            tags=[tags.STREAMLIT_TAG, tags.ARTICLE],
+            author=authors.STREAMLIT_AUTHOR,
+        ),
+        Resource(
+            "The Streamlit Roadmap: Big Plans for 2020!",
+            url="https://discuss.streamlit.io/t/the-streamlit-roadmap-big-plans-for-2020/2054",
+            is_awesome=True,
+            tags=[tags.STREAMLIT_TAG, tags.ARTICLE],
+            author=authors.STREAMLIT_AUTHOR,
+        ),
+        Resource(
+            "Object Detection in a few lines of code",
+            url="https://medium.com/@boadziedaniel/object-detection-in-a-few-lines-of-code-40640fdb2c46",
+            is_awesome=True,
+            tags=[tags.TUTORIAL, tags.ARTICLE],
+            author=authors.BOADZIE_DANIEL,
+        ),
+        Resource(
+            "Creating A Stock Dashboard",
+            url="https://www.linkedin.com/pulse/creating-stock-dashboard-curt-beck/?trackingId=AityTMjb3NukPM%2FZIrEoxA%3D%3D",
+            is_awesome=True,
+            tags=[tags.TUTORIAL, tags.ARTICLE],
+            author=authors.CURT_BECK,
+        ),
         Resource(
             "Turn Python Scripts into Beautiful ML Tools | PyData LA 2019",
             url="https://www.youtube.com/watch?v=0It8phQ1gkQ",

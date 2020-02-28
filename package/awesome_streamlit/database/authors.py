@@ -6,6 +6,7 @@ Author = models.Author
 ADRIAN_TREUILLE = Author(name="Adrian Treuille", url="http://www.cs.cmu.edu/~./treuille/")
 ALEXANDRE_DOMINGUES = Author(name="Alexandre Domingues", url="https://github.com/Taxuspt")
 ALI_AVNI_CIRIK = Author(name="Ali Avni Cirik", url="https://www.linkedin.com/in/aliavnicirik")
+CURT_BECK = Author(name="Curt Beck", url="https://www.linkedin.com/pulse/creating-stock-dashboard-curt-beck/?trackingId=AityTMjb3NukPM%2FZIrEoxA%3D%3D")
 STREAMLIT_AUTHOR = Author(name="Streamlit", url="https://streamlit.io/")
 KEVIN_ARVAI = Author(name="Kevin Arvai", url="https://github.com/arvkevi")
 MARC_SKOV_MADSEN = Author(name="Marc Skov Madsen", url="https://datamodelsanalytics.com")
@@ -33,8 +34,8 @@ PETER_BAUMGARTNER = Author(
 DAVID_CHEDZICKI = Author(
     name="David Chudzicki",
     url="http://www.davidchudzicki.com/",
-    #github_url="https://github.com/dchudz",
-    #github_avatar_url="https://avatars1.githubusercontent.com/u/1222726",
+    # github_url="https://github.com/dchudz",
+    # github_avatar_url="https://avatars1.githubusercontent.com/u/1222726",
 )
 ESTEE_TEY = Author(name="Tey Siew Wen", url="https://github.com/lyqht")
 
@@ -43,6 +44,7 @@ AUTHORS = [
     ALEXANDER_GARCIA,
     ALI_AVNI_CIRIK,
     BOADZIE_DANIEL,
+    CURT_BECK
     GEORGI_TANCEV,
     INES,
     JCHARIS,
@@ -56,5 +58,5 @@ AUTHORS = [
     POSEY,
     STREAMLIT_AUTHOR,
     DOUG_GUTHRIE,
-    ESTEE_TEY
+    ESTEE_TEY,
 ]
