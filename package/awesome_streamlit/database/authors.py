@@ -38,6 +38,7 @@ DAVID_CHEDZICKI = Author(
     # github_avatar_url="https://avatars1.githubusercontent.com/u/1222726",
 )
 ESTEE_TEY = Author(name="Tey Siew Wen", url="https://github.com/lyqht")
+COLLIN_PRATHER = Author(name="Collin Prather", url="https://github.com/collinprather")
 
 AUTHORS = [
     ALEXANDRE_DOMINGUES,
