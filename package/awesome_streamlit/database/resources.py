@@ -667,6 +667,13 @@ RESOURCES = (
             tags=[CODE],
             is_awesome=True,
         ),
+        Resource(
+            name="Deploying wed apps with Streamlit, Docker, and AWS",
+            url="https://github.com/collinprather/streamlit-docker/tree/docker-compose+postgres",
+            is_awesome=True,
+            tags=[tags.APP, tags.CODE],
+            author=authors.COLLIN_PRATHER,
+        ),
     ]
     + STREAMLIT_EXAMPLE_APPS
     + STREAMLIT_EXAMPLE_APPS_FAILED_TEST
