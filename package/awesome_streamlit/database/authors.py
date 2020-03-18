@@ -6,7 +6,10 @@ Author = models.Author
 ADRIAN_TREUILLE = Author(name="Adrian Treuille", url="http://www.cs.cmu.edu/~./treuille/")
 ALEXANDRE_DOMINGUES = Author(name="Alexandre Domingues", url="https://github.com/Taxuspt")
 ALI_AVNI_CIRIK = Author(name="Ali Avni Cirik", url="https://www.linkedin.com/in/aliavnicirik")
-CURT_BECK = Author(name="Curt Beck", url="https://www.linkedin.com/pulse/creating-stock-dashboard-curt-beck/?trackingId=AityTMjb3NukPM%2FZIrEoxA%3D%3D")
+CURT_BECK = Author(
+    name="Curt Beck",
+    url="https://www.linkedin.com/pulse/creating-stock-dashboard-curt-beck/?trackingId=AityTMjb3NukPM%2FZIrEoxA%3D%3D",
+)
 STREAMLIT_AUTHOR = Author(name="Streamlit", url="https://streamlit.io/")
 KEVIN_ARVAI = Author(name="Kevin Arvai", url="https://github.com/arvkevi")
 MARC_SKOV_MADSEN = Author(name="Marc Skov Madsen", url="https://datamodelsanalytics.com")
@@ -45,6 +48,7 @@ AUTHORS = [
     ALEXANDER_GARCIA,
     ALI_AVNI_CIRIK,
     BOADZIE_DANIEL,
+    COLLIN_PRATHER,
     CURT_BECK,
     GEORGI_TANCEV,
     INES,

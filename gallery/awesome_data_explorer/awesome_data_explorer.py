@@ -47,6 +47,7 @@ def get_categories_and_file_names() -> Dict:
         category, file_name = i.parts[-2:]
 
         file = Path("apd-core/core") / category / file_name
+        print(file)
         try:
             with file.open() as open_file:
                 data_info = yaml.load(open_file.read(), Loader=yaml.FullLoader)
@@ -56,7 +57,8 @@ def get_categories_and_file_names() -> Dict:
             else:
                 category_files[category] = {file_name: data_info}
         except UnicodeDecodeError as err:
-            logging.exception("Error. Could not read %s", file.name, exc_info=err)
+            category_files[category][file_name] = "NOT READABLE"
+            # logging.exception("Error. Could not read %s", file.name, exc_info=err)
 
     return category_files
 
@@ -156,9 +158,7 @@ def show_homepage(data_info):
         if response == "Connection error":
             st.error(f"{homepage}\n\nThere is a connection issue to this website.")
         elif response == "SSL error":
-            st.warning(
-                f"There might be an SSL issue with {homepage}\n\nProceed with caution!"
-            )
+            st.warning(f"There might be an SSL issue with {homepage}\n\nProceed with caution!")
         else:
             st.info(f"{homepage}")
 
@@ -174,9 +174,7 @@ def main():
 
     categories_and_files = get_categories_and_file_names()
 
-    category_file_count = {
-        k: f"{k} ({len(v)})" for k, v in categories_and_files.items()
-    }
+    category_file_count = {k: f"{k} ({len(v)})" for k, v in categories_and_files.items()}
     selected_topic = st.sidebar.selectbox(
         "Select topic",
         options=sorted(categories_and_files.keys()),
@@ -188,14 +186,10 @@ def main():
     data_titles = {k: v.get("title") for k, v in category_data.items()}
 
     selected_data = st.sidebar.selectbox(
-        "Select data",
-        options=sorted(category_data.keys()),
-        format_func=data_titles.get,
+        "Select data", options=sorted(category_data.keys()), format_func=data_titles.get
     )
 
-    show_data_count_by_topic = st.sidebar.checkbox(
-        "Show data count by topic", value=True
-    )
+    show_data_count_by_topic = st.sidebar.checkbox("Show data count by topic", value=True)
 
     selected_data_info = category_data[selected_data]
 
@@ -224,9 +218,7 @@ def main():
             .properties(height=600)
         )
 
-        text = chart.mark_text(align="left", baseline="middle", dx=3,).encode(
-            text="Number of data"
-        )
+        text = chart.mark_text(align="left", baseline="middle", dx=3).encode(text="Number of data")
 
         st.altair_chart(chart + text)
 
