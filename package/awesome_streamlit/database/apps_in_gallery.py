@@ -224,5 +224,12 @@ APPS_IN_GALLERY = [
         tags=[tags.CODE, tags.APP_IN_GALLERY],
         author=authors.ESTEE_TEY,
     ),
+    Resource(
+        name="Python Formatter",
+        url=GITHUB_RAW_GALLERY_URL + "python_formatter/python_formatter.py",
+        is_awesome=True,
+        tags=[tags.CODE, tags.APP_IN_GALLERY],
+        author=authors.STEFANO_TABACCO,
+    ),
     DEFAULT_APP_IN_GALLERY,
 ]
