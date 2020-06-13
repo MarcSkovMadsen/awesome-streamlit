@@ -10,3 +10,4 @@
 **/.vscode/
 **/*.sqlite3
 **/.env
+**/apd-core

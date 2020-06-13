@@ -53,7 +53,7 @@ def get_categories_and_file_names() -> Dict:
         category, file_name = i.parts[-2:]
 
         file = Path("apd-core/core") / category / file_name
-        print(file)
+        # print(file)
         try:
             with file.open() as open_file:
                 open_file_content = open_file.read()
