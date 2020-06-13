@@ -92,4 +92,3 @@ else:
 
 # tabs.servable()
 st.bokeh_chart(tabs.get_root())
-

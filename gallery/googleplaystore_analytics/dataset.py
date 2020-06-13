@@ -1,9 +1,10 @@
-import streamlit as st
+import itertools
+
 import matplotlib.pyplot as plt
-import seaborn as sns
 import numpy as np
 import pandas as pd
-import itertools
+import seaborn as sns
+import streamlit as st
 from nltk.probability import FreqDist
 
 

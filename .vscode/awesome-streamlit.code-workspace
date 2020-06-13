@@ -1,0 +1,12 @@
+{
+	"folders": [
+		{
+			"path": "C:\\repos\\private\\awesome-streamlit"
+		}
+	],
+	"settings": {
+		"terminal.integrated.env.windows": {
+			"PATH": "${env:PATH}:/c/repos/private/awesome-streamlit/.venv/Lib/site-packages/osgeo"
+		},
+	}
+}

@@ -1,10 +1,11 @@
 # Look here for documenting Python code: https://realpython.com/documenting-python-code/
 
+import os
+
 import streamlit as st
+
 import src.content as content
 import src.structure as struct
-import uuid
-import os
 
 
 def main():

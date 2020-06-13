@@ -5,4 +5,3 @@ def write_page(page):
 		page {module} -- A module with a "def write():" function
 	"""
 	page.write()
-

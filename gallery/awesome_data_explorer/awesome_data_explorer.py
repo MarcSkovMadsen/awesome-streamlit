@@ -6,7 +6,6 @@ This app explores data in the Awesome Public Datasets repository.
 Author: [Ali Avni Cirik](https://www.linkedin.com/in/aliavnicirik)\n
 Source: [Github](https://github.com/aliavni/awesome-data-explorer)
 """
-import logging
 from pathlib import Path
 from typing import Dict, Tuple, Union
 
@@ -17,6 +16,13 @@ import requests
 import streamlit as st
 import yaml
 
+CORRECTIONS = {
+    "DOI: ": "DOI ",
+    "see: ": "see ",
+    "from: ": "from ",
+    "tables: ": "tables ",
+    "1981â€“2016": "1981-2016",
+}
 
 @st.cache
 def get_awesome_data_repo():
@@ -50,7 +56,10 @@ def get_categories_and_file_names() -> Dict:
         print(file)
         try:
             with file.open() as open_file:
-                data_info = yaml.load(open_file.read(), Loader=yaml.FullLoader)
+                open_file_content = open_file.read()
+                for old, new in CORRECTIONS.items():
+                    open_file_content = open_file_content.replace(old, new)
+                data_info = yaml.load(open_file_content, Loader=yaml.FullLoader)
 
             if category in category_files:
                 category_files[category][file_name] = data_info
@@ -194,7 +203,7 @@ def main():
     selected_data_info = category_data[selected_data]
 
     title.title(selected_data_info["title"])
-    data_image = selected_data_info["image"]
+    data_image = selected_data_info.get("image", None)
     if data_image and data_image != "none":
         st.image(data_image, width=200)
 
@@ -203,7 +212,7 @@ def main():
     show_homepage(selected_data_info)
 
     if show_data_count_by_topic:
-        st.title("Data count by topic")
+        st.title(body="Data count by topic")
         source = pd.DataFrame(
             {
                 "Topic": list(categories_and_files.keys()),

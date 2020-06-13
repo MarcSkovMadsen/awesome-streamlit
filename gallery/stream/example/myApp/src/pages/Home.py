@@ -7,4 +7,3 @@ def write():
 		st.write(f"This is {PAGE_NAME}")
 
 		elt_0 = st.empty()
-

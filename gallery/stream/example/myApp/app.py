@@ -1,10 +1,9 @@
 import streamlit as st
-import src.utils.utils as utils
 
-
-import src.sidebar.main_sidebar as msb
-import src.pages.Home as Home
 import src.pages.Dashboard as Dashboard
+import src.pages.Home as Home
+import src.sidebar.main_sidebar as msb
+import src.utils.utils as utils
 
 PAGES = {
 	"Home": Home,
@@ -26,4 +25,3 @@ def main():
 
 if __name__ == "__main__":
 	main()
-

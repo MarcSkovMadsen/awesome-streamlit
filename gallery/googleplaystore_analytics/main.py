@@ -3,8 +3,8 @@ import streamlit as st
 import dataset
 import intro
 import model
-import topic_modelling
 import references
+import topic_modelling
 
 PAGES = {
     "Intro": intro,

@@ -1,7 +1,7 @@
 """Example from https://deckgl.readthedocs.io/en/latest/tooltip.html"""
-import streamlit as st
-import pydeck as pdk
 import pandas as pd
+import pydeck as pdk
+import streamlit as st
 
 UK_ACCIDENTS_DATA = (
     "https://raw.githubusercontent.com/uber-common/"

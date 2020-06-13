@@ -1,5 +1,6 @@
-import streamlit as st
 import time
+
+import streamlit as st
 
 slider_ph = st.empty()
 info_ph = st.empty()
