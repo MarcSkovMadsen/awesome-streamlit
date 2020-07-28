@@ -9,3 +9,8 @@ voila # For comparisons with voila
 bqplot # For comparisons with voila
 selenium==3.141.0
 ptvsd # Python Tools for Visual Studio debug server. See https://github.com/microsoft/ptvsd
+
+# Package Publishing
+setuptools
+wheel
+twine
