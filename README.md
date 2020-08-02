@@ -51,7 +51,7 @@ A curated list of awesome streamlit resources. Inspired by [awesome-python](http
 - [Streamlit Demo](https://github.com/Poseyy/StreamlitDemo) by [Luke Posey](https://github.com/Poseyy) (#App, #Code)
 - [Streamlit-components-demo App](https://fullstackstation.com/streamlit-components-demo) (#App)
 - [Deploying web apps with Streamlit, Docker, and AWS](https://github.com/collinprather/streamlit-docker/tree/docker-compose+postgres) by [Collin Prather](https://github.com/collinprather) (#App, #Code)
-
+-[Used Car Price Prediction Model](https://carresellprice.herokuapp.com/)by[Anush Krishna](https://github.com/anushkrishnav)
 ### Article
 
 - [Intermediate Streamlit - Tips and Tricks for an evolving app](https://towardsdatascience.com/intermediate-streamlit-d5a1381daa65) by [Peter Baumgartner](https://pmbaumgartner.github.io/) (#Article)
