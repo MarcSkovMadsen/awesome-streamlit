@@ -361,6 +361,12 @@ RESOURCES = (
             author=authors.ALEXANDRE_DOMINGUES,
         ),
         Resource(
+            "Share Streamlit apps with colleagues on JupyterHub using ContainDS Dashboards",
+            url="https://medium.com/@dan_19973/streamlit-apps-deploy-instantly-with-zero-configuration-7729944c649c?source=friends_link&sk=1f9b765b9b3d3c1501c4815c078f2962",
+            is_awesome=True,
+            tags=[tags.GUIDE, tags.CODE],
+        ),
+        Resource(
             "Intermediate Streamlit - Tips and Tricks for an evolving app",
             url="https://towardsdatascience.com/intermediate-streamlit-d5a1381daa65",
             is_awesome=True,
