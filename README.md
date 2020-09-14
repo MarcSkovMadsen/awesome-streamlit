@@ -77,6 +77,7 @@ A curated list of awesome streamlit resources. Inspired by [awesome-python](http
 - [File Uploader](https://raw.githubusercontent.com/MarcSkovMadsen/awesome-streamlit/master/gallery/file_uploader/file_uploader.py) by [Marc Skov Madsen](https://datamodelsanalytics.com) (#App In Gallery, #Code)
 - [File Uploader - Multiple Files](https://raw.githubusercontent.com/MarcSkovMadsen/awesome-streamlit/master/gallery/file_uploader_multiple_files/file_uploader_multiple_files.py) by [Marc Skov Madsen](https://datamodelsanalytics.com) (#App In Gallery, #Code)
 - [Image Classifier](https://raw.githubusercontent.com/MarcSkovMadsen/awesome-streamlit/master/gallery/image_classifier/image_classifier.py) by [Marc Skov Madsen](https://datamodelsanalytics.com) (#App In Gallery, #Code)
+- [Another Awesome Image Classifier Boilerplate](https://github.com/smaranjitghose/img_ai_app_boilerplate
 - [Iris Classifier](https://raw.githubusercontent.com/MarcSkovMadsen/awesome-streamlit/master/gallery/iris_classification/iris.py) by [Noah Saunders](https://morioh.com/p/7066169a0314) (#App In Gallery, #Code, #Machine Learning)
 - [Iris EDA App](https://raw.githubusercontent.com/MarcSkovMadsen/awesome-streamlit/master/gallery/iris_eda_app/iris_eda_app.py) by [Jesse E. Agbe (JCharis)](https://github.com/Jcharis) (#App In Gallery, #Code)
 - [Kickstarter Dashboard](https://raw.githubusercontent.com/MarcSkovMadsen/awesome-streamlit/master/gallery/kickstarter_dashboard/kickstarter_dashboard.py) by [Marc Skov Madsen](https://datamodelsanalytics.com) (#App In Gallery, #Code)
