@@ -45,6 +45,7 @@ A curated list of awesome streamlit resources. Inspired by [awesome-python](http
 - [How to create and deploy data exploration web app easily using python](https://github.com/robmarkcole/mqtt-camera-streamer) (#App, #Code, #Deployment)
 - [Kaggle Mushrooms Dashboard](https://github.com/pierpaolo28/Data-Visualization/tree/master/Streamlit) (#App)
 - [NLP Based App with Streamlit](https://github.com/Jcharis/Streamlit_DataScience_Apps/tree/master/NLP_App_with_Streamlit_Python) by [Jesse E. Agbe (JCharis)](https://github.com/Jcharis) (#App, #Code)
+- [Use HuggingFace with streamlit](https://github.com/Anku5hk/Help-Me-Read) by [Ankush Kuwar](https://github.com/Anku5hk)
 - [Powering up Apache JMeter with Streamlit](https://qainsights.com/apache-jmeter-with-streamlit-for-machine-learning/) by [Naveen Kumar](https://github.com/QAInsights) (#App, #Code)
 - [Quickly Build and Deploy a Dashboard with Streamlit](https://towardsdatascience.com/quickly-build-and-deploy-an-application-with-streamlit-988ca08c7e83) by [Maarten Grootendorst](https://github.com/MaartenGr) (#App, #Code, #Deployment)
 - [Sentiment Analyzer Tool](https://www.linkedin.com/posts/patidarparas13_code-ml-machinelearning-ugcPost-6585745929062703104-ttkv) (#App, #Code, #Social)
