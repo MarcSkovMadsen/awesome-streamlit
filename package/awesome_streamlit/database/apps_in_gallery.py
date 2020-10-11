@@ -231,5 +231,12 @@ APPS_IN_GALLERY = [
         tags=[tags.CODE, tags.APP_IN_GALLERY],
         author=authors.STEFANO_TABACCO,
     ),
+    Resource(
+        name="ezancestry",
+        url=GITHUB_RAW_GALLERY_URL + "ezancestry/app.py",
+        is_awesome=True,
+        tags=[tags.CODE, tags.APP_IN_GALLERY],
+        author=authors.KEVIN_ARVAI,
+    ),
     DEFAULT_APP_IN_GALLERY,
 ]
