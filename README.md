@@ -47,6 +47,7 @@ A curated list of awesome streamlit resources. Inspired by [awesome-python](http
 - [NLP Based App with Streamlit](https://github.com/Jcharis/Streamlit_DataScience_Apps/tree/master/NLP_App_with_Streamlit_Python) by [Jesse E. Agbe (JCharis)](https://github.com/Jcharis) (#App, #Code)
 - [Powering up Apache JMeter with Streamlit](https://qainsights.com/apache-jmeter-with-streamlit-for-machine-learning/) by [Naveen Kumar](https://github.com/QAInsights) (#App, #Code)
 - [Quickly Build and Deploy a Dashboard with Streamlit](https://towardsdatascience.com/quickly-build-and-deploy-an-application-with-streamlit-988ca08c7e83) by [Maarten Grootendorst](https://github.com/MaartenGr) (#App, #Code, #Deployment)
+- [Rick and Morty story generation with GPT2](https://madewithml.com/projects/2571/rick-and-morty-story-generation-with-gpt2/) by [Tornike Tsereteli](https://github.com/e-tony) (#App, #Code, #Deployment)
 - [Sentiment Analyzer Tool](https://www.linkedin.com/posts/patidarparas13_code-ml-machinelearning-ugcPost-6585745929062703104-ttkv) (#App, #Code, #Social)
 - [Streamlit Demo](https://github.com/Poseyy/StreamlitDemo) by [Luke Posey](https://github.com/Poseyy) (#App, #Code)
 - [Streamlit-components-demo App](https://fullstackstation.com/streamlit-components-demo) (#App)
@@ -133,6 +134,7 @@ A curated list of awesome streamlit resources. Inspired by [awesome-python](http
 - [How to create and deploy data exploration web app easily using python](https://medium.com/@ansjin/how-to-create-and-deploy-data-exploration-web-app-easily-using-python-a03c4b8a1f3e) (#Article, #Deployment, #Tutorial)
 - [How to write web apps using simple python for data scientists](https://towardsdatascience.com/how-to-write-web-apps-using-simple-python-for-data-scientists-a227a1a01582) (#Article, #Tutorial)
 - [Mining and Classifying Medical Text Documents](https://towardsdatascience.com/mining-and-classifying-medical-text-documents-1876462f73bc) by [Georgi Tancev](https://github.com/gtancev) (#Article, #Deployment, #NLP, #Tutorial)
+- [Rick and Morty story generation with GPT2 using Transformers and Streamlit in 57 lines of code](https://towardsdatascience.com/rick-and-morty-story-generation-with-gpt2-using-transformers-and-streamlit-in-57-lines-of-code-8f81a8f92692) (#Article, #Deployment, #NLP)
 - [Streamlit Python Tutorial (Crash Course)](https://www.youtube.com/watch?v=_9WiB2PDO7k) by [Jesse E. Agbe (JCharis)](https://github.com/Jcharis) (#Tutorial, #Video
 
 ## Governance
