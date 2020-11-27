@@ -169,15 +169,19 @@ class Grid:
     color: {self.color};
     }}
     .box {{
-    background-color: {self.color};
-    color: {self.background_color};
-    border-radius: 5px;
     padding: 20px;
     font-size: 150%;
     }}
     table {{
         color: {self.color}
     }}
+    table tr td, table tr th {{
+        background: {self.background_color}
+    }}
+    .toolbar .streamlit-button {{
+        background-color: {self.background_color};
+        color: {self.color};
+     }}
 </style>
 """
 
