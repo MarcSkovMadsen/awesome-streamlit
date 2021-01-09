@@ -43,6 +43,11 @@ DAVID_CHEDZICKI = Author(
 ESTEE_TEY = Author(name="Tey Siew Wen", url="https://github.com/lyqht")
 COLLIN_PRATHER = Author(name="Collin Prather", url="https://github.com/collinprather")
 STEFANO_TABACCO = Author(name="Stefano Tabacco", url="https://github.com/stabacco")
+JOSHUA_COOK = Author(
+    name="Joshua Cook", 
+    url="https://joshuacook.netlify.app",
+    # github_url="https://github.com/dchudz",
+)
 
 AUTHORS = [
     ALEXANDRE_DOMINGUES,
@@ -66,4 +71,5 @@ AUTHORS = [
     DOUG_GUTHRIE,
     ESTEE_TEY,
     STEFANO_TABACCO,
+    JOSHUA_COOK
 ]
