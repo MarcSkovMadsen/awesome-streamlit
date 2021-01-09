@@ -671,7 +671,7 @@ RESOURCES = (
             "Creating a Streamlit web app, building with Docker + GitHub Actions, and hosting on Heroku",
             url="https://joshuacook.netlify.app/post/streamlit-app-heroku/",
             is_awesome=True,
-            tags=[tags.TUTORIAL, tags.ARTICLE],
+            tags=[tags.TUTORIAL, tags.ARTICLE, tags.DEPLOYMENT, tags.GUIDE],
             author=authors.JOSHUA_COOK,
         ),
     ]

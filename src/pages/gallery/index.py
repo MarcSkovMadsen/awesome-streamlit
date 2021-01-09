@@ -9,9 +9,8 @@ Credits to Nhan for sharing that code
 import logging
 from typing import List
 
-import streamlit as st
-
 import awesome_streamlit as ast
+import streamlit as st
 
 # Get an instance of a logger
 logging.basicConfig(format="%(asctime)s - %(message)s", level=logging.INFO)

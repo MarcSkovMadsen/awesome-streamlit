@@ -2,7 +2,6 @@
 import urllib.request
 
 import pytest
-
 from awesome_streamlit.core import services
 
 

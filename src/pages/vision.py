@@ -1,9 +1,8 @@
 """Page for viewing the awesome Streamlit vision"""
 import pathlib
 
-import streamlit as st
-
 import awesome_streamlit as ast
+import streamlit as st
 
 
 @st.cache

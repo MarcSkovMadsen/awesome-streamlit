@@ -1,7 +1,7 @@
 """Main module for the streamlit app"""
+import awesome_streamlit as ast
 import streamlit as st
 
-import awesome_streamlit as ast
 import src.pages.about
 import src.pages.gallery.index
 import src.pages.home

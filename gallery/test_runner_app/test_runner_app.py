@@ -2,9 +2,8 @@
 # pylint: disable=invalid-name
 from typing import List
 
-import streamlit as st
-
 import awesome_streamlit as ast
+import streamlit as st
 from awesome_streamlit.database.apps_in_gallery import GITHUB_RAW_GALLERY_URL
 from awesome_streamlit.testing.models import \
     TesTItem  # Special Capitalization is due to PyTest

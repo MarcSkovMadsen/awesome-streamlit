@@ -2,7 +2,6 @@
 import pathlib
 
 import pytest
-
 from awesome_streamlit.testing import utils
 
 from . import test_module_example_folder

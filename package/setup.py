@@ -6,7 +6,7 @@ or similar where . is replaced by the path to package root
 """
 import pathlib
 
-from setuptools import setup, find_packages
+from setuptools import find_packages, setup
 
 README_FILE_PATH = pathlib.Path(__file__).parent / "README.md"
 with open(README_FILE_PATH) as f:

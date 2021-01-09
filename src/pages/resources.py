@@ -1,9 +1,8 @@
 """This page is for searching and viewing the list of awesome resources"""
 import logging
 
-import streamlit as st
-
 import awesome_streamlit as ast
+import streamlit as st
 from awesome_streamlit.core.services import resources
 
 logging.basicConfig(format="%(asctime)s - %(message)s", level=logging.INFO)

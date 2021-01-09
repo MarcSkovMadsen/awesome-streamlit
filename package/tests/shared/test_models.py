@@ -1,6 +1,5 @@
 """Test of the models"""
 import pytest
-
 from awesome_streamlit.shared.models import Author, Resource, Tag
 
 

@@ -6,7 +6,6 @@ from typing import List
 
 import pandas as pd
 import streamlit as st
-
 from awesome_streamlit.testing.models import TesTItem
 
 

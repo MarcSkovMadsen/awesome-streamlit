@@ -231,5 +231,12 @@ APPS_IN_GALLERY = [
         tags=[tags.CODE, tags.APP_IN_GALLERY],
         author=authors.STEFANO_TABACCO,
     ),
+    Resource(
+        name="Sudoku Solver",
+        url=GITHUB_RAW_GALLERY_URL + "sudoku_solver/sudoku_solver.py",
+        is_awesome=True,
+        tags=[tags.CODE, tags.APP_IN_GALLERY, tags.APP],
+        author=authors.JOSHUA_COOK,
+    ),
     DEFAULT_APP_IN_GALLERY,
 ]

@@ -1,9 +1,8 @@
-import streamlit as st
-
 import dataset
 import intro
 import model
 import references
+import streamlit as st
 import topic_modelling
 
 PAGES = {
