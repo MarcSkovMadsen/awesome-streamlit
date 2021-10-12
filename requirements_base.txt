@@ -61,7 +61,7 @@ pydot==1.4.1
 plotly==4.1.0
 PyYAML==5.2
 twine==2.0.0
-opencv-python==4.1.1.26
+opencv-python==4.2.0.32
 yfinance==0.1.45
 lxml==4.4.1
 vaderSentiment==3.2.1 # A lexicon and rule-based sentiment analysis tool that is specifically attuned to sentiments expressed in social media. See https://github.com/cjhutto/vaderSentiment
