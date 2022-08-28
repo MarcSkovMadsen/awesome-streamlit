@@ -67,7 +67,7 @@ Then you need to insert the following snippet in your `<your-app_name>.py` file.
 ```python
 import ptvsd
 ptvsd.enable_attach(address=('localhost', 5678))
-ptvsd.wait_for_attach() # Only include this line if you always wan't to attach the debugger
+ptvsd.wait_for_attach() # Only include this line if you always want to attach the debugger
 ```
 
 Then you can start your Streamlit app
