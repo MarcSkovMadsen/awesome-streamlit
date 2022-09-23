@@ -2,7 +2,8 @@
 
 [<img src="https://github.com/MarcSkovMadsen/awesome-streamlit/blob/master/assets/streamlit-logo.png?raw=true" align="right" height="75" width="75">](https://streamlit.io)
 
-> The fastest way to build **Awesome Tools and Apps**! Powered by **Python**!
+> The fastest way to build **Awesome Tools and Apps**! Powered by **Python**!.
+
 
 The purpose of this project is to share knowledge on how Awesome [Streamlit](https://streamlit.io/) is and can become. [Pull requests](https://github.com/MarcSkovMadsen/awesome-streamlit/pulls) are very welcome!
 
@@ -26,7 +27,7 @@ The only way to truly understand how magical Streamlit is to play around with it
 
 Afterwards you can go to the [Streamlit docs](https://streamlit.io/docs/) to get started. You might also visit [Awesome Streamlit docs](https://awesome-streamlit.readthedocs.io/en/latest/).
 
-[![Introduction to Streamlit](https://github.com/MarcSkovMadsen/awesome-streamlit/blob/master/assets/youtube-introduction-to-streamlit.png?raw=true)](https://www.youtube.com/watch?v=B2iAodr0fOo&feature=youtu.be "Introduction to streamlit")
+[![Introduction to Streamlit](https://github.com/MarcSkovMadsen/awesome-streamlit/blob/master/assets/youtube-introduction-to-streamlit.png?raw=true)](https://www.youtube.com/watch?v=B2iAodr0fOo&feature=youtu.be "Introduction to streamlit").
 
 ## Awesome Resources
 
