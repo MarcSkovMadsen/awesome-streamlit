@@ -36,6 +36,7 @@ A curated list of awesome streamlit resources. Inspired by [awesome-python](http
 
 - [Bokeh](https://bokeh.pydata.org/en/latest/index.html) (#Alternative)
 - [Jupyter Voila](https://blog.jupyter.org/and-voil%C3%A0-f6a2c08a4a93) (#Alternative)
+- [Mercury](https://github.com/mljar/mercury) (#Alternative)
 - [Panel](http://panel.pyviz.org/) (#Alternative)
 - [Plotly Dash](https://plot.ly/dash/) (#Alternative)
 
