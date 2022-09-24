@@ -6,7 +6,7 @@
 
 The purpose of this project is to share knowledge on how Awesome [Streamlit](https://streamlit.io/) is and can become. [Pull requests](https://github.com/MarcSkovMadsen/awesome-streamlit/pulls) are very welcome!
 
-Streamlit has just been [announced](https://towardsdatascience.com/coding-ml-tools-like-you-code-ml-models-ddba3357eace) (Oct 2019) but I see the potential of becoming the **Iphone of Data Science Apps**. And maybe it can even become the Iphone of Technical Writing, Code, Micro Apps and Python.
+Streamlit has just been [announced](https://towardsdatascience.com/coding-ml-tools-like-you-code-ml-models-ddba3357eace) (Oct 2019) but I see the potential of it becoming the **iPhone of Data Science Apps**. And maybe it can even become the iPhone of Technical Writing, Code, Micro Apps and Python.
 
 This project provides
 
@@ -91,6 +91,7 @@ A curated list of awesome streamlit resources. Inspired by [awesome-python](http
 - [SpacyIO](https://raw.githubusercontent.com/MarcSkovMadsen/awesome-streamlit/master/gallery/spacyio/spacyio.py) by [Ines Montani](https://gist.github.com/ines) (#App In Gallery, #Code, #NLP)
 - [Spreadsheet](https://raw.githubusercontent.com/MarcSkovMadsen/awesome-streamlit/master/gallery/spreadsheet/spreadsheet.py) by [Marc Skov Madsen](https://datamodelsanalytics.com) (#App In Gallery, #Code)
 - [Streamlit-components-demo Code](https://github.com/virusvn/streamlit-components-demo) (#Code)
+- [Sudoku Solver](https://raw.githubusercontent.com/MarcSkovMadsen/awesome-streamlit/master/gallery/sudoku_solver/sudoku_solver.py) by [Joshua Cook](https://joshuacook.netlify.app/) (#App, #App In Gallery, #Code)
 - [Table Experiments](https://raw.githubusercontent.com/MarcSkovMadsen/awesome-streamlit/master/gallery/table_experiments/app.py) by [Marc Skov Madsen](https://datamodelsanalytics.com) (#App In Gallery, #Code)
 - [Uber Data Explorer App](https://dataexplorerlit.herokuapp.com/) (#Code)
 - [Uber NYC Pickups](https://raw.githubusercontent.com/streamlit/demo-uber-nyc-pickups/master/app.py) by [Streamlit](https://streamlit.io/) (#App In Gallery, #Code)
@@ -127,13 +128,15 @@ A curated list of awesome streamlit resources. Inspired by [awesome-python](http
 - [A step by step guide to running streamlit pytorch and bert on a cheap aws instance](https://fuzzyblog.io/blog/python/2019/10/17/a-step-by-step-guide-to-running-streamlit-pytorch-and-bert-on-a-cheap-aws-instance.html) (#Article, #Deployment, #Tutorial)
 - [Building a ui for your latest ai](https://towardsdatascience.com/full-stack-ai-building-a-ui-for-your-latest-ai-project-in-no-time-at-all-7e5c8fd4eafd  ) by [Luke Posey](https://github.com/Poseyy) (#Article, #Tutorial)
 - [Building an Iris EDA App with Streamlit and Python](https://www.youtube.com/watch?v=L_mZcEMFUIc) by [Jesse E. Agbe (JCharis)](https://github.com/Jcharis) (#Tutorial, #Video)
+- [Creating A Stock Dashboard](https://www.linkedin.com/pulse/creating-stock-dashboard-curt-beck/?trackingId=AityTMjb3NukPM%2FZIrEoxA%3D%3D) by [Curt Beck](https://www.linkedin.com/pulse/creating-stock-dashboard-curt-beck/?trackingId=AityTMjb3NukPM%2FZIrEoxA%3D%3D) (#Article, #Tutorial)
+- [Creating a Streamlit web app, building with Docker + GitHub Actions, and hosting on Heroku](https://joshuacook.netlify.app/post/streamlit-app-heroku/) by [Joshua Cook](https://joshuacook.netlify.app) (#Tutorial, #Article)
 - [Full-Stack AI: Building a UI for Your Latest AI Project in No Time at All](https://towardsdatascience.com/full-stack-ai-building-a-ui-for-your-latest-ai-project-in-no-time-at-all-7e5c8fd4eafd) (#Article, #Image Recognition, #Tutorial)
 - [How To Deploy Streamlit Apps (Using Heroku)](https://www.youtube.com/watch?v=skpiLtEN3yk&feature=youtu.be) (#Deployment, #Tutorial, #Video)
 - [How to build your machine learning app in 3 simple steps](https://towardsdatascience.com/how-to-build-your-machine-learning-app-in-3-simple-steps-d56ed910355c) (#Article, #Deployment, #Tutorial)
 - [How to create and deploy data exploration web app easily using python](https://medium.com/@ansjin/how-to-create-and-deploy-data-exploration-web-app-easily-using-python-a03c4b8a1f3e) (#Article, #Deployment, #Tutorial)
 - [How to write web apps using simple python for data scientists](https://towardsdatascience.com/how-to-write-web-apps-using-simple-python-for-data-scientists-a227a1a01582) (#Article, #Tutorial)
 - [Mining and Classifying Medical Text Documents](https://towardsdatascience.com/mining-and-classifying-medical-text-documents-1876462f73bc) by [Georgi Tancev](https://github.com/gtancev) (#Article, #Deployment, #NLP, #Tutorial)
-- [Streamlit Python Tutorial (Crash Course)](https://www.youtube.com/watch?v=_9WiB2PDO7k) by [Jesse E. Agbe (JCharis)](https://github.com/Jcharis) (#Tutorial, #Video
+- [Streamlit Python Tutorial (Crash Course)](https://www.youtube.com/watch?v=_9WiB2PDO7k) by [Jesse E. Agbe (JCharis)](https://github.com/Jcharis) (#Tutorial, #Video)
 
 ## Governance
 
@@ -147,7 +150,7 @@ You can learn more about me at [datamodelsanalytics.com](https://datamodelsanaly
 
 I try my best to govern and maintain this project in the spirit of the [Zen of Python](https://www.python.org/dev/peps/pep-0020/).
 
-But **i'm not an experienced open source maintainer** so helpfull suggestions are appreciated.
+But **I'm not an experienced open source maintainer** so helpfull suggestions are appreciated.
 
 Thanks
 
@@ -316,7 +319,7 @@ conda create -n awesome-streamlit python=3.7.4
 and activate environment.
 
 ```bash
-activate awesome-streamlit
+conda activate awesome-streamlit
 ```
 
 If you are on windows you need to install some things required by GeoPandas by following [these instructions](https://geoffboeing.com/2014/09/using-geopandas-windows/).

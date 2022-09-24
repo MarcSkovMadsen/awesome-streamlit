@@ -4,10 +4,9 @@ import subprocess
 import time
 import urllib.request
 
+import awesome_streamlit as ast
 from PIL import Image
 from selenium import webdriver
-
-import awesome_streamlit as ast
 
 ROOT = pathlib.Path(__file__).parent.parent / "assets/resources_screenshots"
 FILE = ROOT / "resource_urls.txt"

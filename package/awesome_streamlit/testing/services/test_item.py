@@ -9,7 +9,6 @@ import random
 from typing import List
 
 import streamlit as st
-
 from awesome_streamlit import database
 from awesome_streamlit.shared.models import Resource
 from awesome_streamlit.testing.models import TesTItem

@@ -11,7 +11,6 @@ import urllib.request
 from typing import Optional
 
 import streamlit as st
-
 from awesome_streamlit.database.settings import GITHUB_RAW_URL
 
 

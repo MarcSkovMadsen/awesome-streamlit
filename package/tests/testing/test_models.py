@@ -1,9 +1,9 @@
 """Here we test the models in the testing package"""
 import pytest
-
 # pylint: disable=redefined-outer-name
 from awesome_streamlit.shared.models import Author, Resource, Tag
 from awesome_streamlit.testing.models import TesTItem
+
 from tests.testing.test_module_example_folder import test_module_example_file
 
 
