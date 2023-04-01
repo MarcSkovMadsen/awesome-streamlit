@@ -667,6 +667,13 @@ RESOURCES = (
             tags=[tags.APP, tags.CODE],
             author=authors.COLLIN_PRATHER,
         ),
+      Resource(
+            name="The Readability Project",
+            url="https://github.com/russelljjarvis/ScienceAccess",
+            is_awesome=True,
+            tags=[tags.APP, tags.CODE],
+            author=authors.Patrick_McGurrin_and_Russell_Jarvis,
+      ),
     ]
     + STREAMLIT_EXAMPLE_APPS
     + STREAMLIT_EXAMPLE_APPS_FAILED_TEST
