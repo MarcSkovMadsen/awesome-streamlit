@@ -41,6 +41,8 @@ A curated list of awesome streamlit resources. Inspired by [awesome-python](http
 
 ### App
 
+- [VASP Input Generator](https://github.com/ShahiDDU/vasp-input-generator) by [Prashanti Shahi](https://github.com/ShahiDDU) - Free web GUI for generating VASP DFT input files (INCAR, POSCAR, KPOINTS, POTCAR) with 10+ calculation types (#App, #Science, #Code)
+- [QE Input Generator](https://github.com/ShahiDDU/qe-input-generator) by [Prashanti Shahi](https://github.com/ShahiDDU) - Free web GUI for generating Quantum ESPRESSO pw.x input files with pseudopotential upload and manual k-point editor (#App, #Science, #Code)
 - [Hello-streamlit deployed on Glitch](https://glitch.com/~hello-streamlit) by [Alexander Garcia](https://github.com/djauxel) (#App, #Deployment)
 - [How to create and deploy data exploration web app easily using python](https://github.com/robmarkcole/mqtt-camera-streamer) (#App, #Code, #Deployment)
 - [Kaggle Mushrooms Dashboard](https://github.com/pierpaolo28/Data-Visualization/tree/master/Streamlit) (#App)
