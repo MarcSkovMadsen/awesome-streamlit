@@ -51,6 +51,7 @@ A curated list of awesome streamlit resources. Inspired by [awesome-python](http
 - [Streamlit Demo](https://github.com/Poseyy/StreamlitDemo) by [Luke Posey](https://github.com/Poseyy) (#App, #Code)
 - [Streamlit-components-demo App](https://fullstackstation.com/streamlit-components-demo) (#App)
 - [Deploying web apps with Streamlit, Docker, and AWS](https://github.com/collinprather/streamlit-docker/tree/docker-compose+postgres) by [Collin Prather](https://github.com/collinprather) (#App, #Code)
+- [Spectrum Analyzer](https://github.com/gqasdq/spectrum-analyzer) - Soil spectral data visualization and modeling platform with FAISS similarity search. (#App, #Code)
 
 ### Article
 
