@@ -667,6 +667,12 @@ RESOURCES = (
             tags=[tags.APP, tags.CODE],
             author=authors.COLLIN_PRATHER,
         ),
+        Resource(
+            name="FishID Studio - Marine Fish Identification & Electronic Monitoring (ConvNeXt + SAM 2 + ByteTrack)",
+            url="https://github.com/viniciusscience/fishid-studio",
+            is_awesome=True,
+            tags=[tags.APP, tags.CODE],
+        ),
     ]
     + STREAMLIT_EXAMPLE_APPS
     + STREAMLIT_EXAMPLE_APPS_FAILED_TEST
